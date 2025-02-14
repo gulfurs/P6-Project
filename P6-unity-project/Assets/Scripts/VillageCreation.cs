@@ -5,8 +5,10 @@ public class VillageCreation : MonoBehaviour
 {
     public List<BuildingType> buildingTypes;
     public int villageSize = 10;
-    public int roadWidth = 2;
+    public int cellSize = 2;
     public Transform villageParent;
+
+    public float placementRandomness = 0.5f;
 
     private bool[,] grid;
 
@@ -47,28 +49,41 @@ public class VillageCreation : MonoBehaviour
 
     Vector2Int FindEmptyPosition()
     {
-        for (int x = 0; x < villageSize; x++)
+        int attempts = 0;
+        while (attempts < 100) // Try 100 times to find a valid position
         {
-            for (int z = 0; z < villageSize; z++)
+            int x = Random.Range(0, villageSize);
+            int z = Random.Range(0, villageSize);
+
+            if (!grid[x, z])
             {
-                if (!grid[x, z])
-                {
-                    return new Vector2Int(x, z);
-                }
+                return new Vector2Int(x, z);
             }
+            attempts++;
         }
         return new Vector2Int(-1, -1); // No empty position found
     }
 
     void PlaceBuilding(GameObject buildingPrefab, Vector2Int position)
     {
-        GameObject building = Instantiate(buildingPrefab, new Vector3(position.x, 0, position.y), Quaternion.identity, villageParent);
+        // Calculate semi-random position within the grid cell
+        float randomOffsetX = (Random.value - 0.5f) * placementRandomness * cellSize;
+        float randomOffsetZ = (Random.value - 0.5f) * placementRandomness * cellSize;
+
+        Vector3 buildingPosition = new Vector3(
+            position.x * cellSize + randomOffsetX,
+            0,
+            position.y * cellSize + randomOffsetZ
+        );
+
+        GameObject building = Instantiate(buildingPrefab, buildingPosition, Quaternion.identity, villageParent);
         grid[position.x, position.y] = true;
 
-        // Mark surrounding spaces as occupied for roads
-        for (int x = -roadWidth; x <= roadWidth; x++)
+        // Mark surrounding spaces as occupied to prevent overlapping
+        int buildingSize = Mathf.CeilToInt(cellSize); // Adjust based on building size
+        for (int x = -buildingSize; x <= buildingSize; x++)
         {
-            for (int z = -roadWidth; z <= roadWidth; z++)
+            for (int z = -buildingSize; z <= buildingSize; z++)
             {
                 int newX = position.x + x;
                 int newZ = position.y + z;
