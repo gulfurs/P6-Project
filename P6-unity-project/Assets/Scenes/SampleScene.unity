@@ -426,6 +426,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1221366698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1221366700}
+  - component: {fileID: 1221366699}
+  m_Layer: 0
+  m_Name: VillageCreation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1221366699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221366698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14dcb6b98b80f04428dc1f750f3c92c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingTypes:
+  - prefab: {fileID: 4237215726662723250, guid: 7364dee058822b24fabaa0071df4f810, type: 3}
+    minCount: 5
+    maxCount: 10
+    isUnique: 0
+  - prefab: {fileID: 2359419230533363624, guid: d633bb213866f2944b6538314974a6d5, type: 3}
+    minCount: 1
+    maxCount: 2
+    isUnique: 0
+  - prefab: {fileID: 6500958860426040867, guid: 7f92d776c3e9dbd478330d52e5e42641, type: 3}
+    minCount: 1
+    maxCount: 1
+    isUnique: 1
+  villageSize: 10
+  roadWidth: 2
+  villageParent: {fileID: 1221366700}
+--- !u!4 &1221366700
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221366698}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 318.92233, y: 238.89516, z: 380.834}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1515014692
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,3 +763,4 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 7726243028598925267}
   - {fileID: 1515014698}
+  - {fileID: 1221366700}
