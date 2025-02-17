@@ -7,11 +7,11 @@ public class VillageCreation : MonoBehaviour
     public int villageSize = 10;
     public int cellSize = 2;
     public Transform villageParent;
+    public Terrain terrain; // Reference to the terrain
 
     public float placementRandomness = 0.5f;
 
     private bool[,] grid;
-
 
     [System.Serializable]
     public class BuildingType
@@ -22,12 +22,12 @@ public class VillageCreation : MonoBehaviour
         public bool isUnique; 
     }
 
-    void Start()
-    {
-        GenerateVillage();
-    }
+    // void Start()
+    // {
+    //     GenerateVillage();
+    // }
 
-    void GenerateVillage()
+    public void GenerateVillage()
     {
         grid = new bool[villageSize, villageSize];
 
@@ -66,21 +66,26 @@ public class VillageCreation : MonoBehaviour
 
     void PlaceBuilding(GameObject buildingPrefab, Vector2Int position)
     {
-        // Calculate semi-random position within the grid cell
         float randomOffsetX = (Random.value - 0.5f) * placementRandomness * cellSize;
         float randomOffsetZ = (Random.value - 0.5f) * placementRandomness * cellSize;
 
-        Vector3 buildingPosition = new Vector3(
+        Vector3 basePosition = new Vector3(
             position.x * cellSize + randomOffsetX,
-            0,
+            0, // We'll set the height dynamically
             position.y * cellSize + randomOffsetZ
         );
+
+        // Get terrain height at this position
+        float terrainHeight = GetTerrainHeight(basePosition);
+
+        // Adjust the position based on terrain height
+        Vector3 buildingPosition = new Vector3(basePosition.x, terrainHeight + 10, basePosition.z);
 
         GameObject building = Instantiate(buildingPrefab, buildingPosition, Quaternion.identity, villageParent);
         grid[position.x, position.y] = true;
 
         // Mark surrounding spaces as occupied to prevent overlapping
-        int buildingSize = Mathf.CeilToInt(cellSize); // Adjust based on building size
+        int buildingSize = Mathf.CeilToInt(cellSize);
         for (int x = -buildingSize; x <= buildingSize; x++)
         {
             for (int z = -buildingSize; z <= buildingSize; z++)
@@ -95,5 +100,22 @@ public class VillageCreation : MonoBehaviour
             }
         }
     }
-}
 
+    float GetTerrainHeight(Vector3 position)
+    {
+        if (terrain != null)
+        {
+            return terrain.SampleHeight(position);
+        }
+        else
+        {
+            // Fallback using Raycast if no terrain reference is set
+            RaycastHit hit;
+            if (Physics.Raycast(new Vector3(position.x, 1000f, position.z), Vector3.down, out hit, Mathf.Infinity))
+            {
+                return hit.point.y;
+            }
+        }
+        return 0f; // Default to 0 if terrain height cannot be found
+    }
+}

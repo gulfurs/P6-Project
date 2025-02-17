@@ -1,18 +1,17 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player_movement : MonoBehaviour
+[RequireComponent(typeof(Rigidbody))]
+public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5f;
-    public float lookSenstivity = 2f;
-
+    public float lookSensitivity = 2f;
     public Transform cameraTransform;
 
-
-    PlayerInput playerInput;
-    InputAction moveAction;
-    InputAction lookAction;
-    CharacterController characterController;
+    private PlayerInput playerInput;
+    private InputAction moveAction;
+    private InputAction lookAction;
+    private Rigidbody rb;
 
     private float verticalRotation = 0f;
 
@@ -21,7 +20,9 @@ public class Player_movement : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions["Move"];
         lookAction = playerInput.actions["Look"];
-        characterController = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
+
+        rb.freezeRotation = true; // Prevents Rigidbody from rotating due to physics
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -29,28 +30,28 @@ public class Player_movement : MonoBehaviour
 
     void Update()
     {
-        MovePlayer();
         LookPlayer();
+    }
+
+    void FixedUpdate() // Use FixedUpdate for Rigidbody movement
+    {
+        MovePlayer();
     }
 
     void MovePlayer()
     {
-
         Vector2 direction = moveAction.ReadValue<Vector2>();
+        Vector3 moveVector = transform.right * direction.x + transform.forward * direction.y;
         
-        Vector3 moveVector = transform.right * direction.x + transform.forward * direction.y; 
-        characterController.Move(moveVector * speed * Time.deltaTime);
-       
-        //Vector3 moveVector = new Vector3(direction.x, 0, direction.y) * speed * Time.deltaTime;
-        //characterController.Move(moveVector);
+        rb.linearVelocity = new Vector3(moveVector.x * speed, rb.linearVelocity.y, moveVector.z * speed);
     }
 
     void LookPlayer()
     {
         Vector2 look = lookAction.ReadValue<Vector2>();
 
-        float mouseX = look.x * lookSenstivity;
-        float mouseY = look.y * lookSenstivity;
+        float mouseX = look.x * lookSensitivity;
+        float mouseY = look.y * lookSensitivity;
 
         transform.Rotate(Vector3.up * mouseX);
         verticalRotation -= mouseY;
