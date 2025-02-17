@@ -1,7 +1,7 @@
 # P6-Project 
 A MEDSOE original
 
-Ohayooo this game is the shit, we have AI and everything.\\
+Ohayooo this game is the shit, we have AI and everything.\
 
-Love.\\
+Love.\
 Team MEDSOE
