@@ -1,41 +1,52 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro; // For TextMeshPro support
 using Microsoft.ML.OnnxRuntime;
 using Microsoft.ML.OnnxRuntime.Tensors;
 using System.Collections.Generic;
 using System.Linq;
 
-public class DistilBERT_NPC : MonoBehaviour
+public class DistilBert_NPC : MonoBehaviour
 {
-    private InferenceSession session;
+    public TMP_InputField playerInputField; // Player input field
+    public TMP_Text npcResponseText; // NPC response text
 
-    // Simple word-to-index dictionary for tokenization (Example only)
-    private Dictionary<string, long> wordToIndex = new Dictionary<string, long>()
-    {
-        { "[CLS]", 101 }, { "[SEP]", 102 }, { "hello", 7592 }, { "world", 2088 }, { "who", 2040 }, { "are", 2024 }, { "you", 2017 }
-        // Add more words or use a real tokenizer (this is a placeholder)
-    };
+    private InferenceSession session;
 
     void Start()
     {
-        string modelPath = Application.dataPath + "/AI_Models/model.onnx";
+        string modelPath = Application.dataPath + "/AI_Models/gpt2-10.onnx";
         session = new InferenceSession(modelPath);
-        Debug.Log("DistilBERT Model Loaded Successfully!");
+        Debug.Log("AI Model Loaded Successfully!");
     }
 
-    public string GetNPCResponse(string inputText)
+    public void OnPlayerSubmit()
     {
-        // Convert text to tokens
-        var tokenizedInput = TokenizeText(inputText);
+        string playerText = playerInputField.text;
+        string npcResponse = GetNPCResponse(playerText);
+        npcResponseText.text = npcResponse;
+    }
 
-        // Convert to tensor format
-        var inputTensor = new DenseTensor<long>(tokenizedInput, new int[] { 1, tokenizedInput.Length });
+    private string GetNPCResponse(string inputText)
+    {
+        var tokenizedInput = TokenizeText(inputText);
+        int seqLength = tokenizedInput.Length;
+
+        var inputTensor = new DenseTensor<long>(tokenizedInput, new int[] { 1, seqLength });
+
+        // Create attention mask (1 for real tokens, 0 for padding)
+        var attentionMask = new DenseTensor<long>(Enumerable.Repeat(1L, seqLength).ToArray(), new int[] { 1, seqLength });
+
+        // Create token type IDs (0 for single-sentence inputs)
+        var tokenTypeIds = new DenseTensor<long>(new long[seqLength], new int[] { 1, seqLength });
 
         var inputs = new List<NamedOnnxValue>
         {
-            NamedOnnxValue.CreateFromTensor("input_ids", inputTensor)
+            NamedOnnxValue.CreateFromTensor("input_ids", inputTensor),
+            NamedOnnxValue.CreateFromTensor("attention_mask", attentionMask),
+            NamedOnnxValue.CreateFromTensor("token_type_ids", tokenTypeIds)
         };
 
-        // Run inference
         using (var results = session.Run(inputs))
         {
             var outputTensor = results.First().AsTensor<float>();
@@ -43,30 +54,24 @@ public class DistilBERT_NPC : MonoBehaviour
         }
     }
 
+    // Tokenization function - if you're using GPT-2, remove the manual dictionary
     private long[] TokenizeText(string text)
     {
-        List<long> tokens = new List<long> { 101 }; // Start token [CLS]
+        // The tokenizer will handle this, but for illustration:
+        // For GPT-2, you might need pre-tokenized input or handle tokenization externally in Python
+        return TokenizeGPT2Text(text);  // Replace with real tokenization logic
+    }
 
-        foreach (string word in text.ToLower().Split(' '))
-        {
-            if (wordToIndex.TryGetValue(word, out long token))
-            {
-                tokens.Add(token);
-            }
-            else
-            {
-                tokens.Add(100); // Unknown token
-            }
-        }
-
-        tokens.Add(102); // End token [SEP]
-
-        return tokens.ToArray();
+    private long[] TokenizeGPT2Text(string text)
+    {
+        // You would handle tokenization here for GPT-2
+        // If running in Unity, you may need to pre-tokenize text externally
+        return new long[] { 101, 7592, 2088, 102 }; // Example tokens for "hello world"
     }
 
     private string InterpretModelOutput(Tensor<float> outputTensor)
     {
-        // Convert AI output into a readable response (Placeholder)
-        return "NPC: That sounds interesting!";
+        // Convert model output tensor to human-readable response
+        return "NPC: That sounds interesting!"; // Placeholder response
     }
 }
