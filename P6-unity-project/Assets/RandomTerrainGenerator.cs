@@ -25,7 +25,7 @@ public class RandomTerrainGenerator : MonoBehaviour
             {
                 float xCoord = (float)x / width * 10;
                 float yCoord = (float)y / height * 10;
-                heights[x, y] = Mathf.PerlinNoise(xCoord + seed, yCoord + seed) * 0.2f; // Adjust intensity
+                heights[x, y] = Mathf.PerlinNoise(xCoord + seed, yCoord + seed) * 0.1f; // Adjust intensity
             }
         }
 
