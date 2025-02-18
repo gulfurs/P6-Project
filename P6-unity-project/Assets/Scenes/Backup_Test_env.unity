@@ -6030,7 +6030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  lookSensitivity: 2
+  lookSensitivity: 10
   cameraTransform: {fileID: 330585546}
 --- !u!136 &1515014695
 CapsuleCollider:
@@ -6210,13 +6210,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fc351b0a3dae54cb6aae22b349ec15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  terrainSize: 512
   terrainPrefab: {fileID: 1166226862}
-  terrainHeight: 50
   player: {fileID: 1515014698}
-  terrainLoadDistance: 50
-  villagePrefab: {fileID: 0}
-  villageSpawnChance: 0.5
+  terrainSize: 1000
+  triggerDistance: 50
 --- !u!4 &2140713705
 Transform:
   m_ObjectHideFlags: 0
