@@ -22,10 +22,10 @@ public class VillageCreation : MonoBehaviour
         public bool isUnique; 
     }
 
-    // void Start()
-    // {
-    //     GenerateVillage();
-    // }
+    void Start()
+    {
+        GenerateVillage();
+    }
 
     public void GenerateVillage()
     {
