@@ -139,7 +139,7 @@ public class FirstPersonController : MonoBehaviour
             float mouseX = input.look.x * cameraSensitivity * Time.deltaTime;
             float mouseY = input.look.y * cameraSensitivity * Time.deltaTime;
 
-            cameraPitch -= mouseY;
+            cameraPitch += mouseY;
             cameraPitch = Mathf.Clamp(cameraPitch, -maxCameraAngle, maxCameraAngle);
             cameraTransform.localRotation = Quaternion.Euler(cameraPitch, 0f, 0f);
 
