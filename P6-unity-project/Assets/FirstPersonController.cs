@@ -20,8 +20,17 @@ public class FirstPersonController : MonoBehaviour
 
     [Header("Ground Check")]
     public float groundCheckDistance = 0.4f;
+    public float groundCheckRadius = 0.3f;
     public LayerMask groundLayer;
     public bool isGrounded;
+
+    private float _fallTimeoutDelta;
+    private float _jumpTimeoutDelta;
+    private const float _terminalVelocity = 53.0f; // Example terminal velocity
+
+    [Space(10)]
+    public float JumpTimeout = 0.1f;
+    public float FallTimeout = 0.15f;
 
     // Components & References
     private CharacterController controller;
@@ -36,39 +45,85 @@ public class FirstPersonController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         input = GetComponent<StarterAssetsInputs>();
 
-         if (input == null)
-    {
-        Debug.LogError("StarterAssetsInputs is missing from " + gameObject.name);
+        if (input == null)
+        {
+            Debug.LogError("StarterAssetsInputs is missing from " + gameObject.name);
+        }
     }
+
+    void Start()
+    {
+        _jumpTimeoutDelta = JumpTimeout;
+        _fallTimeoutDelta = FallTimeout;
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (!Application.isPlaying) return;
+
+        Gizmos.color = isGrounded ? Color.green : Color.red;
+
+        // Use the same ground check position as GroundedCheck()
+        Vector3 checkPosition = transform.position + Vector3.down * (controller.height / 2f) + controller.center;
+        Gizmos.DrawWireSphere(checkPosition, groundCheckRadius);
     }
 
     private void Update()
     {
+        GroundedCheck();
         JumpAndGravity();
         Move();
+    }
+
+    private void LateUpdate()
+    {
         CameraRotation();
     }
 
-    // Handle jumping and gravity
+    private void GroundedCheck()
+    {
+        // Set sphere position with offset
+        Vector3 spherePosition = transform.position + Vector3.down * (controller.height / 2f) + controller.center;
+        isGrounded = Physics.CheckSphere(spherePosition, groundCheckRadius, groundLayer, QueryTriggerInteraction.Ignore);
+    }
+
     private void JumpAndGravity()
     {
-        isGrounded = Physics.CheckSphere(transform.position, groundCheckDistance, groundLayer);
-
-        if (isGrounded && velocity.y < 0)
+        if (isGrounded)
         {
-            velocity.y = -2f; // Small force to keep grounded
+            _fallTimeoutDelta = FallTimeout;
+
+            if (velocity.y < 0.0f)
+            {
+                velocity.y = -2f;
+            }
+
+            if (input.jump && _jumpTimeoutDelta <= 0.0f)
+            {
+                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                _jumpTimeoutDelta = JumpTimeout; // Reset jump cooldown
+                input.jump = false; // Reset input to avoid continuous jumping
+            }
+        }
+        else
+        {
+            _fallTimeoutDelta -= Time.deltaTime;
         }
 
-        if (input.jump && isGrounded)
+        // Always count down jump timeout
+        if (_jumpTimeoutDelta >= 0.0f)
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            _jumpTimeoutDelta -= Time.deltaTime;
         }
 
-        velocity.y += gravity * Time.deltaTime;
+        // Apply gravity, ensuring it does not exceed terminal velocity
+        velocity.y = Mathf.Max(velocity.y + gravity * Time.deltaTime, -_terminalVelocity);
+
+        // Move character
         controller.Move(velocity * Time.deltaTime);
     }
 
-    // Handle player movement
+
     private void Move()
     {
         float speed = input.sprint ? sprintSpeed : (input.crouch ? crouchSpeed : moveSpeed);
@@ -77,7 +132,6 @@ public class FirstPersonController : MonoBehaviour
         controller.Move(move * speed * Time.deltaTime);
     }
 
-    // Handle camera rotation
     private void CameraRotation()
     {
         if (input.look.sqrMagnitude >= 0.01f)
@@ -85,12 +139,10 @@ public class FirstPersonController : MonoBehaviour
             float mouseX = input.look.x * cameraSensitivity * Time.deltaTime;
             float mouseY = input.look.y * cameraSensitivity * Time.deltaTime;
 
-            // Rotate the camera up and down (pitch)
             cameraPitch -= mouseY;
             cameraPitch = Mathf.Clamp(cameraPitch, -maxCameraAngle, maxCameraAngle);
             cameraTransform.localRotation = Quaternion.Euler(cameraPitch, 0f, 0f);
 
-            // Rotate the player left and right (yaw)
             transform.Rotate(Vector3.up * mouseX);
         }
     }

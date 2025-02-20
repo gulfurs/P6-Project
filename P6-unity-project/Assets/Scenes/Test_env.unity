@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 202491593}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerCameraRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1040,7 +1040,7 @@ GameObject:
   - component: {fileID: 1515014700}
   - component: {fileID: 1515014701}
   - component: {fileID: 1515014702}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1209,16 +1209,19 @@ MonoBehaviour:
   moveSpeed: 10
   sprintSpeed: 20
   crouchSpeed: 2
-  jumpHeight: 10
-  gravity: -9.82
-  cameraTransform: {fileID: 718548410}
+  jumpHeight: 5
+  gravity: -20
+  cameraTransform: {fileID: 202491593}
   cameraSensitivity: 90
   maxCameraAngle: 85
   groundCheckDistance: 0.4
+  groundCheckRadius: 0.3
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
-  isGrounded: 0
+    m_Bits: 1
+  isGrounded: 1
+  JumpTimeout: 0.1
+  FallTimeout: 1
 --- !u!114 &1515014702
 MonoBehaviour:
   m_ObjectHideFlags: 0
