@@ -1,13 +1,5 @@
 fileFormatVersion: 2
 guid: e4bb2a4dc33335646834fac74301c9a8
-ShaderImporter:
-  externalObjects: {}
-  defaultTextures: []
-  nonModifiableTextures: []
-  preprocessorOverride: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
   productId: 53808
@@ -15,3 +7,11 @@ AssetOrigin:
   packageVersion: 1.6
   assetPath: Assets/Aligned Games/Polygonal Modern Weapons Collection 1 Asset Package/Shaders/AlignedGamesToonUnlit.shader
   uploadId: 700902
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _TextureMap: {fileID: 2800000, guid: ed6f6dbbbba63c440a760b6f869219cb, type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
