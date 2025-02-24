@@ -11296,7 +11296,7 @@ MonoBehaviour:
   villageSize: 50
   cellSize: 6
   villageParent: {fileID: 1221366700}
-  terrain: {fileID: 0}
+  terrain: {fileID: 1474480705}
   placementRandomness: 0.5
 --- !u!4 &1221366700
 Transform:
@@ -12167,7 +12167,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 18
+    type: 0
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
