@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 	{
 		[Header("Character Input Values")]
 		public Vector2 move, look;
-		public bool jump, sprint, crouch, attack, aim;
+		public bool jump, sprint, crouch, attack, aim, interact;
 		public bool equip1, equip2, equip3;
 
 		[Header("Movement Settings")]
@@ -59,8 +59,15 @@ using UnityEngine.InputSystem;
 		{
 			AimInput(value.isPressed);
 		}
-		
-		//EQUIP
+
+		// INTERACT
+
+		public void OnInteract(InputValue value)
+		{
+		InteractInput(value.isPressed);
+		}
+
+	//EQUIP
 
 		public void OnEquip1(InputValue value)
 		{
@@ -114,7 +121,12 @@ using UnityEngine.InputSystem;
 			aim = newAimState;
 		}
 
-		public void EquipInput(int equipSlot, bool newState)
+		public void InteractInput(bool newInteractState)
+		{
+			interact = newInteractState;
+		}
+
+	public void EquipInput(int equipSlot, bool newState)
 		{
 			switch (equipSlot)
 			{
