@@ -663,8 +663,8 @@ MonoBehaviour:
   dontDestroyOnLoad: 1
   contextSize: 4299
   batchSize: 512
-  model: qwen2-0_5b-instruct-q4_k_m.gguf
-  chatTemplate: chatml
+  model: mistral-7b-v0.1.Q4_K_M.gguf
+  chatTemplate: mistral chat
   lora: 
   loraWeights: 
   flashAttention: 0
@@ -676,7 +676,7 @@ MonoBehaviour:
   minContextLength: 0
   maxContextLength: 32768
   embeddingsOnly: 0
-  embeddingLength: 896
+  embeddingLength: 4096
 --- !u!1 &1051131186
 GameObject:
   m_ObjectHideFlags: 0

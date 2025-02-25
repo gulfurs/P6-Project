@@ -510,7 +510,8 @@ MonoBehaviour:
   stream: 1
   playerName: user
   AIName: assistant
-  prompt: you are a wizard giving a quest to a travelling salesman
+  prompt: A chat between a curious human and an artificial intelligence assistant.
+    The assistant gives helpful, detailed, and polite answers to the human's questions.
   setNKeepToPrompt: 1
   chat: []
   grammarString: 
