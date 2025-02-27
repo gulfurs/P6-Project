@@ -621,7 +621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EquipmentName: 
-  EquipmentIcon: {fileID: 0}
+  EquipmentIcon: {fileID: 914885334}
   EquipmentRoot: {fileID: 0}
   WeaponMuzzle: {fileID: 0}
   EquipType: 0
@@ -1805,15 +1805,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e478d703e54d5294bb65099f92bfae55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EquipmentSocket: {fileID: 0}
+  EquipmentSocket: {fileID: 202491593}
   equipments:
   - {fileID: 644984261}
   - {fileID: 644984261}
   - {fileID: 644984261}
   equipmentIndex: 0
   isAiming: 0
-  equipIcon: {fileID: 0}
-  ammoText: {fileID: 0}
+  equipIcon: {fileID: 841342542}
+  ammoText: {fileID: 2057366718}
 --- !u!1 &1631557236
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,6 +1824,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1631557238}
   - component: {fileID: 1631557237}
+  - component: {fileID: 1631557239}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -1846,11 +1847,11 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 3, z: 2}
+  m_Size: {x: 3, y: 3, z: 2}
   m_Center: {x: 0, y: 0, z: 0.3}
 --- !u!4 &1631557238
 Transform:
@@ -1868,6 +1869,27 @@ Transform:
   - {fileID: 1799389315}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1631557239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631557236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 027c795bdb9f05a4ba9a6c67a54fd205, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EquipmentName: Rifle
+  EquipmentIcon: {fileID: 841342542}
+  EquipmentRoot: {fileID: 0}
+  WeaponMuzzle: {fileID: 0}
+  EquipType: 1
+  Equipped: 0
+  MaxAmmo: 12
+  CurrentAmmo: 12
+  ProjectilePrefab: {fileID: 0}
 --- !u!1001 &1799389314
 PrefabInstance:
   m_ObjectHideFlags: 0
