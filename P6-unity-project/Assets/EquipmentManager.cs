@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 
@@ -18,24 +17,19 @@ public class EquipmentManager : MonoBehaviour
     private StarterAssetsInputs _input;
     public bool isAiming;
 
-    [Tooltip("Secondary camera used to avoid seeing weapon go throw geometries")]
+    [Tooltip("Secondary camera used to avoid seeing weapon go through geometries")]
     public Image equipIcon;
     public TextMeshProUGUI ammoText;
-    
-    /*
-    public void AddEquipment() { 
-        if (_input.interact)
-    } */
 
     void Start()
     {
         _input = GetComponent<StarterAssetsInputs>();
-
-        EquipWeapon(equipmentIndex);
+        EquipWeapon(equipmentIndex);  // Equip the starting equipment
     }
+
     void Update()
     {
-        // Check for Equip button input, and cycle through the equipment slots
+        // Check for Equip button input and cycle through the equipment slots
         if (_input.equip1)
         {
             SwitchEquipment(0); // Equip slot 1
@@ -47,6 +41,18 @@ public class EquipmentManager : MonoBehaviour
         else if (_input.equip3)
         {
             SwitchEquipment(2); // Equip slot 3
+        }
+
+        // Raycast to detect and collect equipment when interact button is pressed
+        if (_input.interact)
+        {
+            // Get the ray based on the mouse position or other input method
+            Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+
+            // Visualize the ray in the scene view (for debugging)
+            Debug.DrawRay(ray.origin, ray.direction * 10, Color.red);
+
+            RaycastForEquipment(ray);
         }
     }
 
@@ -91,6 +97,50 @@ public class EquipmentManager : MonoBehaviour
         }
 
         // Update icon based on selected equipment
-        equipIcon = equipments[equipmentIndex].GetComponent<EquipmentController>().EquipmentIcon;
+        equipIcon.sprite = equipments[equipmentIndex].EquipmentIcon.sprite;
+    }
+
+    void RaycastForEquipment(Ray ray)
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            EquipmentController collectedEquipment = hit.collider.GetComponent<EquipmentController>();
+
+            if (collectedEquipment != null && !collectedEquipment.Equipped)
+            {
+                // Only replace equipment in slots 1 or 2
+                if (equipmentIndex != 2)
+                {
+                    collectedEquipment.Equipped = true;
+
+                    // Destroy the collected equipment in the scene (hide it or clean it up)
+                    Destroy(collectedEquipment.gameObject);
+
+                    // Create a duplicate of the collected equipment
+                    EquipmentController newEquipment = Instantiate(collectedEquipment, collectedEquipment.transform.position, collectedEquipment.transform.rotation);
+
+                    // Optionally, you can adjust the position of the new equipment if needed
+                    newEquipment.transform.SetParent(EquipmentSocket); // You might want to position it under the socket or in a more relevant spot
+
+                    ReplaceEquipment(newEquipment);
+                }
+            }
+        }
+    }
+
+    public void ReplaceEquipment(EquipmentController newEquipment)
+    {
+        // Deactivate the current equipment in the selected slot
+        equipments[equipmentIndex].gameObject.SetActive(false);
+
+        equipments[equipmentIndex] = newEquipment;
+
+        // Add new equipment to the slot, replace the previous one
+        EquipWeapon(equipmentIndex);
+
+        // Optionally, you can update the UI when the equipment is changed
+        UpdateUI();
     }
 }
