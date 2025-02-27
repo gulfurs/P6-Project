@@ -1702,6 +1702,8 @@ MonoBehaviour:
   equip1: 0
   equip2: 0
   equip3: 0
+  toggleEquip: 0
+  cycleInput: 0
   analogMovement: 1
   cursorLocked: 1
   cursorInputForLook: 1

@@ -1,14 +1,17 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 
 public class EquipmentController : MonoBehaviour
 {
     public enum EquipmentType
     {
+       None,
        Weapon,
        Tool,
+       Objective,
     }
 
     [Header("Information")]
@@ -16,7 +19,7 @@ public class EquipmentController : MonoBehaviour
     public string EquipmentName;
 
     [Tooltip("The image that will be displayed in the UI for this Equipment")]
-    public Sprite EquipmentIcon;
+    public Image EquipmentIcon;
 
     [Tooltip("The root object for the weapon, this is what will be deactivated when the weapon isn't active")]
     public GameObject EquipmentRoot;
@@ -27,9 +30,12 @@ public class EquipmentController : MonoBehaviour
     [Tooltip("The type of Equipment wil affect how it is utilized")]
     public EquipmentType EquipType;
 
+    [Tooltip("Check if Equipment is equipped")]
+    public bool Equipped;
+
     [Tooltip("Maximum amount of ammo in the gun")]
-    public int MaxAmmo = 8;
-    float m_CurrentAmmo;
+    public int MaxAmmo = 6;
+    public float CurrentAmmo = 6;
 
     [Tooltip("The projectile prefab")] public GameObject ProjectilePrefab;
 

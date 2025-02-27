@@ -134,6 +134,8 @@ using UnityEngine.InputSystem;
 
 		public void OnEquip3(InputValue value)
 		{
+		equip1 = false;
+		equip2 = false;
 		EquipInput(3, value.isPressed);
 		}
 
