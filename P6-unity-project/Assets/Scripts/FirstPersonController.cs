@@ -102,7 +102,7 @@ public class FirstPersonController : MonoBehaviour
             {
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
                 _jumpTimeoutDelta = JumpTimeout; // Reset jump cooldown
-                input.jump = false; // Reset input to avoid continuous jumping
+                input.jump = false; 
             }
         }
         else
