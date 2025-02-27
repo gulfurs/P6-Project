@@ -96,13 +96,22 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Cycle",
+                    "name": "ToggleEquip",
                     "type": "PassThrough",
-                    "id": "a053f8be-7be0-4494-b678-d66113239790",
+                    "id": "88958f98-14b9-4f14-9f95-71e8598a1f47",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Cycle",
+                    "type": "Value",
+                    "id": "a053f8be-7be0-4494-b678-d66113239790",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Interact",
@@ -370,6 +379,17 @@
                 },
                 {
                     "name": "",
+                    "id": "a78ba636-942f-452f-ace9-8fa0c3f7eb99",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "ToggleEquip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "74d7761e-86be-4684-bede-f0328520b753",
                     "path": "<Keyboard>/2",
                     "interactions": "",
@@ -386,17 +406,6 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
-                    "action": "Cycle",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a78ba636-942f-452f-ace9-8fa0c3f7eb99",
-                    "path": "<Gamepad>/buttonNorth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
                     "action": "Cycle",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -438,7 +447,7 @@
                     "name": "",
                     "id": "9b96ad51-063b-4f4f-83d2-fde2e773bc2b",
                     "path": "<Gamepad>/buttonWest",
-                    "interactions": "Hold",
+                    "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Interact",

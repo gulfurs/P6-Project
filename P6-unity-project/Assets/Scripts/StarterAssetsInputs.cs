@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 
@@ -8,6 +8,8 @@ using UnityEngine.InputSystem;
 		public Vector2 move, look;
 		public bool jump, sprint, crouch, attack, aim, interact;
 		public bool equip1, equip2, equip3;
+		public bool toggleEquip;
+		public float cycleInput;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -67,7 +69,55 @@ using UnityEngine.InputSystem;
 		InteractInput(value.isPressed);
 		}
 
-	//EQUIP
+		public void OnCycle(InputValue value)
+		{
+		Vector2 scrollValue = value.Get<Vector2>(); // Read as Vector2
+		cycleInput = scrollValue.y; // Use only the Y-axis for scrolling
+
+		if (cycleInput > 0)
+		{
+			CycleForward(); // Scroll up → next weapon
+		}
+		else if (cycleInput < 0)
+		{
+			CycleBackward(); // Scroll down → previous weapon
+			}
+		}
+
+		public void CycleForward()
+		{
+		if (equip1)
+			{
+				equip1 = false;
+				equip2 = true;
+			}
+		else if (equip2)
+			{
+				equip2 = false;
+				equip1 = true;
+			}
+		else
+			{
+				equip1 = true; // Default case if neither is active
+			}
+		}
+
+		public void CycleBackward()
+		{
+			CycleForward();
+		}
+
+		public void OnToggleEquip(InputValue value)
+		{
+			ToggleEquipInput(value.isPressed);
+
+			if (value.isPressed)
+			{
+				CycleForward();
+			}
+		}
+
+		//EQUIP
 
 		public void OnEquip1(InputValue value)
 		{
@@ -126,7 +176,17 @@ using UnityEngine.InputSystem;
 			interact = newInteractState;
 		}
 
-	public void EquipInput(int equipSlot, bool newState)
+		public void CycleInput(float newCycleState)
+		{
+			cycleInput = newCycleState;
+		}
+
+		public void ToggleEquipInput(bool newToggleEquipState)
+		{
+			toggleEquip = newToggleEquipState;
+		}
+
+		public void EquipInput(int equipSlot, bool newState)
 		{
 			switch (equipSlot)
 			{
