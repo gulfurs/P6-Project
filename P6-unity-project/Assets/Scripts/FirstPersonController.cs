@@ -116,7 +116,7 @@ public class FirstPersonController : MonoBehaviour
             _jumpTimeoutDelta -= Time.deltaTime;
         }
 
-        // Apply gravity, ensuring it does not exceed terminal velocity
+        // Apply gravity
         velocity.y = Mathf.Max(velocity.y + gravity * Time.deltaTime, -_terminalVelocity);
 
         // Move character

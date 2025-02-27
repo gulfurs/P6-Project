@@ -90,15 +90,18 @@ using UnityEngine.InputSystem;
 			{
 				equip1 = false;
 				equip2 = true;
-			}
+				equip3 = false;
+		}
 		else if (equip2)
 			{
 				equip2 = false;
 				equip1 = true;
-			}
+				equip3 = false;
+		}
 		else
 			{
-				equip1 = true; // Default case if neither is active
+				equip1 = true;
+				equip3 = false;
 			}
 		}
 
