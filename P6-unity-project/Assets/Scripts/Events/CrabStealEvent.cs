@@ -21,7 +21,7 @@ public class CrabStealEvent : SpaceTimeEvent
     private void spawnCrab()
     {
 
-        Vector3 offset = new Vector3(Random.Range(-5, 5), 0, Random.Range(-5, 5));
+        Vector3 offset = new Vector3(Random.Range(-20, 20), 0, Random.Range(-20, 20));
         Vector3 spawnPosition = eventLocation + offset;
 
 
