@@ -42,5 +42,13 @@ public class Enemy : MonoBehaviour
             // Apply the rotation to the agent's transform
             transform.rotation = targetRotation;
         }
+
+        // Make sure the enemy also faces the player
+        Vector3 directionToFace = (player.position - transform.position).normalized;
+        directionToFace.y = 0;  // Ignore the y-axis to prevent tilting upwards/downwards
+        Quaternion targetPlayerRotation = Quaternion.LookRotation(directionToFace);
+
+        // Smoothly rotate towards the player (optional)
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetPlayerRotation, Time.deltaTime * 5f);
     }
 }
