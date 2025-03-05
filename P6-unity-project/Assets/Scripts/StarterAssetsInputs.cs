@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 	{
 		[Header("Character Input Values")]
 		public Vector2 move, look;
-		public bool jump, sprint, crouch, attack, aim, interact;
+		public bool jump, sprint, crouch, attack, aim, interact, drop, log;
 		public bool equip1, equip2, equip3;
 		public bool toggleEquip;
 		public float cycleInput;
@@ -62,11 +62,21 @@ using UnityEngine.InputSystem;
 			AimInput(value.isPressed);
 		}
 
+		public void OnDrop(InputValue value)
+		{
+			DropInput(value.isPressed);
+		}
+
+		public void OnLog(InputValue value)
+		{
+			LogInput(value.isPressed);
+		}
+
 		// INTERACT
 
 		public void OnInteract(InputValue value)
 		{
-		InteractInput(value.isPressed);
+			InteractInput(value.isPressed);
 		}
 
 		public void OnCycle(InputValue value)
@@ -176,6 +186,16 @@ using UnityEngine.InputSystem;
 			aim = newAimState;
 		}
 
+		public void DropInput(bool newDropState)
+		{
+			drop = newDropState;
+		}
+
+		public void LogInput(bool newLogState)
+		{
+			log = newLogState;
+		}
+
 		public void InteractInput(bool newInteractState)
 		{
 			interact = newInteractState;
@@ -210,7 +230,7 @@ using UnityEngine.InputSystem;
 			}
 		}
 
-	private void OnApplicationFocus(bool hasFocus)
+		private void OnApplicationFocus(bool hasFocus)
 		{
 			SetCursorState(cursorLocked);
 		}
