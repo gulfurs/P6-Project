@@ -1027,9 +1027,10 @@ GameObject:
   - component: {fileID: 661941172}
   - component: {fileID: 661941171}
   - component: {fileID: 661941174}
+  - component: {fileID: 661941175}
   m_Layer: 0
   m_Name: EventSystem
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1127,6 +1128,19 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: d691077be59bc61469aa00fef9862994, type: 2}
   m_BuildHeightMesh: 0
+--- !u!114 &661941175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661941170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f18ae9c80b645014894885eb62c2f92d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  borders: {fileID: 2054159887}
 --- !u!1 &663384140
 GameObject:
   m_ObjectHideFlags: 0

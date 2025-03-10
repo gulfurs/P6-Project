@@ -8,5 +8,7 @@ public class InteractHandler : MonoBehaviour
     {
         Debug.Log("Interacted with: " + gameObject.name);
         interactable = false;
+        GameManager gm = FindObjectOfType<GameManager>();
+        gm.borders.SetTrigger("ToggleBorders");
     }
 }

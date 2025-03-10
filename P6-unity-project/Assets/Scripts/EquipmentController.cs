@@ -24,6 +24,9 @@ public class EquipmentController : MonoBehaviour
     [Tooltip("The root object for the weapon, this is what will be deactivated when the weapon isn't active")]
     public GameObject EquipmentRoot;
 
+    [Tooltip("The transform for the correct hand positioning of the equipment")]
+    public Transform EquipmentOffset;
+
     [Tooltip("Tip of the Equipment, where the projectiles are shot (If a weapon")]
     public Transform WeaponMuzzle;
 

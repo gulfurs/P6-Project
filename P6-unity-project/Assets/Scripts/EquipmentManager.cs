@@ -54,6 +54,11 @@ public class EquipmentManager : MonoBehaviour
 
             RaycastForEquipment(ray);
         }
+
+        if (_input.drop)
+        {
+            DropEquipment();
+        }
     }
 
     public void SwitchEquipment(int slotIndex)
@@ -76,15 +81,53 @@ public class EquipmentManager : MonoBehaviour
 
     public void EquipWeapon(int slotIndex)
     {
-        // Ensure the index is valid
-        if (slotIndex < 0 || slotIndex >= equipments.Count) return;
+            if (slotIndex < 0 || slotIndex >= equipments.Count) return;
 
-        // Activate the selected equipment and place it in the equipment socket
-        equipments[slotIndex].transform.SetParent(EquipmentSocket);
-        equipments[slotIndex].gameObject.SetActive(true);
+            EquipmentController equipment = equipments[slotIndex];
+
+            equipment.transform.SetParent(EquipmentSocket);
+            equipment.gameObject.SetActive(true);
+
+            if (equipment.EquipmentOffset != null)
+            {
+                equipment.transform.localPosition = equipment.EquipmentOffset.localPosition;
+                equipment.transform.localRotation = equipment.EquipmentOffset.localRotation;
+            }
+            else
+            {
+                equipment.transform.localPosition = Vector3.zero;
+                equipment.transform.localRotation = Quaternion.identity;
+            }
+     }
+
+    void DropEquipment()
+    {
+        // Ensure we're not trying to drop slot 3 or an item that isn't a Weapon
+        if (equipmentIndex != 2 && equipments[equipmentIndex].EquipType != EquipmentController.EquipmentType.None)
+        {
+            // Get the currently equipped item
+            EquipmentController equipmentToDrop = equipments[equipmentIndex];
+
+            // Instantiate the dropped item at the player's position or slightly offset in front
+            Vector3 dropPosition = Camera.main.transform.position + Camera.main.transform.forward * 1.5f; // 1.5 units in front of the player
+            Quaternion dropRotation = Camera.main.transform.rotation;
+
+            // Instantiate the equipment to drop
+            EquipmentController droppedEquipment = Instantiate(equipmentToDrop, dropPosition, dropRotation);
+
+            // Disable the original equipment
+            equipmentToDrop.gameObject.SetActive(false);
+
+            // Optionally, you can add a Rigidbody or force to make the drop more realistic (e.g., physics)
+            Rigidbody rb = droppedEquipment.gameObject.AddComponent<Rigidbody>();
+            rb.AddForce(Camera.main.transform.forward * 5f, ForceMode.Impulse); // Apply a small force forward
+
+            // Update the UI or handle the dropped item
+            UpdateUI();
+        }
     }
 
-    void UpdateUI()
+        void UpdateUI()
     {
         // Example of updating UI, like ammo count or equipment icon
         if (equipments[equipmentIndex].CurrentAmmo > 0)
