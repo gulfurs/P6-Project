@@ -64,15 +64,15 @@ public class TerrainManager : MonoBehaviour
         Vector3 position = new Vector3(tileCoord.x * terrainSize, 0, tileCoord.y * terrainSize);
         GameObject newTerrain = Instantiate(terrainPrefab, position, Quaternion.identity);
 
-        // Apply mirroring if necessary
-        if (tileCoord.x % 2 != 0) // Mirror along X
-        {
-            newTerrain.transform.localScale = new Vector3(-1, 1, 1);
-        }
-        if (tileCoord.y % 2 != 0) // Mirror along Z
-        {
-            newTerrain.transform.localScale = new Vector3(newTerrain.transform.localScale.x, 1, -1);
-        }
+        //// Apply mirroring if necessary
+        //if (tileCoord.x % 2 != 0) // Mirror along X
+        //{
+        //    newTerrain.transform.localScale = new Vector3(-1, 1, 1);
+        //}
+        //if (tileCoord.y % 2 != 0) // Mirror along Z
+        //{
+        //    newTerrain.transform.localScale = new Vector3(newTerrain.transform.localScale.x, 1, -1);
+        //}
 
         activeTerrains[tileCoord] = newTerrain;
     }
