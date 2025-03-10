@@ -14,7 +14,7 @@ public class TerrainController : MonoBehaviour
     public float offsetZ = 0;
 
     public float offset = 200.4f;
-    private void OnValidate()
+    private void Update()
     {   
         foreach (Terrain terrain in Terrain.activeTerrains)
         {
