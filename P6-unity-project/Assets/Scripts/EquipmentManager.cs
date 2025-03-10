@@ -115,14 +115,12 @@ public class EquipmentManager : MonoBehaviour
                 {
                     collectedEquipment.Equipped = true;
 
-                    // Destroy the collected equipment in the scene (hide it or clean it up)
                     Destroy(collectedEquipment.gameObject);
 
-                    // Create a duplicate of the collected equipment
                     EquipmentController newEquipment = Instantiate(collectedEquipment, collectedEquipment.transform.position, collectedEquipment.transform.rotation);
 
-                    // Optionally, you can adjust the position of the new equipment if needed
-                    newEquipment.transform.SetParent(EquipmentSocket); // You might want to position it under the socket or in a more relevant spot
+                    
+                    newEquipment.transform.SetParent(EquipmentSocket); 
 
                     ReplaceEquipment(newEquipment);
                 }

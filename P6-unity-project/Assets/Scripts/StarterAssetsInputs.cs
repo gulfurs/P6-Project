@@ -69,12 +69,16 @@ using UnityEngine.InputSystem;
 
 		public void OnLog(InputValue value)
 		{
-			LogInput(value.isPressed);
+			if (value.isPressed)
+			{
+			LogInput(true);
+			}
 		}
 
-		// INTERACT
 
-		public void OnInteract(InputValue value)
+	// INTERACT
+
+	public void OnInteract(InputValue value)
 		{
 			InteractInput(value.isPressed);
 		}
@@ -235,7 +239,7 @@ using UnityEngine.InputSystem;
 			SetCursorState(cursorLocked);
 		}
 
-		private void SetCursorState(bool newState)
+		public void SetCursorState(bool newState)
 		{
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 		}

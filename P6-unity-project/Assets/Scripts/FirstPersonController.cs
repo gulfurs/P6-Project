@@ -26,7 +26,7 @@ public class FirstPersonController : MonoBehaviour
 
     private float _fallTimeoutDelta;
     private float _jumpTimeoutDelta;
-    private const float _terminalVelocity = 53.0f; // Example terminal velocity
+    private const float _terminalVelocity = 53.0f;
 
     [Space(10)]
     public float JumpTimeout = 0.1f;
@@ -44,11 +44,6 @@ public class FirstPersonController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         input = GetComponent<StarterAssetsInputs>();
-
-        if (input == null)
-        {
-            Debug.LogError("StarterAssetsInputs is missing from " + gameObject.name);
-        }
     }
 
     void Start()
