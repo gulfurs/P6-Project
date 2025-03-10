@@ -11341,7 +11341,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.53, y: 0.53, z: 0.53}
+  m_LocalScale: {x: 0.11, y: 0.11, z: 0.11}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7938804}
@@ -11762,7 +11762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aff3b2e57ba79c54abc7ebda34ffac74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDelay: 30
+  startDelay: 0
   eventDuration: 30
   crabPrefab: {fileID: 8269106702017602629}
   lostItem: {fileID: 587977677}
@@ -11928,7 +11928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae1def6163c18864d9eced9079fdacc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDelay: 120
+  startDelay: 20
   eventDuration: 10
   villageCreation: {fileID: 1221366699}
 --- !u!1 &1165360458

@@ -24,7 +24,7 @@ public class VillageCreation : MonoBehaviour
 
     void Start()
     {
-        GenerateVillage();
+        //GenerateVillage();
     }
 
     public void GenerateVillage()
