@@ -2,5 +2,5 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public Animator borders;
+    public Animator borders; // Use Anima
 }

@@ -10,6 +10,7 @@ public class EquipmentManager : MonoBehaviour
     public Transform EquipmentSocket;
 
     [Header("Equipment")]
+    public EquipmentController DefaultEquipment;
     public List<EquipmentController> equipments = new List<EquipmentController>();
     public int equipmentIndex = 0;
 
@@ -24,6 +25,16 @@ public class EquipmentManager : MonoBehaviour
     void Start()
     {
         _input = GetComponent<StarterAssetsInputs>();
+
+        //Logic for replacing each object in 'equipments'-list with the DefaultEquipment (1, 2, 3)
+        for (int i = 0; i < equipments.Count; i++)
+        {
+            if (equipments[i] == null)
+            {
+                equipments[i] = Instantiate(DefaultEquipment);
+            }
+        }
+
         EquipWeapon(equipmentIndex);  // Equip the starting equipment
     }
 
@@ -81,24 +92,33 @@ public class EquipmentManager : MonoBehaviour
 
     public void EquipWeapon(int slotIndex)
     {
-            if (slotIndex < 0 || slotIndex >= equipments.Count) return;
+        if (slotIndex < 0 || slotIndex >= equipments.Count) return;
 
-            EquipmentController equipment = equipments[slotIndex];
+        EquipmentController equipment = equipments[slotIndex];
 
-            equipment.transform.SetParent(EquipmentSocket);
-            equipment.gameObject.SetActive(true);
+        // Set the parent and activate the new equipment
+        equipment.transform.SetParent(EquipmentSocket);
+        equipment.gameObject.SetActive(true);
 
-            if (equipment.EquipmentOffset != null)
-            {
-                equipment.transform.localPosition = equipment.EquipmentOffset.localPosition;
-                equipment.transform.localRotation = equipment.EquipmentOffset.localRotation;
-            }
-            else
-            {
-                equipment.transform.localPosition = Vector3.zero;
-                equipment.transform.localRotation = Quaternion.identity;
-            }
-     }
+        // Check if the equipment has a Rigidbody and disable it
+        Rigidbody rb = equipment.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.isKinematic = true; // Disable physics interaction (effectively disables Rigidbody)
+        }
+
+        if (equipment.EquipmentOffset != null)
+        {
+            equipment.transform.localPosition = equipment.EquipmentOffset.localPosition;
+            equipment.transform.localRotation = equipment.EquipmentOffset.localRotation;
+        }
+        else
+        {
+            equipment.transform.localPosition = Vector3.zero;
+            equipment.transform.localRotation = Quaternion.identity;
+        }
+    }
+
 
     void DropEquipment()
     {
@@ -114,20 +134,25 @@ public class EquipmentManager : MonoBehaviour
 
             // Instantiate the equipment to drop
             EquipmentController droppedEquipment = Instantiate(equipmentToDrop, dropPosition, dropRotation);
+            droppedEquipment.Equipped = false; // Mark as not equipped
 
-            // Disable the original equipment
-            equipmentToDrop.gameObject.SetActive(false);
+            // Disable and destroy the original equipment
+            Destroy(equipmentToDrop.gameObject);
 
             // Optionally, you can add a Rigidbody or force to make the drop more realistic (e.g., physics)
             Rigidbody rb = droppedEquipment.gameObject.AddComponent<Rigidbody>();
             rb.AddForce(Camera.main.transform.forward * 5f, ForceMode.Impulse); // Apply a small force forward
+
+            // Replace the current equipment with DefaultEquipment
+            ReplaceEquipment(DefaultEquipment);
 
             // Update the UI or handle the dropped item
             UpdateUI();
         }
     }
 
-        void UpdateUI()
+
+    void UpdateUI()
     {
         // Example of updating UI, like ammo count or equipment icon
         if (equipments[equipmentIndex].CurrentAmmo > 0)
@@ -173,12 +198,17 @@ public class EquipmentManager : MonoBehaviour
 
     public void ReplaceEquipment(EquipmentController newEquipment)
     {
-        // Deactivate the current equipment in the selected slot
-        equipments[equipmentIndex].gameObject.SetActive(false);
+        // Deactivate and destroy the old equipment in the selected slot
+        EquipmentController oldEquipment = equipments[equipmentIndex];
+        if (oldEquipment != null)
+        {
+            Destroy(oldEquipment.gameObject); // Completely remove the old equipment from the hierarchy
+        }
 
+        // Replace the equipment in the list
         equipments[equipmentIndex] = newEquipment;
 
-        // Add new equipment to the slot, replace the previous one
+        // Equip the new equipment (set it as active and positioned correctly)
         EquipWeapon(equipmentIndex);
 
         // Optionally, you can update the UI when the equipment is changed
