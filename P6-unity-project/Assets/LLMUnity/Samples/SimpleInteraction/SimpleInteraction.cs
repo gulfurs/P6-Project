@@ -1,19 +1,62 @@
 using UnityEngine;
 using LLMUnity;
 using UnityEngine.UI;
+using TMPro;
 
 namespace LLMUnitySamples
 {
     public class SimpleInteraction : MonoBehaviour
     {
         public LLMCharacter llmCharacter;
-        public InputField playerText;
-        public Text AIText;
+        //public InputField playerText;
+        //public Text AIText;
+
+        public TMP_InputField playerText;
+        public TextMeshPro AIText;
+
+        [Header("Toggle Settings")]
+        public KeyCode toggleKey = KeyCode.T;
+        public GameObject chatInterface;
+
+        private bool isChatActive = false;
+        //private PlayerMovement playerMovement;
 
         void Start()
         {
             playerText.onSubmit.AddListener(onInputFieldSubmit);
-            playerText.Select();
+            //playerText.Select();
+
+            SetChatActive(false);
+        }
+
+        void Update()
+        {
+            if (Input.GetKeyDown(toggleKey))
+            {
+                SetChatActive(!isChatActive);
+            }
+
+            if (isChatActive && Input.GetKeyDown(KeyCode.Escape))
+            {
+                SetChatActive(false);
+            }
+        }
+
+        void SetChatActive(bool active)
+        {
+            isChatActive = active;
+            chatInterface.SetActive(active);
+
+            if (active)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                playerText.interactable = true;
+                playerText.Select();
+            } else {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
         }
 
         void onInputFieldSubmit(string message)
