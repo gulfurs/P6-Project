@@ -7,9 +7,15 @@ public class Enemy : MonoBehaviour
 {
     public Transform player;
     private NavMeshAgent agent;
-    public float closeEnoughRadius = 2.0f;
-    public float raycastLength = 2.0f;  // Length of the raycast to detect the ground
+    public float standStillRadius = 10.0f; // Beyond this, the crab doesn't move
+    public float fleeRadius = 6.0f; // Inside this, the crab flees normally
+    public float superSpeedRadius = 3.0f; // Inside this, the crab flees at high speed
+    public float raycastLength = 2.0f; // Length of the raycast to detect the ground
+
     private Quaternion targetRotation;
+    public bool shouldFlee = true; // Crab always tries to flee
+    public float normalSpeed = 3.5f; // Default speed
+    public float superSpeed = 8.0f; // Speed when escaping aggressively
 
     void Start()
     {
@@ -17,16 +23,40 @@ public class Enemy : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player").transform;
 
         agent = GetComponent<NavMeshAgent>();
+        agent.speed = normalSpeed;
     }
 
     void Update()
     {
+        float distanceToPlayer = Vector3.Distance(player.position, transform.position);
         Vector3 directionToPlayer = (player.position - agent.transform.position).normalized;
-        Vector3 targetPosition = player.position - directionToPlayer * closeEnoughRadius;
+
+        if (distanceToPlayer > standStillRadius)
+        {
+            // Player is too far; enemy stands still
+            agent.isStopped = true;
+            return;
+        }
+        else
+        {
+            agent.isStopped = false;
+        }
+
+        // Adjust fleeing behavior
+        if (distanceToPlayer < superSpeedRadius)
+        {
+            agent.speed = superSpeed; // Sprint away
+        }
+        else
+        {
+            agent.speed = normalSpeed; // Normal flee speed
+        }
+
+        Vector3 targetPosition = agent.transform.position - directionToPlayer * fleeRadius;
 
         // Ensure the target position is still on the NavMesh
         NavMeshHit hit;
-        if (NavMesh.SamplePosition(targetPosition, out hit, closeEnoughRadius, NavMesh.AllAreas))
+        if (NavMesh.SamplePosition(targetPosition, out hit, fleeRadius, NavMesh.AllAreas))
         {
             agent.destination = hit.position;
         }
@@ -35,20 +65,16 @@ public class Enemy : MonoBehaviour
         RaycastHit groundHit;
         if (Physics.Raycast(transform.position, Vector3.down, out groundHit, raycastLength))
         {
-            // Align the character to the ground by setting the rotation
+            // Align the character to the ground
             Vector3 groundNormal = groundHit.normal;
             targetRotation = Quaternion.FromToRotation(transform.up, groundNormal) * transform.rotation;
-
-            // Apply the rotation to the agent's transform
             transform.rotation = targetRotation;
         }
 
-        // Make sure the enemy also faces the player
-        Vector3 directionToFace = (player.position - transform.position).normalized;
-        directionToFace.y = 0;  // Ignore the y-axis to prevent tilting upwards/downwards
+        // Ensure enemy faces away from the player
+        Vector3 directionToFace = -directionToPlayer;
+        directionToFace.y = 0; // Ignore the y-axis to prevent tilting
         Quaternion targetPlayerRotation = Quaternion.LookRotation(directionToFace);
-
-        // Smoothly rotate towards the player
         transform.rotation = Quaternion.Slerp(transform.rotation, targetPlayerRotation, Time.deltaTime * 5f);
     }
 }

@@ -4108,17 +4108,57 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1515014698}
+    - target: {fileID: 3816483486734956083, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
+      propertyPath: maxSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3816483486734956083, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
+      propertyPath: baseSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3816483486734956083, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
+      propertyPath: fleeRadius
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3816483486734956083, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
+      propertyPath: panicSpeed
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3816483486734956083, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
+      propertyPath: shouldFlee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3816483486734956083, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
+      propertyPath: superSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3816483486734956083, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
+      propertyPath: normalSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3816483486734956083, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
+      propertyPath: fleeThreshold
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3816483486734956083, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
+      propertyPath: standStillRadius
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3816483486734956083, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
+      propertyPath: superSpeedRadius
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4555260969622836188, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 50.62
+      value: 506.16
       objectReference: {fileID: 0}
     - target: {fileID: 4555260969622836188, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 28.85
+      value: 36.47
       objectReference: {fileID: 0}
     - target: {fileID: 4555260969622836188, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 84.53244
+      value: 22.16
       objectReference: {fileID: 0}
     - target: {fileID: 4555260969622836188, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4126,15 +4166,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4555260969622836188, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4555260969622836188, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4555260969622836188, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4555260969622836188, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4224,8 +4264,9 @@ SceneRoots:
   - {fileID: 330585546}
   - {fileID: 455185492}
   - {fileID: 1497198784}
-  - {fileID: 1515014698}
   - {fileID: 1221366700}
+  - {fileID: 5397369000633781787}
+  - {fileID: 1515014698}
   - {fileID: 1286372162}
   - {fileID: 642820998}
   - {fileID: 1326570905}
@@ -4237,7 +4278,6 @@ SceneRoots:
   - {fileID: 1631557238}
   - {fileID: 958923951}
   - {fileID: 63307192}
-  - {fileID: 5397369000633781787}
   - {fileID: 475192496}
   - {fileID: 1747563861}
   - {fileID: 1623905468}
