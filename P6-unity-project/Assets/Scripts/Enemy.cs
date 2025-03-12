@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
         directionToFace.y = 0;  // Ignore the y-axis to prevent tilting upwards/downwards
         Quaternion targetPlayerRotation = Quaternion.LookRotation(directionToFace);
 
-        // Smoothly rotate towards the player (optional)
+        // Smoothly rotate towards the player
         transform.rotation = Quaternion.Slerp(transform.rotation, targetPlayerRotation, Time.deltaTime * 5f);
     }
 }
