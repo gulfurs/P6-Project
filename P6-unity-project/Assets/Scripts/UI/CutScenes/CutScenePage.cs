@@ -16,12 +16,25 @@ public class CutScenePage : MonoBehaviour
     public Image background;   // Fullscreen background
     public TextMeshProUGUI dialogueText; // Text element
 
+    [Header("Audio")]
+    public AudioSource audioSource; // Reference to AudioSource
+    public AudioClip typeSound; // The typing sound effect
+    [Range(0.1f, 1.0f)]
+    public float typeSoundVolume = 0.5f; // Volume control
+    [Range(0.5f, 2.0f)]
+    public float pitchVariation = 1.1f; // Pitch variation
+
+    [Header("Typing Settings")]
+    [Range(0.01f, 0.5f)]
+    public float typingSpeed = 0.08f; // Slower typing speed (higher = slower)
+    public bool skipPunctuationDelay = false;
+
     private int currentPageIndex = 0;
     private int currentTextIndex = 0;
     private bool isTyping = false;
-
     void Start()
     {
+            
         ShowPage(0);
     }
 
@@ -73,11 +86,31 @@ public class CutScenePage : MonoBehaviour
     {
         isTyping = true;
         dialogueText.text = "";
+        
         foreach (char letter in text)
         {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(0.05f); // Speed of typing effect
+            
+            // Play sound for each letter, except for spaces and punctuation if desired
+            if (letter != ' ' && !char.IsPunctuation(letter) && typeSound != null)
+            {
+                // Randomize pitch slightly for natural variation
+                audioSource.pitch = Random.Range(1.0f, pitchVariation);
+                audioSource.PlayOneShot(typeSound, typeSoundVolume);
+            }
+            
+            // Add longer delay for punctuation to create natural pauses
+            if (!skipPunctuationDelay && (letter == '.' || letter == '!' || letter == '?' || letter == ','))
+            {
+                float pauseTime = (letter == ',' || letter == ';') ? typingSpeed * 8 : typingSpeed * 15;
+                yield return new WaitForSeconds(pauseTime);
+            }
+            else
+            {
+                yield return new WaitForSeconds(typingSpeed); // Slower typing speed
+            }
         }
+        
         isTyping = false;
     }
 
@@ -86,6 +119,12 @@ public class CutScenePage : MonoBehaviour
         StopAllCoroutines();
         dialogueText.text = pages[currentPageIndex].texts[currentTextIndex];
         isTyping = false;
+    
+        // Stop any currently playing typing sounds
+        if (audioSource != null)
+        {
+            audioSource.Stop();
+        }
     }
 
     void EndCutscene()
