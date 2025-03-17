@@ -149,14 +149,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pages:
-  - image: {fileID: 21300000, guid: ec43fad9a87c6524281d4685ed585147, type: 3}
+  - image: {fileID: 21300000, guid: 992f4a93ced2e664f9434b8a1acefb58, type: 3}
     texts:
-    - test
-    - testtt
-  - image: {fileID: 21300000, guid: d5227b390cdf7c74b863ae7f4ab22a3a, type: 3}
+    - For generations, the iron serpents of the Sandline Railroad had been the lifeblood
+      of this parched world
+    - ' connecting its scattered settlements across the endless dune'
+    - Today, Elias, a veteran conductor with the dust of countless journeys etched
+      into his face, stood ready.
+  - image: {fileID: 21300000, guid: 84693bb87eb1c0b45926dd1b8c330c29, type: 3}
     texts:
-    - 22222
-    - fdsfsdfdsf
+    - This morning's run was a vital one,
+    - carrying precious water and synth-minerals to the sister city of Xylos, nestled
+      beyond the treacherous Whispering Canyons
+  - image: {fileID: 21300000, guid: ade8bcf1fa923d5499c72aa1b4b7ffa6, type: 3}
+    texts:
+    - elow, the endless ocean of dunes stretched out, beautiful yet unforgiving
+    - Elias knew the risks of the desert, the sudden sandstorms, the unpredictable
+      shifts in terrain... and the legends
+    - The bridge between worlds. A marvel of engineering, it sliced through the heart
+      of the desolate expanse
+    - ' The wind seemed to carry whispers, tales of creatures that lurked beneath
+      the surface.'
+  - image: {fileID: 21300000, guid: 191d713cc023a3241ab55d7ad4cd3df9, type: 3}
+    texts:
+    - Not with the wind, but with something vast and powerful rising from the depths.
+    - Tentacles, thick as the train cars themselves, erupted from the dunes, their
+      chitinous surfaces glistening under the harsh sunlight
+  - image: {fileID: 21300000, guid: b233353dfa697df429b99d0c285d0dd4, type: 3}
+    texts:
+    - ' A creature of nightmare, a legend made real. Its eyeless head, a monstrous
+      bulb of muscle and teeth'
+    - rose above the track, its many limbs lashing out with terrifying speed.
+  - image: {fileID: 21300000, guid: c2d3e8b9f79775a469f50617aacb2706, type: 3}
+    texts:
+    - A massive tentacle slammed into the side of the engine, sending him hurtling
+      into the abyss
+    - '"Elias. He was somewhere in this desolate landscape, thrown from his train'
+    - ' his life hanging precariously in the balance'
+    - ' The desert, once his familiar route, had become his battleground.'
+    - This was not the end of his journey. It was the beginning
   background: {fileID: 1519713974}
   dialogueText: {fileID: 1170231278}
   audioSource: {fileID: 1609088556}
@@ -259,150 +290,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &702867627
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 702867628}
-  - component: {fileID: 702867630}
-  - component: {fileID: 702867629}
-  m_Layer: 5
-  m_Name: Train_test
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &702867628
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 702867627}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1833895194}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000061035, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &702867629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 702867627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Texture: {fileID: 2800000, guid: d5227b390cdf7c74b863ae7f4ab22a3a, type: 3}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
---- !u!222 &702867630
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 702867627}
-  m_CullTransparentMesh: 1
---- !u!1 &801825315
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 801825316}
-  - component: {fileID: 801825318}
-  - component: {fileID: 801825317}
-  m_Layer: 5
-  m_Name: Train_test_2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &801825316
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801825315}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1833895194}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000061035, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &801825317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801825315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Texture: {fileID: 2800000, guid: ec43fad9a87c6524281d4685ed585147, type: 3}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
---- !u!222 &801825318
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801825315}
-  m_CullTransparentMesh: 1
 --- !u!1 &977419146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,8 +937,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 702867628}
-  - {fileID: 801825316}
   - {fileID: 1519713972}
   - {fileID: 1170231280}
   m_Father: {fileID: 0}

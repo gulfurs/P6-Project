@@ -12144,6 +12144,12 @@ MonoBehaviour:
   - {fileID: 1866401757}
   - {fileID: 1221197889}
   participantID: default
+  enableDebugKeys: 1
+  debugTriggerKey: 286
+  debugEventNames:
+  - Debug_Trigger_1
+  - Debug_Trigger_2
+  - Debug_Trigger_3
 --- !u!4 &811862954
 Transform:
   m_ObjectHideFlags: 0
@@ -13342,7 +13348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1276083359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13909,7 +13915,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1327244036
 RectTransform:
   m_ObjectHideFlags: 0
