@@ -1,0 +1,18 @@
+{
+    "items": [
+        {
+            "evaluationNumber": 1,
+            "eventName": "Debug_Trigger_1",
+            "rating": 2,
+            "gameTime": 10.978649139404297,
+            "timestamp": "2025-03-17 12:07:27"
+        },
+        {
+            "evaluationNumber": 2,
+            "eventName": "Debug_Trigger_2",
+            "rating": 5,
+            "gameTime": 16.26027488708496,
+            "timestamp": "2025-03-17 12:07:34"
+        }
+    ]
+}
