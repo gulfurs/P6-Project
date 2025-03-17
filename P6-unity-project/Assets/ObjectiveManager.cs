@@ -3,18 +3,30 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 
+[CreateAssetMenu(fileName = "NewObjective", menuName = "Objectives/Objective")]
+public class Objective : ScriptableObject
+{
+    public string objectiveName;
+    public string description;
+    public int goal;  // The goal to achieve for the objective
+    public List<Objective> nextObjectives;  // New objectives unlocked after completion
+}
+
 public class ObjectiveManager : MonoBehaviour
 {
     public static ObjectiveManager Instance;
 
-    private Dictionary<string, int> activeObjectives = new Dictionary<string, int>();
-    private Dictionary<string, int> objectiveGoals = new Dictionary<string, int>();
-    private List<string> completedObjectives = new List<string>();
+    [System.Serializable]
+    public class ActiveObjective
+    {
+        public Objective objective;  // Reference to the ScriptableObject
+        public int currentProgress;  // Current progress towards the goal
+        public bool isUnlocked;  // Whether the objective is unlocked or not
+    }
 
-    public TextMeshProUGUI objectiveText; // Assign this in the inspector
-
-    public event Action<string> OnObjectiveCompleted;
-    public event Action<string, int, int> OnObjectiveProgressUpdated;
+    public List<ActiveObjective> activeObjectives = new List<ActiveObjective>();  // List of active objectives
+    public Objective startObjective;
+    public TextMeshProUGUI objectiveText;
 
     void Awake()
     {
@@ -31,34 +43,66 @@ public class ObjectiveManager : MonoBehaviour
 
     void Start()
     {
-        AddObjective("Put objects in container", 3);
-        AddObjective("Kill the charade", 3);
+        // Optionally, add all objectives on start
+        AddObjective(startObjective);
     }
 
-    public void AddObjective(string objective, int goal = 1)
+    public void AddObjective(Objective newObjective)
     {
-        if (!activeObjectives.ContainsKey(objective))
+        // Check if objective is already unlocked and not added yet
+        if (!IsObjectiveAdded(newObjective))
         {
-            activeObjectives[objective] = 0;
-            objectiveGoals[objective] = goal;
+            // Create an ActiveObjective instance
+            ActiveObjective activeObjective = new ActiveObjective
+            {
+                objective = newObjective,
+                currentProgress = 0,  // Start with 0 progress
+                isUnlocked = true  // Automatically unlocked when added
+            };
+
+            activeObjectives.Add(activeObjective);
+            Debug.Log("New Objective Added: " + newObjective.objectiveName);
             UpdateObjectiveUI();
         }
     }
 
-    public void UpdateObjectiveProgress(string objective, int amount)
+    public void UpdateObjectiveProgress(Objective objective, int amount)
     {
-        if (activeObjectives.ContainsKey(objective))
+        ActiveObjective activeObj = GetActiveObjective(objective);
+        if (activeObj != null)
         {
-            activeObjectives[objective] += amount;
-            int currentProgress = activeObjectives[objective];
-            int goal = objectiveGoals[objective];
-
-            OnObjectiveProgressUpdated?.Invoke(objective, currentProgress, goal);
+            activeObj.currentProgress += amount;
             UpdateObjectiveUI();
 
-            if (currentProgress >= goal)
+            if (activeObj.currentProgress >= objective.goal)
             {
-                CompleteObjective(objective);
+                CompleteObjective(activeObj);
+            }
+        }
+    }
+
+    private void CompleteObjective(ActiveObjective activeObjective)
+    {
+        activeObjectives.Remove(activeObjective);
+        Debug.Log(activeObjective.objective.objectiveName + " Completed!");
+
+        // Unlock the next objectives
+        UnlockNextObjectives(activeObjective.objective);
+
+        UpdateObjectiveUI();
+    }
+
+    private void UnlockNextObjectives(Objective completedObjective)
+    {
+        if (completedObjective.nextObjectives.Count > 0)
+        {
+            foreach (Objective nextObjective in completedObjective.nextObjectives)
+            {
+                if (!IsObjectiveAdded(nextObjective))
+                {
+                    AddObjective(nextObjective);  // Add the next objective
+                    Debug.Log("New Objective Unlocked: " + nextObjective.objectiveName);
+                }
             }
         }
     }
@@ -67,33 +111,21 @@ public class ObjectiveManager : MonoBehaviour
     {
         string uiText = "";
 
-        foreach (var objective in activeObjectives)
+        foreach (var activeObjective in activeObjectives)
         {
-            string objName = objective.Key;
-            int current = objective.Value;
-            int goal = objectiveGoals[objName];
-
-            uiText += $"{objName}: {current}/{goal}\n";
+            uiText += $"{activeObjective.objective.objectiveName}: {activeObjective.currentProgress}/{activeObjective.objective.goal}\n";
         }
 
-        foreach (var completed in completedObjectives)
-        {
-            uiText += $"{completed}: ✅ Completed!\n";
-        }
-
-        objectiveText.text = uiText; // Update the UI with all objectives
+        objectiveText.text = uiText;
     }
 
-    private void CompleteObjective(string objective)
+    private bool IsObjectiveAdded(Objective objective)
     {
-        if (activeObjectives.ContainsKey(objective))
-        {
-            activeObjectives.Remove(objective);
-            objectiveGoals.Remove(objective);
-            completedObjectives.Add(objective);
+        return activeObjectives.Exists(obj => obj.objective == objective);
+    }
 
-            OnObjectiveCompleted?.Invoke(objective);
-            UpdateObjectiveUI();
-        }
+    private ActiveObjective GetActiveObjective(Objective objective)
+    {
+        return activeObjectives.Find(obj => obj.objective == objective);
     }
 }
