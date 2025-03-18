@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Bot_diffuse
-    second: {fileID: 2800000, guid: be411d0cc4517f748bf58b1b2d3e7871, type: 3}
+    second: {fileID: 2800000, guid: 1a5f4876bb856444d8b014b2ab79c1f0, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: personality_sphere_light
-    second: {fileID: 2800000, guid: bda1cf4bc1e86db438f37f796afb1741, type: 3}
+    second: {fileID: 2800000, guid: 0ed01a8ceb4525a4c8633bd1fa907ea6, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
