@@ -4,7 +4,7 @@ public class TerrainTest : MonoBehaviour
 {
 
 
-    public float scale = 5f;
+    public float scale = 2f;
 
     public float offsetX = 0;
     public float offsetZ = 0;
@@ -14,7 +14,7 @@ public class TerrainTest : MonoBehaviour
     public GameObject Player;
     public GameObject Land;
 
-    public float terrainSize = 1000f;
+    public float terrainSize = 10000f;
 
     private void Awake()
     {
