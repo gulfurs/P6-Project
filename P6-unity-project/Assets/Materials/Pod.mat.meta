@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:P6-unity-project/Assets/Materials/UI/UI_container.mat.meta
+guid: de7f50b6929c9d543b44087ca436403b
+========
+guid: 9a66a810ce2820c4db173726b5499f76
+>>>>>>>> core:P6-unity-project/Assets/Materials/Pod.mat.meta
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

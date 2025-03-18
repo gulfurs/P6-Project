@@ -26,7 +26,7 @@ public class FirstPersonController : MonoBehaviour
 
     private float _fallTimeoutDelta;
     private float _jumpTimeoutDelta;
-    private const float _terminalVelocity = 53.0f; // Example terminal velocity
+    private const float _terminalVelocity = 53.0f;
 
     [Space(10)]
     public float JumpTimeout = 0.1f;
@@ -44,11 +44,6 @@ public class FirstPersonController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         input = GetComponent<StarterAssetsInputs>();
-
-        if (input == null)
-        {
-            Debug.LogError("StarterAssetsInputs is missing from " + gameObject.name);
-        }
     }
 
     void Start()
@@ -102,7 +97,7 @@ public class FirstPersonController : MonoBehaviour
             {
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
                 _jumpTimeoutDelta = JumpTimeout; // Reset jump cooldown
-                input.jump = false; // Reset input to avoid continuous jumping
+                input.jump = false; 
             }
         }
         else
@@ -116,7 +111,7 @@ public class FirstPersonController : MonoBehaviour
             _jumpTimeoutDelta -= Time.deltaTime;
         }
 
-        // Apply gravity, ensuring it does not exceed terminal velocity
+        // Apply gravity
         velocity.y = Mathf.Max(velocity.y + gravity * Time.deltaTime, -_terminalVelocity);
 
         // Move character
@@ -139,7 +134,7 @@ public class FirstPersonController : MonoBehaviour
             float mouseX = input.look.x * cameraSensitivity * Time.deltaTime;
             float mouseY = input.look.y * cameraSensitivity * Time.deltaTime;
 
-            cameraPitch += mouseY;
+            cameraPitch -= mouseY;
             cameraPitch = Mathf.Clamp(cameraPitch, -maxCameraAngle, maxCameraAngle);
             cameraTransform.localRotation = Quaternion.Euler(cameraPitch, 0f, 0f);
 
