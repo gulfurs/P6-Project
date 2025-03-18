@@ -1,2 +1,0 @@
-gpt2-10.onnx filter=lfs diff=lfs merge=lfs -text
-model.onnx filter=lfs diff=lfs merge=lfs -text
