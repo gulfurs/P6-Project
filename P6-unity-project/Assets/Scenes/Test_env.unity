@@ -2446,10 +2446,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a92b5977fcd3c024f9fab5b743a0c2a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDelay: 0
-  eventDuration: 10
-  eventLocation: {x: 0, y: 0, z: 0}
-  isRunning: 0
 --- !u!1 &1112760105
 GameObject:
   m_ObjectHideFlags: 0
@@ -2459,10 +2455,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1112760108}
-  - component: {fileID: 1112760107}
   - component: {fileID: 1112760106}
+  - component: {fileID: 1112760107}
+  - component: {fileID: 1112760109}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: SandCrab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2477,7 +2474,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1112760105}
   m_Enabled: 1
   m_AgentTypeID: -334000983
-  m_Radius: 0.5
+  m_Radius: 0.7
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -2486,8 +2483,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
+  m_Height: 1
+  m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &1112760107
@@ -2503,13 +2500,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1515014698}
-  standStillRadius: 10
-  fleeRadius: 6
-  superSpeedRadius: 3
+  standStillRadius: 45
+  fleeRadius: 25
+  superSpeedRadius: 10
   raycastLength: 2
   shouldFlee: 1
-  normalSpeed: 3.5
-  superSpeed: 8
+  normalSpeed: 15
+  superSpeed: 50
 --- !u!4 &1112760108
 Transform:
   m_ObjectHideFlags: 0
@@ -2526,6 +2523,27 @@ Transform:
   - {fileID: 1062173359}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1112760109
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112760105}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.6, y: 1, z: 1.35}
+  m_Center: {x: 0, y: -0.2, z: 0.05}
 --- !u!1 &1124363680
 GameObject:
   m_ObjectHideFlags: 0
@@ -2710,10 +2728,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15257e0168ab0f849a5696a909dce5fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDelay: 0
-  eventDuration: 10
-  eventLocation: {x: 0, y: 0, z: 0}
-  isRunning: 0
 --- !u!1 &1221366698
 GameObject:
   m_ObjectHideFlags: 0
@@ -9720,6 +9734,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: fa958912a6235f547abbfed4b3c10f73, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
