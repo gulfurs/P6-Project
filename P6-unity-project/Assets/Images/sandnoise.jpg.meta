@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:P6-unity-project/Assets/Images/sandnoise.jpg.meta
 guid: 210f47ce243d1f24893bd75eb8dd3b45
+========
+guid: be411d0cc4517f748bf58b1b2d3e7871
+>>>>>>>> core:P6-unity-project/Assets/Materials/Bot_diffuse.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

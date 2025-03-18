@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:P6-unity-project/Assets/Images/CutScene/IntroScene/Intro_1.jpeg.meta
 guid: c2d3e8b9f79775a469f50617aacb2706
+========
+guid: c348e6116e9be5143ab239b5d1fe51f5
+>>>>>>>> core:P6-unity-project/Assets/Materials/Brick Trims.jpg.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
