@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 
@@ -6,8 +6,10 @@ using UnityEngine.InputSystem;
 	{
 		[Header("Character Input Values")]
 		public Vector2 move, look;
-		public bool jump, sprint, crouch, attack, aim, interact;
+		public bool jump, sprint, crouch, attack, aim, interact, drop, log;
 		public bool equip1, equip2, equip3;
+		public bool toggleEquip;
+		public float cycleInput;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -60,14 +62,79 @@ using UnityEngine.InputSystem;
 			AimInput(value.isPressed);
 		}
 
-		// INTERACT
-
-		public void OnInteract(InputValue value)
+		public void OnDrop(InputValue value)
 		{
-		InteractInput(value.isPressed);
+			DropInput(value.isPressed);
 		}
 
-	//EQUIP
+		public void OnLog(InputValue value)
+		{
+			if (value.isPressed)
+			{
+			LogInput(true);
+			}
+		}
+
+
+	// INTERACT
+
+	public void OnInteract(InputValue value)
+		{
+			InteractInput(value.isPressed);
+		}
+
+		public void OnCycle(InputValue value)
+		{
+		Vector2 scrollValue = value.Get<Vector2>(); // Read as Vector2
+		cycleInput = scrollValue.y; // Use only the Y-axis for scrolling
+
+		if (cycleInput > 0)
+		{
+			CycleForward(); // Scroll up → next weapon
+		}
+		else if (cycleInput < 0)
+		{
+			CycleBackward(); // Scroll down → previous weapon
+			}
+		}
+
+		public void CycleForward()
+		{
+		if (equip1)
+			{
+				equip1 = false;
+				equip2 = true;
+				equip3 = false;
+		}
+		else if (equip2)
+			{
+				equip2 = false;
+				equip1 = true;
+				equip3 = false;
+		}
+		else
+			{
+				equip1 = true;
+				equip3 = false;
+			}
+		}
+
+		public void CycleBackward()
+		{
+			CycleForward();
+		}
+
+		public void OnToggleEquip(InputValue value)
+		{
+			ToggleEquipInput(value.isPressed);
+
+			if (value.isPressed)
+			{
+				CycleForward();
+			}
+		}
+
+		//EQUIP
 
 		public void OnEquip1(InputValue value)
 		{
@@ -81,6 +148,8 @@ using UnityEngine.InputSystem;
 
 		public void OnEquip3(InputValue value)
 		{
+		equip1 = false;
+		equip2 = false;
 		EquipInput(3, value.isPressed);
 		}
 
@@ -121,12 +190,32 @@ using UnityEngine.InputSystem;
 			aim = newAimState;
 		}
 
+		public void DropInput(bool newDropState)
+		{
+			drop = newDropState;
+		}
+
+		public void LogInput(bool newLogState)
+		{
+			log = newLogState;
+		}
+
 		public void InteractInput(bool newInteractState)
 		{
 			interact = newInteractState;
 		}
 
-	public void EquipInput(int equipSlot, bool newState)
+		public void CycleInput(float newCycleState)
+		{
+			cycleInput = newCycleState;
+		}
+
+		public void ToggleEquipInput(bool newToggleEquipState)
+		{
+			toggleEquip = newToggleEquipState;
+		}
+
+		public void EquipInput(int equipSlot, bool newState)
 		{
 			switch (equipSlot)
 			{
@@ -145,12 +234,12 @@ using UnityEngine.InputSystem;
 			}
 		}
 
-	private void OnApplicationFocus(bool hasFocus)
+		private void OnApplicationFocus(bool hasFocus)
 		{
 			SetCursorState(cursorLocked);
 		}
 
-		private void SetCursorState(bool newState)
+		public void SetCursorState(bool newState)
 		{
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 		}
