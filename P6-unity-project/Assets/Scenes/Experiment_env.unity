@@ -13825,7 +13825,7 @@ Transform:
   m_GameObject: {fileID: 1051987519}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 19.19}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14268,7 +14268,7 @@ Transform:
   m_GameObject: {fileID: 1143276482}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 482.6705, y: 4.588547, z: 496.73282}
+  m_LocalPosition: {x: 482.6705, y: 4.588547, z: 519.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14290,7 +14290,7 @@ MonoBehaviour:
   cameraPosition: {fileID: 685235289}
   playerMovement: {fileID: 1327244035}
   tilePrefab: {fileID: 1332002078463102191, guid: 7f2ac2b84d5a72246a2c91b908032b52, type: 3}
-  gridParent: {fileID: 1143276483}
+  gridParent: {fileID: 1051987520}
   rows: 4
   columns: 4
   tileSpacing: 2
