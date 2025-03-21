@@ -380,17 +380,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3362367021539139775, guid: 40045eb755bde624682c4947dc8404c2, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1515014692}
     - target: {fileID: 4699243543824935449, guid: 40045eb755bde624682c4947dc8404c2, type: 3}
       propertyPath: m_Name
       value: Terrain Main
-      objectReference: {fileID: 0}
-    - target: {fileID: 4699243543824935449, guid: 40045eb755bde624682c4947dc8404c2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5074865797337212389, guid: 40045eb755bde624682c4947dc8404c2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -435,7 +427,7 @@ PrefabInstance:
     - target: {fileID: 9008709897611911395, guid: 40045eb755bde624682c4947dc8404c2, type: 3}
       propertyPath: m_TerrainData
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 15600000, guid: 7490c94bb2bb1e64f9a234363e9aef01, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1966,11 +1958,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damping: 0
---- !u!1 &721250274 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1167297840761313987, guid: 1fdec333f0000fe4fa043eb399cd2eb8, type: 3}
-  m_PrefabInstance: {fileID: 7726243028598925267}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &736461726
 GameObject:
   m_ObjectHideFlags: 0
@@ -3322,29 +3309,6 @@ Terrain:
   m_CorrespondingSourceObject: {fileID: 4418904366420910576, guid: 1fdec333f0000fe4fa043eb399cd2eb8, type: 3}
   m_PrefabInstance: {fileID: 7726243028598925267}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1474480708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 721250274}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38adda8b28fd3ed46937c631a3f9ce94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heightMapResolution: 513
-  terrainSize: 500
-  heightScale: 10
-  noiseScale: 50
-  octaves: 6
-  persistence: 0.5
-  lacunarity: 2
-  offset: 0
-  seed: 42
-  player: {fileID: 1515014692}
-  updateDistance: 200
 --- !u!1 &1497198781
 GameObject:
   m_ObjectHideFlags: 0
@@ -9854,7 +9818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1167297840761313987, guid: 1fdec333f0000fe4fa043eb399cd2eb8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4304122955999296797, guid: 1fdec333f0000fe4fa043eb399cd2eb8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9899,10 +9863,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1167297840761313987, guid: 1fdec333f0000fe4fa043eb399cd2eb8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1474480708}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fdec333f0000fe4fa043eb399cd2eb8, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
