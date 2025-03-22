@@ -19,12 +19,14 @@ public class VillageCreation : MonoBehaviour
         public GameObject prefab;
         public int minCount;
         public int maxCount;
-        public bool isUnique; 
+        public bool isUnique;
     }
 
     void Start()
     {
         //GenerateVillage();
+        //villageParent = transform.GetChild(0);
+        //terrain = GetComponent<Terrain>();
     }
 
     public void GenerateVillage()
@@ -78,14 +80,20 @@ public class VillageCreation : MonoBehaviour
         // Get terrain height at this position
         float terrainHeight = GetTerrainHeight(basePosition);
 
-        // Adjust the position based on terrain height
-        Vector3 buildingPosition = new Vector3(basePosition.x, terrainHeight + 10, basePosition.z);
+        // Adjust the position based on terrain height (add a small offset if necessary)
+        Vector3 buildingPosition = new Vector3(basePosition.x, terrainHeight, basePosition.z);
 
+        // Adjust for village parent position
+        buildingPosition += villageParent.position;
+
+        // Instantiate the building relative to the villageParent
         GameObject building = Instantiate(buildingPrefab, buildingPosition, Quaternion.identity, villageParent);
         grid[position.x, position.y] = true;
 
-        // Mark surrounding spaces as occupied to prevent overlapping
-        int buildingSize = Mathf.CeilToInt(cellSize);
+        // Adjust for building size in the grid
+        int buildingSize = Mathf.CeilToInt(cellSize);  // Or, consider building dimensions if you have them
+
+        // Mark surrounding spaces as occupied, accounting for building size
         for (int x = -buildingSize; x <= buildingSize; x++)
         {
             for (int z = -buildingSize; z <= buildingSize; z++)
@@ -103,19 +111,31 @@ public class VillageCreation : MonoBehaviour
 
     float GetTerrainHeight(Vector3 position)
     {
+        int groundLayer = LayerMask.GetMask("Ground");
+
         if (terrain != null)
         {
+            // Use the terrain SampleHeight method for accurate ground height
             return terrain.SampleHeight(position);
         }
         else
         {
-            // Fallback using Raycast if no terrain reference is set
+            // Fallback raycast logic if terrain is not set or if you want to avoid terrain usage
             RaycastHit hit;
-            if (Physics.Raycast(new Vector3(position.x, 1000f, position.z), Vector3.down, out hit, Mathf.Infinity))
+            // Start the ray just above the expected ground height to ensure it hits the terrain or ground.
+            Vector3 rayStart = new Vector3(position.x, 1000f, position.z);  // You can adjust the height (1000f) based on your needs.
+
+            // Cast ray only against the "groundLayer"
+            if (Physics.Raycast(rayStart, Vector3.down, out hit, Mathf.Infinity, groundLayer))
             {
-                return hit.point.y;
+                return hit.point.y;  // Return the Y position where the ray hits the ground
+            }
+            else
+            {
+                return position.y; // Return the original Y position if raycast fails (fallback)
             }
         }
-        return 0f; // Default to 0 if terrain height cannot be found
     }
+
+
 }
