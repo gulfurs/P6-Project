@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    public Transform player;
+    public Transform target;
     private NavMeshAgent agent;
     public float standStillRadius = 10.0f; // Beyond this, the crab doesn't move
     public float fleeRadius = 6.0f; // Inside this, the crab flees normally
@@ -19,8 +19,8 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        if (player == null)
-            player = GameObject.FindGameObjectWithTag("Player").transform;
+        if (target == null)
+            target = GameObject.FindGameObjectWithTag("Player").transform;
 
         agent = GetComponent<NavMeshAgent>();
         agent.speed = normalSpeed;
@@ -28,8 +28,8 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        float distanceToPlayer = Vector3.Distance(player.position, transform.position);
-        Vector3 directionToPlayer = (player.position - agent.transform.position).normalized;
+        float distanceToPlayer = Vector3.Distance(target.position, transform.position);
+        Vector3 directionToPlayer = (target.position - agent.transform.position).normalized;
 
         if (distanceToPlayer > standStillRadius)
         {
