@@ -12,8 +12,8 @@ public class LogManager : MonoBehaviour
         public AudioClip soundword;
     }
 
-    public List<LogEntry> logEntries = new List<LogEntry>(); 
-    public GameObject logPrefab; 
+    public List<LogEntry> logEntries = new List<LogEntry>();
+    public GameObject logPrefab;
     public Transform contentPanel;
     public GameObject logMenu;
     private bool isLogOpen = false;
@@ -22,12 +22,12 @@ public class LogManager : MonoBehaviour
     public ScrollRect scrollRect;
     private AudioSource audioSource;
     private CrabInterface crabInterface;
-    private List<string> pendingWords = new List<string>();
 
     void Start()
     {
         UpdateLog();
         input = GetComponent<StarterAssetsInputs>();
+        audioSource = GetComponent<AudioSource>();
         logMenu.SetActive(false);
     }
 
@@ -43,15 +43,8 @@ public class LogManager : MonoBehaviour
     public void SetCrabInterface(CrabInterface newCrabInterface)
     {
         crabInterface = newCrabInterface;
-
-        // Send any pending words to the board
-        foreach (string word in pendingWords)
-        {
-            crabInterface.AddWordToBoard(word);
-        }
-        pendingWords.Clear();
     }
-        
+
     public void ToggleLogMenu(bool open)
     {
         isLogOpen = open;
@@ -73,7 +66,6 @@ public class LogManager : MonoBehaviour
             input.SetCursorState(true); // Lock cursor
         }
     }
-
 
     public void AddWord(string newWord)
     {
@@ -109,10 +101,6 @@ public class LogManager : MonoBehaviour
         if (crabInterface != null)
         {
             crabInterface.AddWordToBoard(entry.wordOfInterest);
-        }
-        else
-        {
-            pendingWords.Add(entry.wordOfInterest); // Store word for later
         }
 
         if (entry.soundword != null && audioSource != null)

@@ -17,10 +17,12 @@ public class CrabInteract : InteractHandler
         if (currentUI == null) 
         {
             currentUI = Instantiate(commandUIPrefab);
+            currentUI.GetComponent<CrabInterface>().crab = GetComponent<CrabHandler>();
         }
 
         logman.ToggleLogMenu(true);
 
-        //base.InteractLogic();
+        base.InteractLogic();
+        interactable = true;
     }
 }
