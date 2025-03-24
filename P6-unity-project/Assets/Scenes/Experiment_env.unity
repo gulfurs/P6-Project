@@ -14754,7 +14754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1165360459
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14857,7 +14857,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e80d972a69a6f34fa65761b9675fa1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  journalEntry: This is a journal entry.
+  sentenceKeywordPairs:
+  - sentence: You want general room lighting, like a lightbulb in the center of a
+      room.
+    keyword: room
   textMeshPro: {fileID: 190986266}
 --- !u!114 &1165360464
 MonoBehaviour:
