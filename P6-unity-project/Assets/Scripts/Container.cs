@@ -6,7 +6,7 @@ public class Container : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Finish")) // Check if the colliding object has the "Finish" tag
+        if (other.CompareTag("PickUp")) // Check if the colliding object has the "Finish" tag
         {
             Destroy(other.gameObject); // Destroy the object (e.g., an item or the player)
 
