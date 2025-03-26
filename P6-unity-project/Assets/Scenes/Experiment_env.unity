@@ -13849,7 +13849,7 @@ MonoBehaviour:
   - {fileID: 433350209}
   - {fileID: 1866401757}
   - {fileID: 1221197889}
-  participantID: default
+  participantID: default_1
   enableDebugKeys: 1
   debugTriggerKey: 286
   debugEventNames:
@@ -14862,6 +14862,7 @@ MonoBehaviour:
       room.
     keyword: room
   textMeshPro: {fileID: 190986266}
+  keywordColor: {r: 0.2, g: 0.6, b: 1, a: 1}
 --- !u!114 &1165360464
 MonoBehaviour:
   m_ObjectHideFlags: 0

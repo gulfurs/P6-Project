@@ -152,18 +152,25 @@ public class TestEvaluation : MonoBehaviour
 
     private void SaveEvaluationData()
     {
-        string directory = @"C:\Users\gulfu\Documents\MED\P6-Project\P6-unity-project\EvaluationData\";
+        // Get the application data path which points to the project folder
+        string basePath = Application.dataPath;
+        // Go up one level from Assets folder to project root
+        string projectRoot = Directory.GetParent(basePath).FullName;
+        string directory = Path.Combine(projectRoot, "EvaluationData");
         
         if (!Directory.Exists(directory))
+        {
+            Debug.Log("Directory does not exist, creating: " + directory);
             Directory.CreateDirectory(directory);
+        }
             
-        string filename = directory + participantID + "_evaluation_data.json";
-                          
+        string filename = Path.Combine(directory, participantID + "_evaluation_data.json");
+                        
         string jsonData = JsonUtility.ToJson(new SerializableList<EvaluationData>(evaluationResults), true);
         File.WriteAllText(filename, jsonData);
         
         Debug.Log("Evaluation data saved to: " + filename);
-    }
+}
 
     // Helper class to serialize lists
     [Serializable]

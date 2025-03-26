@@ -25,7 +25,7 @@ public class DiglotWeaveJournal : MonoBehaviour
     {
         pickupObject = GetComponent<PickupObject>();
 
-        // Set the initial text on the paper (without bold keywords)
+        // Set the initial text on the paper
         UpdateJournalText(false);
     }
 
@@ -57,7 +57,7 @@ public class DiglotWeaveJournal : MonoBehaviour
         }
     }
 
-    // Update the journal text, optionally with bold keywords
+    // Update the journal text
     private void UpdateJournalText(bool highlightKeywords)
     {
         if (textMeshPro == null) return;
@@ -68,7 +68,7 @@ public class DiglotWeaveJournal : MonoBehaviour
         {
             string sentenceText = pair.sentence;
             
-            // If highlighting is enabled and keyword exists, make it bold
+            
             if (highlightKeywords && !string.IsNullOrEmpty(pair.keyword))
             {
                 string colorHex = ColorUtility.ToHtmlStringRGB(keywordColor);
