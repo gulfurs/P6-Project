@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LogManager : MonoBehaviour
 {
@@ -8,22 +9,26 @@ public class LogManager : MonoBehaviour
     {
         public string wordOfInterest;
         public string userDefinition;
+        public AudioClip soundword;
     }
 
-    public List<LogEntry> logEntries = new List<LogEntry>(); 
-    public GameObject logPrefab; 
+    public List<LogEntry> logEntries = new List<LogEntry>();
+    public GameObject logPrefab;
     public Transform contentPanel;
     public GameObject logMenu;
     private bool isLogOpen = false;
 
     private StarterAssetsInputs input;
-
+    public ScrollRect scrollRect;
+    private AudioSource audioSource;
+    private CrabInterface crabInterface;
 
     void Start()
     {
         UpdateLog();
         input = GetComponent<StarterAssetsInputs>();
-        logMenu.SetActive(false); 
+        audioSource = GetComponent<AudioSource>();
+        logMenu.SetActive(false);
     }
 
     void Update()
@@ -35,6 +40,11 @@ public class LogManager : MonoBehaviour
         }
     }
 
+    public void SetCrabInterface(CrabInterface newCrabInterface)
+    {
+        crabInterface = newCrabInterface;
+    }
+
     public void ToggleLogMenu(bool open)
     {
         isLogOpen = open;
@@ -44,6 +54,11 @@ public class LogManager : MonoBehaviour
         {
             Time.timeScale = 0f; // Pause game
             input.SetCursorState(false); // Unlock cursor
+
+            if (scrollRect != null)
+            {
+                scrollRect.horizontalNormalizedPosition = 0f;
+            }
         }
         else
         {
@@ -51,7 +66,6 @@ public class LogManager : MonoBehaviour
             input.SetCursorState(true); // Lock cursor
         }
     }
-
 
     public void AddWord(string newWord)
     {
@@ -75,8 +89,23 @@ public class LogManager : MonoBehaviour
         foreach (var entry in logEntries)
         {
             GameObject logInstance = Instantiate(logPrefab, contentPanel);
+            Button button = logInstance.GetComponent<Button>();
             LogUI logUI = logInstance.GetComponent<LogUI>();
             logUI.Setup(entry.wordOfInterest, entry.userDefinition, this);
+            button.onClick.AddListener(() => OnWordClicked(entry));
+        }
+    }
+
+    private void OnWordClicked(LogEntry entry)
+    {
+        if (crabInterface != null)
+        {
+            crabInterface.AddWordToBoard(entry.wordOfInterest);
+        }
+
+        if (entry.soundword != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(entry.soundword);
         }
     }
 

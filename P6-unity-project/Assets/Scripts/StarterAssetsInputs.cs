@@ -69,10 +69,7 @@ using UnityEngine.InputSystem;
 
 		public void OnLog(InputValue value)
 		{
-			if (value.isPressed)
-			{
-			LogInput(true);
-			}
+			LogInput(value.isPressed);
 		}
 
 

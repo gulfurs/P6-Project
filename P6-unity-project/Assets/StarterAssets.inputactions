@@ -133,12 +133,12 @@
                 },
                 {
                     "name": "Log",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "92d21857-6782-43ed-a8ba-108027318684",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -509,6 +509,17 @@
                     "name": "",
                     "id": "2718ba43-792c-4d2d-8d0d-356e0748c57b",
                     "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";KeyboardMouse",
+                    "action": "Log",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7640cc61-fc2a-48ea-a7c5-7b69299e41f0",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": ";KeyboardMouse",
