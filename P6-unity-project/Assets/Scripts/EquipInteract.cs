@@ -14,6 +14,7 @@ public class EquipInteract : InteractHandler
         {
             equipItem.EquipmentRoot = gameObject;
             equipmentManager.EquipNewItem(equipItem); // Send the item to be equipped
+            transform.SetParent(null);
             gameObject.SetActive(false); // Hide the pickup object after interacting
         }
     }

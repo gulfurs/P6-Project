@@ -1,17 +1,20 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Actor : MonoBehaviour
 {
     public GameObject target;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public List<string> actorTypes;
+
     void Start()
     {
         target = gameObject;
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool HasType(string type)
     {
-        
+        return actorTypes.Contains(type);
     }
 }

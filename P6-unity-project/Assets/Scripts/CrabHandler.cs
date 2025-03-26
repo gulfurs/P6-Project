@@ -19,6 +19,11 @@ public class CrabHandler : MonoBehaviour
     public float normalSpeed = 3.5f; // Default speed
     public float superSpeed = 8.0f; // Speed when escaping aggressively
 
+    public bool isCarryingObject = false; // Flag to check if crab is carrying an object
+    private GameObject carriedObject; // Object that the crab is carrying
+    private GameManager gm;
+    public CrabBehavior crabBehavior;
+    public string targetingType;
     //private List<string> confirmedWords = new List<string>();
 
     void Start()
@@ -28,33 +33,48 @@ public class CrabHandler : MonoBehaviour
 
         agent = GetComponent<NavMeshAgent>();
         agent.speed = normalSpeed;
+        gm = FindObjectOfType<GameManager>();
     }
 
     void Update()
     {
-        //ApplyBoardTextEffects();
+        isCarryingObject = HasChildWithTag("PickUp");
 
         float distanceToPlayer = Vector3.Distance(target.position, transform.position);
         Vector3 directionToPlayer = (target.position - agent.transform.position).normalized;
-        /*
-        // Handle movement behavior (flee or follow)
-        if (distanceToPlayer > standStillRadius)
-        {
-            agent.ResetPath(); // Stop moving if too far from the player
-            return;
-        }
-        else
-        {
-            agent.isStopped = false;
-        } */
 
-        if (shouldFlee)
+        if (!string.IsNullOrEmpty(targetingType))
         {
-            HandleFleeBehavior(distanceToPlayer, directionToPlayer); // Flee behavior
+            target = FindNearestTarget(targetingType);
         }
-        else
+
+        if (isCarryingObject)
         {
-            HandleFollowBehavior(distanceToPlayer); // Follow behavior
+            CarryObject();
+        }
+
+        // Handle behavior based on crabBehavior enum
+        switch (crabBehavior)
+        {
+            case CrabBehavior.Flee:
+                HandleFleeBehavior(distanceToPlayer, directionToPlayer);
+                break;
+
+            case CrabBehavior.Follow:
+                HandleFollowBehavior(distanceToPlayer);
+                break;
+
+            case CrabBehavior.PickingUp:
+                HandlePickingUpBehavior(distanceToPlayer, directionToPlayer);
+                break;
+
+            case CrabBehavior.DropItem:
+                DropObject();
+                break;
+
+            case CrabBehavior.StandStill:
+                HandleStandStillBehavior();
+                break;
         }
 
         // Handle ground alignment and rotation
@@ -64,6 +84,16 @@ public class CrabHandler : MonoBehaviour
     // Method to handle fleeing behavior
     void HandleFleeBehavior(float distanceToPlayer, Vector3 directionToPlayer)
     {
+        // Handle movement behavior (flee or follow)
+        if (distanceToPlayer > standStillRadius)
+        {
+            agent.ResetPath(); // Stop moving if too far from the player
+            return;
+        }
+        else
+        {
+            agent.isStopped = false;
+        }
         // Adjust flee speed based on proximity
         if (distanceToPlayer < superSpeedRadius)
         {
@@ -110,6 +140,34 @@ public class CrabHandler : MonoBehaviour
         agent.speed = normalSpeed; // Maintain normal speed while following
     }
 
+    // Method to handle the picking up behavior
+    void HandlePickingUpBehavior(float distanceToObject, Vector3 directionToObject)
+    {
+        agent.isStopped = false;
+        // Keep following the object until it is within reach for pickup
+        if (distanceToObject > 0.5f) // Adjust the distance as needed
+        {
+            // Follow the object
+            Debug.Log("HELP ME IM IN GREAT PAIN");
+            agent.SetDestination(target.position);
+            agent.speed = normalSpeed;
+        } 
+        
+        if (isCarryingObject)
+        {
+                targetingType = "";
+                crabBehavior = CrabBehavior.Follow; // Switch behavior to follow the player
+                target = GameObject.FindGameObjectWithTag("Player").transform; // Update the target to the player
+        }
+       
+    }
+
+    void HandleStandStillBehavior()
+    {
+        agent.isStopped = true;  // Stop movement
+        agent.velocity = Vector3.zero;  // Ensure it's fully stationary
+    }
+
     // Method to handle ground alignment and rotation
     void HandleGroundAlignmentAndRotation(Vector3 directionToPlayer)
     {
@@ -142,21 +200,155 @@ public class CrabHandler : MonoBehaviour
 
     public void ApplyBoardTextEffects(List<string> confirmedWords)
     {
-        GameManager gameManager = FindObjectOfType<GameManager>();
+        targetingType = "";
 
         foreach (string word in confirmedWords)
         {
-            GameManager.WordEffect effect = gameManager.GetEffectForWord(word);
+            GameManager.WordEffect effect = gm.GetEffectForWord(word);
 
             if (effect != null)
             {
-                shouldFlee = effect.fleeBehavior;
-
-                if (effect._target != null)
+                if (effect.affectFlee)
                 {
-                    target = effect._target.transform;
+                    // Set crab behavior to the corresponding enum value (like Flee)
+                    if (effect.crabBehavior == CrabBehavior.Flee)
+                    {
+                        crabBehavior = CrabBehavior.Flee;
+                    }
+                    else if (effect.crabBehavior == CrabBehavior.Follow)
+                    {
+                        crabBehavior = CrabBehavior.Follow;
+                    }
+                    else if (effect.crabBehavior == CrabBehavior.PickingUp)
+                    {
+                        crabBehavior = CrabBehavior.PickingUp;
+                    }
+                    else if (effect.crabBehavior == CrabBehavior.DropItem)
+                    {
+                        crabBehavior = CrabBehavior.DropItem;
+                    }
+                    else if (effect.crabBehavior == CrabBehavior.StandStill)
+                    {
+                        crabBehavior = CrabBehavior.StandStill;
+                    }
+                }
+
+                if (effect.affectTarget)
+                {
+                    if (effect._target != null)
+                    {
+                        target = effect._target.transform; // Direct target
+                    }
+                    else if (!string.IsNullOrEmpty(effect.targetType))
+                    {
+                        targetingType = effect.targetType; // NOTICE THIS MS. GPT
+                        target = FindNearestTarget(effect.targetType);
+                    }
                 }
             }
         }
     }
+
+
+    private Transform FindNearestTarget(string targetType)
+    {
+        Actor[] actors = FindObjectsOfType<Actor>();
+        Transform nearestTarget = null;
+        float shortestDistance = Mathf.Infinity;
+
+        foreach (Actor actor in actors)
+        {
+            if (actor.HasType(targetType)) // Check if the actor has the required type
+            {
+                float distance = Vector3.Distance(transform.position, actor.transform.position);
+                if (distance < shortestDistance)
+                {
+                    shortestDistance = distance;
+                    nearestTarget = actor.transform;
+                }
+            }
+        }
+
+        return nearestTarget;
+    }
+
+    // Check if crab touches an object with the PickUp tag
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("PickUp") && !isCarryingObject && crabBehavior == CrabBehavior.PickingUp)
+        {
+            PickUpObject(other.gameObject);
+        }
+    }
+
+    // Handle picking up the object
+    void PickUpObject(GameObject obj)
+    {
+        carriedObject = obj;
+        obj.transform.SetParent(transform); // Attach the object to the crab
+
+        // Disable the object's collider to prevent it from affecting movement
+        obj.GetComponent<Collider>().enabled = false;
+
+        // Move the object to a specific position relative to the crab
+        obj.transform.localPosition = new Vector3(0, 1, 0); 
+    }
+
+    void DropObject()
+    {
+        if (carriedObject != null)
+        {
+            carriedObject.transform.SetParent(null);
+            carriedObject.transform.position += Vector3.down * 0.5f; // Drop slightly
+
+            // Ensure it has a collider
+            Collider col = carriedObject.GetComponent<Collider>();
+            if (col != null)
+            {
+                col.enabled = true;
+            }
+
+            // Ensure it has a Rigidbody
+            Rigidbody rb = carriedObject.GetComponent<Rigidbody>();
+            if (rb == null)
+            {
+                rb = carriedObject.AddComponent<Rigidbody>();
+            }
+
+            // Apply a small downward force for realism
+            rb.linearVelocity = Vector3.down * 2f;
+
+            carriedObject = null;
+
+            // Reset behavior after dropping
+            crabBehavior = CrabBehavior.Follow;
+        }
+    }
+
+
+    void CarryObject()
+    {
+        if (carriedObject != null)
+        {
+            // Keep the object close to the crab
+            carriedObject.transform.position = transform.position + new Vector3(0, 1, 0);
+
+            // Set the rotation to (0, 0, -90)
+            carriedObject.transform.rotation = Quaternion.Euler(0, 0, -90);
+        }
+    }
+
+    // Method to check if a child object with a specific tag exists
+    bool HasChildWithTag(string tag)
+    {
+        foreach (Transform child in transform)
+        {
+            if (child.CompareTag(tag))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
