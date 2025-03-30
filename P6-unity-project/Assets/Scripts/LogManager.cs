@@ -9,7 +9,6 @@ public class LogManager : MonoBehaviour
     {
         public string wordOfInterest;
         public string userDefinition;
-        public AudioClip soundword;
     }
 
     public List<LogEntry> logEntries = new List<LogEntry>();
@@ -20,14 +19,12 @@ public class LogManager : MonoBehaviour
 
     private StarterAssetsInputs input;
     public ScrollRect scrollRect;
-    private AudioSource audioSource;
     private CrabInterface crabInterface;
 
     void Start()
     {
         UpdateLog();
         input = GetComponent<StarterAssetsInputs>();
-        audioSource = GetComponent<AudioSource>();
         logMenu.SetActive(false);
     }
 
@@ -103,13 +100,13 @@ public class LogManager : MonoBehaviour
             crabInterface.AddWordToBoard(entry.wordOfInterest);
         }
 
-        if (entry.soundword != null && audioSource != null)
+        if (GameManager.Instance != null)
         {
-            audioSource.PlayOneShot(entry.soundword);
+            GameManager.Instance.PlaySoundForWord(entry.wordOfInterest);
         }
     }
 
-    public void UpdateUserDefinition(string word, string newDefinition)
+        public void UpdateUserDefinition(string word, string newDefinition)
     {
         LogEntry entry = logEntries.Find(e => e.wordOfInterest == word);
         if (entry != null)

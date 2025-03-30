@@ -15,6 +15,8 @@ public enum CrabBehavior
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance { get; private set; }
+
     [System.Serializable]
     public class WordEffect
     {
@@ -31,10 +33,27 @@ public class GameManager : MonoBehaviour
 
     public List<WordEffect> wordEffectsList = new List<WordEffect>();
     private Dictionary<string, WordEffect> wordEffectsDictionary = new Dictionary<string, WordEffect>();
-    public Animator borders; // Animation reference
+    public Animator borders; 
+
+    void Awake()
+    {
+        // Check if the instance already exists
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject); 
+        }
+        else
+        {
+            Instance = this; 
+            DontDestroyOnLoad(gameObject); 
+        }
+    }
+
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         foreach (var effect in wordEffectsList)
         {
             wordEffectsDictionary[effect.word] = effect;
