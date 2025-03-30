@@ -2283,6 +2283,7 @@ GameObject:
   - component: {fileID: 661941174}
   - component: {fileID: 661941175}
   - component: {fileID: 661941176}
+  - component: {fileID: 661941177}
   m_Layer: 0
   m_Name: EventSystem GAMEMANAGER
   m_TagString: GameManager
@@ -2402,49 +2403,63 @@ MonoBehaviour:
     targetType: 
     affectFlee: 1
     affectTarget: 0
-    soundword: {fileID: 0}
+    soundword: {fileID: 8300000, guid: 64213636b0a2293458500948f1414ed4, type: 3}
   - word: "\xC1rvore"
     crabBehavior: 1
     _target: {fileID: 0}
     targetType: Gun
     affectFlee: 0
     affectTarget: 1
-    soundword: {fileID: 0}
+    soundword: {fileID: 8300000, guid: 40e378f5ca33dd7478d0c67bbe438f70, type: 3}
   - word: Casa
     crabBehavior: 1
     _target: {fileID: 1405272156}
     targetType: 
     affectFlee: 0
     affectTarget: 1
-    soundword: {fileID: 0}
+    soundword: {fileID: 8300000, guid: f176fe7a4422de34cb980f869352f8dd, type: 3}
   - word: Va Para
     crabBehavior: 1
     _target: {fileID: 0}
     targetType: 
     affectFlee: 1
     affectTarget: 0
-    soundword: {fileID: 0}
+    soundword: {fileID: 8300000, guid: 92920e69ab4efdd449d95e5a5e03ebf0, type: 3}
   - word: Deixar cair
     crabBehavior: 3
     _target: {fileID: 0}
     targetType: 
     affectFlee: 1
     affectTarget: 0
-    soundword: {fileID: 0}
+    soundword: {fileID: 8300000, guid: fcbb94df5d8fa25468fd098bba18f277, type: 3}
   - word: Venha Aqui
     crabBehavior: 1
     _target: {fileID: 1515014692}
     targetType: 
     affectFlee: 1
     affectTarget: 1
-    soundword: {fileID: 0}
-  - word: Venha Aqui
+    soundword: {fileID: 8300000, guid: a67784a264c619c41bcd77d213e3b2d4, type: 3}
+  - word: Seguir
     crabBehavior: 1
     _target: {fileID: 1515014692}
     targetType: 
     affectFlee: 1
+    affectTarget: 0
+    soundword: {fileID: 8300000, guid: 86c41eaf8b4ba08449ff927586fd9542, type: 3}
+  - word: Branco
+    crabBehavior: 1
+    _target: {fileID: 0}
+    targetType: White
+    affectFlee: 0
     affectTarget: 1
-    soundword: {fileID: 0}
+    soundword: {fileID: 8300000, guid: f5c04bf4f78892844a89fc55898966b8, type: 3}
+  - word: Cheva
+    crabBehavior: 1
+    _target: {fileID: 1515014692}
+    targetType: 
+    affectFlee: 0
+    affectTarget: 1
+    soundword: {fileID: 8300000, guid: bf4505b19920aa94a958a997cd4f8ea7, type: 3}
   borders: {fileID: 2054159887}
 --- !u!114 &661941176
 MonoBehaviour:
@@ -2460,6 +2475,103 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 2128823428}
   typingSpeed: 0.05
+--- !u!82 &661941177
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661941170}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &663384140
 GameObject:
   m_ObjectHideFlags: 0
@@ -5566,31 +5678,22 @@ MonoBehaviour:
   logEntries:
   - wordOfInterest: "\xC1rvore"
     userDefinition: 
-    soundword: {fileID: 8300000, guid: 40e378f5ca33dd7478d0c67bbe438f70, type: 3}
   - wordOfInterest: Deixar cair
     userDefinition: 
-    soundword: {fileID: 8300000, guid: fcbb94df5d8fa25468fd098bba18f277, type: 3}
   - wordOfInterest: Casa
     userDefinition: 
-    soundword: {fileID: 8300000, guid: f176fe7a4422de34cb980f869352f8dd, type: 3}
   - wordOfInterest: Cheva
     userDefinition: 
-    soundword: {fileID: 8300000, guid: bf4505b19920aa94a958a997cd4f8ea7, type: 3}
   - wordOfInterest: Va Para
     userDefinition: 
-    soundword: {fileID: 8300000, guid: 92920e69ab4efdd449d95e5a5e03ebf0, type: 3}
   - wordOfInterest: Venha Aqui
     userDefinition: 
-    soundword: {fileID: 8300000, guid: a67784a264c619c41bcd77d213e3b2d4, type: 3}
   - wordOfInterest: Seguir
     userDefinition: 
-    soundword: {fileID: 8300000, guid: 86c41eaf8b4ba08449ff927586fd9542, type: 3}
   - wordOfInterest: Seguir
     userDefinition: 
-    soundword: {fileID: 8300000, guid: 86c41eaf8b4ba08449ff927586fd9542, type: 3}
   - wordOfInterest: Fique
     userDefinition: 
-    soundword: {fileID: 8300000, guid: 86c41eaf8b4ba08449ff927586fd9542, type: 3}
   logPrefab: {fileID: 5046196537164786419, guid: c25b1b0ddef3bc847ade9bf93e7ce6b7, type: 3}
   contentPanel: {fileID: 402223476}
   logMenu: {fileID: 391826213}
