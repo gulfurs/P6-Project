@@ -13,6 +13,12 @@ public class TestEvaluation : MonoBehaviour
     [SerializeField] private TextMeshProUGUI questionText;
     [SerializeField] private Button[] ratingButtons; // 5 buttons for the rating scale
 
+    [Header("Second Question")]
+    [SerializeField] private GameObject textInputPanel;
+    [SerializeField] private TextMeshProUGUI secondQuestionText;
+    [SerializeField] private TMP_InputField textInputField;
+    [SerializeField] private Button submitButton;
+
     [Header("Evaluation Settings")]
     [SerializeField] private string participantID = "default"; // For data identification
 
@@ -38,6 +44,7 @@ public class TestEvaluation : MonoBehaviour
         public int evaluationNumber;
         public string eventName;
         public int rating;
+        public string textResponse; 
         public float gameTime;
         public string timestamp;
     }
@@ -47,9 +54,15 @@ public class TestEvaluation : MonoBehaviour
         // Make sure the question panel is hidden at the start
         if (questionPanel != null)
             questionPanel.SetActive(false);
+        if (textInputPanel != null)
+            textInputPanel.SetActive(false);
 
         // Set up the rating buttons
         SetupRatingButtons();
+
+        if (submitButton != null){ 
+            submitButton.onClick.AddListener(OnTextSubmitted);
+        }
         
         // Record when the game started
         gameStartTime = Time.time;
@@ -128,10 +141,9 @@ public class TestEvaluation : MonoBehaviour
             eventName = currentEventName,
             rating = rating,
             gameTime = elapsedGameTime,
-            timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+            timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+            textResponse = "" 
         };
-
-        evaluationResults.Add(data);
         
         // Save data after each evaluation for safety
         SaveEvaluationData();
@@ -140,6 +152,34 @@ public class TestEvaluation : MonoBehaviour
         if (questionPanel != null)
             questionPanel.SetActive(false);
         
+        if (textInputPanel != null){
+
+            if(textInputField != null){
+                textInputField.text = ""; 
+            }
+            textInputPanel.SetActive(true);
+        }
+        evaluationResults.Add(data);
+
+    }
+
+    public void OnTextSubmitted(){
+
+        string textResponse = textInputField != null ? textInputField.text : "";
+
+        if(evaluationResults.Count > 0){
+            int lastIndex = evaluationResults.Count - 1;
+            EvaluationData lastData = evaluationResults[lastIndex];
+            lastData.textResponse = textResponse; 
+            evaluationResults[lastIndex] = lastData; 
+        }
+
+        SaveEvaluationData();
+
+        // Hide the text input panel
+        if (textInputPanel != null)
+            textInputPanel.SetActive(false);
+
         // Restore previous cursor state
         Cursor.lockState = previousLockState;
         Cursor.visible = previousCursorVisibility;
