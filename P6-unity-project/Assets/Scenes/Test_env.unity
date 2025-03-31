@@ -12544,14 +12544,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bank
       objectReference: {fileID: 0}
-    - target: {fileID: 919979480295286400, guid: 3dab9d6713bd88448a215813ffe2a2d3, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: fe6ba248f97095d49869fcb5611b50d4, type: 2}
-    - target: {fileID: 919979480295286400, guid: 3dab9d6713bd88448a215813ffe2a2d3, type: 3}
-      propertyPath: 'm_Materials.Array.data[8]'
-      value: 
-      objectReference: {fileID: 2100000, guid: fe6ba248f97095d49869fcb5611b50d4, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
