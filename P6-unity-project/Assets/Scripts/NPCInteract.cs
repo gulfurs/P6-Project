@@ -3,13 +3,15 @@ using UnityEngine;
 
 public class NPCInteract : InteractHandler
 {
-    public Objective npcObjective;
+    public Objective ObjectiveProgress;
+    public Objective ObjectiveStart;
     public TypeWriter typeWriter;
     public List<string> npcDialogue;
 
     private int dialogueIndex = 0;
     private bool inDialogue = false;
     private GameManager gm;
+    
 
     void Start()
     {
@@ -19,13 +21,22 @@ public class NPCInteract : InteractHandler
 
     public override void InteractLogic()
     {
-        if (npcObjective != null)
+        if (ObjectiveProgress != null)
         {
 
             //npcObjective.currentProgress = npcObjective.goal; 
-            ObjectiveManager.Instance.UpdateObjectiveProgress(npcObjective, 1);
+            ObjectiveManager.Instance.UpdateObjectiveProgress(ObjectiveProgress, 1);
 
-            Debug.Log($"Objective '{npcObjective.objectiveName}' updated or completed.");
+            Debug.Log($"Objective '{ObjectiveProgress.objectiveName}' updated or completed.");
+        }
+
+        if (ObjectiveStart != null)
+        {
+
+            //npcObjective.currentProgress = npcObjective.goal; 
+            ObjectiveManager.Instance.AddObjective(ObjectiveStart);
+
+            Debug.Log($"Objective '{ObjectiveStart.objectiveName}' started");
         }
 
         if (!inDialogue)
@@ -47,6 +58,7 @@ public class NPCInteract : InteractHandler
     {
         if (inDialogue && Input.GetMouseButtonDown(0))
         {
+            Debug.Log("UPDATING");
             HandleNextDialogue();
         }
     }
@@ -55,7 +67,11 @@ public class NPCInteract : InteractHandler
     {
         if (typeWriter == null || npcDialogue.Count == 0) return;
 
-        if (typeWriter.textMesh.text != npcDialogue[dialogueIndex])
+        // Remove formatting and characters like asterisks and dashes
+        string rawText = RemoveFormattingAndSpecialChars(typeWriter.textMesh.text);
+        string rawDialogue = RemoveFormattingAndSpecialChars(npcDialogue[dialogueIndex]);
+
+        if (rawText != rawDialogue)
         {
             typeWriter.SkipTyping();
         }
@@ -73,6 +89,17 @@ public class NPCInteract : InteractHandler
             }
         }
     }
+
+    // Function to strip rich text tags, asterisks, and dashes
+    string RemoveFormattingAndSpecialChars(string text)
+    {
+        // Remove rich text tags and asterisks/dashes
+        string noFormatting = System.Text.RegularExpressions.Regex.Replace(text, "<.*?>", "");
+        string cleanText = noFormatting.Replace("*", "").Replace("-", " ");
+        return cleanText;
+    }
+
+
 
     void ShowNextLine()
     {

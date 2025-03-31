@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System;
 using System.Collections.Generic;
 using TMPro;
 
@@ -8,8 +7,9 @@ public class Objective : ScriptableObject
 {
     public string objectiveName;
     public string description;
-    public int goal;  // The goal to achieve for the objective
-    public List<Objective> nextObjectives;  // New objectives unlocked after completion
+    public int goal;
+    public List<Objective> nextObjectives;
+    public int xp;  // XP reward for completing this objective
 }
 
 public class ObjectiveManager : MonoBehaviour
@@ -19,14 +19,17 @@ public class ObjectiveManager : MonoBehaviour
     [System.Serializable]
     public class ActiveObjective
     {
-        public Objective objective;  // Reference to the ScriptableObject
-        public int currentProgress;  // Current progress towards the goal
-        public bool isUnlocked;  // Whether the objective is unlocked or not
+        public Objective objective;
+        public int currentProgress;
+        public bool isUnlocked;
     }
 
-    public List<ActiveObjective> activeObjectives = new List<ActiveObjective>();  // List of active objectives
+    public List<ActiveObjective> activeObjectives = new List<ActiveObjective>();
     public Objective startObjective;
     public TextMeshProUGUI objectiveText;
+    public TextMeshProUGUI xpText;
+
+    private int playerXP = 0;  // Track total XP
 
     void Awake()
     {
@@ -43,21 +46,19 @@ public class ObjectiveManager : MonoBehaviour
 
     void Start()
     {
-        // Optionally, add all objectives on start
         AddObjective(startObjective);
+        UpdateXPUI();
     }
 
     public void AddObjective(Objective newObjective)
     {
-        // Check if objective is already unlocked and not added yet
         if (!IsObjectiveAdded(newObjective))
         {
-            // Create an ActiveObjective instance
             ActiveObjective activeObjective = new ActiveObjective
             {
                 objective = newObjective,
-                currentProgress = 0,  // Start with 0 progress
-                isUnlocked = true  // Automatically unlocked when added
+                currentProgress = 0,
+                isUnlocked = true
             };
 
             activeObjectives.Add(activeObjective);
@@ -86,10 +87,19 @@ public class ObjectiveManager : MonoBehaviour
         activeObjectives.Remove(activeObjective);
         Debug.Log(activeObjective.objective.objectiveName + " Completed!");
 
+        // Reward XP
+        RewardXP(activeObjective.objective.xp);
+
         // Unlock the next objectives
         UnlockNextObjectives(activeObjective.objective);
 
         UpdateObjectiveUI();
+    }
+
+    private void RewardXP(int xpAmount)
+    {
+        playerXP += xpAmount;
+        UpdateXPUI();
     }
 
     private void UnlockNextObjectives(Objective completedObjective)
@@ -100,7 +110,7 @@ public class ObjectiveManager : MonoBehaviour
             {
                 if (!IsObjectiveAdded(nextObjective))
                 {
-                    AddObjective(nextObjective);  // Add the next objective
+                    AddObjective(nextObjective);
                     Debug.Log("New Objective Unlocked: " + nextObjective.objectiveName);
                 }
             }
@@ -117,6 +127,11 @@ public class ObjectiveManager : MonoBehaviour
         }
 
         objectiveText.text = uiText;
+    }
+
+    private void UpdateXPUI()
+    {
+        xpText.text = $"{playerXP}%";
     }
 
     private bool IsObjectiveAdded(Objective objective)

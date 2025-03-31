@@ -10,14 +10,21 @@ public class TypeWriter : MonoBehaviour
     private Coroutine typingCoroutine;
     private string currentFullText;
     private bool isTyping;
+    private LogManager logManager;
+
+    void Start()
+    {
+        logManager = FindObjectOfType<LogManager>();
+    }
 
     public void StartTyping(string fullText)
     {
         if (typingCoroutine != null)
             StopCoroutine(typingCoroutine);
 
-        currentFullText = fullText;
-        typingCoroutine = StartCoroutine(TypeText(fullText));
+        // Format the text with asterisks turned into bold yellow
+        currentFullText = FormatText(fullText);
+        typingCoroutine = StartCoroutine(TypeText(currentFullText));
     }
 
     private IEnumerator TypeText(string fullText)
@@ -25,13 +32,24 @@ public class TypeWriter : MonoBehaviour
         isTyping = true;
         textMesh.text = "";
 
-        foreach (char letter in fullText)
+        // Directly type the formatted text
+        for (int i = 0; i < fullText.Length; i++)
         {
-            textMesh.text += letter;
+            // Only type out the raw character (not the HTML tags)
+            if (fullText[i] == '<')
+            {
+                // Skip over HTML tags
+                while (fullText[i] != '>') i++;
+            }
+            else
+            {
+                textMesh.text += fullText[i];
+            }
             yield return new WaitForSeconds(typingSpeed);
         }
 
-        isTyping = false;
+        // Automatically call SkipTyping once typing is complete
+        SkipTyping();
     }
 
     public void SkipTyping()
@@ -42,5 +60,25 @@ public class TypeWriter : MonoBehaviour
             textMesh.text = currentFullText;
             isTyping = false;
         }
+    }
+
+    private string FormatText(string text)
+    {
+        string[] words = text.Split(' ');
+        for (int i = 0; i < words.Length; i++)
+        {
+            if (words[i].StartsWith("*"))
+            {
+                string cleanWord = words[i].Substring(1); // Remove '*'
+                cleanWord = cleanWord.Replace("-", " ");  // Remove dash from the word
+                words[i] = $"<b><color=yellow>{cleanWord}</color></b>"; // Apply rich text formatting
+
+                if (logManager != null)
+                {
+                    logManager.AddWord(cleanWord); // Log the word
+                }
+            }
+        }
+        return string.Join(" ", words);
     }
 }
