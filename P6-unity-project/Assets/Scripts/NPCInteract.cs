@@ -15,6 +15,7 @@ public class NPCInteract : InteractHandler
 
     void Start()
     {
+        dialogueIndex = 0;
         gm = FindObjectOfType<GameManager>();
         typeWriter = FindObjectOfType<TypeWriter>();
     }
@@ -103,6 +104,7 @@ public class NPCInteract : InteractHandler
 
     void ShowNextLine()
     {
+        typeWriter = FindObjectOfType<TypeWriter>();
         typeWriter.StartTyping(npcDialogue[dialogueIndex]);
     }
 

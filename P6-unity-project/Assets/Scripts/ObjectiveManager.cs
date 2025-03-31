@@ -29,6 +29,9 @@ public class ObjectiveManager : MonoBehaviour
     public TextMeshProUGUI objectiveText;
     public TextMeshProUGUI xpText;
 
+    public delegate void ObjectiveCompletedEvent(Objective objective);
+    public static event ObjectiveCompletedEvent OnObjectiveCompleted;
+
     private int playerXP = 0;  // Track total XP
 
     void Awake()
@@ -82,10 +85,28 @@ public class ObjectiveManager : MonoBehaviour
         }
     }
 
+    public bool IsObjectiveCompleted(Objective objective)
+    {
+        return activeObjectives.Exists(o => o.objective == objective) == false &&
+               IsObjectiveAdded(objective) == true;
+    }
+
     private void CompleteObjective(ActiveObjective activeObjective)
     {
         activeObjectives.Remove(activeObjective);
+
         Debug.Log(activeObjective.objective.objectiveName + " Completed!");
+
+        // Fire the event to notify listeners
+        if (OnObjectiveCompleted != null)
+        {
+            Debug.Log($"Firing OnObjectiveCompleted for {activeObjective.objective.objectiveName}");
+            OnObjectiveCompleted.Invoke(activeObjective.objective);
+        }
+        else
+        {
+            Debug.LogWarning("OnObjectiveCompleted event has no listeners!");
+        }
 
         // Reward XP
         RewardXP(activeObjective.objective.xp);
@@ -95,6 +116,7 @@ public class ObjectiveManager : MonoBehaviour
 
         UpdateObjectiveUI();
     }
+
 
     private void RewardXP(int xpAmount)
     {

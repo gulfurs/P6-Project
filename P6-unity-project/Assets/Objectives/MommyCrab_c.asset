@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: MommyCrab_c
   m_EditorClassIdentifier: Assembly-CSharp::Objective
-  objectiveName: 
+  objectiveName: Return to Stranger
   description: 
-  goal: 0
+  goal: 1
   nextObjectives: []
-  xp: 0
+  xp: 25

@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: MommyCrab
   m_EditorClassIdentifier: Assembly-CSharp::Objective
-  objectiveName: 
+  objectiveName: Help Crabs cross the road
   description: 
-  goal: 0
-  nextObjectives: []
+  goal: 2
+  nextObjectives:
+  - {fileID: 11400000, guid: abd10748a2af64748ae46d1a305fb8ec, type: 2}
   xp: 0
