@@ -3,15 +3,33 @@ using UnityEngine;
 public class Container : MonoBehaviour
 {
     public Objective obj; // The objective to be updated
+    public string actorType; // The type to check against Actor.HasType
+    public bool destroyOnEnter = true;
+    public bool exitLogic = true;
+
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("PickUp")) // Check if the colliding object has the "Finish" tag
+        Actor actor = other.GetComponent<Actor>();
+        if (actor != null && actor.HasType(actorType)) // Check if the actor has the specified type
         {
-            Destroy(other.gameObject); // Destroy the object (e.g., an item or the player)
+            if (destroyOnEnter)
+            {
+                Destroy(other.gameObject);
+            }
 
-            // Update the objective progress by 1 (or adjust depending on how much you want to increment)
             ObjectiveManager.Instance.UpdateObjectiveProgress(obj, 1);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (!exitLogic) return;
+
+        Actor actor = other.GetComponent<Actor>();
+        if (actor != null && actor.HasType(actorType)) // Check if the actor has the specified type
+        {
+            ObjectiveManager.Instance.UpdateObjectiveProgress(obj, -1);
         }
     }
 }

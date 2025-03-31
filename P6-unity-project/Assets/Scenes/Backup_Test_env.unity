@@ -12902,15 +12902,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingTypes:
-  - prefab: {fileID: 4237215726662723250, guid: 7364dee058822b24fabaa0071df4f810, type: 3}
+  - prefab: {fileID: 4728260882279248230, guid: 8f99dc28bdef4944b8e53eca5bb1f9fa, type: 3}
     minCount: 5
     maxCount: 10
     isUnique: 0
-  - prefab: {fileID: 2359419230533363624, guid: d633bb213866f2944b6538314974a6d5, type: 3}
+  - prefab: {fileID: 3920288723461913208, guid: 0881b5aff75353a4c87b47f385ac6d78, type: 3}
     minCount: 1
     maxCount: 2
     isUnique: 0
-  - prefab: {fileID: 6500958860426040867, guid: 7f92d776c3e9dbd478330d52e5e42641, type: 3}
+  - prefab: {fileID: 919979480293095488, guid: 3dab9d6713bd88448a215813ffe2a2d3, type: 3}
     minCount: 1
     maxCount: 1
     isUnique: 1

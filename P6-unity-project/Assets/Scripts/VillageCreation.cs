@@ -24,7 +24,7 @@ public class VillageCreation : MonoBehaviour
 
     void Start()
     {
-        //GenerateVillage();
+        GenerateVillage();
         //villageParent = transform.GetChild(0);
         //terrain = GetComponent<Terrain>();
     }
