@@ -3,16 +3,18 @@
         {
             "evaluationNumber": 1,
             "eventName": "Debug_Trigger_1",
-            "rating": 4,
-            "gameTime": 4.926906108856201,
-            "timestamp": "2025-03-26 11:32:33"
+            "rating": 2,
+            "textResponse": "dkjsfhks",
+            "gameTime": 2.884152412414551,
+            "timestamp": "2025-03-31 10:30:36"
         },
         {
-            "evaluationNumber": 2,
-            "eventName": "Debug_Trigger_2",
+            "evaluationNumber": 1,
+            "eventName": "Debug_Trigger_1",
             "rating": 2,
-            "gameTime": 10.529342651367188,
-            "timestamp": "2025-03-26 11:32:40"
+            "textResponse": "dkjsfhks",
+            "gameTime": 2.884152412414551,
+            "timestamp": "2025-03-31 10:30:36"
         }
     ]
 }
