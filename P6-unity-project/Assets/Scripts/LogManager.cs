@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -66,6 +67,10 @@ public class LogManager : MonoBehaviour
 
     public void AddWord(string newWord)
     {
+        // Remove punctuation marks and make the first letter uppercase
+        newWord = newWord.TrimEnd('!', '.', ',', '?', ';', ':').ToLower();
+        newWord = Char.ToUpper(newWord[0]) + newWord.Substring(1);
+
         // Avoid duplicates
         if (logEntries.Exists(entry => entry.wordOfInterest == newWord))
             return;
@@ -73,6 +78,7 @@ public class LogManager : MonoBehaviour
         logEntries.Add(new LogEntry { wordOfInterest = newWord, userDefinition = "" });
         UpdateLog();
     }
+
 
     public void UpdateLog()
     {

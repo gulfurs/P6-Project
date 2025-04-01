@@ -20,7 +20,7 @@ public class Container : MonoBehaviour
 
             ObjectiveManager.Instance.UpdateObjectiveProgress(obj, 1);
         }
-    }
+    } 
 
     private void OnTriggerExit(Collider other)
     {

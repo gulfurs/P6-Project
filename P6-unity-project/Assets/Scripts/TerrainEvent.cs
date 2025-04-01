@@ -27,7 +27,7 @@ public class TerrainEvent : MonoBehaviour
             if (villageCreation != null && createVillage)
             {
                 villageCreation.villageParent = transform.GetChild(0);
-                villageCreation.terrain = GetComponent<Terrain>();
+                //villageCreation.terrain = GetComponent<Terrain>();
                 villageCreation.GenerateVillage();
                 foreach (var terrainEvent in FindObjectsOfType<TerrainEvent>())
                 {
