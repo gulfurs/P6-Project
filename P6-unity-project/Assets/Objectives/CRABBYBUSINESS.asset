@@ -15,5 +15,6 @@ MonoBehaviour:
   objectiveName: Retrieve Shopping Cart from Crab
   description: 
   goal: 1
-  nextObjectives: []
+  nextObjectives:
+  - {fileID: 11400000, guid: 555e3c66134337a438fc14c9b00c3747, type: 2}
   xp: 0

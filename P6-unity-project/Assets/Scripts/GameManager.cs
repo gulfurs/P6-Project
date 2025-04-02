@@ -10,6 +10,7 @@ public enum CrabBehavior
     Follow,     // Crab is following a target
     PickingUp,   // Crab is following an object to pick it up
     DropItem,
+    GoTo,
     StandStill
 }
 

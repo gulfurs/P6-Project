@@ -34,13 +34,24 @@ public class CrabHandler : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.speed = normalSpeed;
         gm = FindObjectOfType<GameManager>();
+
+        if (carriedObject == null)
+        {
+            foreach (Transform child in transform)
+            {
+                if (child.CompareTag("PickUp"))
+                {
+                    carriedObject = child.gameObject;
+                    break; 
+                }
+            }
+        }
     }
+
 
     void Update()
     {
         isCarryingObject = HasChildWithTag("PickUp");
-
-        
 
         if (!string.IsNullOrEmpty(targetingType))
         {
@@ -70,6 +81,10 @@ public class CrabHandler : MonoBehaviour
                     HandlePickingUpBehavior(distanceToPlayer, directionToPlayer);
                     break;
 
+                case CrabBehavior.GoTo:
+                    HandlePickingUpBehavior(distanceToPlayer, directionToPlayer);
+                    break;
+
                 case CrabBehavior.DropItem:
                     DropObject();
                     break;
@@ -77,6 +92,7 @@ public class CrabHandler : MonoBehaviour
                 case CrabBehavior.StandStill:
                     HandleStandStillBehavior();
                     break;
+
             }
 
             //HandleGroundAlignmentAndRotation(directionToPlayer);
@@ -160,14 +176,28 @@ public class CrabHandler : MonoBehaviour
             agent.SetDestination(target.position);
             agent.speed = normalSpeed;
         } 
-        
-        if (isCarryingObject)
+        /*
+        if (isCarryingObject && crabBehavior == CrabBehavior.PickingUp)
         {
                 targetingType = "";
                 crabBehavior = CrabBehavior.Follow; // Switch behavior to follow the player
                 target = GameObject.FindGameObjectWithTag("Player").transform; // Update the target to the player
-        }
+        }*/
        
+    }
+
+    // Method to handle the Go To behaviour
+    void HandleGotoBehavior(float distanceToObject, Vector3 directionToObject)
+    {
+        agent.isStopped = false;
+        // Keep following the object 
+        if (distanceToObject > 0.5f)
+        {
+            // Follow the object
+            Debug.Log("HELP ME IM IN GREAT PAIN");
+            agent.SetDestination(target.position);
+            agent.speed = normalSpeed;
+        }
     }
 
     void HandleStandStillBehavior()
@@ -239,6 +269,10 @@ public class CrabHandler : MonoBehaviour
                     {
                         crabBehavior = CrabBehavior.StandStill;
                     }
+                    else if (effect.crabBehavior == CrabBehavior.GoTo)
+                    {
+                        crabBehavior = CrabBehavior.GoTo;
+                    }
                 }
 
                 if (effect.affectTarget)
@@ -304,6 +338,7 @@ public class CrabHandler : MonoBehaviour
     {
         carriedObject = obj;
         obj.transform.SetParent(transform); // Attach the object to the crab
+        carriedObject.transform.position = transform.position + new Vector3(0, 1, 0);
 
         // Disable the object's collider to prevent it from affecting movement
         Collider objCollider = obj.GetComponent<Collider>();
@@ -369,7 +404,7 @@ public class CrabHandler : MonoBehaviour
         if (carriedObject != null)
         {
             // Keep the object close to the crab
-            carriedObject.transform.position = transform.position + new Vector3(0, 1, 0);
+            //carriedObject.transform.position = transform.position + new Vector3(0, 1, 0);
 
             // Set the rotation to (0, 0, -90)
             //carriedObject.transform.rotation = Quaternion.Euler(0, 0, -90);

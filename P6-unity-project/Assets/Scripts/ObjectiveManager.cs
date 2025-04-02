@@ -32,6 +32,9 @@ public class ObjectiveManager : MonoBehaviour
     public delegate void ObjectiveCompletedEvent(Objective objective);
     public static event ObjectiveCompletedEvent OnObjectiveCompleted;
 
+    // Declare an event for when XP reaches 100
+    public delegate void XPReachedEvent();
+    public static event XPReachedEvent OnXPReached;
     private int playerXP = 0;  // Track total XP
 
     void Awake()
@@ -122,7 +125,14 @@ public class ObjectiveManager : MonoBehaviour
     {
         playerXP += xpAmount;
         UpdateXPUI();
+
+        // Check if XP is 100 or greater and trigger the event
+        if (playerXP >= 100)
+        {
+            OnXPReached?.Invoke();  // Trigger the XP event
+        }
     }
+
 
     private void UnlockNextObjectives(Objective completedObjective)
     {

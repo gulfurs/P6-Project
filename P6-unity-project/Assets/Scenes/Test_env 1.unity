@@ -309,7 +309,8 @@ MonoBehaviour:
   target: {fileID: 0}
   actorTypes:
   - MomAndSon
-  - Gun
+  - Crab
+  - Baby
   objectiveList:
   - {fileID: 11400000, guid: 8f73559e9fd7c704fa7397dfcfee2d92, type: 2}
 --- !u!54 &54508947
@@ -414,7 +415,7 @@ MonoBehaviour:
   normalSpeed: 15
   superSpeed: 50
   isCarryingObject: 0
-  crabBehavior: 4
+  crabBehavior: 5
   targetingType: 
 --- !u!195 &54508952
 NavMeshAgent:
@@ -1239,7 +1240,6 @@ GameObject:
   - component: {fileID: 184769372}
   - component: {fileID: 184769371}
   - component: {fileID: 184769370}
-  - component: {fileID: 184769369}
   - component: {fileID: 184769368}
   - component: {fileID: 184769367}
   - component: {fileID: 184769366}
@@ -1248,6 +1248,7 @@ GameObject:
   - component: {fileID: 184769363}
   - component: {fileID: 184769362}
   - component: {fileID: 184769361}
+  - component: {fileID: 184769373}
   m_Layer: 0
   m_Name: SandCrab (8)
   m_TagString: PickUp
@@ -1337,7 +1338,8 @@ MonoBehaviour:
   actorTypes:
   - Crab
   - 
-  objectiveList: []
+  objectiveList:
+  - {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
 --- !u!54 &184769366
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1398,27 +1400,6 @@ MonoBehaviour:
   interactable: 1
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
---- !u!65 &184769369
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 184769360}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.6, y: 1, z: 1.35}
-  m_Center: {x: 0, y: -0.2, z: 0.05}
 --- !u!114 &184769370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1440,7 +1421,7 @@ MonoBehaviour:
   normalSpeed: 15
   superSpeed: 50
   isCarryingObject: 0
-  crabBehavior: 4
+  crabBehavior: 5
   targetingType: 
 --- !u!195 &184769371
 NavMeshAgent:
@@ -1480,6 +1461,27 @@ Transform:
   - {fileID: 1299285065}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &184769373
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184769360}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2, z: 3}
+  m_Center: {x: 0, y: 0, z: 0.51}
 --- !u!1 &202491592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1525,7 +1527,6 @@ GameObject:
   - component: {fileID: 208408674}
   - component: {fileID: 208408673}
   - component: {fileID: 208408672}
-  - component: {fileID: 208408671}
   - component: {fileID: 208408670}
   - component: {fileID: 208408669}
   - component: {fileID: 208408668}
@@ -1534,6 +1535,7 @@ GameObject:
   - component: {fileID: 208408665}
   - component: {fileID: 208408664}
   - component: {fileID: 208408663}
+  - component: {fileID: 208408675}
   m_Layer: 0
   m_Name: SandCrab (2)
   m_TagString: PickUp
@@ -1623,7 +1625,8 @@ MonoBehaviour:
   actorTypes:
   - Crab
   - 
-  objectiveList: []
+  objectiveList:
+  - {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
 --- !u!54 &208408668
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1684,27 +1687,6 @@ MonoBehaviour:
   interactable: 1
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
---- !u!65 &208408671
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 208408662}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.6, y: 1, z: 1.35}
-  m_Center: {x: 0, y: -0.2, z: 0.05}
 --- !u!114 &208408672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1726,7 +1708,7 @@ MonoBehaviour:
   normalSpeed: 15
   superSpeed: 50
   isCarryingObject: 0
-  crabBehavior: 4
+  crabBehavior: 5
   targetingType: 
 --- !u!195 &208408673
 NavMeshAgent:
@@ -1766,6 +1748,27 @@ Transform:
   - {fileID: 326409942}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &208408675
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208408662}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2, z: 3}
+  m_Center: {x: 0, y: 0, z: 0.51}
 --- !u!1001 &211545866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2579,7 +2582,6 @@ GameObject:
   - component: {fileID: 293926537}
   - component: {fileID: 293926536}
   - component: {fileID: 293926535}
-  - component: {fileID: 293926534}
   - component: {fileID: 293926533}
   - component: {fileID: 293926532}
   - component: {fileID: 293926531}
@@ -2588,6 +2590,7 @@ GameObject:
   - component: {fileID: 293926528}
   - component: {fileID: 293926527}
   - component: {fileID: 293926526}
+  - component: {fileID: 293926538}
   m_Layer: 0
   m_Name: SandCrab (5)
   m_TagString: PickUp
@@ -2677,7 +2680,8 @@ MonoBehaviour:
   actorTypes:
   - Crab
   - 
-  objectiveList: []
+  objectiveList:
+  - {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
 --- !u!54 &293926531
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2738,27 +2742,6 @@ MonoBehaviour:
   interactable: 1
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
---- !u!65 &293926534
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 293926525}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.6, y: 1, z: 1.35}
-  m_Center: {x: 0, y: -0.2, z: 0.05}
 --- !u!114 &293926535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2780,7 +2763,7 @@ MonoBehaviour:
   normalSpeed: 15
   superSpeed: 50
   isCarryingObject: 0
-  crabBehavior: 4
+  crabBehavior: 5
   targetingType: 
 --- !u!195 &293926536
 NavMeshAgent:
@@ -2820,6 +2803,27 @@ Transform:
   - {fileID: 1336635360}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &293926538
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293926525}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2, z: 3}
+  m_Center: {x: 0, y: 0, z: 0.51}
 --- !u!1001 &296594563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3205,7 +3209,6 @@ GameObject:
   - component: {fileID: 380264726}
   - component: {fileID: 380264725}
   - component: {fileID: 380264724}
-  - component: {fileID: 380264723}
   - component: {fileID: 380264722}
   - component: {fileID: 380264721}
   - component: {fileID: 380264720}
@@ -3214,6 +3217,7 @@ GameObject:
   - component: {fileID: 380264717}
   - component: {fileID: 380264716}
   - component: {fileID: 380264715}
+  - component: {fileID: 380264727}
   m_Layer: 0
   m_Name: SandCrab (7)
   m_TagString: PickUp
@@ -3303,7 +3307,8 @@ MonoBehaviour:
   actorTypes:
   - Crab
   - 
-  objectiveList: []
+  objectiveList:
+  - {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
 --- !u!54 &380264720
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3364,27 +3369,6 @@ MonoBehaviour:
   interactable: 1
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
---- !u!65 &380264723
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 380264714}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.6, y: 1, z: 1.35}
-  m_Center: {x: 0, y: -0.2, z: 0.05}
 --- !u!114 &380264724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3406,7 +3390,7 @@ MonoBehaviour:
   normalSpeed: 15
   superSpeed: 50
   isCarryingObject: 0
-  crabBehavior: 4
+  crabBehavior: 5
   targetingType: 
 --- !u!195 &380264725
 NavMeshAgent:
@@ -3446,6 +3430,27 @@ Transform:
   - {fileID: 458905657}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &380264727
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380264714}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2, z: 3}
+  m_Center: {x: 0, y: 0, z: 0.51}
 --- !u!4 &387879451 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
@@ -4405,6 +4410,10 @@ PrefabInstance:
       propertyPath: ObjectiveProgress
       value: 
       objectReference: {fileID: 11400000, guid: 555e3c66134337a438fc14c9b00c3747, type: 2}
+    - target: {fileID: 1443654185466013936, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'npcDialogue.Array.data[0]'
+      value: '*Obrigado, amigo!'
+      objectReference: {fileID: 0}
     - target: {fileID: 2251161944625243377, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: m_LocalPosition.x
       value: 729.73
@@ -4465,6 +4474,26 @@ PrefabInstance:
       propertyPath: ObjectiveProgress
       value: 
       objectReference: {fileID: 11400000, guid: 555e3c66134337a438fc14c9b00c3747, type: 2}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: npcDialogue.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'npcDialogue.Array.data[0]'
+      value: Meu *amigo! Ajude-me!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'npcDialogue.Array.data[1]'
+      value: '*Caranguejo tem *carrinho-de-compras'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'npcDialogue.Array.data[2]'
+      value: Caranguejo mal!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'npcDialogue.Array.data[3]'
+      value: "Fa\xE7a o caranguejo *deixa-cair!"
+      objectReference: {fileID: 0}
     - target: {fileID: 9196274457006421723, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: m_Name
       value: Stranger (CRABBYBUSINESS)
@@ -4515,7 +4544,6 @@ GameObject:
   - component: {fileID: 598536939}
   - component: {fileID: 598536938}
   - component: {fileID: 598536937}
-  - component: {fileID: 598536936}
   - component: {fileID: 598536935}
   - component: {fileID: 598536934}
   - component: {fileID: 598536933}
@@ -4524,6 +4552,7 @@ GameObject:
   - component: {fileID: 598536930}
   - component: {fileID: 598536929}
   - component: {fileID: 598536928}
+  - component: {fileID: 598536940}
   m_Layer: 0
   m_Name: SandCrab (4)
   m_TagString: PickUp
@@ -4613,7 +4642,8 @@ MonoBehaviour:
   actorTypes:
   - Crab
   - 
-  objectiveList: []
+  objectiveList:
+  - {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
 --- !u!54 &598536933
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4674,27 +4704,6 @@ MonoBehaviour:
   interactable: 1
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
---- !u!65 &598536936
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 598536927}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.6, y: 1, z: 1.35}
-  m_Center: {x: 0, y: -0.2, z: 0.05}
 --- !u!114 &598536937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4716,7 +4725,7 @@ MonoBehaviour:
   normalSpeed: 15
   superSpeed: 50
   isCarryingObject: 0
-  crabBehavior: 4
+  crabBehavior: 5
   targetingType: 
 --- !u!195 &598536938
 NavMeshAgent:
@@ -4756,6 +4765,27 @@ Transform:
   - {fileID: 782462314}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &598536940
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598536927}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2, z: 3}
+  m_Center: {x: 0, y: 0, z: 0.51}
 --- !u!1001 &602977422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5187,10 +5217,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 661941173}
+  - component: {fileID: 661941175}
   - component: {fileID: 661941172}
   - component: {fileID: 661941171}
   - component: {fileID: 661941174}
-  - component: {fileID: 661941175}
   - component: {fileID: 661941176}
   - component: {fileID: 661941177}
   m_Layer: 0
@@ -5306,7 +5336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordEffectsList:
-  - word: Pegar
+  - word: Pega
     crabBehavior: 2
     _target: {fileID: 0}
     targetType: 
@@ -5327,14 +5357,14 @@ MonoBehaviour:
     affectFlee: 0
     affectTarget: 1
     soundword: {fileID: 8300000, guid: f176fe7a4422de34cb980f869352f8dd, type: 3}
-  - word: Va para
-    crabBehavior: 1
+  - word: "V\xE1 para"
+    crabBehavior: 4
     _target: {fileID: 0}
     targetType: 
     affectFlee: 1
     affectTarget: 0
     soundword: {fileID: 8300000, guid: 92920e69ab4efdd449d95e5a5e03ebf0, type: 3}
-  - word: Deixar cair
+  - word: Deixa cair
     crabBehavior: 3
     _target: {fileID: 0}
     targetType: 
@@ -5348,7 +5378,7 @@ MonoBehaviour:
     affectFlee: 1
     affectTarget: 1
     soundword: {fileID: 8300000, guid: a67784a264c619c41bcd77d213e3b2d4, type: 3}
-  - word: Seguir
+  - word: Segue
     crabBehavior: 1
     _target: {fileID: 1515014692}
     targetType: 
@@ -5370,11 +5400,39 @@ MonoBehaviour:
     affectTarget: 1
     soundword: {fileID: 8300000, guid: bf4505b19920aa94a958a997cd4f8ea7, type: 3}
   - word: Fique
-    crabBehavior: 4
+    crabBehavior: 5
     _target: {fileID: 1515014692}
     targetType: 
     affectFlee: 1
-    affectTarget: 0
+    affectTarget: 1
+    soundword: {fileID: 8300000, guid: 6a70ec2161a974c458dc822325525003, type: 3}
+  - word: Caranguejo
+    crabBehavior: 4
+    _target: {fileID: 0}
+    targetType: Crab
+    affectFlee: 0
+    affectTarget: 1
+    soundword: {fileID: 8300000, guid: 6a70ec2161a974c458dc822325525003, type: 3}
+  - word: Carrinho de compras
+    crabBehavior: 4
+    _target: {fileID: 0}
+    targetType: Shopping Cart
+    affectFlee: 0
+    affectTarget: 1
+    soundword: {fileID: 8300000, guid: 6a70ec2161a974c458dc822325525003, type: 3}
+  - word: Filhote
+    crabBehavior: 5
+    _target: {fileID: 0}
+    targetType: Baby
+    affectFlee: 0
+    affectTarget: 1
+    soundword: {fileID: 8300000, guid: 6a70ec2161a974c458dc822325525003, type: 3}
+  - word: Gato
+    crabBehavior: 4
+    _target: {fileID: 0}
+    targetType: Cat
+    affectFlee: 0
+    affectTarget: 1
     soundword: {fileID: 8300000, guid: 6a70ec2161a974c458dc822325525003, type: 3}
   borders: {fileID: 2054159887}
 --- !u!114 &661941176
@@ -7739,6 +7797,18 @@ PrefabInstance:
       propertyPath: ObjectiveProgress
       value: 
       objectReference: {fileID: 11400000, guid: 7ab17fc68e42ad547802b1230983c21b, type: 2}
+    - target: {fileID: 1443654185466013936, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: npcDialogue.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443654185466013936, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'npcDialogue.Array.data[0]'
+      value: Amo-te!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443654185466013936, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'npcDialogue.Array.data[1]'
+      value: '*Obrigado salvares o meu gato.'
+      objectReference: {fileID: 0}
     - target: {fileID: 2251161944625243377, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: m_LocalPosition.x
       value: 765.8
@@ -7780,13 +7850,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3825390026240642931, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: actorTypes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3825390026240642931, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: objectiveList.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3825390026240642931, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'objectiveList.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 555e3c66134337a438fc14c9b00c3747, type: 2}
+      objectReference: {fileID: 11400000, guid: 7ab17fc68e42ad547802b1230983c21b, type: 2}
     - target: {fileID: 4791873189770746800, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: objectiveToWatch
       value: 
@@ -7799,6 +7873,30 @@ PrefabInstance:
       propertyPath: ObjectiveProgress
       value: 
       objectReference: {fileID: 11400000, guid: 7ab17fc68e42ad547802b1230983c21b, type: 2}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: npcDialogue.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'npcDialogue.Array.data[0]'
+      value: 'Grande problema! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'npcDialogue.Array.data[1]'
+      value: Meu *Gato!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'npcDialogue.Array.data[2]'
+      value: '*Pega meu gato! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'npcDialogue.Array.data[3]'
+      value: "N\xE3o deixe o meu gato cair!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'npcDialogue.Array.data[4]'
+      value: "*V\xE1-para o *quintal pode ajudar."
+      objectReference: {fileID: 0}
     - target: {fileID: 9196274457006421723, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: m_Name
       value: Stranger (CRABTOWER)
@@ -8257,7 +8355,7 @@ MonoBehaviour:
   normalSpeed: 15
   superSpeed: 50
   isCarryingObject: 0
-  crabBehavior: 4
+  crabBehavior: 5
   targetingType: 
 --- !u!4 &1112760108
 Transform:
@@ -8371,7 +8469,8 @@ MonoBehaviour:
   target: {fileID: 0}
   actorTypes:
   - MomAndSon
-  - Gun
+  - Crab
+  - Mom
   objectiveList:
   - {fileID: 11400000, guid: 8f73559e9fd7c704fa7397dfcfee2d92, type: 2}
 --- !u!114 &1112760115
@@ -8561,6 +8660,18 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: 1443654185466013936, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: npcDialogue.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443654185466013936, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'npcDialogue.Array.data[0]'
+      value: "Ahh...Caranguejo mam\xE3e e caranguejo filhote."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443654185466013936, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'npcDialogue.Array.data[1]'
+      value: Obrigado!
+      objectReference: {fileID: 0}
     - target: {fileID: 2251161944625243377, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: m_LocalPosition.x
       value: 770.37537
@@ -8609,6 +8720,22 @@ PrefabInstance:
       propertyPath: 'objectiveList.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: abd10748a2af64748ae46d1a305fb8ec, type: 2}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'npcDialogue.Array.data[1]'
+      value: "voc\xEA *segue a *mam\xE3e caranguejo."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'npcDialogue.Array.data[4]'
+      value: Ajuda! Ajudem-me!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'npcDialogue.Array.data[6]'
+      value: Pequena familia de caranguejo.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'npcDialogue.Array.data[7]'
+      value: Ajuda a cruzar a estrada.
+      objectReference: {fileID: 0}
     - target: {fileID: 9196274457006421723, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: m_Name
       value: Stranger (MomAndSon)
@@ -8779,7 +8906,7 @@ GameObject:
   - component: {fileID: 1155708715}
   m_Layer: 0
   m_Name: Cat
-  m_TagString: Untagged
+  m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8831,12 +8958,11 @@ Transform:
   m_GameObject: {fileID: 1155708714}
   serializedVersion: 2
   m_LocalRotation: {x: -0.458196, y: 0.53856885, z: 0.53856885, w: 0.458196}
-  m_LocalPosition: {x: 773, y: 6.45, z: 654.89}
+  m_LocalPosition: {x: 773, y: 6.45, z: 651.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1238294569}
-  - {fileID: 1329207587}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 9.22, z: 90}
 --- !u!1001 &1170581530
@@ -9821,12 +9947,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329207586}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7048192, y: -0.056832187, z: -0.056832187, w: 0.7048192}
-  m_LocalPosition: {x: 0, y: 0, z: -6.02}
-  m_LocalScale: {x: 7.8164, y: 7.8164, z: 7.8164}
+  m_LocalRotation: {x: -0, y: 0.70710677, z: -0.0000000037252903, w: 0.7071068}
+  m_LocalPosition: {x: 767.59827, y: 0.42999983, z: 655.5642}
+  m_LocalScale: {x: 2.1875758, y: 7.8164, z: 1.6921724}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1155708717}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &1329207588
 BoxCollider:
@@ -9861,8 +9987,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19965f357230b00419f2abfc0de82f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 11400000, guid: 8f73559e9fd7c704fa7397dfcfee2d92, type: 2}
-  actorType: MomAndSon
+  obj: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
+  actorType: Cat
   destroyOnEnter: 0
   exitLogic: 1
 --- !u!23 &1329207590
@@ -10256,7 +10382,6 @@ GameObject:
   - component: {fileID: 1404045066}
   - component: {fileID: 1404045065}
   - component: {fileID: 1404045064}
-  - component: {fileID: 1404045063}
   - component: {fileID: 1404045062}
   - component: {fileID: 1404045061}
   - component: {fileID: 1404045060}
@@ -10265,6 +10390,7 @@ GameObject:
   - component: {fileID: 1404045057}
   - component: {fileID: 1404045056}
   - component: {fileID: 1404045055}
+  - component: {fileID: 1404045067}
   m_Layer: 0
   m_Name: SandCrab (6)
   m_TagString: PickUp
@@ -10354,7 +10480,8 @@ MonoBehaviour:
   actorTypes:
   - Crab
   - 
-  objectiveList: []
+  objectiveList:
+  - {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
 --- !u!54 &1404045060
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10415,27 +10542,6 @@ MonoBehaviour:
   interactable: 1
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
---- !u!65 &1404045063
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1404045054}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.6, y: 1, z: 1.35}
-  m_Center: {x: 0, y: -0.2, z: 0.05}
 --- !u!114 &1404045064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10457,7 +10563,7 @@ MonoBehaviour:
   normalSpeed: 15
   superSpeed: 50
   isCarryingObject: 0
-  crabBehavior: 4
+  crabBehavior: 5
   targetingType: 
 --- !u!195 &1404045065
 NavMeshAgent:
@@ -10497,6 +10603,27 @@ Transform:
   - {fileID: 1053504705}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &1404045067
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404045054}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2, z: 3}
+  m_Center: {x: 0, y: 0, z: 0.51}
 --- !u!1 &1405272156
 GameObject:
   m_ObjectHideFlags: 0
@@ -11756,7 +11883,6 @@ GameObject:
   - component: {fileID: 1560941994}
   - component: {fileID: 1560941993}
   - component: {fileID: 1560941992}
-  - component: {fileID: 1560941991}
   - component: {fileID: 1560941990}
   - component: {fileID: 1560941989}
   - component: {fileID: 1560941988}
@@ -11765,6 +11891,7 @@ GameObject:
   - component: {fileID: 1560941985}
   - component: {fileID: 1560941984}
   - component: {fileID: 1560941983}
+  - component: {fileID: 1560941995}
   m_Layer: 0
   m_Name: SandCrab (9)
   m_TagString: PickUp
@@ -11854,7 +11981,8 @@ MonoBehaviour:
   actorTypes:
   - Crab
   - 
-  objectiveList: []
+  objectiveList:
+  - {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
 --- !u!54 &1560941988
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11915,27 +12043,6 @@ MonoBehaviour:
   interactable: 1
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
---- !u!65 &1560941991
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1560941982}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.6, y: 1, z: 1.35}
-  m_Center: {x: 0, y: -0.2, z: 0.05}
 --- !u!114 &1560941992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11957,7 +12064,7 @@ MonoBehaviour:
   normalSpeed: 15
   superSpeed: 50
   isCarryingObject: 0
-  crabBehavior: 4
+  crabBehavior: 5
   targetingType: 
 --- !u!195 &1560941993
 NavMeshAgent:
@@ -11997,6 +12104,27 @@ Transform:
   - {fileID: 1538743373}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &1560941995
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560941982}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2, z: 3}
+  m_Center: {x: 0, y: 0, z: 0.51}
 --- !u!1 &1585682195
 GameObject:
   m_ObjectHideFlags: 0
@@ -17891,7 +18019,29 @@ MonoBehaviour:
   target: {fileID: 0}
   actorTypes:
   - Shopping Cart
-  objectiveList: []
+  objectiveList:
+  - {fileID: 11400000, guid: be0ce70bdf0b85441accef8e8df14d9a, type: 2}
+--- !u!65 &1775196713
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775196710}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.68, y: 1.08, z: 1}
+  m_Center: {x: -0.53, y: 0.43, z: 0}
 --- !u!1001 &1799389314
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18450,12 +18600,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938267806}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0000000026341782, y: 1, z: -0.0000000026341782, w: 0.000000059604645}
-  m_LocalPosition: {x: 0, y: -6.14, z: 0}
-  m_LocalScale: {x: 7.3073673, y: 4.2244, z: 8.333052}
+  m_LocalRotation: {x: -0, y: 0.70710677, z: -0.0000000037252907, w: 0.7071069}
+  m_LocalPosition: {x: 721.46, y: 0.5700002, z: 664.8}
+  m_LocalScale: {x: 7.307369, y: 4.2244, z: 8.333054}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2098926890}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &1938267808
 BoxCollider:
@@ -18490,8 +18640,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19965f357230b00419f2abfc0de82f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 11400000, guid: 8f73559e9fd7c704fa7397dfcfee2d92, type: 2}
-  actorType: MomAndSon
+  obj: {fileID: 11400000, guid: be0ce70bdf0b85441accef8e8df14d9a, type: 2}
+  actorType: Shopping Cart
   destroyOnEnter: 0
   exitLogic: 1
 --- !u!23 &1938267810
@@ -19730,7 +19880,8 @@ MonoBehaviour:
   actorTypes:
   - Crab
   - 
-  objectiveList: []
+  objectiveList:
+  - {fileID: 11400000, guid: be0ce70bdf0b85441accef8e8df14d9a, type: 2}
 --- !u!54 &2098926884
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19833,7 +19984,7 @@ MonoBehaviour:
   normalSpeed: 0
   superSpeed: 0
   isCarryingObject: 0
-  crabBehavior: 4
+  crabBehavior: 5
   targetingType: 
 --- !u!195 &2098926889
 NavMeshAgent:
@@ -19870,9 +20021,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2086179971}
   - {fileID: 1775196711}
-  - {fileID: 1938267807}
+  - {fileID: 2086179971}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &2120121843
@@ -19886,7 +20036,6 @@ GameObject:
   - component: {fileID: 2120121855}
   - component: {fileID: 2120121854}
   - component: {fileID: 2120121853}
-  - component: {fileID: 2120121852}
   - component: {fileID: 2120121851}
   - component: {fileID: 2120121850}
   - component: {fileID: 2120121849}
@@ -19895,6 +20044,7 @@ GameObject:
   - component: {fileID: 2120121846}
   - component: {fileID: 2120121845}
   - component: {fileID: 2120121844}
+  - component: {fileID: 2120121856}
   m_Layer: 0
   m_Name: SandCrab (3)
   m_TagString: PickUp
@@ -19984,7 +20134,8 @@ MonoBehaviour:
   actorTypes:
   - Crab
   - 
-  objectiveList: []
+  objectiveList:
+  - {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
 --- !u!54 &2120121849
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20045,27 +20196,6 @@ MonoBehaviour:
   interactable: 1
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
---- !u!65 &2120121852
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2120121843}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.6, y: 1, z: 1.35}
-  m_Center: {x: 0, y: -0.2, z: 0.05}
 --- !u!114 &2120121853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20087,7 +20217,7 @@ MonoBehaviour:
   normalSpeed: 15
   superSpeed: 50
   isCarryingObject: 0
-  crabBehavior: 4
+  crabBehavior: 5
   targetingType: 
 --- !u!195 &2120121854
 NavMeshAgent:
@@ -20127,6 +20257,27 @@ Transform:
   - {fileID: 2001216528}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2120121856
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120121843}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2, z: 3}
+  m_Center: {x: 0, y: 0, z: 0.51}
 --- !u!1 &2128823426
 GameObject:
   m_ObjectHideFlags: 0
@@ -20653,10 +20804,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8445046431020931665, guid: 74244193d46c59c4a8934d75989c24c1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5347904659167972141, guid: 74244193d46c59c4a8934d75989c24c1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1775196713}
     - targetCorrespondingSourceObject: {fileID: 5347904659167972141, guid: 74244193d46c59c4a8934d75989c24c1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1775196712}
@@ -20858,11 +21013,11 @@ SceneRoots:
   - {fileID: 1848394741}
   - {fileID: 670584314}
   - {fileID: 1489973791}
+  - {fileID: 1143291845}
   - {fileID: 1112760108}
   - {fileID: 54508953}
   - {fileID: 458561237}
   - {fileID: 236377273}
-  - {fileID: 1143291845}
   - {fileID: 2861557235380357915}
   - {fileID: 2053819178}
   - {fileID: 1014249867}
@@ -20877,8 +21032,10 @@ SceneRoots:
   - {fileID: 1960604330}
   - {fileID: 231713793}
   - {fileID: 1529875959}
+  - {fileID: 1329207587}
   - {fileID: 1155708717}
   - {fileID: 1217190192}
   - {fileID: 584639011}
+  - {fileID: 1938267807}
   - {fileID: 2098926890}
   - {fileID: 7142691456705228035}
