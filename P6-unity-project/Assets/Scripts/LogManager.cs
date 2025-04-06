@@ -17,20 +17,29 @@ public class LogManager : MonoBehaviour
     public Transform contentPanel;
     public GameObject logMenu;
     private bool isLogOpen = false;
+    private InteractManager interactMan;
 
     private StarterAssetsInputs input;
     public ScrollRect scrollRect;
     private CrabInterface crabInterface;
 
+    public bool canOpenLog = false;
+
     void Start()
     {
         UpdateLog();
+        interactMan = GetComponent<InteractManager>();
         input = GetComponent<StarterAssetsInputs>();
         logMenu.SetActive(false);
     }
 
     void Update()
     {
+        if (!canOpenLog)
+        {
+            return;
+        }
+
         if (input.log)
         {
             ToggleLogMenu(!isLogOpen);
@@ -52,7 +61,7 @@ public class LogManager : MonoBehaviour
         {
             Time.timeScale = 0f; // Pause game
             input.SetCursorState(false); // Unlock cursor
-
+            interactMan.UnlockInteract(false);
             if (scrollRect != null)
             {
                 scrollRect.horizontalNormalizedPosition = 0f;
@@ -61,6 +70,7 @@ public class LogManager : MonoBehaviour
         else
         {
             Time.timeScale = 1f; // Resume game
+            interactMan.UnlockInteract(true);
             input.SetCursorState(true); // Lock cursor
         }
     }
@@ -119,5 +129,10 @@ public class LogManager : MonoBehaviour
         {
             entry.userDefinition = newDefinition;
         }
+    }
+
+    public void UnlockLog(bool unlock)
+    {
+        canOpenLog = unlock;
     }
 }

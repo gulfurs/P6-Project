@@ -371,6 +371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
+  tooltipText: Press E to interact with Crab
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!65 &54508950
@@ -468,6 +469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 0
+  tooltipText: Press E to interact with Crab
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &54508955
@@ -584,6 +586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
+  tooltipText: Press E to interact
   equipItem: {fileID: 2142483944}
 --- !u!65 &63307191
 BoxCollider:
@@ -1249,6 +1252,7 @@ GameObject:
   - component: {fileID: 184769362}
   - component: {fileID: 184769361}
   - component: {fileID: 184769373}
+  - component: {fileID: 184769374}
   m_Layer: 0
   m_Name: SandCrab (8)
   m_TagString: PickUp
@@ -1269,6 +1273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 0
+  tooltipText: Press E to interact with Crab
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &184769362
@@ -1283,7 +1288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 8f73559e9fd7c704fa7397dfcfee2d92, type: 2}
+  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
   overrideComponent: {fileID: 184769361}
 --- !u!114 &184769363
 MonoBehaviour:
@@ -1297,7 +1302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e869ac655ba1a43bad365479264ff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 236377273}
+  target: {fileID: 0}
   standStillRadius: 45
   fleeRadius: 25
   superSpeedRadius: 10
@@ -1306,7 +1311,7 @@ MonoBehaviour:
   normalSpeed: 15
   superSpeed: 50
   isCarryingObject: 0
-  crabBehavior: 1
+  crabBehavior: 5
   targetingType: 
 --- !u!114 &184769364
 MonoBehaviour:
@@ -1320,7 +1325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 8f73559e9fd7c704fa7397dfcfee2d92, type: 2}
+  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
   overrideComponent: {fileID: 184769363}
 --- !u!114 &184769365
 MonoBehaviour:
@@ -1398,6 +1403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
+  tooltipText: Press E to interact with Crab
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &184769370
@@ -1482,6 +1488,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 3}
   m_Center: {x: 0, y: 0, z: 0.51}
+--- !u!65 &184769374
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184769360}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &202491592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1536,6 +1563,7 @@ GameObject:
   - component: {fileID: 208408664}
   - component: {fileID: 208408663}
   - component: {fileID: 208408675}
+  - component: {fileID: 208408676}
   m_Layer: 0
   m_Name: SandCrab (2)
   m_TagString: PickUp
@@ -1556,6 +1584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 0
+  tooltipText: Press E to interact with Crab
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &208408664
@@ -1570,7 +1599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 8f73559e9fd7c704fa7397dfcfee2d92, type: 2}
+  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
   overrideComponent: {fileID: 208408663}
 --- !u!114 &208408665
 MonoBehaviour:
@@ -1584,7 +1613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e869ac655ba1a43bad365479264ff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 236377273}
+  target: {fileID: 0}
   standStillRadius: 45
   fleeRadius: 25
   superSpeedRadius: 10
@@ -1593,7 +1622,7 @@ MonoBehaviour:
   normalSpeed: 15
   superSpeed: 50
   isCarryingObject: 0
-  crabBehavior: 1
+  crabBehavior: 5
   targetingType: 
 --- !u!114 &208408666
 MonoBehaviour:
@@ -1607,7 +1636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 8f73559e9fd7c704fa7397dfcfee2d92, type: 2}
+  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
   overrideComponent: {fileID: 208408665}
 --- !u!114 &208408667
 MonoBehaviour:
@@ -1685,6 +1714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
+  tooltipText: Press E to interact with Crab
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &208408672
@@ -1769,6 +1799,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 3}
   m_Center: {x: 0, y: 0, z: 0.51}
+--- !u!65 &208408676
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208408662}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &211545866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2591,6 +2642,7 @@ GameObject:
   - component: {fileID: 293926527}
   - component: {fileID: 293926526}
   - component: {fileID: 293926538}
+  - component: {fileID: 293926539}
   m_Layer: 0
   m_Name: SandCrab (5)
   m_TagString: PickUp
@@ -2611,6 +2663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 0
+  tooltipText: Press E to interact with Crab
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &293926527
@@ -2625,7 +2678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 8f73559e9fd7c704fa7397dfcfee2d92, type: 2}
+  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
   overrideComponent: {fileID: 293926526}
 --- !u!114 &293926528
 MonoBehaviour:
@@ -2639,7 +2692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e869ac655ba1a43bad365479264ff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 236377273}
+  target: {fileID: 0}
   standStillRadius: 45
   fleeRadius: 25
   superSpeedRadius: 10
@@ -2648,7 +2701,7 @@ MonoBehaviour:
   normalSpeed: 15
   superSpeed: 50
   isCarryingObject: 0
-  crabBehavior: 1
+  crabBehavior: 5
   targetingType: 
 --- !u!114 &293926529
 MonoBehaviour:
@@ -2662,7 +2715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 8f73559e9fd7c704fa7397dfcfee2d92, type: 2}
+  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
   overrideComponent: {fileID: 293926528}
 --- !u!114 &293926530
 MonoBehaviour:
@@ -2740,6 +2793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
+  tooltipText: Press E to interact with Crab
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &293926535
@@ -2824,6 +2878,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 3}
   m_Center: {x: 0, y: 0, z: 0.51}
+--- !u!65 &293926539
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293926525}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &296594563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3080,7 +3155,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 745.1933, y: 20, z: 574.9}
+  m_LocalPosition: {x: 745.1933, y: 4.8100004, z: 574.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3218,6 +3293,7 @@ GameObject:
   - component: {fileID: 380264716}
   - component: {fileID: 380264715}
   - component: {fileID: 380264727}
+  - component: {fileID: 380264728}
   m_Layer: 0
   m_Name: SandCrab (7)
   m_TagString: PickUp
@@ -3238,6 +3314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 0
+  tooltipText: Press E to interact with Crab
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &380264716
@@ -3252,7 +3329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 8f73559e9fd7c704fa7397dfcfee2d92, type: 2}
+  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
   overrideComponent: {fileID: 380264715}
 --- !u!114 &380264717
 MonoBehaviour:
@@ -3266,7 +3343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e869ac655ba1a43bad365479264ff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 236377273}
+  target: {fileID: 0}
   standStillRadius: 45
   fleeRadius: 25
   superSpeedRadius: 10
@@ -3275,7 +3352,7 @@ MonoBehaviour:
   normalSpeed: 15
   superSpeed: 50
   isCarryingObject: 0
-  crabBehavior: 1
+  crabBehavior: 5
   targetingType: 
 --- !u!114 &380264718
 MonoBehaviour:
@@ -3289,7 +3366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 8f73559e9fd7c704fa7397dfcfee2d92, type: 2}
+  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
   overrideComponent: {fileID: 380264717}
 --- !u!114 &380264719
 MonoBehaviour:
@@ -3367,6 +3444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
+  tooltipText: Press E to interact with Crab
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &380264724
@@ -3451,6 +3529,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 3}
   m_Center: {x: 0, y: 0, z: 0.51}
+--- !u!65 &380264728
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380264714}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &387879451 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
@@ -4137,7 +4236,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &475192496
 RectTransform:
@@ -4467,6 +4566,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: be0ce70bdf0b85441accef8e8df14d9a, type: 2}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: tooltipText
+      value: Press E to interact with Shop Owner
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: ObjectiveStart
       value: 
       objectReference: {fileID: 11400000, guid: be0ce70bdf0b85441accef8e8df14d9a, type: 2}
@@ -4553,6 +4656,7 @@ GameObject:
   - component: {fileID: 598536929}
   - component: {fileID: 598536928}
   - component: {fileID: 598536940}
+  - component: {fileID: 598536941}
   m_Layer: 0
   m_Name: SandCrab (4)
   m_TagString: PickUp
@@ -4573,6 +4677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 0
+  tooltipText: Press E to interact with Crab
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &598536929
@@ -4587,7 +4692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 8f73559e9fd7c704fa7397dfcfee2d92, type: 2}
+  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
   overrideComponent: {fileID: 598536928}
 --- !u!114 &598536930
 MonoBehaviour:
@@ -4601,7 +4706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e869ac655ba1a43bad365479264ff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 236377273}
+  target: {fileID: 0}
   standStillRadius: 45
   fleeRadius: 25
   superSpeedRadius: 10
@@ -4610,7 +4715,7 @@ MonoBehaviour:
   normalSpeed: 15
   superSpeed: 50
   isCarryingObject: 0
-  crabBehavior: 1
+  crabBehavior: 5
   targetingType: 
 --- !u!114 &598536931
 MonoBehaviour:
@@ -4624,7 +4729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 8f73559e9fd7c704fa7397dfcfee2d92, type: 2}
+  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
   overrideComponent: {fileID: 598536930}
 --- !u!114 &598536932
 MonoBehaviour:
@@ -4702,6 +4807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
+  tooltipText: Press E to interact with Crab
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &598536937
@@ -4786,6 +4892,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 3}
   m_Center: {x: 0, y: 0, z: 0.51}
+--- !u!65 &598536941
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598536927}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &602977422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5223,6 +5350,10 @@ GameObject:
   - component: {fileID: 661941174}
   - component: {fileID: 661941176}
   - component: {fileID: 661941177}
+  - component: {fileID: 661941178}
+  - component: {fileID: 661941181}
+  - component: {fileID: 661941180}
+  - component: {fileID: 661941179}
   m_Layer: 0
   m_Name: EventSystem GAMEMANAGER
   m_TagString: GameManager
@@ -5546,6 +5677,72 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &661941178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661941170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf0a676e1022b34c991c161b4320103, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 1515014702}
+  tutorialSteps:
+  - {fileID: 661941181}
+  - {fileID: 661941180}
+  - {fileID: 661941179}
+--- !u!114 &661941179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661941170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07c0ad212bdc7342968f8ed6ac4597b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  borders: {fileID: 2054159887}
+  stepName: Interact using E
+  tutorialLines:
+  - Use E to interact and pickup items.
+  interactable: {fileID: 462678341}
+--- !u!114 &661941180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661941170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba5fd15ab3a2bf4192b99eaae7138c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  borders: {fileID: 2054159887}
+  stepName: Jump on Spacebar
+  tutorialLines:
+  - Jump using Spacebar.
+--- !u!114 &661941181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661941170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43fbd62ef0074d4ab09f52e48428c54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  borders: {fileID: 2054159887}
+  stepName: Move
+  tutorialLines:
+  - Move using W A S D / Jump using 'SPACEBAR'
 --- !u!1 &663384140
 GameObject:
   m_ObjectHideFlags: 0
@@ -5930,7 +6127,7 @@ Transform:
   m_GameObject: {fileID: 718548408}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 745.1933, y: 20, z: 574.9}
+  m_LocalPosition: {x: 745.1933, y: 4.8100004, z: 574.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6173,6 +6370,7 @@ RectTransform:
   m_Children:
   - {fileID: 903561958}
   - {fileID: 2054159886}
+  - {fileID: 1394899339}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -7251,6 +7449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
+  tooltipText: Press E to interact
   equipItem: {fileID: 2142483944}
 --- !u!65 &958923950
 BoxCollider:
@@ -7866,6 +8065,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: tooltipText
+      value: Press E to interact with Cat Owner
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: ObjectiveStart
       value: 
       objectReference: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
@@ -8407,6 +8610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
+  tooltipText: Press E to interact with Crab
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &1112760111
@@ -8500,6 +8704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 0
+  tooltipText: Press E to interact with Crab
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &1112760117
@@ -8721,6 +8926,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: abd10748a2af64748ae46d1a305fb8ec, type: 2}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: tooltipText
+      value: Press E to interact with Stranger
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[1]'
       value: "voc\xEA *segue a *mam\xE3e caranguejo."
       objectReference: {fileID: 0}
@@ -8904,6 +9113,7 @@ GameObject:
   - component: {fileID: 1155708717}
   - component: {fileID: 1155708716}
   - component: {fileID: 1155708715}
+  - component: {fileID: 1155708718}
   m_Layer: 0
   m_Name: Cat
   m_TagString: PickUp
@@ -8943,7 +9153,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -8965,6 +9175,27 @@ Transform:
   - {fileID: 1238294569}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 9.22, z: 90}
+--- !u!65 &1155708718
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155708714}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1170581530
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10371,6 +10602,142 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3652132559885027355, guid: 74f58d7b7e454b34595a6d4d3c9fb8ed, type: 3}
   m_PrefabInstance: {fileID: 1388892307}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1394899338
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1394899339}
+  - component: {fileID: 1394899341}
+  - component: {fileID: 1394899340}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1394899339
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394899338}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 736461730}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -55.508972, y: -266.31628}
+  m_SizeDelta: {x: -1423.6909, y: -1028.5868}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1394899340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394899338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: New Text
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 46
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: -0.7133789, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1394899341
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394899338}
+  m_CullTransparentMesh: 1
 --- !u!1 &1404045054
 GameObject:
   m_ObjectHideFlags: 0
@@ -10391,6 +10758,7 @@ GameObject:
   - component: {fileID: 1404045056}
   - component: {fileID: 1404045055}
   - component: {fileID: 1404045067}
+  - component: {fileID: 1404045068}
   m_Layer: 0
   m_Name: SandCrab (6)
   m_TagString: PickUp
@@ -10411,6 +10779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 0
+  tooltipText: Press E to interact with Crab
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &1404045056
@@ -10425,7 +10794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 8f73559e9fd7c704fa7397dfcfee2d92, type: 2}
+  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
   overrideComponent: {fileID: 1404045055}
 --- !u!114 &1404045057
 MonoBehaviour:
@@ -10439,7 +10808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e869ac655ba1a43bad365479264ff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 236377273}
+  target: {fileID: 0}
   standStillRadius: 45
   fleeRadius: 25
   superSpeedRadius: 10
@@ -10448,7 +10817,7 @@ MonoBehaviour:
   normalSpeed: 15
   superSpeed: 50
   isCarryingObject: 0
-  crabBehavior: 1
+  crabBehavior: 5
   targetingType: 
 --- !u!114 &1404045058
 MonoBehaviour:
@@ -10462,7 +10831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 8f73559e9fd7c704fa7397dfcfee2d92, type: 2}
+  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
   overrideComponent: {fileID: 1404045057}
 --- !u!114 &1404045059
 MonoBehaviour:
@@ -10540,6 +10909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
+  tooltipText: Press E to interact with Crab
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &1404045064
@@ -10624,6 +10994,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 3}
   m_Center: {x: 0, y: 0, z: 0.51}
+--- !u!65 &1404045068
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404045054}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1405272156
 GameObject:
   m_ObjectHideFlags: 0
@@ -11320,7 +11711,7 @@ Transform:
   m_GameObject: {fileID: 1515014692}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 745.1933, y: 19.2, z: 574.9}
+  m_LocalPosition: {x: 745.1933, y: 4.01, z: 574.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11487,6 +11878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61abeb812ba479e4895712c260fc989e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tooltip: {fileID: 1394899340}
 --- !u!82 &1515014707
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11597,7 +11989,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  actorTypes: []
+  actorTypes:
+  - Player
   objectiveList: []
 --- !u!1001 &1525847649
 PrefabInstance:
@@ -11892,6 +12285,7 @@ GameObject:
   - component: {fileID: 1560941984}
   - component: {fileID: 1560941983}
   - component: {fileID: 1560941995}
+  - component: {fileID: 1560941996}
   m_Layer: 0
   m_Name: SandCrab (9)
   m_TagString: PickUp
@@ -11912,6 +12306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 0
+  tooltipText: Press E to interact with Crab
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &1560941984
@@ -11926,7 +12321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 8f73559e9fd7c704fa7397dfcfee2d92, type: 2}
+  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
   overrideComponent: {fileID: 1560941983}
 --- !u!114 &1560941985
 MonoBehaviour:
@@ -11940,7 +12335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e869ac655ba1a43bad365479264ff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 236377273}
+  target: {fileID: 0}
   standStillRadius: 45
   fleeRadius: 25
   superSpeedRadius: 10
@@ -11949,7 +12344,7 @@ MonoBehaviour:
   normalSpeed: 15
   superSpeed: 50
   isCarryingObject: 0
-  crabBehavior: 1
+  crabBehavior: 5
   targetingType: 
 --- !u!114 &1560941986
 MonoBehaviour:
@@ -11963,7 +12358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 8f73559e9fd7c704fa7397dfcfee2d92, type: 2}
+  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
   overrideComponent: {fileID: 1560941985}
 --- !u!114 &1560941987
 MonoBehaviour:
@@ -12041,6 +12436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
+  tooltipText: Press E to interact with Crab
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &1560941992
@@ -12125,6 +12521,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 3}
   m_Center: {x: 0, y: 0, z: 0.51}
+--- !u!65 &1560941996
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560941982}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1585682195
 GameObject:
   m_ObjectHideFlags: 0
@@ -17204,6 +17621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
+  tooltipText: Press E to interact
   equipItem: {fileID: 326603663}
 --- !u!114 &1631557240
 MonoBehaviour:
@@ -19811,6 +20229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 0
+  tooltipText: Press E to interact with Crab
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &2098926880
@@ -19940,6 +20359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
+  tooltipText: Press E to interact with Crab
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!65 &2098926887
@@ -20045,6 +20465,7 @@ GameObject:
   - component: {fileID: 2120121845}
   - component: {fileID: 2120121844}
   - component: {fileID: 2120121856}
+  - component: {fileID: 2120121857}
   m_Layer: 0
   m_Name: SandCrab (3)
   m_TagString: PickUp
@@ -20065,6 +20486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 0
+  tooltipText: Press E to interact with Crab
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &2120121845
@@ -20079,7 +20501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 8f73559e9fd7c704fa7397dfcfee2d92, type: 2}
+  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
   overrideComponent: {fileID: 2120121844}
 --- !u!114 &2120121846
 MonoBehaviour:
@@ -20093,7 +20515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e869ac655ba1a43bad365479264ff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 236377273}
+  target: {fileID: 0}
   standStillRadius: 45
   fleeRadius: 25
   superSpeedRadius: 10
@@ -20102,7 +20524,7 @@ MonoBehaviour:
   normalSpeed: 15
   superSpeed: 50
   isCarryingObject: 0
-  crabBehavior: 1
+  crabBehavior: 5
   targetingType: 
 --- !u!114 &2120121847
 MonoBehaviour:
@@ -20116,7 +20538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 8f73559e9fd7c704fa7397dfcfee2d92, type: 2}
+  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
   overrideComponent: {fileID: 2120121846}
 --- !u!114 &2120121848
 MonoBehaviour:
@@ -20194,6 +20616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
+  tooltipText: Press E to interact with Crab
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &2120121853
@@ -20278,6 +20701,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 3}
   m_Center: {x: 0, y: 0, z: 0.51}
+--- !u!65 &2120121857
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120121843}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2128823426
 GameObject:
   m_ObjectHideFlags: 0
@@ -20998,13 +21442,13 @@ SceneRoots:
   - {fileID: 642820998}
   - {fileID: 718548410}
   - {fileID: 1147237962}
+  - {fileID: 475192496}
   - {fileID: 736461730}
   - {fileID: 661941173}
   - {fileID: 1623905468}
   - {fileID: 1631557238}
   - {fileID: 958923951}
   - {fileID: 63307192}
-  - {fileID: 475192496}
   - {fileID: 213889055}
   - {fileID: 1968452541}
   - {fileID: 1405272159}
