@@ -3,6 +3,7 @@ using UnityEngine;
 public class InteractStep : TutorialStep
 {
     public GameObject interactable;
+    public Objective PickUpOBJ;
 
     public override void UpdateStep(StarterAssetsInputs input)
     {
@@ -11,15 +12,16 @@ public class InteractStep : TutorialStep
 
         if (input.interact && IsLookingAt(interactable))
         {
+            ObjectiveManager.Instance.UpdateObjectiveProgress(PickUpOBJ, 1);
             stepCompleted = true;
         }
     }
 
-    public override void EndStep()
+    /*public override void EndStep()
     {
-        Debug.Log("Ended Tutorial Step: " + stepName);
+        Debug.Log("AYOOOOOOOOOOOOOOOOOOOOOOOO");
 
-    }
+    }*/
 
     private bool IsLookingAt(GameObject obj)
     {

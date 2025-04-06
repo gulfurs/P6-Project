@@ -3,6 +3,7 @@ using TMPro;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using UnityEngine.Playables;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -62,16 +63,20 @@ public class TutorialManager : MonoBehaviour
 
 public abstract class TutorialStep : MonoBehaviour
 {
-        public Animator borders;
+        private Animator borders;
         public string stepName;
         public string[] tutorialLines;
         private int tutorialIndex = 0;
         private TypeWriter typeWriter;
         public bool stepCompleted { get; protected set; }
-        
+
+        public PlayableDirector initiateTimeline;
+        public Objective initiateObjective;
+
         void Start()
         {
         typeWriter = FindObjectOfType<TypeWriter>();
+        borders = GameManager.Instance.borders;
         }
 
         public virtual void StartStep()
@@ -79,6 +84,18 @@ public abstract class TutorialStep : MonoBehaviour
             Debug.Log("Started Tutorial Step: " + stepName);
             ShowBorders();
             ShowNextLine();
+
+
+        if (initiateTimeline != null)
+        {
+            initiateTimeline.time = 0;
+            initiateTimeline.Play();
+        }
+
+        if (initiateObjective != null)
+            {
+            ObjectiveManager.Instance.AddObjective(initiateObjective);
+            }
         }
 
         public virtual void EndStep()
@@ -91,14 +108,18 @@ public abstract class TutorialStep : MonoBehaviour
 
         protected void ShowBorders()
         {
-            // Trigger UI or VFX for tutorial border
-            borders.SetTrigger("ToggleBorders");
+                if (borders != null)
+            {
+                borders.Play("EnterBorder", 0, 0f); // Play from start
+            }
         }
 
         protected void HideBorders()
         {
-            // Hide UI or VFX
-            borders.SetTrigger("ToggleBorders");
+            if (borders != null)
+            {
+            borders.Play("ExitBorder", 0, 0f); // Play from start
+            }
         }
 
         public virtual void ShowNextLine()

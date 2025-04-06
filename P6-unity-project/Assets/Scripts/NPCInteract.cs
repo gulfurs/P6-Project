@@ -3,46 +3,22 @@ using UnityEngine;
 
 public class NPCInteract : InteractHandler
 {
-    public Objective ObjectiveProgress;
-    public Objective ObjectiveStart;
     public TypeWriter typeWriter;
     public List<string> npcDialogue;
-
     private int dialogueIndex = 0;
     private bool inDialogue = false;
-    private GameManager gm;
-    
 
     void Start()
     {
         dialogueIndex = 0;
-        gm = FindObjectOfType<GameManager>();
         typeWriter = FindObjectOfType<TypeWriter>();
     }
 
     public override void InteractLogic()
     {
-        if (ObjectiveProgress != null)
-        {
-
-            //npcObjective.currentProgress = npcObjective.goal; 
-            ObjectiveManager.Instance.UpdateObjectiveProgress(ObjectiveProgress, 1);
-
-            Debug.Log($"Objective '{ObjectiveProgress.objectiveName}' updated or completed.");
-        }
-
-        if (ObjectiveStart != null)
-        {
-
-            //npcObjective.currentProgress = npcObjective.goal; 
-            ObjectiveManager.Instance.AddObjective(ObjectiveStart);
-
-            Debug.Log($"Objective '{ObjectiveStart.objectiveName}' started");
-        }
-
         if (!inDialogue)
         {
-            gm.borders.SetTrigger("ToggleBorders");
+            GameManager.Instance.borders.Play("EnterBorder", 0, 0f);
             inDialogue = true;
             dialogueIndex = 0;
             ShowNextLine();
@@ -111,6 +87,6 @@ public class NPCInteract : InteractHandler
     void EndDialogue()
     {
         inDialogue = false;
-        gm.borders.SetTrigger("ToggleBorders");
+        GameManager.Instance.borders.Play("ExitBorder", 0, 0f);
     }
 }

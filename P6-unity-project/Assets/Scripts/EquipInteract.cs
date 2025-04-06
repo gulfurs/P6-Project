@@ -8,6 +8,8 @@ public class EquipInteract : InteractHandler
 
     public override void InteractLogic()
     {
+        base.InteractLogic();
+        interactable = true;
         EquipmentManager equipmentManager = FindObjectOfType<EquipmentManager>(); // Get the EquipmentManager
 
         if (equipmentManager != null && equipItem != null)

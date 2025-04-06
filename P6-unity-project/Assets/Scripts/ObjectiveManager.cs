@@ -25,7 +25,7 @@ public class ObjectiveManager : MonoBehaviour
     }
 
     public List<ActiveObjective> activeObjectives = new List<ActiveObjective>();
-    public Objective startObjective;
+    public List<Objective> startObjectives;
     public TextMeshProUGUI objectiveText;
     public TextMeshProUGUI xpText;
 
@@ -52,7 +52,10 @@ public class ObjectiveManager : MonoBehaviour
 
     void Start()
     {
-        AddObjective(startObjective);
+        foreach (Objective startObjective in startObjectives)
+        {
+            AddObjective(startObjective);
+        }
         UpdateXPUI();
     }
 

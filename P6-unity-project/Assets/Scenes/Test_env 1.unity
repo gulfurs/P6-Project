@@ -372,6 +372,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 1
   tooltipText: Press E to interact with Crab
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!65 &54508950
@@ -470,6 +472,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 0
   tooltipText: Press E to interact with Crab
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &54508955
@@ -587,6 +591,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 1
   tooltipText: Press E to interact
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
   equipItem: {fileID: 2142483944}
 --- !u!65 &63307191
 BoxCollider:
@@ -641,6 +647,114 @@ MonoBehaviour:
   actorTypes:
   - Gun
   objectiveList: []
+--- !u!1 &73234822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 73234826}
+  - component: {fileID: 73234825}
+  - component: {fileID: 73234824}
+  - component: {fileID: 73234823}
+  - component: {fileID: 73234827}
+  m_Layer: 0
+  m_Name: Flare
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &73234823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73234822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 419c091bf19deff4da8930f75b985ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  actorTypes: []
+  objectiveList:
+  - {fileID: 11400000, guid: a897b1b46b5422342a494d80bc12bbd2, type: 2}
+--- !u!114 &73234824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73234822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bdcac52160eeaa4da22eec17ced1b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 1
+  tooltipText: Press E to interact
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
+  equipItem: {fileID: 1620250675}
+--- !u!65 &73234825
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73234822}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &73234826
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73234822}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 744.47284, y: 0.07, z: 574.15497}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 763605029}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &73234827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73234822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &118588772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1274,6 +1388,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 0
   tooltipText: Press E to interact with Crab
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &184769362
@@ -1404,6 +1520,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 1
   tooltipText: Press E to interact with Crab
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &184769370
@@ -1541,6 +1659,7 @@ Transform:
   - {fileID: 326603662}
   - {fileID: 2142483943}
   - {fileID: 644984264}
+  - {fileID: 1620250678}
   m_Father: {fileID: 1515014698}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &208408662
@@ -1585,6 +1704,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 0
   tooltipText: Press E to interact with Crab
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &208408664
@@ -1715,6 +1836,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 1
   tooltipText: Press E to interact with Crab
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &208408672
@@ -2575,6 +2698,66 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000002, y: 1, z: 1.0000004}
   m_Center: {x: 0, y: 0, z: -0.0000038146973}
+--- !u!1001 &257981689
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1620250678}
+    m_Modifications:
+    - target: {fileID: 1946664821847510, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+      propertyPath: m_Name
+      value: compensator_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949073504520062, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949073504520062, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949073504520062, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949073504520062, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949073504520062, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949073504520062, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949073504520062, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949073504520062, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949073504520062, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949073504520062, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1946664821847510, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1585550589}
+  m_SourcePrefab: {fileID: 100100000, guid: 83594cfb2155fef48b008a819994c194, type: 3}
 --- !u!224 &275650419 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1742241283567533943, guid: c25b1b0ddef3bc847ade9bf93e7ce6b7, type: 3}
@@ -2622,6 +2805,33 @@ MonoBehaviour:
   actorTypes:
   - Key
   objectiveList: []
+--- !u!1 &288213097 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1427308197837982363, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+  m_PrefabInstance: {fileID: 1379187037}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &288213098
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288213097}
+  m_Enabled: 1
+  m_AgentTypeID: -334000983
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &293926525
 GameObject:
   m_ObjectHideFlags: 0
@@ -2664,6 +2874,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 0
   tooltipText: Press E to interact with Crab
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &293926527
@@ -2794,6 +3006,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 1
   tooltipText: Press E to interact with Crab
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &293926535
@@ -3315,6 +3529,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 0
   tooltipText: Press E to interact with Crab
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &380264716
@@ -3445,6 +3661,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 1
   tooltipText: Press E to interact with Crab
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &380264724
@@ -4678,6 +4896,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 0
   tooltipText: Press E to interact with Crab
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &598536929
@@ -4808,6 +5028,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 1
   tooltipText: Press E to interact with Crab
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &598536937
@@ -5354,6 +5576,8 @@ GameObject:
   - component: {fileID: 661941181}
   - component: {fileID: 661941180}
   - component: {fileID: 661941179}
+  - component: {fileID: 661941182}
+  - component: {fileID: 661941183}
   m_Layer: 0
   m_Name: EventSystem GAMEMANAGER
   m_TagString: GameManager
@@ -5692,8 +5916,8 @@ MonoBehaviour:
   playerInput: {fileID: 1515014702}
   tutorialSteps:
   - {fileID: 661941181}
-  - {fileID: 661941180}
   - {fileID: 661941179}
+  - {fileID: 661941183}
 --- !u!114 &661941179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5706,11 +5930,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b07c0ad212bdc7342968f8ed6ac4597b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borders: {fileID: 2054159887}
   stepName: Interact using E
   tutorialLines:
   - Use E to interact and pickup items.
-  interactable: {fileID: 462678341}
+  initiateTimeline: {fileID: 0}
+  initiateObjective: {fileID: 11400000, guid: a897b1b46b5422342a494d80bc12bbd2, type: 2}
+  interactable: {fileID: 73234822}
+  PickUpOBJ: {fileID: 11400000, guid: a897b1b46b5422342a494d80bc12bbd2, type: 2}
 --- !u!114 &661941180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5723,10 +5949,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ba5fd15ab3a2bf4192b99eaae7138c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borders: {fileID: 2054159887}
-  stepName: Jump on Spacebar
+  stepName: Jump
   tutorialLines:
   - Jump using Spacebar.
+  initiateTimeline: {fileID: 0}
+  initiateObjective: {fileID: 0}
 --- !u!114 &661941181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5739,10 +5966,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43fbd62ef0074d4ab09f52e48428c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borders: {fileID: 2054159887}
   stepName: Move
   tutorialLines:
   - Move using W A S D / Jump using 'SPACEBAR'
+  initiateTimeline: {fileID: 0}
+  initiateObjective: {fileID: 0}
+  MoveObj: {fileID: 11400000, guid: 1780f850d39ca2747a59fb6d4fe0608d, type: 2}
+  JumpObj: {fileID: 11400000, guid: 28349db15f0d6ea4eb065fd805ec4050, type: 2}
+--- !u!320 &661941182
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661941170}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 0}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
+--- !u!114 &661941183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661941170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14dcd1019deda34439524ff31fec86f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepName: Drop
+  tutorialLines:
+  - Press 1 or 2 to switch between held items. Press Q to drop your current item.
+  initiateTimeline: {fileID: 0}
+  initiateObjective: {fileID: 11400000, guid: 36c63af439aef474e8764af9ff76c4f1, type: 2}
+  dropItem: {fileID: 1620250675}
+  DropOBJ: {fileID: 11400000, guid: 36c63af439aef474e8764af9ff76c4f1, type: 2}
 --- !u!1 &663384140
 GameObject:
   m_ObjectHideFlags: 0
@@ -6056,6 +6322,66 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3652132559885027355, guid: 74f58d7b7e454b34595a6d4d3c9fb8ed, type: 3}
   m_PrefabInstance: {fileID: 700891564}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &717278605
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 73234826}
+    m_Modifications:
+    - target: {fileID: 1946664821847510, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+      propertyPath: m_Name
+      value: compensator_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949073504520062, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949073504520062, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949073504520062, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949073504520062, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949073504520062, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949073504520062, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949073504520062, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949073504520062, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949073504520062, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949073504520062, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1946664821847510, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 763605026}
+  m_SourcePrefab: {fileID: 100100000, guid: 83594cfb2155fef48b008a819994c194, type: 3}
 --- !u!1 &718548408
 GameObject:
   m_ObjectHideFlags: 0
@@ -6480,6 +6806,37 @@ Transform:
   - {fileID: 1103202415}
   m_Father: {fileID: 1529875959}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &763605023 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1946664821847510, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+  m_PrefabInstance: {fileID: 717278605}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &763605026
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763605023}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.15387401, y: 0.15387395, z: 0.42410713}
+  m_Center: {x: 0.00045034662, y: -0.0033896007, z: -0.010824181}
+--- !u!4 &763605029 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4949073504520062, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+  m_PrefabInstance: {fileID: 717278605}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &779991147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7450,6 +7807,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 1
   tooltipText: Press E to interact
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
   equipItem: {fileID: 2142483944}
 --- !u!65 &958923950
 BoxCollider:
@@ -8611,6 +8970,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 1
   tooltipText: Press E to interact with Crab
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &1112760111
@@ -8705,6 +9066,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 0
   tooltipText: Press E to interact with Crab
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &1112760117
@@ -10478,6 +10841,78 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3652132559885027355, guid: 74f58d7b7e454b34595a6d4d3c9fb8ed, type: 3}
   m_PrefabInstance: {fileID: 1368571133}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1379187037
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1427308197837982363, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      propertyPath: m_Name
+      value: RobotFriend
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118732969852764795, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 747.0298
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118732969852764795, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118732969852764795, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 587.24713
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118732969852764795, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.64465845
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118732969852764795, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118732969852764795, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.76447076
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118732969852764795, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118732969852764795, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118732969852764795, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 99.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118732969852764795, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984765902549585960, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984765902549585960, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984765902549585960, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1427308197837982363, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 288213098}
+  m_SourcePrefab: {fileID: 100100000, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
 --- !u!1001 &1379654395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10780,6 +11215,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 0
   tooltipText: Press E to interact with Crab
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &1404045056
@@ -10910,6 +11347,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 1
   tooltipText: Press E to interact with Crab
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &1404045064
@@ -11866,6 +12305,7 @@ MonoBehaviour:
   contentPanel: {fileID: 402223476}
   logMenu: {fileID: 391826213}
   scrollRect: {fileID: 911796834}
+  canOpenLog: 0
 --- !u!114 &1515014706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12307,6 +12747,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 0
   tooltipText: Press E to interact with Crab
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &1560941984
@@ -12437,6 +12879,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 1
   tooltipText: Press E to interact with Crab
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &1560941992
@@ -12542,6 +12986,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1585550587 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1946664821847510, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+  m_PrefabInstance: {fileID: 257981689}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1585550588 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4949073504520062, guid: 83594cfb2155fef48b008a819994c194, type: 3}
+  m_PrefabInstance: {fileID: 257981689}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1585550589
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585550587}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.15387401, y: 0.15387395, z: 0.42410713}
+  m_Center: {x: 0.00045034662, y: -0.0033896007, z: -0.010824181}
 --- !u!1 &1585682195
 GameObject:
   m_ObjectHideFlags: 0
@@ -17437,6 +17912,100 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3652132559885027355, guid: 74f58d7b7e454b34595a6d4d3c9fb8ed, type: 3}
   m_PrefabInstance: {fileID: 1614647412}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1620250674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1620250678}
+  - component: {fileID: 1620250677}
+  - component: {fileID: 1620250676}
+  - component: {fileID: 1620250675}
+  m_Layer: 0
+  m_Name: Flare
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1620250675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620250674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 027c795bdb9f05a4ba9a6c67a54fd205, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EquipmentName: Flare
+  EquipmentIcon: {fileID: 0}
+  EquipmentRoot: {fileID: 0}
+  EquipmentOffset: {fileID: 0}
+  WeaponMuzzle: {fileID: 0}
+  EquipType: 2
+  Equipped: 0
+  MaxAmmo: 6
+  CurrentAmmo: 6
+  ProjectilePrefab: {fileID: 0}
+--- !u!114 &1620250676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620250674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 419c091bf19deff4da8930f75b985ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  actorTypes: []
+  objectiveList:
+  - {fileID: 11400000, guid: a897b1b46b5422342a494d80bc12bbd2, type: 2}
+--- !u!65 &1620250677
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620250674}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1620250678
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620250674}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.22329655, y: -0.11702532, z: 0.027014079, w: 0.9673231}
+  m_LocalPosition: {x: 0.162, y: -0.102, z: 0.474}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1585550588}
+  m_Father: {fileID: 202491593}
+  m_LocalEulerAnglesHint: {x: -25.194, y: -15.28, z: 6.633}
 --- !u!1 &1623905466
 GameObject:
   m_ObjectHideFlags: 0
@@ -17448,7 +18017,7 @@ GameObject:
   - component: {fileID: 1623905468}
   - component: {fileID: 1623905467}
   m_Layer: 0
-  m_Name: ObjectiveManager
+  m_Name: OBJECTIVEMANAGER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17467,7 +18036,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeObjectives: []
-  startObjective: {fileID: 11400000, guid: 08c40fb8d195eab4687879b2185411a5, type: 2}
+  startObjectives:
+  - {fileID: 11400000, guid: 1780f850d39ca2747a59fb6d4fe0608d, type: 2}
+  - {fileID: 11400000, guid: 28349db15f0d6ea4eb065fd805ec4050, type: 2}
   objectiveText: {fileID: 1772036186}
   xpText: {fileID: 2057366718}
 --- !u!4 &1623905468
@@ -17622,6 +18193,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 1
   tooltipText: Press E to interact
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
   equipItem: {fileID: 326603663}
 --- !u!114 &1631557240
 MonoBehaviour:
@@ -17798,6 +18371,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!1 &1686340680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1686340681}
+  m_Layer: 0
+  m_Name: '-------- :: Start :: ------------------------------------------- '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1686340681
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686340680}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 737.0441, y: 7.666915, z: 577.95703}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1690003134
 GameObject:
   m_ObjectHideFlags: 0
@@ -20230,6 +20834,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 0
   tooltipText: Press E to interact with Crab
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &2098926880
@@ -20360,6 +20966,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 1
   tooltipText: Press E to interact with Crab
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!65 &2098926887
@@ -20487,6 +21095,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 0
   tooltipText: Press E to interact with Crab
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &2120121845
@@ -20617,6 +21227,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: 1
   tooltipText: Press E to interact with Crab
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
   commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
   logman: {fileID: 0}
 --- !u!114 &2120121853
@@ -21456,6 +22068,8 @@ SceneRoots:
   - {fileID: 2018237401}
   - {fileID: 1848394741}
   - {fileID: 670584314}
+  - {fileID: 1686340681}
+  - {fileID: 1379187037}
   - {fileID: 1489973791}
   - {fileID: 1143291845}
   - {fileID: 1112760108}
@@ -21483,3 +22097,4 @@ SceneRoots:
   - {fileID: 1938267807}
   - {fileID: 2098926890}
   - {fileID: 7142691456705228035}
+  - {fileID: 73234826}
