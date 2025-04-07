@@ -73,6 +73,7 @@ public class EquipmentController : MonoBehaviour
                     // Example: Use tool logic, maybe scanning or interacting
                     Debug.Log("Tool equipped.");
                     if (_input.aim) {
+                        Instantiate(ProjectilePrefab, transform);
                     }
                 }
                 break;
