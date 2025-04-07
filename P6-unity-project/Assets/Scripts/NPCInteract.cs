@@ -11,11 +11,13 @@ public class NPCInteract : InteractHandler
     public bool inDialogue = false;
 
     public PlayableDirector _timeline;
+    private InteractManager interactMan;
 
     void Start()
     {
         dialogueIndex = 0;
         typeWriter = FindObjectOfType<TypeWriter>();
+        interactMan = FindObjectOfType<InteractManager>();
     }
 
     public override void InteractLogic()
@@ -24,6 +26,7 @@ public class NPCInteract : InteractHandler
         {
             GameManager.Instance.borders.Play("EnterBorder", 0, 0f);
             inDialogue = true;
+            interactMan.UnlockInteract(false);
             dialogueIndex = 0;
             ShowNextLine();
 
@@ -43,7 +46,7 @@ public class NPCInteract : InteractHandler
 
     void Update()
     {
-        if (inDialogue && Input.GetMouseButtonDown(0)) // Check for input (like a click)
+        if (inDialogue && Input.GetMouseButtonDown(0)) 
         {
             Debug.Log("UPDATING");
             HandleNextDialogue();
@@ -110,6 +113,7 @@ public class NPCInteract : InteractHandler
     void EndDialogue()
     {
         inDialogue = false;
+        interactMan.UnlockInteract(true);
         GameManager.Instance.borders.Play("ExitBorder", 0, 0f);
 
         // Optionally stop the timeline when the dialogue ends

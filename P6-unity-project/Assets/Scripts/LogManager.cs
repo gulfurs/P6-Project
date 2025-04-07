@@ -23,7 +23,7 @@ public class LogManager : MonoBehaviour
     public ScrollRect scrollRect;
     private CrabInterface crabInterface;
 
-    public bool canOpenLog = false;
+    [Copyable] public bool canOpenLog = false;
 
     void Start()
     {
@@ -131,6 +131,11 @@ public class LogManager : MonoBehaviour
         {
             entry.userDefinition = newDefinition;
         }
+    }
+
+    public void StartLogManager()
+    {
+
     }
 
     public void UnlockLog(bool unlock)

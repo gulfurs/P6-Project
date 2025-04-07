@@ -39,6 +39,9 @@ public class ObjectiveCompletionHandler : MonoBehaviour
         FieldInfo[] fields = source.GetType().GetFields(BindingFlags.Public | BindingFlags.Instance);
         foreach (var field in fields)
         {
+            if (!field.IsDefined(typeof(CopyableAttribute), false))
+                continue;
+
             field.SetValue(target, field.GetValue(source));
         }
     }
