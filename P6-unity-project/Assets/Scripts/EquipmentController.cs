@@ -41,16 +41,54 @@ public class EquipmentController : MonoBehaviour
     public float CurrentAmmo = 6;
 
     [Tooltip("The projectile prefab")] public GameObject ProjectilePrefab;
+    private StarterAssetsInputs _input;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        _input = FindObjectOfType<StarterAssetsInputs>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        switch (EquipType)
+        {
+            case EquipmentType.None:
+                // Maybe do nothing or add idle behavior
+                break;
+
+            case EquipmentType.Weapon:
+                if (Equipped)
+                {
+                    // Example: Shooting logic, checking for input, etc.
+                    Debug.Log("Weapon equipped.");
+                    // if (_input.shoot) { Fire(); }
+                }
+                break;
+
+            case EquipmentType.Tool:
+                if (Equipped)
+                {
+                    // Example: Use tool logic, maybe scanning or interacting
+                    Debug.Log("Tool equipped.");
+                    if (_input.aim) {
+                    }
+                }
+                break;
+
+            case EquipmentType.Objective:
+                if (Equipped)
+                {
+                    // Example: Carry or activate objective
+                    Debug.Log("Objective equipped.");
+                }
+                break;
+
+            default:
+                Debug.LogWarning("Unknown EquipmentType");
+                break;
+        }
     }
+
 }
