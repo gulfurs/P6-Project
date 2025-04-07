@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class InteractHandler : MonoBehaviour
 {
-    public bool interactable = true;
+    [Copyable] public bool interactable = true;
     [TextArea] public string tooltipText = "Press E to interact";
-    public Objective ObjectiveProgress;
-    public Objective ObjectiveStart;
+    [Copyable] public Objective ObjectiveProgress;
+    [Copyable] public Objective ObjectiveStart;
 
     public virtual void InteractLogic()
     {

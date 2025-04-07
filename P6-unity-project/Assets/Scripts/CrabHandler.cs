@@ -6,24 +6,24 @@ using UnityEngine.AI;
 
 public class CrabHandler : MonoBehaviour
 {
-    public Transform target;
+    [Copyable] public Transform target;
     private NavMeshAgent agent;
 
-    public float standStillRadius = 10.0f; // Beyond this, the crab doesn't move
-    public float fleeRadius = 6.0f; // Inside this, the crab flees normally
-    public float superSpeedRadius = 3.0f; // Inside this, the crab flees at high speed
-    public float raycastLength = 2.0f; // Length of the raycast to detect the ground
+    [Copyable] public float standStillRadius = 10.0f; // Beyond this, the crab doesn't move
+    [Copyable] public float fleeRadius = 6.0f; // Inside this, the crab flees normally
+    [Copyable] public float superSpeedRadius = 3.0f; // Inside this, the crab flees at high speed
+    [Copyable] public float raycastLength = 2.0f; // Length of the raycast to detect the ground
 
     private Quaternion targetRotation;
-    public bool shouldFlee = true; // Crab always tries to flee
-    public float normalSpeed = 3.5f; // Default speed
-    public float superSpeed = 8.0f; // Speed when escaping aggressively
+    [Copyable] public bool shouldFlee = true; // Crab always tries to flee
+    [Copyable] public float normalSpeed = 3.5f; // Default speed
+    [Copyable] public float superSpeed = 8.0f; // Speed when escaping aggressively
 
-    public bool isCarryingObject = false; // Flag to check if crab is carrying an object
+    [Copyable] public bool isCarryingObject = false; // Flag to check if crab is carrying an object
     private GameObject carriedObject; // Object that the crab is carrying
     private GameManager gm;
-    public CrabBehavior crabBehavior;
-    public string targetingType;
+    [Copyable] public CrabBehavior crabBehavior;
+    [Copyable] public string targetingType;
     //private List<string> confirmedWords = new List<string>();
 
     void Start()

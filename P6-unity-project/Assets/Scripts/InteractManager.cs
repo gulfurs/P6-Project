@@ -18,6 +18,7 @@ public class InteractManager : MonoBehaviour
     void Update()
     {
         if (!canInteract) {
+            HideToolTip();
             return;
         }
 
