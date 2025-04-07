@@ -88,7 +88,6 @@ public abstract class TutorialStep : MonoBehaviour
             ShowBorders();
             ShowNextLine();
 
-
         if (initiateTimeline != null)
         {
             initiateTimeline.time = 0;
@@ -146,8 +145,6 @@ public abstract class TutorialStep : MonoBehaviour
             }
         }
     }
-
-
 
     protected void ShowBorders()
         {
