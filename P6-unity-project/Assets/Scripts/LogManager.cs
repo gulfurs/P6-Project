@@ -77,6 +77,8 @@ public class LogManager : MonoBehaviour
 
     public void AddWord(string newWord)
     {
+        interactMan = GetComponent<InteractManager>();
+        input = GetComponent<StarterAssetsInputs>();
         // Remove punctuation marks and make the first letter uppercase
         newWord = newWord.TrimEnd('!', '.', ',', '?', ';', ':').ToLower();
         newWord = Char.ToUpper(newWord[0]) + newWord.Substring(1);

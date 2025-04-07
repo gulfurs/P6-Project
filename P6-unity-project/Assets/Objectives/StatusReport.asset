@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: StatusReport
   m_EditorClassIdentifier: Assembly-CSharp::Objective
-  objectiveName: Speak with Di4mond
+  objectiveName: Speak with BrimBot
   description: 
   goal: 1
   nextObjectives:
   - {fileID: 11400000, guid: 667734bf277c24242a80c0e0f00a59ea, type: 2}
-  xp: 25
+  xp: 0

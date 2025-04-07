@@ -2,30 +2,19 @@ using UnityEngine;
 
 public class InteractStep : TutorialStep
 {
-    public GameObject interactable;
+    public EquipmentController pickUpItem;
     public Objective PickUpOBJ;
 
     public override void UpdateStep(StarterAssetsInputs input)
     {
+        EquipmentManager equipMan = FindObjectOfType<EquipmentManager>();
         InteractManager interactMan = FindObjectOfType<InteractManager>();
         interactMan.UnlockInteract(true);
 
-        if (input.interact && IsLookingAt(interactable))
+        if (equipMan.equippedItems.Contains(pickUpItem))
         {
             ObjectiveManager.Instance.UpdateObjectiveProgress(PickUpOBJ, 1);
             stepCompleted = true;
         }
-    }
-
-    /*public override void EndStep()
-    {
-        Debug.Log("AYOOOOOOOOOOOOOOOOOOOOOOOO");
-
-    }*/
-
-    private bool IsLookingAt(GameObject obj)
-    {
-        Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
-        return Physics.Raycast(ray, out RaycastHit hit, 5f) && hit.collider.gameObject == obj;
     }
 }

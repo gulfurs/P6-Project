@@ -1,12 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
+using System.Linq;
 
 public class NPCInteract : InteractHandler
 {
     public TypeWriter typeWriter;
     public List<string> npcDialogue;
     private int dialogueIndex = 0;
-    private bool inDialogue = false;
+    public bool inDialogue = false;
+
+    public PlayableDirector _timeline;
 
     void Start()
     {
@@ -22,6 +26,12 @@ public class NPCInteract : InteractHandler
             inDialogue = true;
             dialogueIndex = 0;
             ShowNextLine();
+
+            if (_timeline != null)
+            {
+                _timeline.time = 0;
+                _timeline.Play();  // Start the timeline
+            }
         }
         else
         {
@@ -33,7 +43,7 @@ public class NPCInteract : InteractHandler
 
     void Update()
     {
-        if (inDialogue && Input.GetMouseButtonDown(0))
+        if (inDialogue && Input.GetMouseButtonDown(0)) // Check for input (like a click)
         {
             Debug.Log("UPDATING");
             HandleNextDialogue();
@@ -44,21 +54,19 @@ public class NPCInteract : InteractHandler
     {
         if (typeWriter == null || npcDialogue.Count == 0) return;
 
-        // Remove formatting and characters like asterisks and dashes
         string rawText = RemoveFormattingAndSpecialChars(typeWriter.textMesh.text);
         string rawDialogue = RemoveFormattingAndSpecialChars(npcDialogue[dialogueIndex]);
 
         if (rawText != rawDialogue)
         {
-            typeWriter.SkipTyping();
+            typeWriter.SkipTyping(); // Skip to the next line of dialogue and the corresponding timeline signal
         }
         else
         {
             dialogueIndex++;
-
             if (dialogueIndex < npcDialogue.Count)
             {
-                ShowNextLine();
+                ShowNextLine();  // Show the next line and wait for the next timeline signal
             }
             else
             {
@@ -67,26 +75,47 @@ public class NPCInteract : InteractHandler
         }
     }
 
-    // Function to strip rich text tags, asterisks, and dashes
+    // Strip rich text and formatting like asterisks or dashes
     string RemoveFormattingAndSpecialChars(string text)
     {
-        // Remove rich text tags and asterisks/dashes
         string noFormatting = System.Text.RegularExpressions.Regex.Replace(text, "<.*?>", "");
         string cleanText = noFormatting.Replace("*", "").Replace("-", " ");
         return cleanText;
     }
 
-
-
     void ShowNextLine()
     {
         typeWriter = FindObjectOfType<TypeWriter>();
         typeWriter.StartTyping(npcDialogue[dialogueIndex]);
+        if (_timeline != null)
+        {
+            _timeline.Play();
+        }
     }
+
+    public void OnNextSignal()
+    {
+        if (_timeline != null)
+        {
+            _timeline.Pause();
+        }
+    }
+
+    public void OnEndSignal()
+    {
+        EndDialogue();
+    }
+
 
     void EndDialogue()
     {
         inDialogue = false;
         GameManager.Instance.borders.Play("ExitBorder", 0, 0f);
+
+        // Optionally stop the timeline when the dialogue ends
+        if (_timeline != null)
+        {
+            _timeline.Stop();
+        }
     }
 }

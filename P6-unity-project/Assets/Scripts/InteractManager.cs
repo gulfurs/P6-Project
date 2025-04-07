@@ -40,7 +40,7 @@ public class InteractManager : MonoBehaviour
                 // Interact on key press
                 if (_input != null && _input.interact)
                 {
-                    interactObject.InteractLogic();
+                   interactObject.InteractLogic();
                 }
 
                 return;

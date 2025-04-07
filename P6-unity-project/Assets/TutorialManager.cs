@@ -73,6 +73,9 @@ public abstract class TutorialStep : MonoBehaviour
         public PlayableDirector initiateTimeline;
         public Objective initiateObjective;
 
+        private float lineTimer = 0f;
+        public float timeBetweenLines = 3f;
+
         void Start()
         {
         typeWriter = FindObjectOfType<TypeWriter>();
@@ -104,9 +107,49 @@ public abstract class TutorialStep : MonoBehaviour
             HideBorders();
         }
 
-        public abstract void UpdateStep(StarterAssetsInputs input);
+    public virtual void UpdateStep(StarterAssetsInputs input)
+    {
+        // Get all instances of NPCInteract
+        NPCInteract[] npcInteracts = FindObjectsOfType<NPCInteract>();
 
-        protected void ShowBorders()
+        // If any NPCInteract is in dialogue, skip the rest of the step update logic
+        foreach (var npcInteract in npcInteracts)
+        {
+            if (npcInteract.inDialogue)  // If any NPC is currently in dialogue
+            {
+                return;  // Exit early, don't update the tutorial step
+            }
+        }
+
+        // If typeWriter is null, return early to prevent errors
+        if (typeWriter == null) return;
+
+        // Only start the timer after typing is done
+        if (!typeWriter.isTyping)
+        {
+            lineTimer += Time.deltaTime;
+
+            // When it's time to show the next line and we haven't reached the end of the tutorial lines
+            if (lineTimer >= timeBetweenLines && tutorialIndex < tutorialLines.Length)
+            {
+                ShowNextLine();
+                lineTimer = 0f;  // Reset timer
+            }
+        }
+
+        // End step when all lines are shown and no typing is in progress
+        if (tutorialIndex >= tutorialLines.Length && !typeWriter.isTyping)
+        {
+            if (lineTimer >= timeBetweenLines)
+            {
+                stepCompleted = true;  // Mark the step as completed
+            }
+        }
+    }
+
+
+
+    protected void ShowBorders()
         {
                 if (borders != null)
             {
@@ -116,7 +159,8 @@ public abstract class TutorialStep : MonoBehaviour
 
         protected void HideBorders()
         {
-            if (borders != null)
+            
+        if (borders != null)
             {
             borders.Play("ExitBorder", 0, 0f); // Play from start
             }

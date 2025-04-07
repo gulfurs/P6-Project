@@ -730,7 +730,7 @@ Transform:
   m_GameObject: {fileID: 73234822}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 744.47284, y: 0.07, z: 574.15497}
+  m_LocalPosition: {x: 744.47284, y: 0.07, z: 287.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -963,6 +963,118 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c76aab66867438840ac650a1b8fcb825, type: 3}
+--- !u!1 &129723447
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 129723451}
+  - component: {fileID: 129723450}
+  - component: {fileID: 129723449}
+  - component: {fileID: 129723448}
+  m_Layer: 0
+  m_Name: SecondaryCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &129723448
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129723447}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &129723449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129723447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e8b78ac948f05a46a6d8339a503172b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LookAtOffset: {x: 0, y: 0.5, z: 0}
+--- !u!114 &129723450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129723447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Priority:
+    Enabled: 1
+    m_Value: 10
+  OutputChannel: 1
+  StandbyUpdate: 2
+  m_StreamingVersion: 20241001
+  m_LegacyPriority: 0
+  Target:
+    TrackingTarget: {fileID: 288213103}
+    LookAtTarget: {fileID: 288213103}
+    CustomLookAtTarget: 1
+  Lens:
+    FieldOfView: 40
+    OrthographicSize: 10
+    NearClipPlane: 0.1
+    FarClipPlane: 5000
+    Dutch: 0
+    ModeOverride: 0
+    PhysicalProperties:
+      GateFit: 2
+      SensorSize: {x: 21.946, y: 16.002}
+      LensShift: {x: 0, y: 0}
+      FocusDistance: 10
+      Iso: 200
+      ShutterSpeed: 0.005
+      Aperture: 16
+      BladeCount: 5
+      Curvature: {x: 2, y: 11}
+      BarrelClipping: 0.25
+      Anamorphism: 0
+  BlendHint: 0
+--- !u!4 &129723451
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129723447}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.03622479, y: -0.6440256, z: 0.030554859, w: 0.76353467}
+  m_LocalPosition: {x: 749.31, y: 1.72, z: 352.61}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &142444667
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1285,6 +1397,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4370991716747493511, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.041433714
+      objectReference: {fileID: 0}
+    - target: {fileID: -4370991716747493511, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.12336913
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.90691906
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.39633015
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.04312314
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
       propertyPath: m_Name
       value: sandCrab
@@ -1296,6 +1428,30 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.3094703
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0073605566
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0025935438
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6457524
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.041433778
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.12336821
       objectReference: {fileID: 0}
     - target: {fileID: 3816483486734956083, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
       propertyPath: player
@@ -1361,10 +1517,6 @@ GameObject:
   - component: {fileID: 184769367}
   - component: {fileID: 184769366}
   - component: {fileID: 184769365}
-  - component: {fileID: 184769364}
-  - component: {fileID: 184769363}
-  - component: {fileID: 184769362}
-  - component: {fileID: 184769361}
   - component: {fileID: 184769373}
   - component: {fileID: 184769374}
   m_Layer: 0
@@ -1374,75 +1526,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &184769361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 184769360}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62f5171bdb4c52d47988ce4a1f0e8968, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactable: 0
-  tooltipText: Press E to interact with Crab
-  ObjectiveProgress: {fileID: 0}
-  ObjectiveStart: {fileID: 0}
-  commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
-  logman: {fileID: 0}
---- !u!114 &184769362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 184769360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
-  overrideComponent: {fileID: 184769361}
---- !u!114 &184769363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 184769360}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4e869ac655ba1a43bad365479264ff5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  standStillRadius: 45
-  fleeRadius: 25
-  superSpeedRadius: 10
-  raycastLength: 2
-  shouldFlee: 0
-  normalSpeed: 15
-  superSpeed: 50
-  isCarryingObject: 0
-  crabBehavior: 5
-  targetingType: 
---- !u!114 &184769364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 184769360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
-  overrideComponent: {fileID: 184769363}
 --- !u!114 &184769365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1677,10 +1760,6 @@ GameObject:
   - component: {fileID: 208408669}
   - component: {fileID: 208408668}
   - component: {fileID: 208408667}
-  - component: {fileID: 208408666}
-  - component: {fileID: 208408665}
-  - component: {fileID: 208408664}
-  - component: {fileID: 208408663}
   - component: {fileID: 208408675}
   - component: {fileID: 208408676}
   m_Layer: 0
@@ -1690,75 +1769,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &208408663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 208408662}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62f5171bdb4c52d47988ce4a1f0e8968, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactable: 0
-  tooltipText: Press E to interact with Crab
-  ObjectiveProgress: {fileID: 0}
-  ObjectiveStart: {fileID: 0}
-  commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
-  logman: {fileID: 0}
---- !u!114 &208408664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 208408662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
-  overrideComponent: {fileID: 208408663}
---- !u!114 &208408665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 208408662}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4e869ac655ba1a43bad365479264ff5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  standStillRadius: 45
-  fleeRadius: 25
-  superSpeedRadius: 10
-  raycastLength: 2
-  shouldFlee: 0
-  normalSpeed: 15
-  superSpeed: 50
-  isCarryingObject: 0
-  crabBehavior: 5
-  targetingType: 
---- !u!114 &208408666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 208408662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
-  overrideComponent: {fileID: 208408665}
 --- !u!114 &208408667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2187,6 +2197,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4370991716747493511, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.041433714
+      objectReference: {fileID: 0}
+    - target: {fileID: -4370991716747493511, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.12336913
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.90691906
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.39633015
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.04312314
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
       propertyPath: m_Name
       value: sandCrab
@@ -2198,6 +2228,30 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.3094703
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0073605566
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0025935438
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6457524
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.041433778
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.12336821
       objectReference: {fileID: 0}
     - target: {fileID: 3816483486734956083, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
       propertyPath: player
@@ -2832,6 +2886,79 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &288213100 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8959311595582126058, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+  m_PrefabInstance: {fileID: 1379187037}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288213097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54f3191473e3d9b43b5dfa1f0cb980b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &288213103 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5118732969852764795, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+  m_PrefabInstance: {fileID: 1379187037}
+  m_PrefabAsset: {fileID: 0}
+--- !u!320 &288213104
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288213097}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: e62f58c86bad94a43955fbd6b00c65ea, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -8062650780825516209, guid: e62f58c86bad94a43955fbd6b00c65ea, type: 2}
+    value: {fileID: 129723448}
+  - key: {fileID: -7906543338864575649, guid: e62f58c86bad94a43955fbd6b00c65ea, type: 2}
+    value: {fileID: 288213105}
+  m_ExposedReferences:
+    m_References: []
+--- !u!114 &288213105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288213097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 0}
+    - {fileID: 11400000, guid: eb5dc803ae49f264d8a66a47fde1f668, type: 2}
+    - {fileID: 11400000, guid: 611721dddf541d548a3c2a5333f3d168, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls: []
+    - m_PersistentCalls:
+        m_Calls: []
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 288213100}
+          m_TargetAssemblyTypeName: NPCInteract, Assembly-CSharp
+          m_MethodName: OnNextSignal
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &293926525
 GameObject:
   m_ObjectHideFlags: 0
@@ -2847,10 +2974,6 @@ GameObject:
   - component: {fileID: 293926532}
   - component: {fileID: 293926531}
   - component: {fileID: 293926530}
-  - component: {fileID: 293926529}
-  - component: {fileID: 293926528}
-  - component: {fileID: 293926527}
-  - component: {fileID: 293926526}
   - component: {fileID: 293926538}
   - component: {fileID: 293926539}
   m_Layer: 0
@@ -2860,75 +2983,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &293926526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 293926525}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62f5171bdb4c52d47988ce4a1f0e8968, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactable: 0
-  tooltipText: Press E to interact with Crab
-  ObjectiveProgress: {fileID: 0}
-  ObjectiveStart: {fileID: 0}
-  commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
-  logman: {fileID: 0}
---- !u!114 &293926527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 293926525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
-  overrideComponent: {fileID: 293926526}
---- !u!114 &293926528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 293926525}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4e869ac655ba1a43bad365479264ff5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  standStillRadius: 45
-  fleeRadius: 25
-  superSpeedRadius: 10
-  raycastLength: 2
-  shouldFlee: 0
-  normalSpeed: 15
-  superSpeed: 50
-  isCarryingObject: 0
-  crabBehavior: 5
-  targetingType: 
---- !u!114 &293926529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 293926525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
-  overrideComponent: {fileID: 293926528}
 --- !u!114 &293926530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3368,8 +3422,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 745.1933, y: 4.8100004, z: 574.9}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 745.1933, y: 4.8100004, z: 139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3502,10 +3556,6 @@ GameObject:
   - component: {fileID: 380264721}
   - component: {fileID: 380264720}
   - component: {fileID: 380264719}
-  - component: {fileID: 380264718}
-  - component: {fileID: 380264717}
-  - component: {fileID: 380264716}
-  - component: {fileID: 380264715}
   - component: {fileID: 380264727}
   - component: {fileID: 380264728}
   m_Layer: 0
@@ -3515,75 +3565,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &380264715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 380264714}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62f5171bdb4c52d47988ce4a1f0e8968, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactable: 0
-  tooltipText: Press E to interact with Crab
-  ObjectiveProgress: {fileID: 0}
-  ObjectiveStart: {fileID: 0}
-  commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
-  logman: {fileID: 0}
---- !u!114 &380264716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 380264714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
-  overrideComponent: {fileID: 380264715}
---- !u!114 &380264717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 380264714}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4e869ac655ba1a43bad365479264ff5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  standStillRadius: 45
-  fleeRadius: 25
-  superSpeedRadius: 10
-  raycastLength: 2
-  shouldFlee: 0
-  normalSpeed: 15
-  superSpeed: 50
-  isCarryingObject: 0
-  crabBehavior: 5
-  targetingType: 
---- !u!114 &380264718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 380264714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
-  overrideComponent: {fileID: 380264717}
 --- !u!114 &380264719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4869,10 +4850,6 @@ GameObject:
   - component: {fileID: 598536934}
   - component: {fileID: 598536933}
   - component: {fileID: 598536932}
-  - component: {fileID: 598536931}
-  - component: {fileID: 598536930}
-  - component: {fileID: 598536929}
-  - component: {fileID: 598536928}
   - component: {fileID: 598536940}
   - component: {fileID: 598536941}
   m_Layer: 0
@@ -4882,75 +4859,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &598536928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 598536927}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62f5171bdb4c52d47988ce4a1f0e8968, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactable: 0
-  tooltipText: Press E to interact with Crab
-  ObjectiveProgress: {fileID: 0}
-  ObjectiveStart: {fileID: 0}
-  commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
-  logman: {fileID: 0}
---- !u!114 &598536929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 598536927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
-  overrideComponent: {fileID: 598536928}
---- !u!114 &598536930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 598536927}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4e869ac655ba1a43bad365479264ff5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  standStillRadius: 45
-  fleeRadius: 25
-  superSpeedRadius: 10
-  raycastLength: 2
-  shouldFlee: 0
-  normalSpeed: 15
-  superSpeed: 50
-  isCarryingObject: 0
-  crabBehavior: 5
-  targetingType: 
---- !u!114 &598536931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 598536927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
-  overrideComponent: {fileID: 598536930}
 --- !u!114 &598536932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5307,6 +5215,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4370991716747493511, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.041433714
+      objectReference: {fileID: 0}
+    - target: {fileID: -4370991716747493511, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.12336913
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.90691906
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.39633015
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.04312314
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
       propertyPath: m_Name
       value: sandCrab
@@ -5318,6 +5246,30 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.3094703
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0073605566
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0025935438
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6457524
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.041433778
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.12336821
       objectReference: {fileID: 0}
     - target: {fileID: 3816483486734956083, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
       propertyPath: player
@@ -5447,6 +5399,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4370991716747493511, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.041433714
+      objectReference: {fileID: 0}
+    - target: {fileID: -4370991716747493511, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.12336913
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.90691906
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.39633015
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.04312314
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
       propertyPath: m_Name
       value: sandCrab
@@ -5458,6 +5430,30 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.3094703
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0073605566
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0025935438
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6457524
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.041433778
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.12336821
       objectReference: {fileID: 0}
     - target: {fileID: 3816483486734956083, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
       propertyPath: player
@@ -5577,7 +5573,9 @@ GameObject:
   - component: {fileID: 661941180}
   - component: {fileID: 661941179}
   - component: {fileID: 661941182}
+  - component: {fileID: 661941184}
   - component: {fileID: 661941183}
+  - component: {fileID: 661941185}
   m_Layer: 0
   m_Name: EventSystem GAMEMANAGER
   m_TagString: GameManager
@@ -5804,6 +5802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 2128823428}
   typingSpeed: 0.05
+  isTyping: 0
 --- !u!82 &661941177
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5918,6 +5917,8 @@ MonoBehaviour:
   - {fileID: 661941181}
   - {fileID: 661941179}
   - {fileID: 661941183}
+  - {fileID: 661941184}
+  - {fileID: 661941185}
 --- !u!114 &661941179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5935,7 +5936,8 @@ MonoBehaviour:
   - Use E to interact and pickup items.
   initiateTimeline: {fileID: 0}
   initiateObjective: {fileID: 11400000, guid: a897b1b46b5422342a494d80bc12bbd2, type: 2}
-  interactable: {fileID: 73234822}
+  timeBetweenLines: 3
+  pickUpItem: {fileID: 1620250675}
   PickUpOBJ: {fileID: 11400000, guid: a897b1b46b5422342a494d80bc12bbd2, type: 2}
 --- !u!114 &661941180
 MonoBehaviour:
@@ -5954,6 +5956,7 @@ MonoBehaviour:
   - Jump using Spacebar.
   initiateTimeline: {fileID: 0}
   initiateObjective: {fileID: 0}
+  timeBetweenLines: 3
 --- !u!114 &661941181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5971,6 +5974,7 @@ MonoBehaviour:
   - Move using W A S D / Jump using 'SPACEBAR'
   initiateTimeline: {fileID: 0}
   initiateObjective: {fileID: 0}
+  timeBetweenLines: 3
   MoveObj: {fileID: 11400000, guid: 1780f850d39ca2747a59fb6d4fe0608d, type: 2}
   JumpObj: {fileID: 11400000, guid: 28349db15f0d6ea4eb065fd805ec4050, type: 2}
 --- !u!320 &661941182
@@ -6007,8 +6011,45 @@ MonoBehaviour:
   - Press 1 or 2 to switch between held items. Press Q to drop your current item.
   initiateTimeline: {fileID: 0}
   initiateObjective: {fileID: 11400000, guid: 36c63af439aef474e8764af9ff76c4f1, type: 2}
+  timeBetweenLines: 3
   dropItem: {fileID: 1620250675}
   DropOBJ: {fileID: 11400000, guid: 36c63af439aef474e8764af9ff76c4f1, type: 2}
+--- !u!114 &661941184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661941170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63c1f65dc1c6b754fb9707cd9433d593, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepName: Sprint
+  tutorialLines:
+  - Objectives are logged on the left.
+  - Brimbot is waiting! Sprint to them using SHIFT.
+  initiateTimeline: {fileID: 0}
+  initiateObjective: {fileID: 11400000, guid: 6ecd8824e907d924f9f8c033e1fcc062, type: 2}
+  timeBetweenLines: 2
+--- !u!114 &661941185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661941170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a26b17e317ac11745a98053fd5d25034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepName: Last Step
+  tutorialLines: []
+  initiateTimeline: {fileID: 0}
+  initiateObjective: {fileID: 0}
+  timeBetweenLines: 3
 --- !u!1 &663384140
 GameObject:
   m_ObjectHideFlags: 0
@@ -6453,7 +6494,7 @@ Transform:
   m_GameObject: {fileID: 718548408}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 745.1933, y: 4.8100004, z: 574.9}
+  m_LocalPosition: {x: 745.1933, y: 4.8100004, z: 139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6539,6 +6580,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4370991716747493511, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.041433714
+      objectReference: {fileID: 0}
+    - target: {fileID: -4370991716747493511, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.12336913
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.90691906
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.39633015
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.04312314
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
       propertyPath: m_Name
       value: sandCrab
@@ -6550,6 +6611,30 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.3094703
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0073605566
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0025935438
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6457524
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.041433778
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.12336821
       objectReference: {fileID: 0}
     - target: {fileID: 3816483486734956083, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
       propertyPath: player
@@ -8680,6 +8765,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4370991716747493511, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.041433714
+      objectReference: {fileID: 0}
+    - target: {fileID: -4370991716747493511, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.12336913
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.90691906
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.39633015
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.04312314
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
       propertyPath: m_Name
       value: sandCrab
@@ -8691,6 +8796,30 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.3094703
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0073605566
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0025935438
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6457524
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.041433778
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.12336821
       objectReference: {fileID: 0}
     - target: {fileID: 3816483486734956083, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
       propertyPath: player
@@ -8785,6 +8914,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a92b5977fcd3c024f9fab5b743a0c2a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1092427925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1092427927}
+  - component: {fileID: 1092427926}
+  m_Layer: 0
+  m_Name: CinemachineCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1092427926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092427925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Priority:
+    Enabled: 0
+    m_Value: 0
+  OutputChannel: 1
+  StandbyUpdate: 0
+  m_StreamingVersion: 20241001
+  m_LegacyPriority: 0
+  Target:
+    TrackingTarget: {fileID: 0}
+    LookAtTarget: {fileID: 0}
+    CustomLookAtTarget: 0
+  Lens:
+    FieldOfView: 60.000004
+    OrthographicSize: 10
+    NearClipPlane: 0.1
+    FarClipPlane: 5000
+    Dutch: 0
+    ModeOverride: 0
+    PhysicalProperties:
+      GateFit: 2
+      SensorSize: {x: 21.946, y: 16.002}
+      LensShift: {x: 0, y: 0}
+      FocusDistance: 10
+      Iso: 200
+      ShutterSpeed: 0.005
+      Aperture: 16
+      BladeCount: 5
+      Curvature: {x: 2, y: 11}
+      BarrelClipping: 0.25
+      Anamorphism: 0
+  BlendHint: 0
+--- !u!4 &1092427927
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092427925}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.09801064, y: 0.85297394, z: -0.17326139, w: 0.4825039}
+  m_LocalPosition: {x: 742.7051, y: 3.1381052, z: 355.59946}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1103202414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9669,6 +9873,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4370991716747493511, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.041433714
+      objectReference: {fileID: 0}
+    - target: {fileID: -4370991716747493511, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.12336913
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.90691906
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.39633015
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.04312314
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
       propertyPath: m_Name
       value: sandCrab
@@ -9680,6 +9904,30 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.3094703
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0073605566
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0025935438
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6457524
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.041433778
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.12336821
       objectReference: {fileID: 0}
     - target: {fileID: 3816483486734956083, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
       propertyPath: player
@@ -10863,7 +11111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5118732969852764795, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 587.24713
+      value: 353
       objectReference: {fileID: 0}
     - target: {fileID: 5118732969852764795, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10893,6 +11141,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8959311595582126058, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      propertyPath: _timeline
+      value: 
+      objectReference: {fileID: 288213104}
     - target: {fileID: 8984765902549585960, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -10912,6 +11164,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1427308197837982363, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
       insertIndex: -1
       addedObject: {fileID: 288213098}
+    - targetCorrespondingSourceObject: {fileID: 1427308197837982363, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 288213104}
+    - targetCorrespondingSourceObject: {fileID: 1427308197837982363, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 288213105}
   m_SourcePrefab: {fileID: 100100000, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
 --- !u!1001 &1379654395
 PrefabInstance:
@@ -11188,10 +11446,6 @@ GameObject:
   - component: {fileID: 1404045061}
   - component: {fileID: 1404045060}
   - component: {fileID: 1404045059}
-  - component: {fileID: 1404045058}
-  - component: {fileID: 1404045057}
-  - component: {fileID: 1404045056}
-  - component: {fileID: 1404045055}
   - component: {fileID: 1404045067}
   - component: {fileID: 1404045068}
   m_Layer: 0
@@ -11201,75 +11455,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1404045055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1404045054}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62f5171bdb4c52d47988ce4a1f0e8968, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactable: 0
-  tooltipText: Press E to interact with Crab
-  ObjectiveProgress: {fileID: 0}
-  ObjectiveStart: {fileID: 0}
-  commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
-  logman: {fileID: 0}
---- !u!114 &1404045056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1404045054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
-  overrideComponent: {fileID: 1404045055}
---- !u!114 &1404045057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1404045054}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4e869ac655ba1a43bad365479264ff5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  standStillRadius: 45
-  fleeRadius: 25
-  superSpeedRadius: 10
-  raycastLength: 2
-  shouldFlee: 0
-  normalSpeed: 15
-  superSpeed: 50
-  isCarryingObject: 0
-  crabBehavior: 5
-  targetingType: 
---- !u!114 &1404045058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1404045054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
-  overrideComponent: {fileID: 1404045057}
 --- !u!114 &1404045059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12058,6 +12243,8 @@ GameObject:
   - component: {fileID: 1515014706}
   - component: {fileID: 1515014707}
   - component: {fileID: 1515014708}
+  - component: {fileID: 1515014710}
+  - component: {fileID: 1515014709}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -12150,7 +12337,7 @@ Transform:
   m_GameObject: {fileID: 1515014692}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 745.1933, y: 4.01, z: 574.9}
+  m_LocalPosition: {x: 745.1933, y: 4.01, z: 139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12432,6 +12619,38 @@ MonoBehaviour:
   actorTypes:
   - Player
   objectiveList: []
+--- !u!114 &1515014709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515014692}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03eb35b63dbd36d4aa897ed890dcff4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logEntries: []
+  logPrefab: {fileID: 5046196537164786419, guid: c25b1b0ddef3bc847ade9bf93e7ce6b7, type: 3}
+  contentPanel: {fileID: 402223476}
+  logMenu: {fileID: 391826213}
+  scrollRect: {fileID: 911796834}
+  canOpenLog: 1
+--- !u!114 &1515014710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515014692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveToWatch: {fileID: 11400000, guid: 6ecd8824e907d924f9f8c033e1fcc062, type: 2}
+  overrideComponent: {fileID: 1515014709}
 --- !u!1001 &1525847649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12542,6 +12761,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4370991716747493511, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.041433714
+      objectReference: {fileID: 0}
+    - target: {fileID: -4370991716747493511, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.12336913
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.90691906
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.39633015
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.04312314
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
       propertyPath: m_Name
       value: sandCrab
@@ -12553,6 +12792,30 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.3094703
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0073605566
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0025935438
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6457524
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.041433778
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.12336821
       objectReference: {fileID: 0}
     - target: {fileID: 3816483486734956083, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
       propertyPath: player
@@ -12720,10 +12983,6 @@ GameObject:
   - component: {fileID: 1560941989}
   - component: {fileID: 1560941988}
   - component: {fileID: 1560941987}
-  - component: {fileID: 1560941986}
-  - component: {fileID: 1560941985}
-  - component: {fileID: 1560941984}
-  - component: {fileID: 1560941983}
   - component: {fileID: 1560941995}
   - component: {fileID: 1560941996}
   m_Layer: 0
@@ -12733,75 +12992,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1560941983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1560941982}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62f5171bdb4c52d47988ce4a1f0e8968, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactable: 0
-  tooltipText: Press E to interact with Crab
-  ObjectiveProgress: {fileID: 0}
-  ObjectiveStart: {fileID: 0}
-  commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
-  logman: {fileID: 0}
---- !u!114 &1560941984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1560941982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
-  overrideComponent: {fileID: 1560941983}
---- !u!114 &1560941985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1560941982}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4e869ac655ba1a43bad365479264ff5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  standStillRadius: 45
-  fleeRadius: 25
-  superSpeedRadius: 10
-  raycastLength: 2
-  shouldFlee: 0
-  normalSpeed: 15
-  superSpeed: 50
-  isCarryingObject: 0
-  crabBehavior: 5
-  targetingType: 
---- !u!114 &1560941986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1560941982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
-  overrideComponent: {fileID: 1560941985}
 --- !u!114 &1560941987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19471,6 +19661,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4370991716747493511, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.041433714
+      objectReference: {fileID: 0}
+    - target: {fileID: -4370991716747493511, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.12336913
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.90691906
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.39633015
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.04312314
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
       propertyPath: m_Name
       value: sandCrab
@@ -19482,6 +19692,30 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.3094703
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0073605566
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0025935438
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6457524
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.041433778
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.12336821
       objectReference: {fileID: 0}
     - target: {fileID: 3816483486734956083, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
       propertyPath: player
@@ -19984,6 +20218,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4370991716747493511, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.041433714
+      objectReference: {fileID: 0}
+    - target: {fileID: -4370991716747493511, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.12336913
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.90691906
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.39633015
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.04312314
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
       propertyPath: m_Name
       value: sandCrab
@@ -19995,6 +20249,30 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.3094703
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0073605566
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0025935438
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6457524
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.041433778
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.12336821
       objectReference: {fileID: 0}
     - target: {fileID: 3816483486734956083, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
       propertyPath: player
@@ -20809,10 +21087,6 @@ GameObject:
   - component: {fileID: 2098926885}
   - component: {fileID: 2098926884}
   - component: {fileID: 2098926883}
-  - component: {fileID: 2098926882}
-  - component: {fileID: 2098926881}
-  - component: {fileID: 2098926880}
-  - component: {fileID: 2098926879}
   m_Layer: 0
   m_Name: SandCrab (10)
   m_TagString: PickUp
@@ -20820,75 +21094,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2098926879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2098926878}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62f5171bdb4c52d47988ce4a1f0e8968, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactable: 0
-  tooltipText: Press E to interact with Crab
-  ObjectiveProgress: {fileID: 0}
-  ObjectiveStart: {fileID: 0}
-  commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
-  logman: {fileID: 0}
---- !u!114 &2098926880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2098926878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 8f73559e9fd7c704fa7397dfcfee2d92, type: 2}
-  overrideComponent: {fileID: 2098926879}
---- !u!114 &2098926881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2098926878}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4e869ac655ba1a43bad365479264ff5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 236377273}
-  standStillRadius: 45
-  fleeRadius: 25
-  superSpeedRadius: 10
-  raycastLength: 2
-  shouldFlee: 0
-  normalSpeed: 15
-  superSpeed: 50
-  isCarryingObject: 0
-  crabBehavior: 1
-  targetingType: 
---- !u!114 &2098926882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2098926878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 8f73559e9fd7c704fa7397dfcfee2d92, type: 2}
-  overrideComponent: {fileID: 2098926881}
 --- !u!114 &2098926883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21068,10 +21273,6 @@ GameObject:
   - component: {fileID: 2120121850}
   - component: {fileID: 2120121849}
   - component: {fileID: 2120121848}
-  - component: {fileID: 2120121847}
-  - component: {fileID: 2120121846}
-  - component: {fileID: 2120121845}
-  - component: {fileID: 2120121844}
   - component: {fileID: 2120121856}
   - component: {fileID: 2120121857}
   m_Layer: 0
@@ -21081,75 +21282,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2120121844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2120121843}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62f5171bdb4c52d47988ce4a1f0e8968, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactable: 0
-  tooltipText: Press E to interact with Crab
-  ObjectiveProgress: {fileID: 0}
-  ObjectiveStart: {fileID: 0}
-  commandUIPrefab: {fileID: 2739978137069306433, guid: 502b202ca09baf0438a26e3fd7e50f6f, type: 3}
-  logman: {fileID: 0}
---- !u!114 &2120121845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2120121843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
-  overrideComponent: {fileID: 2120121844}
---- !u!114 &2120121846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2120121843}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4e869ac655ba1a43bad365479264ff5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  standStillRadius: 45
-  fleeRadius: 25
-  superSpeedRadius: 10
-  raycastLength: 2
-  shouldFlee: 0
-  normalSpeed: 15
-  superSpeed: 50
-  isCarryingObject: 0
-  crabBehavior: 5
-  targetingType: 
---- !u!114 &2120121847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2120121843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectiveToWatch: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
-  overrideComponent: {fileID: 2120121846}
 --- !u!114 &2120121848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21920,6 +22052,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4370991716747493511, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.041433714
+      objectReference: {fileID: 0}
+    - target: {fileID: -4370991716747493511, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.12336913
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.90691906
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.39633015
+      objectReference: {fileID: 0}
+    - target: {fileID: -1549577366225088717, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.04312314
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
       propertyPath: m_Name
       value: sandCrab
@@ -21931,6 +22083,30 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.3094703
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0073605566
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640434543837745495, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0025935438
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6457524
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.041433778
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977716278454337510, guid: 8546fd9206d0cda4ba6d356d8f635b5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.12336821
       objectReference: {fileID: 0}
     - target: {fileID: 3816483486734956083, guid: de5c29f4784a61440a3917c192c7769b, type: 3}
       propertyPath: player
@@ -22053,6 +22229,7 @@ SceneRoots:
   - {fileID: 1515014698}
   - {fileID: 642820998}
   - {fileID: 718548410}
+  - {fileID: 129723451}
   - {fileID: 1147237962}
   - {fileID: 475192496}
   - {fileID: 736461730}
@@ -22069,6 +22246,7 @@ SceneRoots:
   - {fileID: 1848394741}
   - {fileID: 670584314}
   - {fileID: 1686340681}
+  - {fileID: 73234826}
   - {fileID: 1379187037}
   - {fileID: 1489973791}
   - {fileID: 1143291845}
@@ -22097,4 +22275,4 @@ SceneRoots:
   - {fileID: 1938267807}
   - {fileID: 2098926890}
   - {fileID: 7142691456705228035}
-  - {fileID: 73234826}
+  - {fileID: 1092427927}

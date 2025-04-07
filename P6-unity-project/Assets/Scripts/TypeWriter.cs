@@ -9,7 +9,7 @@ public class TypeWriter : MonoBehaviour
 
     private Coroutine typingCoroutine;
     private string currentFullText;
-    private bool isTyping;
+    public bool isTyping;
     private LogManager logManager;
 
     void Start()
