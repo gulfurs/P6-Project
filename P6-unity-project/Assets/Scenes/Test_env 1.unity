@@ -21553,6 +21553,13 @@ MonoBehaviour:
   - {fileID: 633802256}
   - {fileID: 835808149}
   - {fileID: 1339080069}
+  textToMonitor: {fileID: 2057366718}
+  triggerValues:
+  - 50
+  - 100
+  triggerEventNames:
+  - Reached_50
+  - Reached_100
   textInputPanel: {fileID: 631480722}
   secondQuestionText: {fileID: 1586698339}
   textInputField: {fileID: 20264774}

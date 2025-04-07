@@ -13,6 +13,12 @@ public class TestEvaluation : MonoBehaviour
     [SerializeField] private TextMeshProUGUI questionText;
     [SerializeField] private Button[] ratingButtons; // 5 buttons for the rating scale
 
+    [Header("TextMeshPro Trigger Settings")]
+    [SerializeField] private TextMeshProUGUI textToMonitor; // The TMPro we want to monitor
+    [SerializeField] private string[] triggerValues = { "50%", "100%" }; // Values that trigger evaluations
+    [SerializeField] private string[] triggerEventNames = { "Reached_50", "Reached_100" }; // Event names for each trigger
+    private string previousTextValue = "";
+
     [Header("Second Question")]
     [SerializeField] private GameObject textInputPanel;
     [SerializeField] private TextMeshProUGUI secondQuestionText;
@@ -81,6 +87,7 @@ public class TestEvaluation : MonoBehaviour
             debugEventCounter++;
             Debug.Log($"Debug evaluation triggered: {eventName}");
         }
+        CheckTextTriggers();
     }
 
     private void SetupRatingButtons()
@@ -92,6 +99,32 @@ public class TestEvaluation : MonoBehaviour
         {
             int rating = i + 1; // Rating from 1 to 5
             ratingButtons[i].onClick.AddListener(() => OnRatingSelected(rating));
+        }
+    }
+    private void CheckTextTriggers()
+    {
+        if (isPaused || textToMonitor == null) return;
+        
+        string currentText = textToMonitor.text;
+        
+        // Only process if the text has changed
+        if (currentText != previousTextValue)
+        {
+            previousTextValue = currentText;
+            
+            // Check if current text matches any trigger values
+            for (int i = 0; i < triggerValues.Length; i++)
+            {
+                if (currentText == triggerValues[i])
+                {
+                    string eventName = i < triggerEventNames.Length ? 
+                        triggerEventNames[i] : $"TextTrigger_{triggerValues[i]}";
+                    
+                    TriggerEvaluation(eventName);
+                    Debug.Log($"Evaluation triggered by text value: {currentText}");
+                    break; // Only trigger one evaluation at a time
+                }
+            }
         }
     }
 
