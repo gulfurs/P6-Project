@@ -45,6 +45,7 @@ public class NPCInteract : InteractHandler
         }
 
         base.InteractLogic();
+        interactable = true;
     }
 
     void Update()

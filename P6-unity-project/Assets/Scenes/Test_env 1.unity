@@ -6247,19 +6247,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[0]'
-      value: Meu *amigo! Ajude-me!
+      value: my *amigo! please *ajuda *me
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[1]'
-      value: '*Caranguejo tem *carrinho-de-compras'
+      value: '*Caranguejo is holding my *carrinho-de-compras'
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[2]'
-      value: Caranguejo mal!
+      value: Evil *Caranguejo!
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[3]'
-      value: "Fa\xE7a o caranguejo *deixa-cair!"
+      value: Can you make the *Caranguejo *deixa-cair the *carrinho-de-compras please!
       objectReference: {fileID: 0}
     - target: {fileID: 9196274457006421723, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: m_Name
@@ -7553,6 +7553,13 @@ MonoBehaviour:
     crabBehavior: 4
     _target: {fileID: 0}
     targetType: Cat
+    affectFlee: 0
+    affectTarget: 1
+    soundword: {fileID: 8300000, guid: b5b2a6513b468c941ac9bcfedf2dc374, type: 3}
+  - word: Me
+    crabBehavior: 4
+    _target: {fileID: 1515014692}
+    targetType: Player
     affectFlee: 0
     affectTarget: 1
     soundword: {fileID: 8300000, guid: b5b2a6513b468c941ac9bcfedf2dc374, type: 3}
@@ -10776,23 +10783,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[0]'
-      value: 'Grande problema! '
+      value: Grande problema!
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[1]'
-      value: Meu *Gato!
+      value: My *Gato! is stuck on the wall
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[2]'
-      value: '*Pega meu gato! '
+      value: Can you *pega my *gato!
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[3]'
-      value: "N\xE3o deixe o meu gato cair!"
+      value: No please dont *deixa-cair my *gato
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[4]'
-      value: "*V\xE1-para o *quintal pode ajudar."
+      value: "*V\xE1-para the backyard for *ajuda."
       objectReference: {fileID: 0}
     - target: {fileID: 9196274457006421723, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: m_Name
@@ -12205,8 +12212,24 @@ PrefabInstance:
       value: Press E to interact with Stranger
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: npcDialogue.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'npcDialogue.Array.data[0]'
+      value: "You see this *mam\xE3e *caranguejo and her *Filhote *caranguejo \u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[1]'
-      value: "voc\xEA *segue a *mam\xE3e caranguejo."
+      value: "Hey! *Filhote *caranguejo go with your *mam\xE3e, *segue her."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'npcDialogue.Array.data[2]'
+      value: "No don\u2019t just run away *Fique with your *mam\xE3e!!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'npcDialogue.Array.data[3]'
+      value: Can you *ajuda *me them cross the road
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[4]'
@@ -12246,6 +12269,10 @@ PrefabInstance:
     - target: {fileID: 1536723654877521411, guid: d6781495b59a4d6488d793b264773623, type: 3}
       propertyPath: m_Name
       value: SandCrab_prototype
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536723654877521411, guid: d6781495b59a4d6488d793b264773623, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5941034580893890807, guid: d6781495b59a4d6488d793b264773623, type: 3}
       propertyPath: m_LocalScale.x
@@ -13899,7 +13926,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
   actorType: Cat
-  destroyOnEnter: 0
+  destroyOnEnter: 1
   exitLogic: 1
 --- !u!23 &1329207590
 MeshRenderer:

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: BootUpSRP
   m_EditorClassIdentifier: Assembly-CSharp::Objective
-  objectiveName: "Pick up the Gas\xF3leo"
+  objectiveName: "Pick up the Gas\xF3leo Tank"
   description: 
   goal: 1
   nextObjectives:
