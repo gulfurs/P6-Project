@@ -7728,6 +7728,7 @@ MonoBehaviour:
   stepName: Move
   tutorialLines:
   - Move using W A S D / Jump using 'SPACEBAR'
+  - Move using W A S D / Jump using 'SPACEBAR'
   initiateTimeline: {fileID: 0}
   initiateObjective: {fileID: 0}
   enableInteraction: []
@@ -7835,7 +7836,21 @@ MonoBehaviour:
   tutorialLines: []
   initiateTimeline: {fileID: 0}
   initiateObjective: {fileID: 0}
-  enableInteraction: []
+  enableInteraction:
+  - {fileID: 584639024}
+  - {fileID: 1014249880}
+  - {fileID: 462678360}
+  - {fileID: 1112760110}
+  - {fileID: 54508949}
+  - {fileID: 208408670}
+  - {fileID: 2120121851}
+  - {fileID: 598536935}
+  - {fileID: 293926533}
+  - {fileID: 1404045062}
+  - {fileID: 380264722}
+  - {fileID: 184769368}
+  - {fileID: 1560941990}
+  - {fileID: 2098926886}
   disableInteraction: []
   enableGameObject: []
   disableGameObject:
@@ -22614,8 +22629,8 @@ MonoBehaviour:
   - {fileID: 1339080069}
   textToMonitor: {fileID: 2057366718}
   triggerValues:
-  - 50
-  - 100
+  - 50%
+  - 100%
   triggerEventNames:
   - Reached_50
   - Reached_100
