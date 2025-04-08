@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 
@@ -123,18 +124,41 @@ public class ObjectiveManager : MonoBehaviour
     }
 
 
-    private void RewardXP(int xpAmount)
+    public void RewardXP(int xpAmount)
     {
+        StartCoroutine(WaitForDialogueToEndThenReward(xpAmount));
+    }
+
+    private IEnumerator WaitForDialogueToEndThenReward(int xpAmount)
+    {
+        // Wait until all NPCs are no longer in dialogue
+        while (AnyNPCInDialogue())
+        {
+            yield return null; // wait for next frame
+        }
+
+        // Dialogue is over, reward XP
         playerXP += xpAmount;
         UpdateXPUI();
 
-        // Check if XP is 100 or greater and trigger the event
         if (playerXP >= 100)
         {
-            OnXPReached?.Invoke();  // Trigger the XP event
+            OnXPReached?.Invoke();
         }
     }
 
+    private bool AnyNPCInDialogue()
+    {
+        NPCInteract[] npcInteracts = FindObjectsOfType<NPCInteract>();
+        foreach (var npcInteract in npcInteracts)
+        {
+            if (npcInteract.inDialogue)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     private void UnlockNextObjectives(Objective completedObjective)
     {
