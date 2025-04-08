@@ -143,6 +143,8 @@ public class TestEvaluation : MonoBehaviour
 
     private void ShowEvaluationQuestion()
     {
+        ConfigureConflictingUI(false);
+
         // Store current cursor state
         previousLockState = Cursor.lockState;
         previousCursorVisibility = Cursor.visible;
@@ -197,6 +199,8 @@ public class TestEvaluation : MonoBehaviour
     }
 
     public void OnTextSubmitted(){
+
+        ConfigureConflictingUI(true);
 
         string textResponse = textInputField != null ? textInputField.text : "";
 
@@ -256,7 +260,16 @@ public class TestEvaluation : MonoBehaviour
             this.items = items;
         }
     }
-    
+
+    void ConfigureConflictingUI(bool unlock) {
+        LogManager logman = FindObjectOfType<LogManager>();
+
+        if (logman != null)
+            logman.ToggleLogMenu(false);
+
+        logman.UnlockLog(unlock);
+    }
+
     // Call this on application quit to ensure data is saved
     private void OnApplicationQuit()
     {
