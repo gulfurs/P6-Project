@@ -14019,8 +14019,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8959311595582126058, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
       propertyPath: 'npcDialogue.Array.data[5]'
-      value: I can see in my database that the village produce a similar fuel to
-        what we need
+      value: "I can see in my database that the village produce a similar *Gas\xF3leo*
+        to what we need"
       objectReference: {fileID: 0}
     - target: {fileID: 8984765902549585960, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
       propertyPath: m_LocalScale.x
@@ -22744,7 +22744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: npcDialogue.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[0]'
@@ -22760,11 +22760,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[3]'
-      value: And as a reward, you get your valuable fuel
+      value: By ordering their pet *Caranguejo* around.
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[4]'
-      value: Ajuda! Ajudem-me!
+      value: In return, you shall earn your valuable fuel
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[6]'
