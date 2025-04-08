@@ -70,7 +70,7 @@ public class LogManager : MonoBehaviour
         else
         {
             if (crabInterface != null)
-            Destroy(crabInterface);
+            Destroy(crabInterface.gameObject);
 
             Time.timeScale = 1f; // Resume game
             interactMan.UnlockInteract(true);

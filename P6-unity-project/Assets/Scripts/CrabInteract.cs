@@ -18,6 +18,7 @@ public class CrabInteract : InteractHandler
         {
             currentUI = Instantiate(commandUIPrefab);
             currentUI.GetComponent<CrabInterface>().crab = GetComponent<CrabHandler>();
+            logman.SetCrabInterface(commandUIPrefab.GetComponent<CrabInterface>());
         }
 
         logman.ToggleLogMenu(true);
