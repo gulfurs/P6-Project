@@ -6,18 +6,20 @@ using System.Linq;
 public class NPCInteract : InteractHandler
 {
     public TypeWriter typeWriter;
-    public List<string> npcDialogue;
+    [Copyable] public List<string> npcDialogue;
     private int dialogueIndex = 0;
     public bool inDialogue = false;
 
-    public PlayableDirector _timeline;
+    [Copyable] public PlayableDirector _timeline;
     private InteractManager interactMan;
+    private FirstPersonController firstPersonController;
 
     void Start()
     {
         dialogueIndex = 0;
         typeWriter = FindObjectOfType<TypeWriter>();
         interactMan = FindObjectOfType<InteractManager>();
+        firstPersonController = FindObjectOfType<FirstPersonController>();
     }
 
     public override void InteractLogic()
@@ -27,6 +29,7 @@ public class NPCInteract : InteractHandler
             GameManager.Instance.borders.Play("EnterBorder", 0, 0f);
             inDialogue = true;
             interactMan.UnlockInteract(false);
+            firstPersonController.UnlockMove(false);
             dialogueIndex = 0;
             ShowNextLine();
 
@@ -114,6 +117,7 @@ public class NPCInteract : InteractHandler
     {
         inDialogue = false;
         interactMan.UnlockInteract(true);
+        firstPersonController.UnlockMove(true);
         GameManager.Instance.borders.Play("ExitBorder", 0, 0f);
 
         // Optionally stop the timeline when the dialogue ends

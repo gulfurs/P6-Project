@@ -5,7 +5,54 @@ public class LastStep : TutorialStep
     public override void StartStep()
     {
         Debug.Log("Started Tutorial Step: " + stepName);
-        // HideBorders(); // If necessary
+
+        // Enable interactions
+        foreach (var handler in enableInteraction)
+        {
+            if (handler != null)
+            {
+                handler.interactable = true;
+            }
+        }
+
+        // Disable interactions
+        foreach (var handler in disableInteraction)
+        {
+            if (handler != null)
+            {
+                handler.interactable = false;
+            }
+        }
+
+        // Enable GameObjects
+        foreach (var go in enableGameObject)
+        {
+            if (go != null)
+            {
+                go.SetActive(true);
+            }
+        }
+
+        // Disable GameObjects
+        foreach (var go in disableGameObject)
+        {
+            if (go != null)
+            {
+                go.SetActive(false);
+            }
+        }
+
+
+        if (initiateTimeline != null)
+        {
+            initiateTimeline.time = 0;
+            initiateTimeline.Play();
+        }
+
+        if (initiateObjective != null)
+        {
+            ObjectiveManager.Instance.AddObjective(initiateObjective);
+        }
     }
 
     public override void UpdateStep(StarterAssetsInputs input)

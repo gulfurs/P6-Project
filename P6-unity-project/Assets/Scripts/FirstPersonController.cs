@@ -39,6 +39,7 @@ public class FirstPersonController : MonoBehaviour
     // Movement & Camera
     private Vector3 velocity;
     private float cameraPitch = 0f;
+    bool canMove = true;
 
     private void Awake()
     {
@@ -67,6 +68,8 @@ public class FirstPersonController : MonoBehaviour
     {
         GroundedCheck();
         JumpAndGravity();
+        if (!canMove)
+            return;
         Move();
     }
 
@@ -141,4 +144,6 @@ public class FirstPersonController : MonoBehaviour
             transform.Rotate(Vector3.up * mouseX);
         }
     }
+
+    public void UnlockMove(bool value) => canMove = value;
 }

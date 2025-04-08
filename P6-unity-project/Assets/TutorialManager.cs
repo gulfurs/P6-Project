@@ -72,8 +72,13 @@ public abstract class TutorialStep : MonoBehaviour
 
         public PlayableDirector initiateTimeline;
         public Objective initiateObjective;
+        public List<InteractHandler> enableInteraction;
+        public List<InteractHandler> disableInteraction;
 
-        private float lineTimer = 0f;
+        public List<GameObject> enableGameObject;
+        public List<GameObject> disableGameObject;
+
+    private float lineTimer = 0f;
         public float timeBetweenLines = 3f;
 
         void Start()
@@ -84,9 +89,45 @@ public abstract class TutorialStep : MonoBehaviour
 
         public virtual void StartStep()
         {
-            Debug.Log("Started Tutorial Step: " + stepName);
-            ShowBorders();
-            ShowNextLine();
+
+        Debug.Log("Started Tutorial Step: " + stepName);
+
+        // Enable interactions
+        foreach (var handler in enableInteraction)
+        {
+            if (handler != null)
+            {
+                handler.interactable = true;
+            }
+        }
+
+        // Disable interactions
+        foreach (var handler in disableInteraction)
+        {
+            if (handler != null)
+            {
+                handler.interactable = false;
+            }
+        }
+
+        // Enable GameObjects
+        foreach (var go in enableGameObject)
+        {
+            if (go != null)
+            {
+                go.SetActive(true);
+            }
+        }
+
+        // Disable GameObjects
+        foreach (var go in disableGameObject)
+        {
+            if (go != null)
+            {
+                go.SetActive(false);
+            }
+        }
+
 
         if (initiateTimeline != null)
         {
@@ -95,9 +136,20 @@ public abstract class TutorialStep : MonoBehaviour
         }
 
         if (initiateObjective != null)
-            {
+        {
             ObjectiveManager.Instance.AddObjective(initiateObjective);
+        }
+
+        NPCInteract[] npcInteracts = FindObjectsOfType<NPCInteract>();
+        foreach (var npcInteract in npcInteracts)
+        {
+            if (npcInteract.inDialogue)  // If any NPC is currently in dialogue
+            {
+                return;  // Exit early, don't update the tutorial step
             }
+        }
+            ShowBorders();
+            ShowNextLine();
         }
 
         public virtual void EndStep()
@@ -141,7 +193,7 @@ public abstract class TutorialStep : MonoBehaviour
         {
             if (lineTimer >= timeBetweenLines)
             {
-                stepCompleted = true;  // Mark the step as completed
+                //stepCompleted = true;  // Mark the step as completed
             }
         }
     }
