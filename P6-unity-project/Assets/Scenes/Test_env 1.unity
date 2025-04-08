@@ -1032,7 +1032,7 @@ Transform:
   m_GameObject: {fileID: 73234822}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.428711, y: -7.596915, z: -290.35703}
+  m_LocalPosition: {x: 7.428711, y: -7.38, z: -313}
   m_LocalScale: {x: 3.0718, y: 3.0718, z: 3.0718}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1370,7 +1370,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129723447}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.03622479, y: -0.6440256, z: 0.030554859, w: 0.76353467}
+  m_LocalRotation: {x: -0.000041533323, y: 0.9990764, z: -0.00096594484, w: -0.042957906}
   m_LocalPosition: {x: 749.31, y: 1.72, z: 352.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4082,8 +4082,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.03622479, y: -0.6440256, z: 0.030554859, w: 0.76353467}
-  m_LocalPosition: {x: 749.31, y: 1.72, z: 352.61}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 745.1933, y: 4.8100004, z: 199.79999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7410,7 +7410,7 @@ MonoBehaviour:
   - {fileID: 661941181}
   - {fileID: 661941179}
   - {fileID: 661941183}
-  - {fileID: 661941184}
+  - {fileID: 0}
   - {fileID: 661941187}
   - {fileID: 661941185}
 --- !u!114 &661941179
@@ -8071,7 +8071,7 @@ Transform:
   m_GameObject: {fileID: 718548408}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 745.1933, y: 4.8100004, z: 139}
+  m_LocalPosition: {x: 745.1933, y: 4.8100004, z: 199.79999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13915,7 +13915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5118732969852764795, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.985657
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5118732969852764795, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13923,7 +13923,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5118732969852764795, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -224.95703
+      value: -338.7
       objectReference: {fileID: 0}
     - target: {fileID: 5118732969852764795, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13961,6 +13961,34 @@ PrefabInstance:
       propertyPath: _timeline
       value: 
       objectReference: {fileID: 288213104}
+    - target: {fileID: 8959311595582126058, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      propertyPath: npcDialogue.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959311595582126058, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      propertyPath: 'npcDialogue.Array.data[0]'
+      value: Hey, Boss! You finally awake!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959311595582126058, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      propertyPath: 'npcDialogue.Array.data[1]'
+      value: Quite a crash we had
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959311595582126058, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      propertyPath: 'npcDialogue.Array.data[2]'
+      value: But not too long now 'til we're back on track.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959311595582126058, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      propertyPath: 'npcDialogue.Array.data[3]'
+      value: "All that\u2019s left is fueling up the pod back up *Gas\xF3leo fluid."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959311595582126058, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      propertyPath: 'npcDialogue.Array.data[4]'
+      value: "I can see on my radar that the village produce a similar *Gas\xF3leo"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959311595582126058, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      propertyPath: 'npcDialogue.Array.data[5]'
+      value: Go grab the fuel-can, and then head to the city....
+      objectReference: {fileID: 0}
     - target: {fileID: 8984765902549585960, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -15349,7 +15377,7 @@ Transform:
   m_GameObject: {fileID: 1515014692}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 745.1933, y: 4.01, z: 139}
+  m_LocalPosition: {x: 745.1933, y: 4.01, z: 199.79999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
