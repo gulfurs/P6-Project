@@ -363,7 +363,9 @@ public class CrabHandler : MonoBehaviour
         if (carriedObject != null)
         {
             carriedObject.transform.SetParent(null);
-            carriedObject.transform.position += Vector3.down * 0.5f; // Drop slightly
+            //carriedObject.transform.position += Vector3.down * 0.5f; // Drop slightly
+            Vector3 dropOffset = transform.forward * 1.5f + Vector3.down * 0.2f;
+            carriedObject.transform.position = transform.position + dropOffset;
 
             // Ensure it has a collider
             Collider col = carriedObject.GetComponent<Collider>();
