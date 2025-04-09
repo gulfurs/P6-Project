@@ -57,7 +57,7 @@ public class LastStep : TutorialStep
 
     public override void UpdateStep(StarterAssetsInputs input)
     {
-        // Do nothing specific for now in UpdateStep, event will handle it
+        
     }
 
     public override void EndStep()

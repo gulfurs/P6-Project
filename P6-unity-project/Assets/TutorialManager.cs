@@ -240,6 +240,7 @@ public abstract class TutorialStep : MonoBehaviour
     {
         NPCInteract[] npcInteracts = FindObjectsOfType<NPCInteract>();
 
+        for (int i = 0; i < 3; i++) yield return null;
         // Wait until none of them are in dialogue
         while (AnyNPCInDialogue(npcInteracts))
         {

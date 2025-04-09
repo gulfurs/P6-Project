@@ -16,8 +16,8 @@ public class CrabStep : TutorialStep
 
     public override void StartStep()
     {
-        base.StartStep();
         Crabman.InteractLogic();
+        StartCoroutine(WaitForDialogueAndContinue());
     }
 
     public override void UpdateStep(StarterAssetsInputs input)

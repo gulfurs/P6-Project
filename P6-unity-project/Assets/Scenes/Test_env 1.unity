@@ -1980,8 +1980,7 @@ MonoBehaviour:
   actorTypes:
   - Crab
   - 
-  objectiveList:
-  - {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
+  objectiveList: []
 --- !u!54 &184769366
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2360,8 +2359,7 @@ MonoBehaviour:
   actorTypes:
   - Crab
   - 
-  objectiveList:
-  - {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
+  objectiveList: []
 --- !u!54 &208408668
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3659,8 +3657,7 @@ MonoBehaviour:
   actorTypes:
   - Crab
   - 
-  objectiveList:
-  - {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
+  objectiveList: []
 --- !u!54 &293926531
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4241,8 +4238,7 @@ MonoBehaviour:
   actorTypes:
   - Crab
   - 
-  objectiveList:
-  - {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
+  objectiveList: []
 --- !u!54 &380264720
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5044,8 +5040,7 @@ MonoBehaviour:
   actorTypes:
   - Crab
   - 
-  objectiveList:
-  - {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
+  objectiveList: []
 --- !u!54 &443063203
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5598,8 +5593,6 @@ RectTransform:
   m_Children:
   - {fileID: 391826214}
   - {fileID: 1673908245}
-  - {fileID: 1308929875}
-  - {fileID: 1772036188}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5733,7 +5726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.5568628}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -6315,16 +6308,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3825390026240642931, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: objectiveList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3825390026240642931, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'objectiveList.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: 555e3c66134337a438fc14c9b00c3747, type: 2}
+    - target: {fileID: 3825390026240642931, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'objectiveList.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 31fe63b56b209a04f8146356ec8acffa, type: 2}
     - target: {fileID: 4791873189770746800, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: objectiveToWatch
       value: 
       objectReference: {fileID: 11400000, guid: be0ce70bdf0b85441accef8e8df14d9a, type: 2}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: RemoveOBJ
+      value: 
+      objectReference: {fileID: 11400000, guid: 31fe63b56b209a04f8146356ec8acffa, type: 2}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: tooltipText
       value: Press E to interact with Shop Owner
@@ -6336,7 +6337,7 @@ PrefabInstance:
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: ObjectiveProgress
       value: 
-      objectReference: {fileID: 11400000, guid: 555e3c66134337a438fc14c9b00c3747, type: 2}
+      objectReference: {fileID: 11400000, guid: 31fe63b56b209a04f8146356ec8acffa, type: 2}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: npcDialogue.Array.size
       value: 5
@@ -6459,8 +6460,7 @@ MonoBehaviour:
   actorTypes:
   - Crab
   - 
-  objectiveList:
-  - {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
+  objectiveList: []
 --- !u!54 &598536933
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7766,6 +7766,7 @@ MonoBehaviour:
   - {fileID: 661941187}
   - {fileID: 661941189}
   - {fileID: 661941188}
+  - {fileID: 661941185}
 --- !u!114 &661941179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7934,8 +7935,7 @@ MonoBehaviour:
   - {fileID: 2098926886}
   disableInteraction: []
   enableGameObject: []
-  disableGameObject:
-  - {fileID: 653417425}
+  disableGameObject: []
   timeBetweenLines: 3
   hasDialogue: 1
 --- !u!114 &661941186
@@ -7985,7 +7985,7 @@ MonoBehaviour:
   enableGameObject:
   - {fileID: 806123164}
   disableGameObject: []
-  timeBetweenLines: 3
+  timeBetweenLines: 1
   hasDialogue: 1
 --- !u!114 &661941188
 MonoBehaviour:
@@ -8000,29 +8000,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stepName: CRAP
-  tutorialLines: []
+  tutorialLines:
+  - Use logged words to command crabs
+  - Interact with crabs with 'E'
   initiateTimeline: {fileID: 0}
   initiateObjective: {fileID: 0}
-  enableInteraction:
-  - {fileID: 584639024}
-  - {fileID: 1014249880}
-  - {fileID: 462678360}
-  - {fileID: 1112760110}
-  - {fileID: 54508949}
-  - {fileID: 208408670}
-  - {fileID: 2120121851}
-  - {fileID: 598536935}
-  - {fileID: 293926533}
-  - {fileID: 1404045062}
-  - {fileID: 380264722}
-  - {fileID: 184769368}
-  - {fileID: 1560941990}
-  - {fileID: 2098926886}
+  enableInteraction: []
   disableInteraction: []
   enableGameObject: []
   disableGameObject: []
-  timeBetweenLines: 3
-  hasDialogue: 0
+  timeBetweenLines: 1
+  hasDialogue: 1
   crabGoals:
   - crab: {fileID: 443063206}
     desiredBehavior: 1
@@ -8917,6 +8905,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1308929875}
+  - {fileID: 1772036188}
   - {fileID: 903561958}
   - {fileID: 2054159886}
   - {fileID: 1394899339}
@@ -11579,16 +11569,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3825390026240642931, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: objectiveList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3825390026240642931, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'objectiveList.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: 7ab17fc68e42ad547802b1230983c21b, type: 2}
+    - target: {fileID: 3825390026240642931, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'objectiveList.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 31fe63b56b209a04f8146356ec8acffa, type: 2}
     - target: {fileID: 4791873189770746800, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: objectiveToWatch
       value: 
       objectReference: {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: RemoveOBJ
+      value: 
+      objectReference: {fileID: 11400000, guid: 31fe63b56b209a04f8146356ec8acffa, type: 2}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: tooltipText
       value: Press E to interact with Cat Owner
@@ -11600,7 +11598,7 @@ PrefabInstance:
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: ObjectiveProgress
       value: 
-      objectReference: {fileID: 11400000, guid: 7ab17fc68e42ad547802b1230983c21b, type: 2}
+      objectReference: {fileID: 11400000, guid: 31fe63b56b209a04f8146356ec8acffa, type: 2}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: npcDialogue.Array.size
       value: 5
@@ -12873,16 +12871,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3825390026240642931, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: objectiveList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3825390026240642931, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'objectiveList.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: abd10748a2af64748ae46d1a305fb8ec, type: 2}
+    - target: {fileID: 3825390026240642931, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'objectiveList.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 31fe63b56b209a04f8146356ec8acffa, type: 2}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: RemoveOBJ
+      value: 
+      objectReference: {fileID: 11400000, guid: 31fe63b56b209a04f8146356ec8acffa, type: 2}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: tooltipText
       value: Press E to interact with Stranger
       objectReference: {fileID: 0}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: ObjectiveProgress
+      value: 
+      objectReference: {fileID: 11400000, guid: 31fe63b56b209a04f8146356ec8acffa, type: 2}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: npcDialogue.Array.size
       value: 4
@@ -14591,14 +14601,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308929874}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 534977841}
   - {fileID: 2000033183}
-  m_Father: {fileID: 475192496}
+  m_Father: {fileID: 736461730}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14619,7 +14629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.5568628}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -15273,8 +15283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8959311595582126058, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
       propertyPath: 'npcDialogue.Array.data[6]'
-      value: There is a nearby location approximately 3 kilometers to the north where
-        fuel can be sourced.
+      value: Fuel can be sourced 3 kilometers to the north.
       objectReference: {fileID: 0}
     - target: {fileID: 8959311595582126058, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
       propertyPath: 'npcDialogue.Array.data[7]'
@@ -15610,8 +15619,7 @@ MonoBehaviour:
   actorTypes:
   - Crab
   - 
-  objectiveList:
-  - {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
+  objectiveList: []
 --- !u!54 &1404045060
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17646,8 +17654,7 @@ MonoBehaviour:
   actorTypes:
   - Crab
   - 
-  objectiveList:
-  - {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
+  objectiveList: []
 --- !u!54 &1560941988
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24970,12 +24977,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1772036185}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 475192496}
+  m_Father: {fileID: 736461730}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -27866,20 +27873,32 @@ PrefabInstance:
       value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1443654185466013936, guid: ec4950e371a44be478046900dca42851, type: 3}
-      propertyPath: ObjectiveProgress
-      value: 
+      propertyPath: tooltipText
+      value: Press E to interact with Townleader
       objectReference: {fileID: 0}
     - target: {fileID: 1443654185466013936, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: ObjectiveProgress
+      value: 
+      objectReference: {fileID: 11400000, guid: 789f2fc5d99332b4fb99f55b63a3c5af, type: 2}
+    - target: {fileID: 1443654185466013936, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: npcDialogue.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1443654185466013936, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[0]'
-      value: Thanks for helping us
+      value: Nice! *Deixa-Cair means to drop
       objectReference: {fileID: 0}
     - target: {fileID: 1443654185466013936, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[1]'
-      value: Obrigado!
+      value: I've granted you Gasoleo fuel for your efforts.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443654185466013936, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'npcDialogue.Array.data[2]'
+      value: Help others and they will give Gasoleo in return.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443654185466013936, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: 'npcDialogue.Array.data[3]'
+      value: Cause that is what we believe in, in this town.
       objectReference: {fileID: 0}
     - target: {fileID: 2251161944625243377, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27940,10 +27959,10 @@ PrefabInstance:
     - target: {fileID: 4791873189770746800, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: objectiveToWatch
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 08c40fb8d195eab4687879b2185411a5, type: 2}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: tooltipText
-      value: Press E to interact with Stranger
+      value: Press E to interact with Townleader
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: interactable
@@ -27959,35 +27978,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: npcDialogue.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[0]'
-      value: Welcome, stranger to our humble *Cidade in this endless desert
+      value: Welcome, stranger to our humble town!
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[1]'
-      value: "The pessoas in here works under the open *c\xE9u to survive"
+      value: Gasoleo? Yes we offer Gasoleo.
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[2]'
-      value: Can you help the *pessoas* with their problems
+      value: But not for free.
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[3]'
-      value: By ordering their pet *Caranguejo* around.
+      value: Let me teach you our ways, and I'll tell you all about it.
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[4]'
-      value: In return, you shall earn your valuable fuel
+      value: Crabs around this place are loyal.
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[5]'
-      value: In return, you shall earn your valuable fuel
+      value: Give the crabs orders in our language and they will listen
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[6]'
-      value: Pequena familia de caranguejo.
+      value: Try it out, tell the crab behind me to *Deixa-cair
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'npcDialogue.Array.data[7]'
@@ -28297,7 +28316,7 @@ Transform:
   m_GameObject: {fileID: 2098926878}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -11.83, y: -16.777493, z: 12.219971}
+  m_LocalPosition: {x: -12.42, y: -16.777493, z: 20.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -28345,8 +28364,7 @@ MonoBehaviour:
   actorTypes:
   - Crab
   - 
-  objectiveList:
-  - {fileID: 11400000, guid: 7aaea5733d71549459d2f999afabadbc, type: 2}
+  objectiveList: []
 --- !u!54 &2120121849
 Rigidbody:
   m_ObjectHideFlags: 0
