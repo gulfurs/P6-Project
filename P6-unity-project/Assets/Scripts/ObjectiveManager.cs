@@ -44,6 +44,11 @@ public class ObjectiveManager : MonoBehaviour
     {
         foreach (Objective startObjective in startObjectives)
         {
+            if (startObjective == null)
+            {
+                Debug.LogWarning("Null objective found in startObjectives list.");
+                continue;
+            }
             AddObjective(startObjective);
         }
         UpdateXPUI();
