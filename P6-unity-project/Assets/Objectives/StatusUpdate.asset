@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: StatusUpdate
   m_EditorClassIdentifier: Assembly-CSharp::Objective
-  objectiveName: Speak with Di4mond
+  objectiveName: 'Learning the steps: Make Crab drop ball'
   description: 
-  currentProgress: 0
   goal: 1
   nextObjectives:
   - {fileID: 11400000, guid: 789f2fc5d99332b4fb99f55b63a3c5af, type: 2}
-  isUnlocked: 0
+  xp: 0

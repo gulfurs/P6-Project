@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: PickUp
   m_EditorClassIdentifier: Assembly-CSharp::Objective
-  objectiveName: 'Learning the steps: Pick up Flare'
+  objectiveName: 'Learning the steps: Pick up Medkit'
   description: 
   goal: 1
   nextObjectives: []

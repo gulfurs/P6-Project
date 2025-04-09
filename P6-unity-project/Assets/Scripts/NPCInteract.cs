@@ -13,6 +13,7 @@ public class NPCInteract : InteractHandler
     [Copyable] public PlayableDirector _timeline;
     private InteractManager interactMan;
     private FirstPersonController firstPersonController;
+    public Objective RemoveOBJ;
 
     void Start()
     {
@@ -32,6 +33,14 @@ public class NPCInteract : InteractHandler
             firstPersonController.UnlockMove(false);
             dialogueIndex = 0;
             ShowNextLine();
+
+            // What's wrong with this?:
+            Actor actor = GetComponent<Actor>();
+            if (actor != null && actor.objectiveList.Contains(RemoveOBJ) && RemoveOBJ != null)
+            {
+                actor.objectiveList.Remove(RemoveOBJ);
+            }
+
 
             if (_timeline != null)
             {

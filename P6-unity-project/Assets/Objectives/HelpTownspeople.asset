@@ -9,12 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: StupidCrab
-  m_EditorClassIdentifier: Assembly-CSharp::Objective
-  objectiveName: Speak with the Townleader
+  m_Script: {fileID: 11500000, guid: 97499676d5b22274ba4463d38c015924, type: 3}
+  m_Name: HelpTownspeople
+  m_EditorClassIdentifier: 
+  objectiveName: Help Townspeople around the town
   description: 
-  goal: 1
-  nextObjectives:
-  - {fileID: 11400000, guid: 31fe63b56b209a04f8146356ec8acffa, type: 2}
+  goal: 3
+  nextObjectives: []
   xp: 0

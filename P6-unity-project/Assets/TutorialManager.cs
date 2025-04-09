@@ -78,8 +78,9 @@ public abstract class TutorialStep : MonoBehaviour
         public List<GameObject> enableGameObject;
         public List<GameObject> disableGameObject;
 
-    private float lineTimer = 0f;
+        private float lineTimer = 0f;
         public float timeBetweenLines = 3f;
+        public bool hasDialogue = true;
 
         void Start()
         {
@@ -90,6 +91,31 @@ public abstract class TutorialStep : MonoBehaviour
         public virtual void StartStep()
         {
 
+        EnableAndDisable();
+
+        NPCInteract[] npcInteracts = FindObjectsOfType<NPCInteract>();
+        foreach (var npcInteract in npcInteracts)
+        {
+            if (npcInteract.inDialogue)  // If any NPC is currently in dialogue
+            {
+                return;  // Exit early, don't update the tutorial step
+            }
+        }
+            if (hasDialogue)
+            {
+            ShowBorders();
+            ShowNextLine();
+            }
+        }
+
+        public virtual void EndStep()
+        {
+            Debug.Log("Ended Tutorial Step: " + stepName);
+            HideBorders();
+        }
+
+    public void EnableAndDisable()
+    {
         Debug.Log("Started Tutorial Step: " + stepName);
 
         // Enable interactions
@@ -139,24 +165,7 @@ public abstract class TutorialStep : MonoBehaviour
         {
             ObjectiveManager.Instance.AddObjective(initiateObjective);
         }
-
-        NPCInteract[] npcInteracts = FindObjectsOfType<NPCInteract>();
-        foreach (var npcInteract in npcInteracts)
-        {
-            if (npcInteract.inDialogue)  // If any NPC is currently in dialogue
-            {
-                return;  // Exit early, don't update the tutorial step
-            }
-        }
-            ShowBorders();
-            ShowNextLine();
-        }
-
-        public virtual void EndStep()
-        {
-            Debug.Log("Ended Tutorial Step: " + stepName);
-            HideBorders();
-        }
+    }
 
     public virtual void UpdateStep(StarterAssetsInputs input)
     {
@@ -226,4 +235,33 @@ public abstract class TutorialStep : MonoBehaviour
 
         tutorialIndex++;
         }
+
+    public IEnumerator WaitForDialogueAndContinue()
+    {
+        NPCInteract[] npcInteracts = FindObjectsOfType<NPCInteract>();
+
+        for (int i = 0; i < 3; i++) yield return null;
+        // Wait until none of them are in dialogue
+        while (AnyNPCInDialogue(npcInteracts))
+        {
+            yield return null; // wait for the next frame
+        }
+        EnableAndDisable();
+
+            if (hasDialogue)
+        {
+            ShowBorders();
+            ShowNextLine();
+        }
+    }
+
+    private bool AnyNPCInDialogue(NPCInteract[] npcInteracts)
+    {
+        foreach (var npc in npcInteracts)
+        {
+            if (npc.inDialogue)
+                return true;
+        }
+        return false;
+    }
 }

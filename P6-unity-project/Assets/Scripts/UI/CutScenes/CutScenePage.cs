@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
-
+using UnityEngine.SceneManagement;
 public class CutScenePage : MonoBehaviour
  {
     [System.Serializable]
@@ -129,6 +129,6 @@ public class CutScenePage : MonoBehaviour
 
     void EndCutscene()
     {
-        Debug.Log("Cutscene finished, go to gameplay!");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
