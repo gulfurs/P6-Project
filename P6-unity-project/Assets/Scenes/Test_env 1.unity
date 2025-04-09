@@ -10005,7 +10005,7 @@ GameObject:
   - component: {fileID: 841070398}
   - component: {fileID: 841070404}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Ball Sphere
   m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10115,7 +10115,7 @@ Transform:
   m_GameObject: {fileID: 841070397}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 774.06, y: 0.42, z: 522.31}
+  m_LocalPosition: {x: 773.43, y: 0.58, z: 522.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10137,7 +10137,7 @@ MonoBehaviour:
   actorTypes:
   - Ball
   objectiveList:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 08c40fb8d195eab4687879b2185411a5, type: 2}
 --- !u!1 &841342540
 GameObject:
   m_ObjectHideFlags: 0
@@ -26042,7 +26042,7 @@ Transform:
   m_GameObject: {fileID: 1938267806}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.70710677, z: -0.0000000037252907, w: 0.7071069}
-  m_LocalPosition: {x: -12.539246, y: -22.917494, z: 13.99}
+  m_LocalPosition: {x: -12.539246, y: -22.917494, z: 21.4}
   m_LocalScale: {x: 7.307369, y: 4.2244, z: 8.333054}
   m_ConstrainProportionsScale: 0
   m_Children: []
