@@ -151,15 +151,15 @@ MonoBehaviour:
   pages:
   - image: {fileID: 21300000, guid: 17ee8ccdee80c934ba0c00c63087a943, type: 3}
     texts:
-    - What date it is were quickly lost when the sand rapture happened,
+    - What day it was were quickly forgotten when the sand rapture began,
     - many things were lost, no one know exactly how or why it happened, but the
       world slowly started to get covered in sand,
     - each day putting a new layers on the world...
   - image: {fileID: 21300000, guid: bfc9dca1fbe8c1740b59a188fc5434df, type: 3}
     texts:
     - ...first we lost the oceans, and then it started coming for our homes,
-    - most people struggled to survive and lastly there was almost nothing left but
-      the endless stretching dunes.
+    - then our lives, most people struggled to survive and lastly there was almost
+      nothing left but the endless stretching dunes.
   - image: {fileID: 21300000, guid: d5401e5098b111546bf5475f45243172, type: 3}
     texts:
     - People were dying left and right, and when factions wasn't looking for food
@@ -172,7 +172,7 @@ MonoBehaviour:
     texts:
     - When things look most bleak, is when it happened, All-Mother and All-Father
       showed up.
-    - Noonr knew exactly where they come from, but they quickly got a following,
+    - No one knew exactly where they come from, but they quickly got a following,
       and soon there was a clear message "join us or get lost".
   - image: {fileID: 21300000, guid: 99bb59a0ea143c245840a4c26c883ddb, type: 3}
     texts:
@@ -189,11 +189,11 @@ MonoBehaviour:
   - image: {fileID: 21300000, guid: cbf4f9ad2f02e1d4a8e5ec34c8be6435, type: 3}
     texts:
     - It did not take long before i got a job as a protector of the train,
-    - it was nice, it gave fresh air, and i could look over the endless dunes...
+    - it was nice, fresh air, and a veiw over the endless dunes...
   - image: {fileID: 21300000, guid: 3148fa57ebd81454cb9255aeffb883a2, type: 3}
     texts:
-    - The All-Father in his speeches had said many times that noone survives in the
-      dunes,
+    - The All-Father in his speeches had said many times that no one survives in
+      the dunes,
     - but i could swear i sometimes saw people in all white walking together with
       what looked like crabs.
     - But All-Father say they dont exist, and we should always trust that.
@@ -212,15 +212,15 @@ MonoBehaviour:
     texts:
     - There have been threats from other factions about blowing up our train.
     - The train is our lively hood, how can we survive without it?
-    - '*Before you you know it, you hear a big boom,*'
-    - '*and then all turns black...*'
+    - '*Before you know it, you hear a big boom,*'
+    - '*that when everything turns to black...*'
   background: {fileID: 1519713974}
   dialogueText: {fileID: 1170231278}
   audioSource: {fileID: 1609088556}
   typeSound: {fileID: 8300000, guid: b6e49c418b8ef724f8878a77cf56c9de, type: 3}
   typeSoundVolume: 1
   pitchVariation: 1.1
-  typingSpeed: 0.1
+  typingSpeed: 0.05
   skipPunctuationDelay: 1
 --- !u!4 &8361878
 Transform:
