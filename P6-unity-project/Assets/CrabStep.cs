@@ -11,6 +11,14 @@ public class CrabStep : TutorialStep
     }
 
     public List<CrabGoal> crabGoals;
+    public NPCInteract Crabman;
+    public Objective OBJ;
+
+    public override void StartStep()
+    {
+        base.StartStep();
+        Crabman.InteractLogic();
+    }
 
     public override void UpdateStep(StarterAssetsInputs input)
     {
@@ -31,6 +39,11 @@ public class CrabStep : TutorialStep
 
         if (allMatch)
         {
+            if (OBJ != null)
+            {
+                ObjectiveManager.Instance.UpdateObjectiveProgress(OBJ, 1);
+            }
+
             stepCompleted = true;
             Debug.Log("All crabs reached their assigned behaviors. Step complete!");
         }
