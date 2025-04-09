@@ -518,17 +518,6 @@
                 },
                 {
                     "name": "",
-                    "id": "7640cc61-fc2a-48ea-a7c5-7b69299e41f0",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";KeyboardMouse",
-                    "action": "Log",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "8539d4d9-6260-4b59-bfa0-5234b0a53648",
                     "path": "<Gamepad>/rightShoulder",
                     "interactions": "",

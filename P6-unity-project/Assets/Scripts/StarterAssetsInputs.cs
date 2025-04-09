@@ -17,8 +17,12 @@ using UnityEngine.InputSystem;
 		[Header("Mouse Cursor Settings")]
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
-		
+
 		//STANDARD MOVEMENT
+
+		void Start() {
+		SetCursorState(true);
+		}
 
 		public void OnMove(InputValue value)
 		{
