@@ -149,53 +149,79 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pages:
-  - image: {fileID: 21300000, guid: 992f4a93ced2e664f9434b8a1acefb58, type: 3}
+  - image: {fileID: 21300000, guid: 17ee8ccdee80c934ba0c00c63087a943, type: 3}
     texts:
-    - For generations, the iron serpents of the Sandline Railroad had been the lifeblood
-      of this parched world
-    - ' connecting its scattered settlements across the endless dune'
-    - Today, Elias, a veteran conductor with the dust of countless journeys etched
-      into his face, stood ready.
-  - image: {fileID: 21300000, guid: 84693bb87eb1c0b45926dd1b8c330c29, type: 3}
+    - What date it is were quickly lost when the sand rapture happened,
+    - many things were lost, no one know exactly how or why it happened, but the
+      world slowly started to get covered in sand,
+    - each day putting a new layers on the world...
+  - image: {fileID: 21300000, guid: bfc9dca1fbe8c1740b59a188fc5434df, type: 3}
     texts:
-    - This morning's run was a vital one,
-    - carrying precious water and synth-minerals to the sister city of Xylos, nestled
-      beyond the treacherous Whispering Canyons
-  - image: {fileID: 21300000, guid: ade8bcf1fa923d5499c72aa1b4b7ffa6, type: 3}
+    - ...first we lost the oceans, and then it started coming for our homes,
+    - most people struggled to survive and lastly there was almost nothing left but
+      the endless stretching dunes.
+  - image: {fileID: 21300000, guid: d5401e5098b111546bf5475f45243172, type: 3}
     texts:
-    - elow, the endless ocean of dunes stretched out, beautiful yet unforgiving
-    - Elias knew the risks of the desert, the sudden sandstorms, the unpredictable
-      shifts in terrain... and the legends
-    - The bridge between worlds. A marvel of engineering, it sliced through the heart
-      of the desolate expanse
-    - ' The wind seemed to carry whispers, tales of creatures that lurked beneath
-      the surface.'
-  - image: {fileID: 21300000, guid: dc03c0104d175774fa1ae4a90d4a5a7e, type: 3}
+    - People were dying left and right, and when factions wasn't looking for food
+      and water,
+    - they were discussing what could have caused this. Some had their answer in
+      science, others blamed higher powers.
+    - Sometimes mid discussion, you even had a blanted hint of melancholy for what
+      we lost as humanity.
+  - image: {fileID: 21300000, guid: 53250f8f90ceb8b49838e73e0721c292, type: 3}
     texts:
-    - Not with the wind, but with something vast and powerful rising from the depths.
-    - Tentacles, thick as the train cars themselves, erupted from the dunes, their
-      chitinous surfaces glistening under the harsh sunlight
-  - image: {fileID: 21300000, guid: b233353dfa697df429b99d0c285d0dd4, type: 3}
+    - When things look most bleak, is when it happened, All-Mother and All-Father
+      showed up.
+    - Noonr knew exactly where they come from, but they quickly got a following,
+      and soon there was a clear message "join us or get lost".
+  - image: {fileID: 21300000, guid: 99bb59a0ea143c245840a4c26c883ddb, type: 3}
     texts:
-    - ' A creature of nightmare, a legend made real. Its eyeless head, a monstrous
-      bulb of muscle and teeth'
-    - rose above the track, its many limbs lashing out with terrifying speed.
-  - image: {fileID: 21300000, guid: c2d3e8b9f79775a469f50617aacb2706, type: 3}
+    - 'A giant city were constructed with promise of jobs to everyone, food and water
+      was quickly rationed, but something seemed off, '
+    - and it did not take long, for our new city called Barbaralados to get full...
+  - image: {fileID: 21300000, guid: 0e431cc7cd170a64e8f5ca9f8bb99a80, type: 3}
     texts:
-    - A massive tentacle slammed into the side of the engine, sending him hurtling
-      into the abyss
-    - '"Elias. He was somewhere in this desolate landscape, thrown from his train'
-    - ' his life hanging precariously in the balance'
-    - ' The desert, once his familiar route, had become his battleground.'
-    - This was not the end of his journey. It was the beginning
+    - ...just about then All-Mother and All-Father, began talking about the prophecy
+      of creating more, and a new giant city was beginning to be constructed.
+    - It is connected by a simple train was running between them, a single track,
+      connecting them together,
+    - keeping the two city forever trading.
+  - image: {fileID: 21300000, guid: cbf4f9ad2f02e1d4a8e5ec34c8be6435, type: 3}
+    texts:
+    - It did not take long before i got a job as a protector of the train,
+    - it was nice, it gave fresh air, and i could look over the endless dunes...
+  - image: {fileID: 21300000, guid: 3148fa57ebd81454cb9255aeffb883a2, type: 3}
+    texts:
+    - The All-Father in his speeches had said many times that noone survives in the
+      dunes,
+    - but i could swear i sometimes saw people in all white walking together with
+      what looked like crabs.
+    - But All-Father say they dont exist, and we should always trust that.
+    - That is atleast whats said on the posters.
+  - image: {fileID: 21300000, guid: 84bf37dffa98cb34e8699fd2027a68b2, type: 3}
+    texts:
+    - Brim-bot says to trust the All-Father, or "dad" as he is called in daily talk.
+    - And Brim-bot is a robot companion made for the trains,
+    - so he should know what he is talking about.
+  - image: {fileID: 21300000, guid: 9e991943b813acc468cf1747b7800d2d, type: 3}
+    texts:
+    - I have a fear this is going to be my last trip.
+    - See it seems that other factions survived and esablished their own cities,
+    - and we are now on the war path...
+  - image: {fileID: 21300000, guid: dc59b08dd6ad1d74e951459c6ebd347d, type: 3}
+    texts:
+    - There have been threats from other factions about blowing up our train.
+    - The train is our lively hood, how can we survive without it?
+    - '*Before you you know it, you hear a big boom,*'
+    - '*and then all turns black...*'
   background: {fileID: 1519713974}
   dialogueText: {fileID: 1170231278}
   audioSource: {fileID: 1609088556}
-  typeSound: {fileID: 8300000, guid: e83a937cbfc81764d9f748d3b199e769, type: 3}
-  typeSoundVolume: 0.5
+  typeSound: {fileID: 8300000, guid: b6e49c418b8ef724f8878a77cf56c9de, type: 3}
+  typeSoundVolume: 1
   pitchVariation: 1.1
-  typingSpeed: 0.08
-  skipPunctuationDelay: 0
+  typingSpeed: 0.1
+  skipPunctuationDelay: 1
 --- !u!4 &8361878
 Transform:
   m_ObjectHideFlags: 0
@@ -451,8 +477,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: SAmple Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -476,8 +502,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -558,6 +584,8 @@ GameObject:
   - component: {fileID: 1398976108}
   - component: {fileID: 1398976107}
   - component: {fileID: 1398976106}
+  - component: {fileID: 1398976110}
+  - component: {fileID: 1398976109}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -639,6 +667,147 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1398976109
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398976105}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f0631da481b4eb845938671ecbdafe53, type: 3}
+  m_Resource: {fileID: 8300000, guid: f0631da481b4eb845938671ecbdafe53, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.087
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1398976110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398976105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &1519713971
 GameObject:
   m_ObjectHideFlags: 0
