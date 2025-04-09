@@ -227,6 +227,9 @@ public class TestEvaluation : MonoBehaviour
         isPaused = false;
     }
 
+    // Add this as a new class variable at the top with other private variables
+    private string currentSessionFilename = "";
+
     private void SaveEvaluationData()
     {
         // Get the application data path which points to the project folder
@@ -240,14 +243,30 @@ public class TestEvaluation : MonoBehaviour
             Debug.Log("Directory does not exist, creating: " + directory);
             Directory.CreateDirectory(directory);
         }
-            
-        string filename = Path.Combine(directory, participantID + "_evaluation_data.json");
-                        
-        string jsonData = JsonUtility.ToJson(new SerializableList<EvaluationData>(evaluationResults), true);
-        File.WriteAllText(filename, jsonData);
         
-        Debug.Log("Evaluation data saved to: " + filename);
-}
+        // Only generate a filename once per play session
+        if (string.IsNullOrEmpty(currentSessionFilename))
+        {
+            string baseFilename = participantID;
+            string filename = Path.Combine(directory, baseFilename + "_evaluation_data.json");
+            
+            // Check if file exists - if so, append incrementing number
+            int suffix = 1;
+            while (File.Exists(filename))
+            {
+                string newParticipantID = baseFilename + "_" + suffix;
+                filename = Path.Combine(directory, newParticipantID + "_evaluation_data.json");
+                suffix++;
+            }
+            
+            currentSessionFilename = filename;
+        }
+        
+        string jsonData = JsonUtility.ToJson(new SerializableList<EvaluationData>(evaluationResults), true);
+        File.WriteAllText(currentSessionFilename, jsonData);
+        
+        Debug.Log("Evaluation data saved to: " + currentSessionFilename);
+    }
 
     // Helper class to serialize lists
     [Serializable]

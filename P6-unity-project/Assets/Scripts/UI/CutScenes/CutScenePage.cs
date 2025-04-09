@@ -129,6 +129,21 @@ public class CutScenePage : MonoBehaviour
 
     void EndCutscene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        // Start the coroutine that loads the next scene asynchronously.
+        StartCoroutine(LoadNextSceneAsync());
+    }
+
+    IEnumerator LoadNextSceneAsync()
+    {
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        // Start the asynchronous load operation.
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(nextSceneIndex);
+
+        // Optionally, you can wait until the asynchronous operation completes.
+        while (!asyncLoad.isDone)
+        {
+            // Here, you could update a loading bar, if desired.
+            yield return null;
+        }
     }
 }
