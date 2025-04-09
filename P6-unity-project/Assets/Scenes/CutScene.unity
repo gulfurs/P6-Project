@@ -152,39 +152,39 @@ MonoBehaviour:
   - image: {fileID: 21300000, guid: 17ee8ccdee80c934ba0c00c63087a943, type: 3}
     texts:
     - What day it was were quickly forgotten when the sand rapture began,
-    - many things were lost, no one know exactly how or why it happened, but the
-      world slowly started to get covered in sand,
-    - each day putting a new layers on the world...
+    - many things were lost, no one knew exactly how or why it happened, but the
+      world slowly started to get cover in sand,
+    - each day putting new layers on the world...
   - image: {fileID: 21300000, guid: bfc9dca1fbe8c1740b59a188fc5434df, type: 3}
     texts:
     - ...first we lost the oceans, and then it started coming for our homes,
-    - then our lives, most people struggled to survive and lastly there was almost
+    - then our lives...., most people struggle to survive and lastly there was almost
       nothing left but the endless stretching dunes.
   - image: {fileID: 21300000, guid: d5401e5098b111546bf5475f45243172, type: 3}
     texts:
-    - People were dying left and right, and when factions wasn't looking for food
+    - People were dying left and right, and the factions weren't looking for food
       and water,
-    - they were discussing what could have caused this. Some had their answer in
-      science, others blamed higher powers.
-    - Sometimes mid discussion, you even had a blanted hint of melancholy for what
-      we lost as humanity.
+    - they were discussing what could have caused the rapture. Some had their answer
+      in science, others blames the higher power.
+    - Sometimes mid discussion, you get a hint of melancholy for what we lost as
+      humanity.
   - image: {fileID: 21300000, guid: 53250f8f90ceb8b49838e73e0721c292, type: 3}
     texts:
-    - When things look most bleak, is when it happened, All-Mother and All-Father
+    - When things look the bleakest, is when it happened, All-Mother and All-Father
       showed up.
-    - No one knew exactly where they come from, but they quickly got a following,
-      and soon there was a clear message "join us or get lost".
+    - No one knew exactly where they came from, but they quickly gain a following,
+      and soon a clear message "join us or get lost" echoed throughout.
   - image: {fileID: 21300000, guid: 99bb59a0ea143c245840a4c26c883ddb, type: 3}
     texts:
-    - 'A giant city were constructed with promise of jobs to everyone, food and water
+    - 'A giant city was constructed with promise of jobs to everyone, food and water
       was quickly rationed, but something seemed off, '
-    - and it did not take long, for our new city called Barbaralados to get full...
+    - and it did not take long, for our new city called "Barbaralados" to get populated...
   - image: {fileID: 21300000, guid: 0e431cc7cd170a64e8f5ca9f8bb99a80, type: 3}
     texts:
-    - ...just about then All-Mother and All-Father, began talking about the prophecy
+    - ...this is when All-Mother and All-Father, began talking about the prophecy
       of creating more, and a new giant city was beginning to be constructed.
-    - It is connected by a simple train was running between them, a single track,
-      connecting them together,
+    - The cities are connected by a simple train, a single track running between
+      them,
     - keeping the two city forever trading.
   - image: {fileID: 21300000, guid: cbf4f9ad2f02e1d4a8e5ec34c8be6435, type: 3}
     texts:
@@ -192,28 +192,29 @@ MonoBehaviour:
     - it was nice, fresh air, and a veiw over the endless dunes...
   - image: {fileID: 21300000, guid: 3148fa57ebd81454cb9255aeffb883a2, type: 3}
     texts:
-    - The All-Father in his speeches had said many times that no one survives in
+    - All-Father in his speeches had repeated many times that no one survives in
       the dunes,
-    - but i could swear i sometimes saw people in all white walking together with
+    - but I could swear I sometimes see people in all white walking together with
       what looked like crabs.
     - But All-Father say they dont exist, and we should always trust that.
-    - That is atleast whats said on the posters.
+    - That is atleast what the poster says.
   - image: {fileID: 21300000, guid: 84bf37dffa98cb34e8699fd2027a68b2, type: 3}
     texts:
-    - Brim-bot says to trust the All-Father, or "dad" as he is called in daily talk.
-    - And Brim-bot is a robot companion made for the trains,
+    - Brim-bot say to trust the All-Father, or "dad" as he is called in him in our
+      daily talks.
+    - And Brim-bot is a robot companion made for the train,
     - so he should know what he is talking about.
   - image: {fileID: 21300000, guid: 9e991943b813acc468cf1747b7800d2d, type: 3}
     texts:
-    - I have a fear this is going to be my last trip.
-    - See it seems that other factions survived and esablished their own cities,
-    - and we are now on the war path...
+    - I fear this is going to be my last trip.
+    - It seems that the other factions survived and esablished their own cities,
+    - The only path is war
   - image: {fileID: 21300000, guid: dc59b08dd6ad1d74e951459c6ebd347d, type: 3}
     texts:
     - There have been threats from other factions about blowing up our train.
     - The train is our lively hood, how can we survive without it?
     - '*Before you know it, you hear a big boom,*'
-    - '*that when everything turns to black...*'
+    - '*that''s when everything turns to black...*'
   background: {fileID: 1519713974}
   dialogueText: {fileID: 1170231278}
   audioSource: {fileID: 1609088556}
