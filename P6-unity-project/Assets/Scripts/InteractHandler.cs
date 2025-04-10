@@ -16,6 +16,7 @@ public class InteractHandler : MonoBehaviour
             ObjectiveManager.Instance.UpdateObjectiveProgress(ObjectiveProgress, 1);
 
             Debug.Log($"Objective '{ObjectiveProgress.objectiveName}' updated or completed.");
+            ObjectiveProgress = null;
         }
 
         if (ObjectiveStart != null)

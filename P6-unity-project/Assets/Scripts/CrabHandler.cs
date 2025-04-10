@@ -381,6 +381,11 @@ public class CrabHandler : MonoBehaviour
                 rb = carriedObject.AddComponent<Rigidbody>();
             }
 
+            EquipInteract equip = carriedObject.GetComponent<EquipInteract>();
+            if (equip != null) {
+                equip.interactable = true;
+            }
+
             // Apply a small downward force for realism
             rb.linearVelocity = Vector3.down * 2f;
 
