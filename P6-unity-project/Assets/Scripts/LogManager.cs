@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -103,8 +104,8 @@ public class LogManager : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        // Rebuild UI from logEntries list
-        foreach (var entry in logEntries)
+        // Rebuild UI from logEntries list, sorted alphabetically
+        foreach (var entry in logEntries.OrderBy(e => e.wordOfInterest))
         {
             GameObject logInstance = Instantiate(logPrefab, contentPanel);
             Button button = logInstance.GetComponent<Button>();

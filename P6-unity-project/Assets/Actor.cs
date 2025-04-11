@@ -12,6 +12,7 @@ public class Actor : MonoBehaviour
 
     void Start()
     {
+        ActorManager.Instance.RegisterActor(this);
         target = gameObject;
         outline = GetComponent<Outline>();
     }

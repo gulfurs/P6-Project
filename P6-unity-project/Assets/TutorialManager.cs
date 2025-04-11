@@ -90,7 +90,8 @@ public abstract class TutorialStep : MonoBehaviour
 
         public virtual void StartStep()
         {
-
+        typeWriter = FindObjectOfType<TypeWriter>();
+        borders = GameManager.Instance.borders;
         EnableAndDisable();
 
         NPCInteract[] npcInteracts = FindObjectsOfType<NPCInteract>();
