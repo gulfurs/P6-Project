@@ -9,12 +9,13 @@ public class Actor : MonoBehaviour
     public List<string> actorTypes;
     public List<Objective> objectiveList; 
     private Outline outline;
+    public GameObject prefabReference;
 
     void Start()
     {
-        ActorManager.Instance.RegisterActor(this);
         target = gameObject;
         outline = GetComponent<Outline>();
+        ActorManager.Instance.RegisterActor(this);
     }
 
     public bool HasType(string type)
@@ -24,10 +25,10 @@ public class Actor : MonoBehaviour
 
     void Update()
     {
-        if (outline != null) { 
-        outline.enabled = ShouldHighlight(); 
-        }
+        if (outline == null || !this) return;
+        outline.enabled = ShouldHighlight();
     }
+
 
     private bool ShouldHighlight()
     {
