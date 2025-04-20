@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
         public bool affectFlee = true;  // Toggle whether the effect influences fleeing behavior
         public bool affectTarget = true; // Toggle whether the effect influences the target
         public AudioClip soundword;
+        public Sprite wordSprite;
     }
 
     private AudioSource audioSource; 

@@ -814,6 +814,75 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!1001 &115483131
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4202507611281119770, guid: f5aa3f2c0d644174a943507a3ee3a082, type: 3}
+      propertyPath: prefabReference
+      value: 
+      objectReference: {fileID: 8686600529231367967, guid: f5aa3f2c0d644174a943507a3ee3a082, type: 3}
+    - target: {fileID: 4222323973884478885, guid: f5aa3f2c0d644174a943507a3ee3a082, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 745.1933
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222323973884478885, guid: f5aa3f2c0d644174a943507a3ee3a082, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222323973884478885, guid: f5aa3f2c0d644174a943507a3ee3a082, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 205.55998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222323973884478885, guid: f5aa3f2c0d644174a943507a3ee3a082, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222323973884478885, guid: f5aa3f2c0d644174a943507a3ee3a082, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222323973884478885, guid: f5aa3f2c0d644174a943507a3ee3a082, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222323973884478885, guid: f5aa3f2c0d644174a943507a3ee3a082, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222323973884478885, guid: f5aa3f2c0d644174a943507a3ee3a082, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222323973884478885, guid: f5aa3f2c0d644174a943507a3ee3a082, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222323973884478885, guid: f5aa3f2c0d644174a943507a3ee3a082, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797787691134853049, guid: f5aa3f2c0d644174a943507a3ee3a082, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 236377273}
+    - target: {fileID: 8160334531922774954, guid: f5aa3f2c0d644174a943507a3ee3a082, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1515014698}
+    - target: {fileID: 8686600529231367967, guid: f5aa3f2c0d644174a943507a3ee3a082, type: 3}
+      propertyPath: m_Name
+      value: MamaCrab
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f5aa3f2c0d644174a943507a3ee3a082, type: 3}
 --- !u!1001 &118588772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3840,7 +3909,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 247
+    m_Bits: 215
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -3886,6 +3955,7 @@ MonoBehaviour:
   m_CameraType: 0
   m_Cameras:
   - {fileID: 554686919}
+  - {fileID: 1504279384}
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
@@ -5467,18 +5537,18 @@ Canvas:
   m_GameObject: {fileID: 475192492}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 1504279384}
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -2104767143
   m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &475192496
@@ -5985,7 +6055,7 @@ GameObject:
   - component: {fileID: 554686919}
   - component: {fileID: 554686917}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: WEAPONCAMERA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6003,7 +6073,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1504279382}
   m_Father: {fileID: 330585546}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &554686917
@@ -7631,6 +7702,7 @@ MonoBehaviour:
     affectFlee: 1
     affectTarget: 0
     soundword: {fileID: 8300000, guid: 64213636b0a2293458500948f1414ed4, type: 3}
+    wordSprite: {fileID: 0}
   - word: "\xC1rvore"
     crabBehavior: 1
     _target: {fileID: 0}
@@ -7638,6 +7710,7 @@ MonoBehaviour:
     affectFlee: 0
     affectTarget: 1
     soundword: {fileID: 8300000, guid: 40e378f5ca33dd7478d0c67bbe438f70, type: 3}
+    wordSprite: {fileID: 0}
   - word: Casa
     crabBehavior: 1
     _target: {fileID: 1405272156}
@@ -7645,6 +7718,7 @@ MonoBehaviour:
     affectFlee: 0
     affectTarget: 1
     soundword: {fileID: 8300000, guid: f176fe7a4422de34cb980f869352f8dd, type: 3}
+    wordSprite: {fileID: 0}
   - word: "V\xE1 para"
     crabBehavior: 4
     _target: {fileID: 0}
@@ -7652,6 +7726,7 @@ MonoBehaviour:
     affectFlee: 1
     affectTarget: 0
     soundword: {fileID: 8300000, guid: 92920e69ab4efdd449d95e5a5e03ebf0, type: 3}
+    wordSprite: {fileID: 0}
   - word: Deixa cair
     crabBehavior: 3
     _target: {fileID: 0}
@@ -7659,6 +7734,7 @@ MonoBehaviour:
     affectFlee: 1
     affectTarget: 0
     soundword: {fileID: 8300000, guid: fcbb94df5d8fa25468fd098bba18f277, type: 3}
+    wordSprite: {fileID: 0}
   - word: Venha aqui
     crabBehavior: 1
     _target: {fileID: 1515014692}
@@ -7666,6 +7742,7 @@ MonoBehaviour:
     affectFlee: 1
     affectTarget: 1
     soundword: {fileID: 8300000, guid: a67784a264c619c41bcd77d213e3b2d4, type: 3}
+    wordSprite: {fileID: 21300000, guid: d2729d63b01b80d479d70c8011dcb6ce, type: 3}
   - word: Segue
     crabBehavior: 1
     _target: {fileID: 1515014692}
@@ -7673,6 +7750,7 @@ MonoBehaviour:
     affectFlee: 1
     affectTarget: 0
     soundword: {fileID: 8300000, guid: 86c41eaf8b4ba08449ff927586fd9542, type: 3}
+    wordSprite: {fileID: 0}
   - word: Branco
     crabBehavior: 1
     _target: {fileID: 0}
@@ -7680,6 +7758,7 @@ MonoBehaviour:
     affectFlee: 0
     affectTarget: 1
     soundword: {fileID: 8300000, guid: f5c04bf4f78892844a89fc55898966b8, type: 3}
+    wordSprite: {fileID: 0}
   - word: Cheva
     crabBehavior: 1
     _target: {fileID: 0}
@@ -7687,6 +7766,7 @@ MonoBehaviour:
     affectFlee: 0
     affectTarget: 1
     soundword: {fileID: 8300000, guid: bf4505b19920aa94a958a997cd4f8ea7, type: 3}
+    wordSprite: {fileID: 0}
   - word: Fique
     crabBehavior: 5
     _target: {fileID: 1515014692}
@@ -7694,6 +7774,7 @@ MonoBehaviour:
     affectFlee: 1
     affectTarget: 1
     soundword: {fileID: 8300000, guid: 6a70ec2161a974c458dc822325525003, type: 3}
+    wordSprite: {fileID: 0}
   - word: Caranguejo
     crabBehavior: 4
     _target: {fileID: 0}
@@ -7701,6 +7782,7 @@ MonoBehaviour:
     affectFlee: 0
     affectTarget: 1
     soundword: {fileID: 8300000, guid: 8789c961b9328f94c83cc3779a302ffb, type: 3}
+    wordSprite: {fileID: 21300000, guid: fba439659f791e64bad00fd8952f4510, type: 3}
   - word: Carrinho de compras
     crabBehavior: 4
     _target: {fileID: 0}
@@ -7708,6 +7790,7 @@ MonoBehaviour:
     affectFlee: 0
     affectTarget: 1
     soundword: {fileID: 8300000, guid: 80c93624e81780a40b33228e6193042a, type: 3}
+    wordSprite: {fileID: 0}
   - word: Filhote
     crabBehavior: 5
     _target: {fileID: 0}
@@ -7715,6 +7798,7 @@ MonoBehaviour:
     affectFlee: 0
     affectTarget: 1
     soundword: {fileID: 8300000, guid: f920ebb5293980748a90b21f2018c684, type: 3}
+    wordSprite: {fileID: 0}
   - word: Gato
     crabBehavior: 4
     _target: {fileID: 0}
@@ -7722,6 +7806,7 @@ MonoBehaviour:
     affectFlee: 0
     affectTarget: 1
     soundword: {fileID: 8300000, guid: b5b2a6513b468c941ac9bcfedf2dc374, type: 3}
+    wordSprite: {fileID: 21300000, guid: 0b241ac1a88f61d479956daddb163957, type: 3}
   - word: Me
     crabBehavior: 4
     _target: {fileID: 1515014692}
@@ -7729,6 +7814,7 @@ MonoBehaviour:
     affectFlee: 0
     affectTarget: 1
     soundword: {fileID: 8300000, guid: 1d68344ee52ef9e4a882b8ef05fb5d6b, type: 3}
+    wordSprite: {fileID: 21300000, guid: d2729d63b01b80d479d70c8011dcb6ce, type: 3}
   - word: "Mam\xE3e"
     crabBehavior: 4
     _target: {fileID: 0}
@@ -7736,6 +7822,7 @@ MonoBehaviour:
     affectFlee: 0
     affectTarget: 1
     soundword: {fileID: 8300000, guid: 043c023b16989c942b2e32d6013a65a2, type: 3}
+    wordSprite: {fileID: 0}
   - word: Amigo
     crabBehavior: 4
     _target: {fileID: 1515014692}
@@ -7743,6 +7830,7 @@ MonoBehaviour:
     affectFlee: 0
     affectTarget: 1
     soundword: {fileID: 8300000, guid: 6e3e295de861a2740ae8ce4311341ad4, type: 3}
+    wordSprite: {fileID: 0}
   - word: Ajuda
     crabBehavior: 4
     _target: {fileID: 0}
@@ -7750,6 +7838,7 @@ MonoBehaviour:
     affectFlee: 0
     affectTarget: 0
     soundword: {fileID: 8300000, guid: d2062807c1fa159408072107bd6f2367, type: 3}
+    wordSprite: {fileID: 0}
   - word: "Gas\xF3leo"
     crabBehavior: 4
     _target: {fileID: 0}
@@ -7757,6 +7846,7 @@ MonoBehaviour:
     affectFlee: 0
     affectTarget: 1
     soundword: {fileID: 8300000, guid: 6b8ddd4a9f052824c9fda2a1cffd6100, type: 3}
+    wordSprite: {fileID: 0}
   borders: {fileID: 2054159887}
 --- !u!114 &661941176
 MonoBehaviour:
@@ -9004,9 +9094,9 @@ Canvas:
   m_GameObject: {fileID: 736461726}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 1504279384}
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -9015,7 +9105,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -2104767143
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &736461730
@@ -17017,6 +17107,134 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1504279381
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1504279382}
+  - component: {fileID: 1504279384}
+  - component: {fileID: 1504279383}
+  m_Layer: 0
+  m_Name: UICAMERA
+  m_TagString: UI
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1504279382
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504279381}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 554686916}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1504279383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504279381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 1
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+--- !u!20 &1504279384
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504279381}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 4
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 32
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1 &1508326876
 GameObject:
   m_ObjectHideFlags: 0
@@ -17313,7 +17531,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03eb35b63dbd36d4aa897ed890dcff4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  logEntries: []
+  logEntries:
+  - wordOfInterest: Deixa cair
+    userDefinition: 
+  - wordOfInterest: Pega
+    userDefinition: 
+  - wordOfInterest: Venha Aqui
+    userDefinition: 
+  - wordOfInterest: Sigue
+    userDefinition: 
+  - wordOfInterest: Fique
+    userDefinition: 
+  - wordOfInterest: Caranguejo
+    userDefinition: 
+  - wordOfInterest: Gato
+    userDefinition: 
+  - wordOfInterest: "V\xE1 para"
+    userDefinition: 
   logPrefab: {fileID: 5046196537164786419, guid: c25b1b0ddef3bc847ade9bf93e7ce6b7, type: 3}
   contentPanel: {fileID: 402223476}
   logMenu: {fileID: 391826213}
@@ -29802,6 +30036,7 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 330585546}
   - {fileID: 2057882709}
+  - {fileID: 115483131}
   - {fileID: 1515014698}
   - {fileID: 718548410}
   - {fileID: 129723451}
