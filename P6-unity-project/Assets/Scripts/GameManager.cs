@@ -11,7 +11,8 @@ public enum CrabBehavior
     PickingUp,   // Crab is following an object to pick it up
     DropItem,
     GoTo,
-    StandStill
+    StandStill,
+    Race
 }
 
 public class GameManager : MonoBehaviour

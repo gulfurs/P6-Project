@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Animations.Rigging;
 
 public class CrabHandler : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class CrabHandler : MonoBehaviour
     [Copyable] public string targetingType;
 
     [SerializeField] private bool startWithAgentDisabled = false;
+    private Animator animator;
+    private Rig carryRig;
     //private List<string> confirmedWords = new List<string>();
 
     void Start()
@@ -53,6 +56,9 @@ public class CrabHandler : MonoBehaviour
                 }
             }
         }
+
+        animator = GetComponentInChildren<Animator>();
+        carryRig = GetComponentInChildren<Rig>();
     }
 
 
@@ -65,10 +71,8 @@ public class CrabHandler : MonoBehaviour
             target = FindNearestTarget(targetingType);
         }
 
-        if (isCarryingObject)
-        {
-            CarryObject();
-        }
+        CarryObject();
+
         if (target != null)
         {
             float distanceToPlayer = Vector3.Distance(target.position, transform.position);
@@ -109,7 +113,12 @@ public class CrabHandler : MonoBehaviour
         }
 
         // Handle ground alignment and rotation
-        
+        if (animator != null && agent != null)
+        {
+            float currentSpeed = agent.velocity.magnitude;
+            animator.SetFloat("CrabSpeed", currentSpeed);
+        }
+
     }
 
     // Method to handle fleeing behavior
@@ -430,13 +439,9 @@ public class CrabHandler : MonoBehaviour
 
     void CarryObject()
     {
-        if (carriedObject != null)
+        if (carryRig != null)
         {
-            // Keep the object close to the crab
-            //carriedObject.transform.position = transform.position + new Vector3(0, 1, 0);
-
-            // Set the rotation to (0, 0, -90)
-            //carriedObject.transform.rotation = Quaternion.Euler(0, 0, -90);
+            carryRig.weight = isCarryingObject ? 1f : 0f;
         }
     }
 
