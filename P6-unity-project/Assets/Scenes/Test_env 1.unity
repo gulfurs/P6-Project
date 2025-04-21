@@ -8439,6 +8439,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &673625623
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 673625624}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &673625624
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673625623}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 784.6, y: 1.5, z: 585.4}
+  m_LocalScale: {x: 151.67812, y: 59.13808, z: 169.88121}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &680578727 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1742241283567533943, guid: c25b1b0ddef3bc847ade9bf93e7ce6b7, type: 3}
@@ -30059,6 +30090,7 @@ SceneRoots:
   - {fileID: 443063208}
   - {fileID: 2077664644}
   - {fileID: 1197904725}
+  - {fileID: 673625624}
   - {fileID: 1686340681}
   - {fileID: 1489973791}
   - {fileID: 2053819178}
