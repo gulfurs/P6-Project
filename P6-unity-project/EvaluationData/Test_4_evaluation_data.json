@@ -1,0 +1,20 @@
+{
+    "items": [
+        {
+            "evaluationNumber": 1,
+            "eventName": "Reached_50",
+            "rating": 4,
+            "textResponse": "It is very easy to understand, however, it lacks signs of what to do next so it becomes confusing",
+            "gameTime": 198.76063537597657,
+            "timestamp": "2025-04-10 13:44:55"
+        },
+        {
+            "evaluationNumber": 2,
+            "eventName": "Reached_100",
+            "rating": 4,
+            "textResponse": "Intrigued in figuring out how the game actually works. So mainly out of curiousity",
+            "gameTime": 309.3741455078125,
+            "timestamp": "2025-04-10 13:50:04"
+        }
+    ]
+}

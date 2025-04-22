@@ -1,0 +1,20 @@
+{
+    "items": [
+        {
+            "evaluationNumber": 1,
+            "eventName": "Reached_50",
+            "rating": 4,
+            "textResponse": "Im still not sure what my objective is",
+            "gameTime": 398.1431884765625,
+            "timestamp": "2025-04-10 12:50:56"
+        },
+        {
+            "evaluationNumber": 2,
+            "eventName": "Reached_100",
+            "rating": 4,
+            "textResponse": "I cracked the code",
+            "gameTime": 542.665771484375,
+            "timestamp": "2025-04-10 12:56:55"
+        }
+    ]
+}
