@@ -98,8 +98,10 @@ public class CompassBar : MonoBehaviour
 
         for (int i = 0; i < activeObjectiveMarkers.Count; i++)
         {
+            if (activeObjectiveTargets[i] == null) continue; 
             SetMarkerPosition(activeObjectiveMarkers[i], activeObjectiveTargets[i].position);
         }
+
 
     }
 

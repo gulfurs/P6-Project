@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Animations.Rigging;
 
 public class CrabHandler : MonoBehaviour
 {
@@ -24,6 +25,10 @@ public class CrabHandler : MonoBehaviour
     private GameManager gm;
     [Copyable] public CrabBehavior crabBehavior;
     [Copyable] public string targetingType;
+
+    [SerializeField] private bool startWithAgentDisabled = false;
+    private Animator animator;
+    private Rig carryRig;
     //private List<string> confirmedWords = new List<string>();
 
     void Start()
@@ -34,6 +39,11 @@ public class CrabHandler : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.speed = normalSpeed;
         gm = FindObjectOfType<GameManager>();
+
+        if (startWithAgentDisabled)
+        {
+            DisableAgentStuff();
+        }
 
         if (carriedObject == null)
         {
@@ -46,6 +56,9 @@ public class CrabHandler : MonoBehaviour
                 }
             }
         }
+
+        animator = GetComponentInChildren<Animator>();
+        carryRig = GetComponentInChildren<Rig>();
     }
 
 
@@ -58,10 +71,8 @@ public class CrabHandler : MonoBehaviour
             target = FindNearestTarget(targetingType);
         }
 
-        if (isCarryingObject)
-        {
-            CarryObject();
-        }
+        CarryObject();
+
         if (target != null)
         {
             float distanceToPlayer = Vector3.Distance(target.position, transform.position);
@@ -102,7 +113,12 @@ public class CrabHandler : MonoBehaviour
         }
 
         // Handle ground alignment and rotation
-        
+        if (animator != null && agent != null)
+        {
+            float currentSpeed = agent.velocity.magnitude;
+            animator.SetFloat("CrabSpeed", currentSpeed);
+        }
+
     }
 
     // Method to handle fleeing behavior
@@ -164,26 +180,27 @@ public class CrabHandler : MonoBehaviour
         agent.speed = normalSpeed; // Maintain normal speed while following
     }
 
-    // Method to handle the picking up behavior
+    private float pickupRange = 2f;
+
     void HandlePickingUpBehavior(float distanceToObject, Vector3 directionToObject)
     {
+        if (target == null) return;
+
         agent.isStopped = false;
-        // Keep following the object until it is within reach for pickup
-        if (distanceToObject > 0.5f) // Adjust the distance as needed
+
+        if (distanceToObject > pickupRange)
         {
-            // Follow the object
             Debug.Log("HELP ME IM IN GREAT PAIN");
             agent.SetDestination(target.position);
             agent.speed = normalSpeed;
-        } 
-        /*
-        if (isCarryingObject && crabBehavior == CrabBehavior.PickingUp)
+            return;
+        }
+
+        if (!isCarryingObject && target.CompareTag("PickUp"))
         {
-                targetingType = "";
-                crabBehavior = CrabBehavior.Follow; // Switch behavior to follow the player
-                target = GameObject.FindGameObjectWithTag("Player").transform; // Update the target to the player
-        }*/
-       
+            Debug.Log("Attempting pickup");
+            PickUpObject(target.gameObject);
+        }
     }
 
     // Method to handle the Go To behaviour
@@ -323,7 +340,7 @@ public class CrabHandler : MonoBehaviour
 
 
     // Check if crab touches an object with the PickUp tag
-    void OnTriggerEnter(Collider other)
+    /*void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("PickUp") && !isCarryingObject && crabBehavior == CrabBehavior.PickingUp)
         {
@@ -332,29 +349,33 @@ public class CrabHandler : MonoBehaviour
                 PickUpObject(other.gameObject);
             }
         }
-    }
+    } */
 
     void PickUpObject(GameObject obj)
     {
         carriedObject = obj;
         obj.transform.SetParent(transform); // Attach the object to the crab
-        carriedObject.transform.position = transform.position + new Vector3(0, 1, 0);
+        carriedObject.transform.position = transform.position + new Vector3(0, 0.8f, 0);
+        carriedObject.transform.localRotation = Quaternion.identity;
 
         // Disable the object's collider to prevent it from affecting movement
         Collider objCollider = obj.GetComponent<Collider>();
         if (objCollider != null) objCollider.enabled = false;
 
+        Rigidbody rb = obj.GetComponent<Rigidbody>();
+        if (rb != null) rb.isKinematic = true;
+
         // Stop NavMeshAgent movement if the object is a crab
-        NavMeshAgent agent = obj.GetComponent<NavMeshAgent>();
-        if (agent != null)
-        {
-            agent.isStopped = true;
-            agent.updatePosition = false;
-            agent.updateRotation = false;
-        }
+            NavMeshAgent agent = obj.GetComponent<NavMeshAgent>();
+            if (agent != null)
+            {
+                agent.isStopped = true;
+                agent.updatePosition = false;
+                agent.updateRotation = false;
+            }
 
         // Move the object to a specific position relative to the crab
-        obj.transform.localPosition = new Vector3(0, 1, 0);
+        //obj.transform.localPosition = new Vector3(0, 0.8f, 0);
     }
 
 
@@ -386,6 +407,7 @@ public class CrabHandler : MonoBehaviour
                 equip.interactable = true;
             }
 
+            rb.isKinematic = false;
             // Apply a small downward force for realism
             rb.linearVelocity = Vector3.down * 2f;
 
@@ -405,16 +427,21 @@ public class CrabHandler : MonoBehaviour
         }
     }
 
+    void DisableAgentStuff()
+    {
+        if (agent != null)
+        {
+            agent.isStopped = true;
+            agent.updatePosition = false;
+            agent.updateRotation = false;
+        }
+    }
 
     void CarryObject()
     {
-        if (carriedObject != null)
+        if (carryRig != null)
         {
-            // Keep the object close to the crab
-            //carriedObject.transform.position = transform.position + new Vector3(0, 1, 0);
-
-            // Set the rotation to (0, 0, -90)
-            //carriedObject.transform.rotation = Quaternion.Euler(0, 0, -90);
+            carryRig.weight = isCarryingObject ? 1f : 0f;
         }
     }
 

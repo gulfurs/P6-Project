@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,6 +23,7 @@ public class LogManager : MonoBehaviour
     private StarterAssetsInputs input;
     public ScrollRect scrollRect;
     private CrabInterface crabInterface;
+    public Animator scrollArea;
 
     [Copyable] public bool canOpenLog = false;
 
@@ -62,9 +64,10 @@ public class LogManager : MonoBehaviour
             Time.timeScale = 0f; // Pause game
             input.SetCursorState(false); // Unlock cursor
             interactMan.UnlockInteract(false);
+            scrollArea.Play("EnterScrollArea");
             if (scrollRect != null)
             {
-                scrollRect.horizontalNormalizedPosition = 0f;
+                scrollRect.verticalNormalizedPosition = 1f;
             }
         }
         else
@@ -103,8 +106,8 @@ public class LogManager : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        // Rebuild UI from logEntries list
-        foreach (var entry in logEntries)
+        // Rebuild UI from logEntries list, sorted alphabetically
+        foreach (var entry in logEntries.OrderBy(e => e.wordOfInterest))
         {
             GameObject logInstance = Instantiate(logPrefab, contentPanel);
             Button button = logInstance.GetComponent<Button>();

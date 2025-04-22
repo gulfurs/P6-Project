@@ -11,7 +11,8 @@ public enum CrabBehavior
     PickingUp,   // Crab is following an object to pick it up
     DropItem,
     GoTo,
-    StandStill
+    StandStill,
+    Race
 }
 
 public class GameManager : MonoBehaviour
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
         public bool affectFlee = true;  // Toggle whether the effect influences fleeing behavior
         public bool affectTarget = true; // Toggle whether the effect influences the target
         public AudioClip soundword;
+        public Sprite wordSprite;
     }
 
     private AudioSource audioSource; 
