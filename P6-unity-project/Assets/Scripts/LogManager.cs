@@ -23,6 +23,7 @@ public class LogManager : MonoBehaviour
     private StarterAssetsInputs input;
     public ScrollRect scrollRect;
     private CrabInterface crabInterface;
+    public Animator scrollArea;
 
     [Copyable] public bool canOpenLog = false;
 
@@ -63,9 +64,10 @@ public class LogManager : MonoBehaviour
             Time.timeScale = 0f; // Pause game
             input.SetCursorState(false); // Unlock cursor
             interactMan.UnlockInteract(false);
+            scrollArea.Play("EnterScrollArea");
             if (scrollRect != null)
             {
-                scrollRect.horizontalNormalizedPosition = 0f;
+                scrollRect.verticalNormalizedPosition = 1f;
             }
         }
         else
