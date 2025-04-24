@@ -12,27 +12,46 @@ public class SandStormEvent : MonoBehaviour
     public Transform respawnPoint;
 
     [Header("Sandstorm Effect")]
-    public GameObject sandstormParticleSystem;
     public float teleportDelay = 2.0f;
     public AudioClip sandstormSound;
+    [Range(0.5f, 2f)]
+    public float fadeInSpeed = 1f;
+    [Range(0.5f, 2f)]
+    public float fadeOutSpeed = 1f;
 
     [Header("References")]
     public FirstPersonController playerController;
     public CanvasGroup sandstormOverlay;
 
     private AudioSource audioSource;
+    private bool isTeleporting = false;
 
     private void Awake()
     {
+        // Initialize boundary settings
         if (boundaryCenter == null)
             boundaryCenter = transform;
             
         if (respawnPoint == null)
             respawnPoint = transform;
             
+        // Set up audio source
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null && sandstormSound != null)
+        {
             audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.spatialBlend = 0f; // Make it 2D sound
+            audioSource.loop = false;
+            audioSource.playOnAwake = false;
+            audioSource.volume = 1f;
+        }
+            
+        // Initialize UI overlay settings
+        if (sandstormOverlay != null)
+        {
+            sandstormOverlay.alpha = 0;
+            sandstormOverlay.gameObject.SetActive(false);
+        }
     }
 
     private void OnDrawGizmosSelected()
@@ -44,7 +63,7 @@ public class SandStormEvent : MonoBehaviour
 
     private void Update()
     {
-        if (playerController != null)
+        if (playerController != null && !isTeleporting)
         {
             float distanceFromCenter = Vector3.Distance(
                 new Vector3(playerController.transform.position.x, boundaryCenter.position.y, playerController.transform.position.z),
@@ -59,25 +78,29 @@ public class SandStormEvent : MonoBehaviour
 
     private IEnumerator TeleportPlayerWithSandstorm()
     {
-        // Prevent movement during teleportation
-        playerController.UnlockMove(false);
-        
-        // Activate sandstorm effect
-        if (sandstormParticleSystem != null)
-            sandstormParticleSystem.SetActive(true);
+        if (isTeleporting)
+            yield break;  // Prevent multiple teleportations
+            
+        isTeleporting = true;
             
         // Play sound effect
         if (audioSource != null && sandstormSound != null)
-            audioSource.PlayOneShot(sandstormSound);
+        {
+            audioSource.clip = sandstormSound;
+            audioSource.Play();
+        }
             
         // Fade in sandstorm overlay
         if (sandstormOverlay != null)
-            StartCoroutine(FadeOverlay(sandstormOverlay, 0, 1, teleportDelay * 0.5f));
+        {
+            sandstormOverlay.gameObject.SetActive(true);
+            yield return StartCoroutine(FadeOverlay(sandstormOverlay, 0, 1, teleportDelay * 0.5f * (1/fadeInSpeed)));
+        }
         
         // Wait before teleporting
         yield return new WaitForSeconds(teleportDelay);
         
-        // Teleport player
+        // Teleport player with CharacterController handling
         CharacterController controller = playerController.GetComponent<CharacterController>();
         if (controller != null)
         {
@@ -86,31 +109,41 @@ public class SandStormEvent : MonoBehaviour
             playerController.transform.rotation = respawnPoint.rotation;
             controller.enabled = true;
         }
+        else
+        {
+            // Fallback direct teleport
+            playerController.transform.position = respawnPoint.position;
+            playerController.transform.rotation = respawnPoint.rotation;
+        }
         
         // Wait a bit after teleport
         yield return new WaitForSeconds(teleportDelay * 0.5f);
         
         // Fade out sandstorm overlay
         if (sandstormOverlay != null)
-            StartCoroutine(FadeOverlay(sandstormOverlay, 1, 0, teleportDelay * 0.5f));
-            
-        // Disable sandstorm effect
-        if (sandstormParticleSystem != null)
-            sandstormParticleSystem.SetActive(false);
-            
-        // Re-enable movement
-        playerController.UnlockMove(true);
+        {
+            yield return StartCoroutine(FadeOverlay(sandstormOverlay, 1, 0, teleportDelay * 0.5f * (1/fadeOutSpeed)));
+            sandstormOverlay.gameObject.SetActive(false);
+        }
+        
+        isTeleporting = false;
     }
     
     private IEnumerator FadeOverlay(CanvasGroup canvasGroup, float start, float end, float duration)
     {
         float elapsed = 0;
+        
+        // Set starting value immediately
+        canvasGroup.alpha = start;
+        
         while (elapsed < duration)
         {
             canvasGroup.alpha = Mathf.Lerp(start, end, elapsed / duration);
             elapsed += Time.deltaTime;
             yield return null;
         }
+        
+        // Ensure we reach the exact end value
         canvasGroup.alpha = end;
     }
 }
