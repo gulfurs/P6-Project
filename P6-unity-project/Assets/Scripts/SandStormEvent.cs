@@ -26,6 +26,10 @@ public class SandStormEvent : MonoBehaviour
     private AudioSource audioSource;
     private bool isTeleporting = false;
 
+    public bool isOneWayBoundary = true;
+    private bool playerInsideBoundary = false;
+
+
     private void Awake()
     {
         // Initialize boundary settings
@@ -61,7 +65,7 @@ public class SandStormEvent : MonoBehaviour
         Gizmos.DrawWireSphere(boundaryCenter.position, maxDistance);
     }
 
-    private void Update()
+   private void Update()
     {
         if (playerController != null && !isTeleporting)
         {
@@ -69,9 +73,26 @@ public class SandStormEvent : MonoBehaviour
                 new Vector3(playerController.transform.position.x, boundaryCenter.position.y, playerController.transform.position.z),
                 new Vector3(boundaryCenter.position.x, boundaryCenter.position.y, boundaryCenter.position.z));
                 
-            if (distanceFromCenter > maxDistance)
+            bool isInsideBoundaryNow = distanceFromCenter <= maxDistance;
+            
+            if (isOneWayBoundary)
             {
-                StartCoroutine(TeleportPlayerWithSandstorm());
+                // One-way boundary logic - only trigger when exiting after having been inside
+                if (playerInsideBoundary && !isInsideBoundaryNow)
+                {
+                    StartCoroutine(TeleportPlayerWithSandstorm());
+                }
+                
+                // Update player's boundary status
+                playerInsideBoundary = isInsideBoundaryNow;
+            }
+            else
+            {
+                // Original behavior - trigger when beyond max distance
+                if (distanceFromCenter > maxDistance)
+                {
+                    StartCoroutine(TeleportPlayerWithSandstorm());
+                }
             }
         }
     }
