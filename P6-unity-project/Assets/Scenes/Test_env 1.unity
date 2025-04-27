@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.97647065, g: 0.70980394, b: 0.4039216, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 01f4eb1c73693428d923f1520032e7f9, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 5d133deeaa66ed445853e946ff25e073, type: 2}
   m_HaloStrength: 1
   m_FlareStrength: 1
   m_FlareFadeSpeed: 10
@@ -8298,7 +8298,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 475.58115, y: 0, z: 507.54}
-  m_LocalScale: {x: 91.47591, y: 91.47591, z: 91.47591}
+  m_LocalScale: {x: 100, y: 1, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -16678,7 +16678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boundaryCenter: {fileID: 1408108569}
-  maxDistance: 100
+  maxDistance: 150
   respawnPoint: {fileID: 126139929}
   teleportDelay: 2
   sandstormSound: {fileID: 8300000, guid: 6c0858ec57fc5f440b9aa617b49205ce, type: 3}
@@ -16686,6 +16686,7 @@ MonoBehaviour:
   fadeOutSpeed: 1
   playerController: {fileID: 1515014701}
   sandstormOverlay: {fileID: 1836328178}
+  isOneWayBoundary: 1
 --- !u!4 &1408108569
 Transform:
   m_ObjectHideFlags: 0
@@ -16695,7 +16696,7 @@ Transform:
   m_GameObject: {fileID: 1408108567}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 784.5996, y: 1.5, z: 177.9}
+  m_LocalPosition: {x: 765.7, y: 1.5, z: 578.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24856,7 +24857,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1631557237
 BoxCollider:
   m_ObjectHideFlags: 0
