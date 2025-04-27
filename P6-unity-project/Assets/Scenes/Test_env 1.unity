@@ -4583,7 +4583,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 0.4641509, g: 0.4641509, b: 0.4641509, a: 1}
+  m_Color: {r: 0.65882355, g: 0.3647059, b: 0.28627452, a: 1}
   m_Intensity: 5
   m_Range: 1000
   m_SpotAngle: 102.54211
@@ -16681,7 +16681,7 @@ MonoBehaviour:
   maxDistance: 150
   respawnPoint: {fileID: 126139929}
   teleportDelay: 2
-  sandstormSound: {fileID: 8300000, guid: 6c0858ec57fc5f440b9aa617b49205ce, type: 3}
+  sandstormSound: {fileID: 8300000, guid: 7e584940eb611b045a03700ccb970e72, type: 3}
   fadeInSpeed: 1
   fadeOutSpeed: 1
   playerController: {fileID: 1515014701}
