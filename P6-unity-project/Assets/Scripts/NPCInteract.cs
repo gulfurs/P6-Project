@@ -2,11 +2,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 using System.Linq;
+using Unity.Cinemachine;
 
 public class NPCInteract : InteractHandler
 {
     public TypeWriter typeWriter;
     [Copyable] public List<string> npcDialogue;
+    [Copyable] public List<NPCDialogue> npcDialogues;
     private int dialogueIndex = 0;
     public bool inDialogue = false;
 
@@ -18,6 +20,15 @@ public class NPCInteract : InteractHandler
     public GameObject NPCInterface;
 
     private GameObject currentUI;
+
+    private CinemachineCamera activeCamera;
+
+    [System.Serializable]
+    public class NPCDialogue
+    {
+        public string dialogue;
+        public CinemachineCamera camera;
+    }
 
     void Start()
     {
@@ -45,11 +56,11 @@ public class NPCInteract : InteractHandler
             }
 
 
-            if (_timeline != null)
+            /*if (_timeline != null)
             {
                 _timeline.time = 0;
                 _timeline.Play();  // Start the timeline
-            }
+            }*/
         }
         else
         {
@@ -64,7 +75,8 @@ public class NPCInteract : InteractHandler
     {
         if (inDialogue && Input.GetMouseButtonDown(0)) 
         {
-            Debug.Log("UPDATING");
+            LogManager logman = FindFirstObjectByType<LogManager>();
+            logman.ToggleLogMenu(false);
             HandleNextDialogue();
         }
     }
@@ -106,18 +118,18 @@ public class NPCInteract : InteractHandler
     {
         typeWriter = FindObjectOfType<TypeWriter>();
         typeWriter.StartTyping(npcDialogue[dialogueIndex]);
-        if (_timeline != null)
+        /*if (_timeline != null)
         {
             _timeline.Play();
-        }
+        }*/
     }
 
     public void OnNextSignal()
     {
-        if (_timeline != null)
+        /*if (_timeline != null)
         {
             _timeline.Pause();
-        }
+        }*/
     }
 
     public void OnEndSignal()
@@ -142,9 +154,9 @@ public class NPCInteract : InteractHandler
         }
 
         // Optionally stop the timeline when the dialogue ends
-        if (_timeline != null)
+        /*if (_timeline != null)
         {
             _timeline.Stop();
-        }
+        }*/
     }
 }

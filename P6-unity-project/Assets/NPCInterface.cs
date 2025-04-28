@@ -24,7 +24,6 @@ public class NPCInterface : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("AW MAN!");
         UpdateUI();
         TimeScaling(0, false);
     }
@@ -42,7 +41,6 @@ public class NPCInterface : MonoBehaviour
         InteractManager interactMan = FindFirstObjectByType<InteractManager>();
         interactMan.UnlockInteract(st);
         LogManager logMan = FindFirstObjectByType<LogManager>();
-        //logMan.ToggleLogMenu(false);
         logMan.UnlockLog(st);
     }
 
@@ -59,6 +57,11 @@ public class NPCInterface : MonoBehaviour
     {
         ObjectiveManager.Instance.AddObjective(obj);
         npc.NPCInterface = null;
+        if (npc._timeline != null)
+        {
+            npc._timeline.time = 0;
+            npc._timeline.Play();
+        }
         TimeScaling(1, true);
         Destroy(gameObject);
     }
