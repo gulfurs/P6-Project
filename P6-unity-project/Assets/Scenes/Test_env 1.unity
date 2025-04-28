@@ -4413,7 +4413,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.0042460635, y: 0.00008392334}
-  m_SizeDelta: {x: 0, y: 550}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &402223479
 MonoBehaviour:
@@ -5351,7 +5351,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &475192493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5694,7 +5694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1742241283567533943, guid: c25b1b0ddef3bc847ade9bf93e7ce6b7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1742241283567533943, guid: c25b1b0ddef3bc847ade9bf93e7ce6b7, type: 3}
       propertyPath: m_AnchorMin.x
@@ -5702,7 +5702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1742241283567533943, guid: c25b1b0ddef3bc847ade9bf93e7ce6b7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1742241283567533943, guid: c25b1b0ddef3bc847ade9bf93e7ce6b7, type: 3}
       propertyPath: m_SizeDelta.x
@@ -5746,7 +5746,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1742241283567533943, guid: c25b1b0ddef3bc847ade9bf93e7ce6b7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1742241283567533943, guid: c25b1b0ddef3bc847ade9bf93e7ce6b7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7574,7 +7574,7 @@ MonoBehaviour:
     affectFlee: 0
     affectTarget: 1
     soundword: {fileID: 8300000, guid: 40e378f5ca33dd7478d0c67bbe438f70, type: 3}
-    wordSprite: {fileID: 0}
+    wordSprite: {fileID: 21300000, guid: c3e404bf774491c42b8d1b2ad0a44773, type: 3}
   - word: Casa
     crabBehavior: 1
     _target: {fileID: 1405272156}
@@ -7582,7 +7582,7 @@ MonoBehaviour:
     affectFlee: 0
     affectTarget: 1
     soundword: {fileID: 8300000, guid: f176fe7a4422de34cb980f869352f8dd, type: 3}
-    wordSprite: {fileID: 0}
+    wordSprite: {fileID: 21300000, guid: e199ec14dfb0eb3469adf3e41f3f0c71, type: 3}
   - word: "V\xE1 para"
     crabBehavior: 4
     _target: {fileID: 0}
@@ -7606,7 +7606,7 @@ MonoBehaviour:
     affectFlee: 1
     affectTarget: 1
     soundword: {fileID: 8300000, guid: a67784a264c619c41bcd77d213e3b2d4, type: 3}
-    wordSprite: {fileID: 21300000, guid: d2729d63b01b80d479d70c8011dcb6ce, type: 3}
+    wordSprite: {fileID: 21300000, guid: bbf4ef2b78ce3b447b0a37be9f8991c1, type: 3}
   - word: Segue
     crabBehavior: 1
     _target: {fileID: 1515014692}
@@ -7622,15 +7622,15 @@ MonoBehaviour:
     affectFlee: 0
     affectTarget: 1
     soundword: {fileID: 8300000, guid: f5c04bf4f78892844a89fc55898966b8, type: 3}
-    wordSprite: {fileID: 0}
-  - word: Cheva
+    wordSprite: {fileID: 21300000, guid: 352eaf318eb1b2c4ab72a046a69651af, type: 3}
+  - word: Chave
     crabBehavior: 1
     _target: {fileID: 0}
     targetType: Key
     affectFlee: 0
     affectTarget: 1
-    soundword: {fileID: 8300000, guid: bf4505b19920aa94a958a997cd4f8ea7, type: 3}
-    wordSprite: {fileID: 0}
+    soundword: {fileID: 8300000, guid: f128fd6d11b0da6488c5560172e661ed, type: 3}
+    wordSprite: {fileID: 21300000, guid: aa1f1176549c02f489b2b6bbf214423c, type: 3}
   - word: Fique
     crabBehavior: 5
     _target: {fileID: 1515014692}
@@ -7646,7 +7646,7 @@ MonoBehaviour:
     affectFlee: 0
     affectTarget: 1
     soundword: {fileID: 8300000, guid: 8789c961b9328f94c83cc3779a302ffb, type: 3}
-    wordSprite: {fileID: 21300000, guid: fba439659f791e64bad00fd8952f4510, type: 3}
+    wordSprite: {fileID: 21300000, guid: 299e31318f668d040a8ce71135b8bc9b, type: 3}
   - word: Carrinho de compras
     crabBehavior: 4
     _target: {fileID: 0}
@@ -7654,7 +7654,7 @@ MonoBehaviour:
     affectFlee: 0
     affectTarget: 1
     soundword: {fileID: 8300000, guid: 80c93624e81780a40b33228e6193042a, type: 3}
-    wordSprite: {fileID: 0}
+    wordSprite: {fileID: 21300000, guid: 415a0aa525b2fa547b6943b2031b321c, type: 3}
   - word: Filhote
     crabBehavior: 5
     _target: {fileID: 0}
@@ -7662,7 +7662,7 @@ MonoBehaviour:
     affectFlee: 0
     affectTarget: 1
     soundword: {fileID: 8300000, guid: f920ebb5293980748a90b21f2018c684, type: 3}
-    wordSprite: {fileID: 0}
+    wordSprite: {fileID: 21300000, guid: aebabc10ea862aa4d929eeeb0974d2d2, type: 3}
   - word: Gato
     crabBehavior: 4
     _target: {fileID: 0}
@@ -7670,7 +7670,7 @@ MonoBehaviour:
     affectFlee: 0
     affectTarget: 1
     soundword: {fileID: 8300000, guid: b5b2a6513b468c941ac9bcfedf2dc374, type: 3}
-    wordSprite: {fileID: 21300000, guid: 0b241ac1a88f61d479956daddb163957, type: 3}
+    wordSprite: {fileID: 21300000, guid: 5d3dc5323f92253469cdddd39c8be44d, type: 3}
   - word: Me
     crabBehavior: 4
     _target: {fileID: 1515014692}
@@ -7678,7 +7678,7 @@ MonoBehaviour:
     affectFlee: 0
     affectTarget: 1
     soundword: {fileID: 8300000, guid: 1d68344ee52ef9e4a882b8ef05fb5d6b, type: 3}
-    wordSprite: {fileID: 21300000, guid: d2729d63b01b80d479d70c8011dcb6ce, type: 3}
+    wordSprite: {fileID: 21300000, guid: bbf4ef2b78ce3b447b0a37be9f8991c1, type: 3}
   - word: "Mam\xE3e"
     crabBehavior: 4
     _target: {fileID: 0}
@@ -7686,7 +7686,7 @@ MonoBehaviour:
     affectFlee: 0
     affectTarget: 1
     soundword: {fileID: 8300000, guid: 043c023b16989c942b2e32d6013a65a2, type: 3}
-    wordSprite: {fileID: 0}
+    wordSprite: {fileID: 21300000, guid: e6e1b7956e4c36a41a561a5bc6bc647b, type: 3}
   - word: Amigo
     crabBehavior: 4
     _target: {fileID: 1515014692}
@@ -7694,7 +7694,7 @@ MonoBehaviour:
     affectFlee: 0
     affectTarget: 1
     soundword: {fileID: 8300000, guid: 6e3e295de861a2740ae8ce4311341ad4, type: 3}
-    wordSprite: {fileID: 0}
+    wordSprite: {fileID: 21300000, guid: 683c0adbf11b4be47b57ffef66e1778f, type: 3}
   - word: Ajuda
     crabBehavior: 4
     _target: {fileID: 0}
@@ -7710,7 +7710,7 @@ MonoBehaviour:
     affectFlee: 0
     affectTarget: 1
     soundword: {fileID: 8300000, guid: 6b8ddd4a9f052824c9fda2a1cffd6100, type: 3}
-    wordSprite: {fileID: 0}
+    wordSprite: {fileID: 21300000, guid: 8bf8b3cf2b384604dac7d6f363d71633, type: 3}
   borders: {fileID: 2054159887}
 --- !u!114 &661941176
 MonoBehaviour:
@@ -11412,7 +11412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1742241283567533943, guid: c25b1b0ddef3bc847ade9bf93e7ce6b7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1742241283567533943, guid: c25b1b0ddef3bc847ade9bf93e7ce6b7, type: 3}
       propertyPath: m_AnchorMin.x
@@ -11420,7 +11420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1742241283567533943, guid: c25b1b0ddef3bc847ade9bf93e7ce6b7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1742241283567533943, guid: c25b1b0ddef3bc847ade9bf93e7ce6b7, type: 3}
       propertyPath: m_SizeDelta.x
@@ -11464,7 +11464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1742241283567533943, guid: c25b1b0ddef3bc847ade9bf93e7ce6b7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -150
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1742241283567533943, guid: c25b1b0ddef3bc847ade9bf93e7ce6b7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11668,7 +11668,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1742241283567533943, guid: c25b1b0ddef3bc847ade9bf93e7ce6b7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1742241283567533943, guid: c25b1b0ddef3bc847ade9bf93e7ce6b7, type: 3}
       propertyPath: m_AnchorMin.x
@@ -11676,7 +11676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1742241283567533943, guid: c25b1b0ddef3bc847ade9bf93e7ce6b7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1742241283567533943, guid: c25b1b0ddef3bc847ade9bf93e7ce6b7, type: 3}
       propertyPath: m_SizeDelta.x
@@ -11720,7 +11720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1742241283567533943, guid: c25b1b0ddef3bc847ade9bf93e7ce6b7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -550
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1742241283567533943, guid: c25b1b0ddef3bc847ade9bf93e7ce6b7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -15120,8 +15120,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1251664153}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.40909076}
-  m_AnchorMax: {x: 1, y: 0.590909}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
