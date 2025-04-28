@@ -13,7 +13,11 @@ public class NPCInteract : InteractHandler
     [Copyable] public PlayableDirector _timeline;
     private InteractManager interactMan;
     private FirstPersonController firstPersonController;
+    public Objective mainOBJ;
     public Objective RemoveOBJ;
+    public GameObject NPCInterface;
+
+    private GameObject currentUI;
 
     void Start()
     {
@@ -34,7 +38,6 @@ public class NPCInteract : InteractHandler
             dialogueIndex = 0;
             ShowNextLine();
 
-            // What's wrong with this?:
             Actor actor = GetComponent<Actor>();
             if (actor != null && actor.objectiveList.Contains(RemoveOBJ) && RemoveOBJ != null)
             {
@@ -129,6 +132,14 @@ public class NPCInteract : InteractHandler
         interactMan.UnlockInteract(true);
         firstPersonController.UnlockMove(true);
         GameManager.Instance.borders.Play("ExitBorder", 0, 0f);
+
+        if (currentUI == null && NPCInterface != null)
+        {
+            Debug.Log("RUN THIS");
+            currentUI = Instantiate(NPCInterface);
+            currentUI.GetComponent<NPCInterface>().obj = mainOBJ;
+            currentUI.GetComponent<NPCInterface>().npc = this;
+        }
 
         // Optionally stop the timeline when the dialogue ends
         if (_timeline != null)

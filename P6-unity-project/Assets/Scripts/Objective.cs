@@ -10,5 +10,6 @@ public class Objective : ScriptableObject
     public string description;
     public int goal;
     public List<Objective> nextObjectives;
+    public int difficulty = 1;
     public int xp;  // XP reward for completing this objective
 }
