@@ -55,7 +55,7 @@ public class NPCInterface : MonoBehaviour
 
     public void ConfirmObjective()
     {
-        ObjectiveManager.Instance.AddObjective(obj);
+        ObjectiveManager.Instance.AddObjective(obj, npc.transform);
         npc.NPCInterface = null;
         if (npc._timeline != null)
         {

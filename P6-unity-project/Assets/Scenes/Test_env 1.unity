@@ -15769,7 +15769,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1288161061}
   m_HandleRect: {fileID: 1288161060}
   m_Direction: 2
-  m_Value: 0.49999985
+  m_Value: 0.5
   m_Size: 0.18181822
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -26874,6 +26874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeObjectives: []
+  completedObjectives: []
   startObjectives:
   - {fileID: 11400000, guid: 1780f850d39ca2747a59fb6d4fe0608d, type: 2}
   - {fileID: 11400000, guid: 28349db15f0d6ea4eb065fd805ec4050, type: 2}
@@ -27281,7 +27282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1660016693}
   m_Layer: 0
-  m_Name: Brigde
+  m_Name: Bridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

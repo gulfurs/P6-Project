@@ -23,7 +23,7 @@ public class InteractHandler : MonoBehaviour
         {
 
             //npcObjective.currentProgress = npcObjective.goal; 
-            ObjectiveManager.Instance.AddObjective(ObjectiveStart);
+            ObjectiveManager.Instance.AddObjective(ObjectiveStart, transform);
 
             Debug.Log($"Objective '{ObjectiveStart.objectiveName}' started");
         }

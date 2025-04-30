@@ -11,5 +11,6 @@ public class Objective : ScriptableObject
     public int goal;
     public List<Objective> nextObjectives;
     public int difficulty = 1;
-    public int xp;  // XP reward for completing this objective
+    public int xp;
+    public Transform objectiveTransform; // XP reward for completing this objective
 }

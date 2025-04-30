@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 
 public class ObjectiveManager : MonoBehaviour
@@ -16,6 +17,7 @@ public class ObjectiveManager : MonoBehaviour
     }
 
     public List<ActiveObjective> activeObjectives = new List<ActiveObjective>();
+    public List<Objective> completedObjectives = new List<Objective>();
     public List<Objective> startObjectives;
     public TextMeshProUGUI objectiveText;
     public TextMeshProUGUI xpText;
@@ -26,6 +28,9 @@ public class ObjectiveManager : MonoBehaviour
     public delegate void XPReachedEvent();
     public static event XPReachedEvent OnXPReached;
     private int playerXP = 0;  // Track total XP
+
+    private Vector3 lastPlayerPosition;
+    private float updateThreshold = 2f; // meters
 
     void Awake()
     {
@@ -54,10 +59,24 @@ public class ObjectiveManager : MonoBehaviour
         UpdateXPUI();
     }
 
-    public void AddObjective(Objective newObjective)
+    void Update()
+    {
+        if (Vector3.Distance(Player.Instance.transform.position, lastPlayerPosition) > updateThreshold)
+        {
+            UpdateObjectiveUI();
+            lastPlayerPosition = Player.Instance.transform.position;
+        }
+    }
+
+    public void AddObjective(Objective newObjective, Transform questGiver = null)
     {
         if (!IsObjectiveAdded(newObjective))
         {
+            if (questGiver != null)
+            {
+                newObjective.objectiveTransform = questGiver;
+            }
+
             ActiveObjective activeObjective = new ActiveObjective
             {
                 objective = newObjective,
@@ -70,6 +89,7 @@ public class ObjectiveManager : MonoBehaviour
             UpdateObjectiveUI();
         }
     }
+
 
     public void UpdateObjectiveProgress(Objective objective, int amount)
     {
@@ -94,6 +114,7 @@ public class ObjectiveManager : MonoBehaviour
 
     private void CompleteObjective(ActiveObjective activeObjective)
     {
+        completedObjectives.Add(activeObjective.objective);
         activeObjectives.Remove(activeObjective);
 
         Debug.Log(activeObjective.objective.objectiveName + " Completed!");
@@ -170,16 +191,34 @@ public class ObjectiveManager : MonoBehaviour
         }
     }
 
+    private List<ActiveObjective> GetNearestObjectives(int count = 2)
+    {
+        return new List<ActiveObjective>(activeObjectives)
+            .OrderBy(obj =>
+                obj.objective.objectiveTransform != null
+                    ? Vector3.Distance(Player.Instance.transform.position, obj.objective.objectiveTransform.position)
+                    : Mathf.Infinity
+            )
+            .Take(count)
+            .ToList();
+    }
+
     private void UpdateObjectiveUI()
     {
         string uiText = "";
+        var nearestObjectives = GetNearestObjectives(2);
 
-        foreach (var activeObjective in activeObjectives)
+        foreach (var activeObjective in nearestObjectives)
         {
             uiText += $"{activeObjective.objective.objectiveName}: {activeObjective.currentProgress}/{activeObjective.objective.goal}\n";
-        }
+        }   
 
         objectiveText.text = uiText;
+    }
+
+    public List<ActiveObjective> GetAllObjectives()
+    {
+        return activeObjectives;
     }
 
     private void UpdateXPUI()
