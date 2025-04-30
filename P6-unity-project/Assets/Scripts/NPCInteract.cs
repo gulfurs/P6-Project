@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 using System.Linq;
@@ -7,8 +7,8 @@ using Unity.Cinemachine;
 public class NPCInteract : InteractHandler
 {
     public TypeWriter typeWriter;
-    [Copyable] public List<string> npcDialogue;
     [Copyable] public List<NPCDialogue> npcDialogues;
+    private CinemachineCamera activeCamera = null;
     private int dialogueIndex = 0;
     public bool inDialogue = false;
 
@@ -20,17 +20,24 @@ public class NPCInteract : InteractHandler
     public GameObject NPCInterface;
 
     private GameObject currentUI;
+    private Camera weaponCamera;
 
-    private CinemachineCamera activeCamera;
+
 
     [System.Serializable]
     public class NPCDialogue
     {
         public string dialogue;
         public CinemachineCamera camera;
+        public bool instantSwitch = true;
     }
 
     void Start()
+    {
+        StartShenanigans();
+    }
+
+    void StartShenanigans()
     {
         dialogueIndex = 0;
         typeWriter = FindObjectOfType<TypeWriter>();
@@ -42,12 +49,16 @@ public class NPCInteract : InteractHandler
     {
         if (!inDialogue)
         {
+            StartShenanigans();
             GameManager.Instance.borders.Play("EnterBorder", 0, 0f);
             inDialogue = true;
             interactMan.UnlockInteract(false);
             firstPersonController.UnlockMove(false);
             dialogueIndex = 0;
             ShowNextLine();
+
+            weaponCamera = GameObject.Find("WEAPONCAMERA").GetComponent<Camera>();
+            if (weaponCamera != null) weaponCamera.enabled = false;
 
             Actor actor = GetComponent<Actor>();
             if (actor != null && actor.objectiveList.Contains(RemoveOBJ) && RemoveOBJ != null)
@@ -83,10 +94,10 @@ public class NPCInteract : InteractHandler
 
     void HandleNextDialogue()
     {
-        if (typeWriter == null || npcDialogue.Count == 0) return;
+        if (typeWriter == null || npcDialogues.Count == 0) return;
 
         string rawText = RemoveFormattingAndSpecialChars(typeWriter.textMesh.text);
-        string rawDialogue = RemoveFormattingAndSpecialChars(npcDialogue[dialogueIndex]);
+        string rawDialogue = RemoveFormattingAndSpecialChars(npcDialogues[dialogueIndex].dialogue);
 
         if (rawText != rawDialogue)
         {
@@ -95,7 +106,7 @@ public class NPCInteract : InteractHandler
         else
         {
             dialogueIndex++;
-            if (dialogueIndex < npcDialogue.Count)
+            if (dialogueIndex < npcDialogues.Count)
             {
                 ShowNextLine();  // Show the next line and wait for the next timeline signal
             }
@@ -117,11 +128,39 @@ public class NPCInteract : InteractHandler
     void ShowNextLine()
     {
         typeWriter = FindObjectOfType<TypeWriter>();
-        typeWriter.StartTyping(npcDialogue[dialogueIndex]);
-        /*if (_timeline != null)
+
+        if (npcDialogues[dialogueIndex] != null)
         {
-            _timeline.Play();
-        }*/
+            typeWriter.StartTyping(npcDialogues[dialogueIndex].dialogue);
+
+            CinemachineBrain brain = Camera.main.GetComponent<CinemachineBrain>();
+
+            // Handle camera switching
+            if (activeCamera != null)
+            {
+                activeCamera.Priority = 9;  // Reset previous camera
+            }
+
+            if (npcDialogues[dialogueIndex].camera != null)
+            {
+                activeCamera = npcDialogues[dialogueIndex].camera;
+
+                if (npcDialogues[dialogueIndex].instantSwitch)
+                {
+                    brain.DefaultBlend = new CinemachineBlendDefinition(CinemachineBlendDefinition.Styles.Cut, 0f);
+                }
+                else
+                {
+                    brain.DefaultBlend = new CinemachineBlendDefinition(CinemachineBlendDefinition.Styles.EaseInOut, 2f);
+                }
+
+                activeCamera.Priority = 11;
+            }
+            else
+            {
+                activeCamera = null;  // No camera for this dialogue
+            }
+        }
     }
 
     public void OnNextSignal()
@@ -140,23 +179,59 @@ public class NPCInteract : InteractHandler
 
     void EndDialogue()
     {
+        // End all other NPC dialogues except self
+        foreach (var npc in FindObjectsOfType<NPCInteract>())
+        {
+            if (npc != this && npc.inDialogue)
+            {
+                npc.ForceEndDialogue();
+            }
+        }
+
+
+        if (inDialogue)
+        {
+            inDialogue = false;
+            interactMan.UnlockInteract(true);
+            firstPersonController.UnlockMove(true);
+            GameManager.Instance.borders.Play("ExitBorder", 0, 0f);
+            StartCoroutine(EnableWeaponCameraDelayed());
+
+            if (activeCamera != null)
+            {
+                activeCamera.Priority = 9;  // Reset camera when dialogue ends
+                activeCamera = null;
+            }
+
+            if (currentUI == null && NPCInterface != null)
+            {
+                Debug.Log("RUN THIS");
+                currentUI = Instantiate(NPCInterface);
+                currentUI.GetComponent<NPCInterface>().obj = mainOBJ;
+                currentUI.GetComponent<NPCInterface>().npc = this;
+            }
+        }
+    }
+
+    public void ForceEndDialogue()
+    {
         inDialogue = false;
         interactMan.UnlockInteract(true);
         firstPersonController.UnlockMove(true);
         GameManager.Instance.borders.Play("ExitBorder", 0, 0f);
+        StartCoroutine(EnableWeaponCameraDelayed());
 
-        if (currentUI == null && NPCInterface != null)
+        if (activeCamera != null)
         {
-            Debug.Log("RUN THIS");
-            currentUI = Instantiate(NPCInterface);
-            currentUI.GetComponent<NPCInterface>().obj = mainOBJ;
-            currentUI.GetComponent<NPCInterface>().npc = this;
+            activeCamera.Priority = 9;
+            activeCamera = null;
         }
+    }
 
-        // Optionally stop the timeline when the dialogue ends
-        /*if (_timeline != null)
-        {
-            _timeline.Stop();
-        }*/
+
+    private System.Collections.IEnumerator EnableWeaponCameraDelayed()
+    {
+        yield return new WaitForSeconds(2f);
+        if (weaponCamera != null) weaponCamera.enabled = true;
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Playables;
 using System.Reflection;
 
 public class ObjectiveCompletionHandler : MonoBehaviour
@@ -26,6 +27,13 @@ public class ObjectiveCompletionHandler : MonoBehaviour
 
     private void ApplyCompletionEffects()
     {
+        PlayableDirector director = GetComponent<PlayableDirector>();
+        if (director != null && director.playableGraph.IsValid())
+        {
+            director.Stop();
+            Debug.Log($"Stopped PlayableDirector on {gameObject.name}");
+        }
+
         if (overrideComponent == null) return;
 
         Component myComponent = GetComponent(overrideComponent.GetType());
