@@ -236,10 +236,10 @@ public class TestEvaluation : MonoBehaviour
     private void SaveEvaluationData()
     {
         // Get the application data path which points to the project folder
-        string basePath = Application.dataPath;
+        //string basePath = Application.dataPath;
         // Go up one level from Assets folder to project root
-        string projectRoot = Directory.GetParent(basePath).FullName;
-        string directory = Path.Combine(projectRoot, "EvaluationData");
+        //string projectRoot = Directory.GetParent(basePath).FullName;
+        string directory = Path.Combine(Application.persistentDataPath, "EvaluationData");
         
         if (!Directory.Exists(directory))
         {
