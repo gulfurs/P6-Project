@@ -24,6 +24,13 @@ public class LogManager : MonoBehaviour
     public ScrollRect scrollRect;
     private CrabInterface crabInterface;
     public Animator scrollArea;
+    
+    [Header("Audio")]
+    public AudioClip openLogSound;
+    public AudioClip closeLogSound;
+    public AudioClip confirmSound;
+    public AudioClip clearSound;
+    private AudioSource audioSource;
 
     [Copyable] public bool canOpenLog = false;
 
@@ -33,6 +40,14 @@ public class LogManager : MonoBehaviour
         interactMan = GetComponent<InteractManager>();
         input = GetComponent<StarterAssetsInputs>();
         logMenu.SetActive(false);
+        
+        // Initialize audio source
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
+        }
     }
 
     void Update()
@@ -58,6 +73,19 @@ public class LogManager : MonoBehaviour
     {
         isLogOpen = open;
         logMenu.SetActive(isLogOpen);
+
+        // Play appropriate sound effect
+        if (audioSource != null)
+        {
+            if (isLogOpen && openLogSound != null)
+            {
+                audioSource.PlayOneShot(openLogSound);
+            }
+            else if (!isLogOpen && closeLogSound != null)
+            {
+                audioSource.PlayOneShot(closeLogSound);
+            }
+        }
 
         if (isLogOpen)
         {
@@ -130,12 +158,18 @@ public class LogManager : MonoBehaviour
         }
     }
 
-        public void UpdateUserDefinition(string word, string newDefinition)
+    public void UpdateUserDefinition(string word, string newDefinition)
     {
         LogEntry entry = logEntries.Find(e => e.wordOfInterest == word);
         if (entry != null)
         {
             entry.userDefinition = newDefinition;
+            
+            // Play confirmation sound
+            if (audioSource != null && confirmSound != null)
+            {
+                audioSource.PlayOneShot(confirmSound);
+            }
         }
     }
 

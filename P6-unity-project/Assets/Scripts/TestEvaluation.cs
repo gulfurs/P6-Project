@@ -180,22 +180,25 @@ public class TestEvaluation : MonoBehaviour
             textResponse = "" 
         };
         
-        // Save data after each evaluation for safety
+        // Add to results and save data
+        evaluationResults.Add(data);
         SaveEvaluationData();
         
-        // Resume the game
+        // Hide the question panel
         if (questionPanel != null)
             questionPanel.SetActive(false);
         
-        if (textInputPanel != null){
-
-            if(textInputField != null){
-                textInputField.text = ""; 
-            }
-            textInputPanel.SetActive(true);
-        }
-        evaluationResults.Add(data);
-
+        // Resume the game immediately (instead of showing text input)
+        ConfigureConflictingUI(true);
+        
+        // Restore previous cursor state
+        Cursor.lockState = previousLockState;
+        Cursor.visible = previousCursorVisibility;
+        
+        // Unfreeze the game
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
+        isPaused = false;
     }
 
     public void OnTextSubmitted(){

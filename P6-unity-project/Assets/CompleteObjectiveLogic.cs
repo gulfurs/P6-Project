@@ -6,6 +6,8 @@ public class ObjectiveCompletionHandler : MonoBehaviour
 {
     public Objective objectiveToWatch;
     public Component overrideComponent;
+    [Tooltip("Sound effect played when the objective is completed")]
+    public AudioClip completionSound;
 
     void Awake()
     {
@@ -27,6 +29,17 @@ public class ObjectiveCompletionHandler : MonoBehaviour
 
     private void ApplyCompletionEffects()
     {
+        // Play completion sound effect if assigned
+        if (completionSound != null)
+        {
+            AudioSource audioSource = GetComponent<AudioSource>();
+            if (audioSource == null)
+            {
+                audioSource = gameObject.AddComponent<AudioSource>();
+            }
+            audioSource.PlayOneShot(completionSound);
+        }
+        
         PlayableDirector director = GetComponent<PlayableDirector>();
         if (director != null && director.playableGraph.IsValid())
         {

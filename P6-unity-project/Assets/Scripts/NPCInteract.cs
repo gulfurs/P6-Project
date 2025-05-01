@@ -21,8 +21,11 @@ public class NPCInteract : InteractHandler
 
     private GameObject currentUI;
     private Camera weaponCamera;
-
-
+    
+    [Header("Audio")]
+    [Tooltip("Sound that plays when clicking on this NPC")]
+    public AudioClip clickSound;
+    private AudioSource audioSource;
 
     [System.Serializable]
     public class NPCDialogue
@@ -43,10 +46,26 @@ public class NPCInteract : InteractHandler
         typeWriter = FindObjectOfType<TypeWriter>();
         interactMan = FindObjectOfType<InteractManager>();
         firstPersonController = FindObjectOfType<FirstPersonController>();
+        
+        // Initialize audio source if needed
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+            if (audioSource == null)
+            {
+                audioSource = gameObject.AddComponent<AudioSource>();
+            }
+        }
     }
 
     public override void InteractLogic()
     {
+        // Play the click sound if available
+        if (clickSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(clickSound);
+        }
+
         if (!inDialogue)
         {
             StartShenanigans();
@@ -65,13 +84,6 @@ public class NPCInteract : InteractHandler
             {
                 actor.objectiveList.Remove(RemoveOBJ);
             }
-
-
-            /*if (_timeline != null)
-            {
-                _timeline.time = 0;
-                _timeline.Play();  // Start the timeline
-            }*/
         }
         else
         {
