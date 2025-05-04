@@ -3,11 +3,22 @@ using UnityEngine;
 
 public class SandStormEvent : MonoBehaviour
 {
+    public enum BoundaryShape
+    {
+        Circle,
+        Rectangle
+    }
+
     [Header("Boundary Settings")]
+    public BoundaryShape boundaryShape = BoundaryShape.Circle;
     [Tooltip("Center of play area")]
     public Transform boundaryCenter;
-    [Tooltip("Maximum distance from center before triggering teleport")]
+    [Tooltip("Maximum distance from center before triggering teleport (for circular boundary)")]
     public float maxDistance = 100f;
+    [Tooltip("Width of rectangular boundary")]
+    public float boundaryWidth = 200f;
+    [Tooltip("Length of rectangular boundary")]
+    public float boundaryLength = 200f;
     [Tooltip("Position to teleport player back to")]
     public Transform respawnPoint;
 
@@ -62,18 +73,35 @@ public class SandStormEvent : MonoBehaviour
     {
         // Visualize the boundary in the editor
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(boundaryCenter.position, maxDistance);
+        if (boundaryShape == BoundaryShape.Circle)
+        {
+            Gizmos.DrawWireSphere(boundaryCenter.position, maxDistance);
+        }
+        else if (boundaryShape == BoundaryShape.Rectangle)
+        {
+            Vector3 size = new Vector3(boundaryWidth, 0, boundaryLength);
+            Gizmos.DrawWireCube(boundaryCenter.position, size);
+        }
     }
 
    private void Update()
     {
         if (playerController != null && !isTeleporting)
         {
-            float distanceFromCenter = Vector3.Distance(
-                new Vector3(playerController.transform.position.x, boundaryCenter.position.y, playerController.transform.position.z),
-                new Vector3(boundaryCenter.position.x, boundaryCenter.position.y, boundaryCenter.position.z));
-                
-            bool isInsideBoundaryNow = distanceFromCenter <= maxDistance;
+            bool isInsideBoundaryNow = false;
+
+            if (boundaryShape == BoundaryShape.Circle)
+            {
+                float distanceFromCenter = Vector3.Distance(
+                    new Vector3(playerController.transform.position.x, boundaryCenter.position.y, playerController.transform.position.z),
+                    new Vector3(boundaryCenter.position.x, boundaryCenter.position.y, boundaryCenter.position.z));
+                isInsideBoundaryNow = distanceFromCenter <= maxDistance;
+            }
+            else if (boundaryShape == BoundaryShape.Rectangle)
+            {
+                Vector3 localPosition = boundaryCenter.InverseTransformPoint(playerController.transform.position);
+                isInsideBoundaryNow = Mathf.Abs(localPosition.x) <= boundaryWidth / 2 && Mathf.Abs(localPosition.z) <= boundaryLength / 2;
+            }
             
             if (isOneWayBoundary)
             {
@@ -89,7 +117,7 @@ public class SandStormEvent : MonoBehaviour
             else
             {
                 // Original behavior - trigger when beyond max distance
-                if (distanceFromCenter > maxDistance)
+                if (!isInsideBoundaryNow)
                 {
                     StartCoroutine(TeleportPlayerWithSandstorm());
                 }
