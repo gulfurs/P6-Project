@@ -407,9 +407,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 0}
+  npc: {fileID: 0}
   TextForObjective: {fileID: 7672244826908844071}
-  TextForDifficulty: {fileID: 8539476531990017414}
-  TextForReward: {fileID: 8908352175514327061}
+  TextForDifficulty: {fileID: 0}
+  TextForReward: {fileID: 0}
 --- !u!1 &3354908084964003591
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,7 +639,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1386021876320518677
 RectTransform:
   m_ObjectHideFlags: 0

@@ -22576,8 +22576,8 @@ MonoBehaviour:
   sandstormSound: {fileID: 8300000, guid: 7e584940eb611b045a03700ccb970e72, type: 3}
   fadeInSpeed: 1
   fadeOutSpeed: 1
-  playerController: {fileID: 0}
-  sandstormOverlay: {fileID: 0}
+  playerController: {fileID: 1515014701}
+  sandstormOverlay: {fileID: 1836328178}
   isOneWayBoundary: 0
 --- !u!4 &1687341925
 Transform:
