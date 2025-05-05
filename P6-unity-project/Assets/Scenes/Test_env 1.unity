@@ -2455,7 +2455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f5171bdb4c52d47988ce4a1f0e8968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: 1
+  interactable: 0
   tooltipText: Press E to interact with Crab
   ObjectiveProgress: {fileID: 0}
   ObjectiveStart: {fileID: 0}
@@ -3624,7 +3624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f5171bdb4c52d47988ce4a1f0e8968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: 1
+  interactable: 0
   tooltipText: Press E to interact with Crab
   ObjectiveProgress: {fileID: 0}
   ObjectiveStart: {fileID: 0}
@@ -4654,7 +4654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f5171bdb4c52d47988ce4a1f0e8968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: 1
+  interactable: 0
   tooltipText: Press E to interact with Crab
   ObjectiveProgress: {fileID: 0}
   ObjectiveStart: {fileID: 0}
@@ -5519,7 +5519,7 @@ GameObject:
   - component: {fileID: 443063201}
   - component: {fileID: 443063200}
   m_Layer: 0
-  m_Name: SandCrab (2)
+  m_Name: TutorCrab
   m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7604,7 +7604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f5171bdb4c52d47988ce4a1f0e8968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: 1
+  interactable: 0
   tooltipText: Press E to interact with Crab
   ObjectiveProgress: {fileID: 0}
   ObjectiveStart: {fileID: 0}
@@ -8852,6 +8852,14 @@ MonoBehaviour:
     affectTarget: 1
     soundword: {fileID: 8300000, guid: 6b8ddd4a9f052824c9fda2a1cffd6100, type: 3}
     wordSprite: {fileID: 21300000, guid: 8bf8b3cf2b384604dac7d6f363d71633, type: 3}
+  - word: Obrigado
+    crabBehavior: 0
+    _target: {fileID: 0}
+    targetType: Help
+    affectFlee: 0
+    affectTarget: 0
+    soundword: {fileID: 8300000, guid: 9ad5acea480e4314f94d56bd1b0c7549, type: 3}
+    wordSprite: {fileID: 21300000, guid: 8bf8b3cf2b384604dac7d6f363d71633, type: 3}
   borders: {fileID: 2054159887}
 --- !u!114 &661941176
 MonoBehaviour:
@@ -9047,6 +9055,7 @@ MonoBehaviour:
   - {fileID: 584639024}
   - {fileID: 462678360}
   - {fileID: 1014249880}
+  - {fileID: 443063205}
   enableGameObject: []
   disableGameObject:
   - {fileID: 806123164}
@@ -9144,15 +9153,10 @@ MonoBehaviour:
   - {fileID: 1014249880}
   - {fileID: 349367281785852199}
   - {fileID: 54508949}
-  - {fileID: 208408670}
-  - {fileID: 2120121851}
-  - {fileID: 598536935}
-  - {fileID: 293926533}
-  - {fileID: 1404045062}
-  - {fileID: 380264722}
   - {fileID: 184769368}
   - {fileID: 1560941990}
   - {fileID: 2098926886}
+  - {fileID: 443063205}
   disableInteraction: []
   enableGameObject: []
   disableGameObject: []
@@ -9225,7 +9229,8 @@ MonoBehaviour:
   - Interact with crabs with 'E'
   initiateTimeline: {fileID: 0}
   initiateObjective: {fileID: 0}
-  enableInteraction: []
+  enableInteraction:
+  - {fileID: 443063205}
   disableInteraction: []
   enableGameObject: []
   disableGameObject: []
@@ -11300,6 +11305,7 @@ GameObject:
   - component: {fileID: 841070398}
   - component: {fileID: 841070404}
   - component: {fileID: 841070405}
+  - component: {fileID: 841070406}
   m_Layer: 0
   m_Name: Ball Sphere
   m_TagString: PickUp
@@ -11452,6 +11458,24 @@ MonoBehaviour:
   ObjectiveProgress: {fileID: 0}
   ObjectiveStart: {fileID: 0}
   equipItem: {fileID: 1216967905}
+--- !u!114 &841070406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841070397}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &841342540
 GameObject:
   m_ObjectHideFlags: 0
@@ -17522,8 +17546,8 @@ Transform:
   m_GameObject: {fileID: 1329207586}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.70710677, z: -0.0000000037252903, w: 0.7071068}
-  m_LocalPosition: {x: 33.599, y: -23.057493, z: 11.848145}
-  m_LocalScale: {x: 2.1875758, y: 7.8164, z: 1.6921724}
+  m_LocalPosition: {x: 30.37, y: -23.057493, z: 10.98}
+  m_LocalScale: {x: 12.035541, y: 7.8164, z: 9.496088}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2053819178}
@@ -18607,7 +18631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f5171bdb4c52d47988ce4a1f0e8968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: 1
+  interactable: 0
   tooltipText: Press E to interact with Crab
   ObjectiveProgress: {fileID: 0}
   ObjectiveStart: {fileID: 0}
@@ -19640,7 +19664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  sprintSpeed: 50
+  sprintSpeed: 20
   crouchSpeed: 2
   jumpHeight: 4
   gravity: -20
@@ -27520,6 +27544,10 @@ PrefabInstance:
       propertyPath: npcDialogues.Array.data[3].instantSwitch
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2167513921771439410, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2251161944625243377, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: m_LocalPosition.x
       value: 775
@@ -27566,12 +27594,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3825390026240642931, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: objectiveList.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3825390026240642931, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: 'objectiveList.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: abd10748a2af64748ae46d1a305fb8ec, type: 2}
+      objectReference: {fileID: 11400000, guid: 789f2fc5d99332b4fb99f55b63a3c5af, type: 2}
     - target: {fileID: 4791873189770746800, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -28380,7 +28408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f5171bdb4c52d47988ce4a1f0e8968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: 1
+  interactable: 0
   tooltipText: Press E to interact with Crab
   ObjectiveProgress: {fileID: 0}
   ObjectiveStart: {fileID: 0}
