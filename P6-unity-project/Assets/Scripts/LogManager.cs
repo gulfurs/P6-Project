@@ -73,8 +73,8 @@ public class LogManager : MonoBehaviour
     {
         isLogOpen = open;
         logMenu.SetActive(isLogOpen);
-
-        // Play appropriate sound effect
+        AudioManager.Instance.ToggleRadioEQ(isLogOpen);
+        //AudioManager.Instance.FadeGameTheme(isLogOpen);
         if (audioSource != null)
         {
             if (isLogOpen && openLogSound != null)
@@ -86,9 +86,11 @@ public class LogManager : MonoBehaviour
                 audioSource.PlayOneShot(closeLogSound);
             }
         }
-
+            
         if (isLogOpen)
         {
+            AudioManager.Instance.ToggleRadioEQ(isLogOpen);
+            //AudioManager.Instance.FadeGameTheme(isLogOpen);
             Time.timeScale = 0f; // Pause game
             input.SetCursorState(false); // Unlock cursor
             interactMan.UnlockInteract(false);
@@ -164,12 +166,6 @@ public class LogManager : MonoBehaviour
         if (entry != null)
         {
             entry.userDefinition = newDefinition;
-            
-            // Play confirmation sound
-            if (audioSource != null && confirmSound != null)
-            {
-                audioSource.PlayOneShot(confirmSound);
-            }
         }
     }
 

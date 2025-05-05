@@ -27,6 +27,8 @@ public class NPCInteract : InteractHandler
     public AudioClip clickSound;
     private AudioSource audioSource;
 
+    public bool AllowDialogueSkip = true;
+
     [System.Serializable]
     public class NPCDialogue
     {
@@ -34,6 +36,12 @@ public class NPCInteract : InteractHandler
         public CinemachineCamera camera;
         public bool instantSwitch = true;
     }
+
+    public enum StartTransition { FadeIn, FadeOut, None }
+    public enum EndTransition { FadeIn, FadeOut, None }
+
+    public StartTransition startTransition = StartTransition.FadeIn;
+    public EndTransition endTransition = EndTransition.FadeOut;
 
     void Start()
     {
@@ -69,6 +77,7 @@ public class NPCInteract : InteractHandler
         if (!inDialogue)
         {
             StartShenanigans();
+            HandleStartTransition();
             GameManager.Instance.borders.Play("EnterBorder", 0, 0f);
             inDialogue = true;
             interactMan.UnlockInteract(false);
@@ -96,6 +105,7 @@ public class NPCInteract : InteractHandler
 
     void Update()
     {
+        //if 
         if (inDialogue && Input.GetMouseButtonDown(0)) 
         {
             LogManager logman = FindFirstObjectByType<LogManager>();
@@ -104,7 +114,7 @@ public class NPCInteract : InteractHandler
         }
     }
 
-    void HandleNextDialogue()
+    public void HandleNextDialogue()
     {
         if (typeWriter == null || npcDialogues.Count == 0) return;
 
@@ -188,6 +198,37 @@ public class NPCInteract : InteractHandler
         EndDialogue();
     }
 
+    void HandleStartTransition()
+    {
+        switch (startTransition)
+        {
+            case StartTransition.FadeIn:
+                AudioManager.Instance.FadeGameTheme(true);
+                break;
+            case StartTransition.FadeOut:
+                AudioManager.Instance.FadeGameTheme(false);
+                break;
+            case StartTransition.None:
+            default:
+                break;
+        }
+    }
+
+    void HandleEndTransition()
+    {
+        switch (endTransition)
+        {
+            case EndTransition.FadeIn:
+                AudioManager.Instance.FadeGameTheme(true);
+                break;
+            case EndTransition.FadeOut:
+                AudioManager.Instance.FadeGameTheme(false);
+                break;
+            case EndTransition.None:
+            default:
+                break;
+        }
+    }
 
     void EndDialogue()
     {
@@ -204,6 +245,7 @@ public class NPCInteract : InteractHandler
         if (inDialogue)
         {
             inDialogue = false;
+            HandleEndTransition();
             interactMan.UnlockInteract(true);
             firstPersonController.UnlockMove(true);
             GameManager.Instance.borders.Play("ExitBorder", 0, 0f);

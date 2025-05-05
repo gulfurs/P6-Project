@@ -16,4 +16,6 @@ MonoBehaviour:
   description: 
   goal: 1
   nextObjectives: []
-  xp: 50
+  difficulty: 1
+  xp: 25
+  objectiveTransform: {fileID: 0}

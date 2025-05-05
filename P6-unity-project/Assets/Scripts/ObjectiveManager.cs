@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using UnityEngine.UI;
 
 public class ObjectiveManager : MonoBehaviour
 {
@@ -31,6 +32,11 @@ public class ObjectiveManager : MonoBehaviour
 
     private Vector3 lastPlayerPosition;
     private float updateThreshold = 2f; // meters
+
+    [SerializeField] private Slider xpSlider;
+    [SerializeField] private float lerpDuration = 0.5f;
+    private Coroutine xpLerpCoroutine;
+
 
     void Awake()
     {
@@ -224,7 +230,29 @@ public class ObjectiveManager : MonoBehaviour
     private void UpdateXPUI()
     {
         xpText.text = $"{playerXP}%";
+
+        if (xpLerpCoroutine != null)
+            StopCoroutine(xpLerpCoroutine);
+
+        xpLerpCoroutine = StartCoroutine(LerpXP(playerXP));
     }
+
+    private IEnumerator LerpXP(float targetXP)
+    {
+        float startXP = xpSlider.value;
+        float timeElapsed = 0f;
+
+        while (timeElapsed < lerpDuration)
+        {
+            float newXP = Mathf.Lerp(startXP, targetXP, timeElapsed / lerpDuration);
+            xpSlider.value = newXP;
+            timeElapsed += Time.unscaledDeltaTime; // use unscaled if game is paused
+            yield return null;
+        }
+
+        xpSlider.value = targetXP;
+    }
+
 
     private bool IsObjectiveAdded(Objective objective)
     {

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
+using UnityEngine.Playables;
 using TMPro;
 
 public enum CrabBehavior
@@ -32,7 +33,8 @@ public class GameManager : MonoBehaviour
         public Sprite wordSprite;
     }
 
-    private AudioSource audioSource; 
+    private AudioSource audioSource;
+    public PlayableDirector timelineToPlay;
 
     public List<WordEffect> wordEffectsList = new List<WordEffect>();
     private Dictionary<string, WordEffect> wordEffectsDictionary = new Dictionary<string, WordEffect>();
@@ -78,6 +80,21 @@ public class GameManager : MonoBehaviour
         if (effect != null && effect.soundword != null && audioSource != null)
         {
             audioSource.PlayOneShot(effect.soundword);
+        }
+    }
+
+    public void OnSliderValueChanged(float value)
+    {
+        if (Mathf.Approximately(value, 100f)) // Safer float comparison
+        {
+            if (timelineToPlay != null)
+            {
+                timelineToPlay.Play();
+            }
+            else
+            {
+                Debug.LogWarning("Timeline is not assigned.");
+            }
         }
     }
 }
