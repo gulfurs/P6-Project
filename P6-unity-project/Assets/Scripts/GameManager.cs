@@ -45,12 +45,12 @@ public class GameManager : MonoBehaviour
         // Check if the instance already exists
         if (Instance != null && Instance != this)
         {
-            Destroy(gameObject); 
+            //Destroy(gameObject); 
         }   
         else
         {
             Instance = this; 
-            DontDestroyOnLoad(gameObject); 
+            //DontDestroyOnLoad(gameObject); 
         }
     }
 
