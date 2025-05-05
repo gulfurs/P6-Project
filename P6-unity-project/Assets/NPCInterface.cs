@@ -49,7 +49,7 @@ public class NPCInterface : MonoBehaviour
         if (obj != null)
         {
             TextForObjective.text = "Objective: " + obj.objectiveName;
-            TextForReward.text = "+" + obj.xp.ToString() + "%";
+            //TextForReward.text = "+" + obj.xp.ToString() + "%";
         }
     }
 
