@@ -10004,6 +10004,7 @@ GameObject:
   - component: {fileID: 736461729}
   - component: {fileID: 736461728}
   - component: {fileID: 736461727}
+  - component: {fileID: 736461731}
   m_Layer: 5
   m_Name: UICanvas
   m_TagString: Untagged
@@ -10106,6 +10107,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!95 &736461731
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736461726}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &747560008 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1649556102765534318, guid: e932cfb4ed469cb41a8fdc0142bd4a36, type: 3}
@@ -11563,7 +11586,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 855719893}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.19321798, y: -0.68019617, z: 0.19321798, w: 0.68019617}
+  m_LocalRotation: {x: 0.19482878, y: -0.67973655, z: 0.19482878, w: 0.67973655}
   m_LocalPosition: {x: 174.09999, y: 341.2, z: 462.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -17100,6 +17123,7 @@ GameObject:
   - component: {fileID: 1308929875}
   - component: {fileID: 1308929877}
   - component: {fileID: 1308929876}
+  - component: {fileID: 1308929878}
   m_Layer: 5
   m_Name: ObjectiveBG
   m_TagString: Untagged
@@ -17166,6 +17190,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308929874}
   m_CullTransparentMesh: 1
+--- !u!95 &1308929878
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308929874}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1321424091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17987,6 +18033,10 @@ PrefabInstance:
     - target: {fileID: 8959311595582126058, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
       propertyPath: tooltipText
       value: Press E to interact with BrimBot
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959311595582126058, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
+      propertyPath: endTransition
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8959311595582126058, guid: 5a728cd26e8e55a4a816393b16845340, type: 3}
       propertyPath: startTransition
@@ -23525,6 +23575,7 @@ GameObject:
   - component: {fileID: 1772036188}
   - component: {fileID: 1772036187}
   - component: {fileID: 1772036186}
+  - component: {fileID: 1772036189}
   m_Layer: 5
   m_Name: Objective_text
   m_TagString: Untagged
@@ -23652,6 +23703,28 @@ RectTransform:
   m_AnchoredPosition: {x: -764, y: 131}
   m_SizeDelta: {x: 332.2769, y: 105.8742}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1772036189
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772036185}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &1772884183 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6350428043233301373, guid: e932cfb4ed469cb41a8fdc0142bd4a36, type: 3}
@@ -26709,6 +26782,8 @@ PlayableDirector:
     value: {fileID: 2039227010}
   - key: {fileID: -9163411999636134973, guid: fd473e1e37a231a479bda754e6a5f706, type: 2}
     value: {fileID: 599265765}
+  - key: {fileID: -1683411574157236674, guid: fd473e1e37a231a479bda754e6a5f706, type: 2}
+    value: {fileID: 736461731}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &2039227008
@@ -27671,8 +27746,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: endTransition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: ObjectiveStart
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
+      propertyPath: startTransition
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5354850184218739588, guid: ec4950e371a44be478046900dca42851, type: 3}
       propertyPath: ObjectiveProgress
