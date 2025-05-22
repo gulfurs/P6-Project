@@ -1,4 +1,4 @@
-using UnityEngine;
+    using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
@@ -76,29 +76,25 @@ public class CrabInterface : MonoBehaviour
             if (effect != null)
             {
                 if (effect.affectFlee) {
-                    // Switch based on effect.crabBehavior
+                  
                     switch (effect.crabBehavior)
                     {
                         case CrabBehavior.Flee:
                         case CrabBehavior.GoTo:
                         case CrabBehavior.Follow:
                             SetBehavior(1);
-                            Debug.Log("WE FOLLOW MUSK ON TWITTER");
                             break;
                         case CrabBehavior.PickingUp:
                             SetBehavior(4);
-                            Debug.Log("WE PICK UP THE PHONE");
                             break;
                         case CrabBehavior.DropItem:
                             SetBehavior(3);
-                            Debug.Log("WE DROP TILTED TOWERS");// Use a different animation for DropItem
                             break;
                         case CrabBehavior.StandStill:
                             SetBehavior(2);
-                            Debug.Log("FREEZE!");
                             break;
                         default:
-                            SetBehavior(0);  // Default case if the behavior doesn't match
+                            SetBehavior(0); 
                             break;
                     }
                 }
@@ -107,7 +103,6 @@ public class CrabInterface : MonoBehaviour
                 {
                     spriteRender.sprite = effect.wordSprite;
 
-                    // Normalize the size to a larger fixed scale
                     if (spriteRender.sprite != null) {
                         float targetSize = 7f;
                         Vector2 spriteSize = effect.wordSprite.bounds.size;

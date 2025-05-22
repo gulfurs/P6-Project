@@ -4,20 +4,20 @@ using System.Collections.Generic;
 
 public class EquipInteract : InteractHandler
 {
-    public EquipmentController equipItem; // Reference to the equipment
+    public EquipmentController equipItem;
 
     public override void InteractLogic()
     {
         base.InteractLogic();
         interactable = true;
-        EquipmentManager equipmentManager = FindObjectOfType<EquipmentManager>(); // Get the EquipmentManager
+        EquipmentManager equipmentManager = FindObjectOfType<EquipmentManager>();
 
         if (equipmentManager != null && equipItem != null)
         {
             equipItem.EquipmentRoot = gameObject;
-            equipmentManager.EquipNewItem(equipItem); // Send the item to be equipped
+            equipmentManager.EquipNewItem(equipItem);
             transform.SetParent(null);
-            gameObject.SetActive(false); // Hide the pickup object after interacting
+            gameObject.SetActive(false);
         }
     }
 }

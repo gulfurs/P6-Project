@@ -86,16 +86,16 @@ using UnityEngine.InputSystem;
 
 		public void OnCycle(InputValue value)
 		{
-		Vector2 scrollValue = value.Get<Vector2>(); // Read as Vector2
-		cycleInput = scrollValue.y; // Use only the Y-axis for scrolling
+		Vector2 scrollValue = value.Get<Vector2>();
+		cycleInput = scrollValue.y;
 
 		if (cycleInput > 0)
 		{
-			CycleForward(); // Scroll up → next weapon
+			CycleForward();
 		}
 		else if (cycleInput < 0)
 		{
-			CycleBackward(); // Scroll down → previous weapon
+			CycleBackward();
 			}
 		}
 

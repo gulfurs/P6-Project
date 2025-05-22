@@ -9,6 +9,6 @@ public class Player : MonoBehaviour
         if (Instance == null)
             Instance = this;
         else
-            Destroy(gameObject); // Safety for duplicates
+            Destroy(gameObject);
     }
 }

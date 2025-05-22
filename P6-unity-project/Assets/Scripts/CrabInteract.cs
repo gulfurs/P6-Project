@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class CrabInteract : InteractHandler
 {
-    public GameObject commandUIPrefab; // Assign in Inspector
+    public GameObject commandUIPrefab;
     public LogManager logman;
 
-    private GameObject currentUI; // Stores the instantiated UI
+    private GameObject currentUI;
 
     void Start()
     {

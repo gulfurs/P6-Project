@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class EquipmentManager : MonoBehaviour
 {
-    public Transform handTransform; // Where items are held
-    public List<EquipmentController> equippedItems = new List<EquipmentController>(2); // Two slots
+    public Transform handTransform;
+    public List<EquipmentController> equippedItems = new List<EquipmentController>(2);
     private int currentIndex = 0;
 
     private StarterAssetsInputs inputHandler;
@@ -106,7 +106,6 @@ public class EquipmentManager : MonoBehaviour
 
         EquipmentController itemToDrop = equippedItems[currentIndex];
 
-        // Replace the dropped item with the default melee controller
         equippedItems[currentIndex] = defaultController;
         itemToDrop.gameObject.SetActive(false);
 
@@ -115,37 +114,25 @@ public class EquipmentManager : MonoBehaviour
             GameObject root = itemToDrop.EquipmentRoot;
             root.SetActive(true);
 
-            // Get the camera's forward direction
             Vector3 dropDirection = Camera.main.transform.forward;
-            Vector3 dropPosition = Camera.main.transform.position + dropDirection * 1.5f + Vector3.down * 0.3f; // Drop slightly below the camera's center
+            Vector3 dropPosition = Camera.main.transform.position + dropDirection * 1.5f + Vector3.down * 0.3f;
 
             root.transform.position = dropPosition;
 
-            // Check if it has a Rigidbody
             Rigidbody rb = root.GetComponent<Rigidbody>();
             if (rb == null)
             {
-                rb = root.AddComponent<Rigidbody>(); // Add Rigidbody if missing
+                rb = root.AddComponent<Rigidbody>();
             }
 
-            // Apply force in the camera's direction
             rb.AddForce(dropDirection * 3f + Vector3.up * 2f, ForceMode.Impulse);
         }
-
-        /*if (equippedItems.Count > 0)
-        {
-            currentIndex = 0;
-            ActivateCurrentItem();
-        }*/
     }
 
 
 
     void AttachItem(EquipmentController item)
     {
-        //item.transform.SetParent(handTransform);
-        //item.transform.localPosition = Vector3.zero;
-        //item.transform.localRotation = Quaternion.identity;
         item.gameObject.SetActive(true);
         item.Equipped = true;
     }

@@ -32,11 +32,9 @@ public class FirstPersonController : MonoBehaviour
     public float JumpTimeout = 0.1f;
     public float FallTimeout = 0.15f;
 
-    // Components & References
     private CharacterController controller;
     private StarterAssetsInputs input;
 
-    // Movement & Camera
     private Vector3 velocity;
     private float cameraPitch = 0f;
     bool canMove = true;
@@ -59,7 +57,6 @@ public class FirstPersonController : MonoBehaviour
 
         Gizmos.color = isGrounded ? Color.green : Color.red;
 
-        // Use the same ground check position as GroundedCheck()
         Vector3 checkPosition = transform.position + Vector3.down * (controller.height / 2f) + controller.center;
         Gizmos.DrawWireSphere(checkPosition, groundCheckRadius);
     }
@@ -80,7 +77,6 @@ public class FirstPersonController : MonoBehaviour
 
     private void GroundedCheck()
     {
-        // Set sphere position with offset
         Vector3 spherePosition = transform.position + Vector3.down * (controller.height / 2f) + controller.center;
         isGrounded = Physics.CheckSphere(spherePosition, groundCheckRadius, groundLayer, QueryTriggerInteraction.Ignore);
     }
@@ -99,7 +95,7 @@ public class FirstPersonController : MonoBehaviour
             if (input.jump && _jumpTimeoutDelta <= 0.0f)
             {
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-                _jumpTimeoutDelta = JumpTimeout; // Reset jump cooldown
+                _jumpTimeoutDelta = JumpTimeout;
                 input.jump = false; 
             }
         }
@@ -108,16 +104,13 @@ public class FirstPersonController : MonoBehaviour
             _fallTimeoutDelta -= Time.deltaTime;
         }
 
-        // Always count down jump timeout
         if (_jumpTimeoutDelta >= 0.0f)
         {
             _jumpTimeoutDelta -= Time.deltaTime;
         }
 
-        // Apply gravity
         velocity.y = Mathf.Max(velocity.y + gravity * Time.deltaTime, -_terminalVelocity);
 
-        // Move character
         controller.Move(velocity * Time.deltaTime);
     }
 

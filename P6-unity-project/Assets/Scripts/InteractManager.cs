@@ -7,7 +7,7 @@ public class InteractManager : MonoBehaviour
     public TextMeshProUGUI tooltip;
 
     private InteractHandler currentHoverTarget;
-    private bool canInteract = false;
+    [SerializeField] private bool canInteract = false;
 
     void Start()
     {

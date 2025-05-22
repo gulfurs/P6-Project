@@ -7,9 +7,9 @@ using TMPro;
 
 public enum CrabBehavior
 {
-    Flee,       // Crab is fleeing from something
-    Follow,     // Crab is following a target
-    PickingUp,   // Crab is following an object to pick it up
+    Flee,
+    Follow,
+    PickingUp,
     DropItem,
     GoTo,
     StandStill,
@@ -25,10 +25,10 @@ public class GameManager : MonoBehaviour
     {
         public string word;
         public CrabBehavior crabBehavior;
-        public GameObject _target; // Specific target (if not using type)
-        public string targetType;  // Type-based targeting (optional)
-        public bool affectFlee = true;  // Toggle whether the effect influences fleeing behavior
-        public bool affectTarget = true; // Toggle whether the effect influences the target
+        public GameObject _target;
+        public string targetType;
+        public bool affectFlee = true;
+        public bool affectTarget = true;
         public AudioClip soundword;
         public Sprite wordSprite;
     }
@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
 
     public void OnSliderValueChanged(float value)
     {
-        if (Mathf.Approximately(value, 100f)) // Safer float comparison
+        if (Mathf.Approximately(value, 100f))
         {
             if (timelineToPlay != null)
             {

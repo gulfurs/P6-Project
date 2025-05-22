@@ -9,9 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7933027827336615456}
+  - component: {fileID: 6102881119354832710}
+  - component: {fileID: 5010202780759970481}
+  - component: {fileID: 2153892508521259614}
   m_Layer: 0
   m_Name: ShoppingCart
-  m_TagString: Untagged
+  m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,14 +27,70 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5347904659167972141}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10362946, y: -0.69947195, z: 0.10362946, w: 0.69947195}
+  m_LocalRotation: {x: 0.10363203, y: -0.69947153, z: 0.10363203, w: 0.69947153}
   m_LocalPosition: {x: 720.84, y: 5.3, z: 665.35}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.2, y: 1.1999999, z: 1.2000002}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3895306600923121656}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 16.855, y: -90, z: 0}
+--- !u!65 &6102881119354832710
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5347904659167972141}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.68, y: 1.08, z: 1}
+  m_Center: {x: -0.53, y: 0.43, z: 0}
+--- !u!114 &5010202780759970481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5347904659167972141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 419c091bf19deff4da8930f75b985ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  actorTypes:
+  - Shopping Cart
+  objectiveList:
+  - {fileID: 11400000, guid: be0ce70bdf0b85441accef8e8df14d9a, type: 2}
+  prefabReference: {fileID: 0}
+--- !u!114 &2153892508521259614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5347904659167972141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bdcac52160eeaa4da22eec17ced1b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 0
+  tooltipText: Press E to interact with shopping cart
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
+  equipItem: {fileID: 0}
 --- !u!1001 &3895306600923520376
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -95,40 +154,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: 668f78c22fd621541bed6c90815f36f5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8445046431020931665}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 668f78c22fd621541bed6c90815f36f5, type: 3}
 --- !u!4 &3895306600923121656 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 668f78c22fd621541bed6c90815f36f5, type: 3}
   m_PrefabInstance: {fileID: 3895306600923520376}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3895306600923421656 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 668f78c22fd621541bed6c90815f36f5, type: 3}
-  m_PrefabInstance: {fileID: 3895306600923520376}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &8445046431020931665
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3895306600923421656}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 668f78c22fd621541bed6c90815f36f5, type: 3}

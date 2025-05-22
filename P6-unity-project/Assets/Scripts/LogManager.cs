@@ -41,7 +41,6 @@ public class LogManager : MonoBehaviour
         input = GetComponent<StarterAssetsInputs>();
         logMenu.SetActive(false);
         
-        // Initialize audio source
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
@@ -74,7 +73,6 @@ public class LogManager : MonoBehaviour
         isLogOpen = open;
         logMenu.SetActive(isLogOpen);
         AudioManager.Instance.ToggleRadioEQ(isLogOpen);
-        //AudioManager.Instance.FadeGameTheme(isLogOpen);
         if (audioSource != null)
         {
             if (isLogOpen && openLogSound != null)
@@ -90,9 +88,8 @@ public class LogManager : MonoBehaviour
         if (isLogOpen)
         {
             AudioManager.Instance.ToggleRadioEQ(isLogOpen);
-            //AudioManager.Instance.FadeGameTheme(isLogOpen);
-            Time.timeScale = 0f; // Pause game
-            input.SetCursorState(false); // Unlock cursor
+            Time.timeScale = 0f;
+            input.SetCursorState(false);
             interactMan.UnlockInteract(false);
             scrollArea.Play("EnterScrollArea");
             if (scrollRect != null)
@@ -105,9 +102,9 @@ public class LogManager : MonoBehaviour
             if (crabInterface != null)
             Destroy(crabInterface.gameObject);
 
-            Time.timeScale = 1f; // Resume game
+            Time.timeScale = 1f;
             interactMan.UnlockInteract(true);
-            input.SetCursorState(true); // Lock cursor
+            input.SetCursorState(true);
         }
     }
 
@@ -115,11 +112,9 @@ public class LogManager : MonoBehaviour
     {
         interactMan = GetComponent<InteractManager>();
         input = GetComponent<StarterAssetsInputs>();
-        // Remove punctuation marks and make the first letter uppercase
         newWord = newWord.TrimEnd('!', '.', ',', '?', ';', ':').ToLower();
         newWord = Char.ToUpper(newWord[0]) + newWord.Substring(1);
 
-        // Avoid duplicates
         if (logEntries.Exists(entry => entry.wordOfInterest == newWord))
             return;
 
@@ -130,13 +125,11 @@ public class LogManager : MonoBehaviour
 
     public void UpdateLog()
     {
-        // Clear all existing UI entries
         foreach (Transform child in contentPanel)
         {
             Destroy(child.gameObject);
         }
 
-        // Rebuild UI from logEntries list, sorted alphabetically
         foreach (var entry in logEntries.OrderBy(e => e.wordOfInterest))
         {
             GameObject logInstance = Instantiate(logPrefab, contentPanel);

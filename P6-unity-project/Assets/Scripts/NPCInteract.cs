@@ -55,7 +55,6 @@ public class NPCInteract : InteractHandler
         interactMan = FindObjectOfType<InteractManager>();
         firstPersonController = FindObjectOfType<FirstPersonController>();
         
-        // Initialize audio source if needed
         if (audioSource == null)
         {
             audioSource = GetComponent<AudioSource>();
@@ -68,7 +67,6 @@ public class NPCInteract : InteractHandler
 
     public override void InteractLogic()
     {
-        // Play the click sound if available
         if (clickSound != null && audioSource != null)
         {
             audioSource.PlayOneShot(clickSound);
@@ -105,7 +103,6 @@ public class NPCInteract : InteractHandler
 
     void Update()
     {
-        //if 
         if (inDialogue && Input.GetMouseButtonDown(0)) 
         {
             LogManager logman = FindFirstObjectByType<LogManager>();
@@ -123,14 +120,14 @@ public class NPCInteract : InteractHandler
 
         if (rawText != rawDialogue)
         {
-            typeWriter.SkipTyping(); // Skip to the next line of dialogue and the corresponding timeline signal
+            typeWriter.SkipTyping();
         }
         else
         {
             dialogueIndex++;
             if (dialogueIndex < npcDialogues.Count)
             {
-                ShowNextLine();  // Show the next line and wait for the next timeline signal
+                ShowNextLine();
             }
             else
             {
@@ -253,7 +250,7 @@ public class NPCInteract : InteractHandler
 
             if (activeCamera != null)
             {
-                activeCamera.Priority = 9;  // Reset camera when dialogue ends
+                activeCamera.Priority = 9;
                 activeCamera = null;
             }
 
