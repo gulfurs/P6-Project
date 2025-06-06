@@ -1,0 +1,307 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &886575544904557950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2529903189940182807}
+  - component: {fileID: 8741768807246652523}
+  - component: {fileID: 6013910320610702668}
+  - component: {fileID: 2498773313899163797}
+  - component: {fileID: 8915080529279976623}
+  - component: {fileID: 1310564099882839569}
+  - component: {fileID: 5924394868155957803}
+  m_Layer: 0
+  m_Name: Stranger (EvilCrab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2529903189940182807
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886575544904557950}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.76447076, z: -0, w: 0.64465845}
+  m_LocalPosition: {x: 486.04, y: 36.58, z: 501.43}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2985600023056260311}
+  - {fileID: 1233172702339743978}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 99.72, z: 0}
+--- !u!65 &8741768807246652523
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886575544904557950}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.5, y: 2.5, z: 2.5}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6013910320610702668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886575544904557950}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &2498773313899163797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886575544904557950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54f3191473e3d9b43b5dfa1f0cb980b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 1
+  ObjectiveProgress: {fileID: 0}
+  ObjectiveStart: {fileID: 0}
+  typeWriter: {fileID: 0}
+  npcDialogue:
+  - 'Grande problema! '
+  - '*Caranguejo!'
+  - Meu *Gato!
+  - Fazer caranguejo *deixar-cair meu gato
+  - Ajudar meu gato!
+--- !u!114 &8915080529279976623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886575544904557950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 419c091bf19deff4da8930f75b985ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  actorTypes: []
+  objectiveList: []
+--- !u!114 &1310564099882839569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886575544904557950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d7d219d605e544c8d2a1af25c875b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveToWatch: {fileID: 11400000, guid: 8f73559e9fd7c704fa7397dfcfee2d92, type: 2}
+  overrideComponent: {fileID: 5924394868155957803}
+--- !u!114 &5924394868155957803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886575544904557950}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54f3191473e3d9b43b5dfa1f0cb980b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 1
+  ObjectiveProgress: {fileID: 11400000, guid: abd10748a2af64748ae46d1a305fb8ec, type: 2}
+  ObjectiveStart: {fileID: 0}
+  typeWriter: {fileID: 0}
+  npcDialogue:
+  - Thank Heavens the lord
+--- !u!1 &8943493550810995117
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1233172702339743978}
+  - component: {fileID: 1511047780567677360}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1233172702339743978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8943493550810995117}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2529903189940182807}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1511047780567677360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8943493550810995117}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54f3191473e3d9b43b5dfa1f0cb980b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 1
+  ObjectiveProgress: {fileID: 11400000, guid: abd10748a2af64748ae46d1a305fb8ec, type: 2}
+  ObjectiveStart: {fileID: 0}
+  typeWriter: {fileID: 0}
+  npcDialogue:
+  - Thank Heavens the lord
+--- !u!1001 &3378898301768694588
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2529903189940182807}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 2faca5255200375439291762e8379201, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2faca5255200375439291762e8379201, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2faca5255200375439291762e8379201, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2faca5255200375439291762e8379201, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2faca5255200375439291762e8379201, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2faca5255200375439291762e8379201, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2faca5255200375439291762e8379201, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2faca5255200375439291762e8379201, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2faca5255200375439291762e8379201, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2faca5255200375439291762e8379201, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2faca5255200375439291762e8379201, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2faca5255200375439291762e8379201, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2faca5255200375439291762e8379201, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2faca5255200375439291762e8379201, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2faca5255200375439291762e8379201, type: 3}
+      propertyPath: m_Name
+      value: sandRobot
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2faca5255200375439291762e8379201, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1541079482223139413}
+  m_SourcePrefab: {fileID: 100100000, guid: 2faca5255200375439291762e8379201, type: 3}
+--- !u!1 &2460420924807759469 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2faca5255200375439291762e8379201, type: 3}
+  m_PrefabInstance: {fileID: 3378898301768694588}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1541079482223139413
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2460420924807759469}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 2faca5255200375439291762e8379201, type: 3}
+  m_Controller: {fileID: 9100000, guid: e00cfd0fe3510ce4e8a05fa57f6f8144, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &2985600023056260311 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2faca5255200375439291762e8379201, type: 3}
+  m_PrefabInstance: {fileID: 3378898301768694588}
+  m_PrefabAsset: {fileID: 0}

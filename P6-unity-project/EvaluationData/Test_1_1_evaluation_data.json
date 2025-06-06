@@ -1,0 +1,20 @@
+{
+    "items": [
+        {
+            "evaluationNumber": 1,
+            "eventName": "Debug_Trigger_1",
+            "rating": 1,
+            "textResponse": "22222222222222",
+            "gameTime": 3.047168254852295,
+            "timestamp": "2025-04-09 15:25:22"
+        },
+        {
+            "evaluationNumber": 2,
+            "eventName": "Debug_Trigger_2",
+            "rating": 3,
+            "textResponse": "ddd",
+            "gameTime": 6.557774066925049,
+            "timestamp": "2025-04-09 15:25:31"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "items": [
+        {
+            "evaluationNumber": 1,
+            "eventName": "Reached_50",
+            "rating": 4,
+            "textResponse": "Nysgerig",
+            "gameTime": 213.8766632080078,
+            "timestamp": "2025-04-10 13:19:41"
+        },
+        {
+            "evaluationNumber": 2,
+            "eventName": "Reached_100",
+            "rating": 4,
+            "textResponse": "Oplevelse",
+            "gameTime": 358.97705078125,
+            "timestamp": "2025-04-10 13:25:21"
+        }
+    ]
+}
